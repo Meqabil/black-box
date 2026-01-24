@@ -1,17 +1,39 @@
 import 'package:black_box/core/constants/colors.dart';
-import 'package:black_box/features/start_app/onboaring.dart';
-import 'package:black_box/features/start_app/splash_screen.dart';
-import 'package:black_box/features/start_app/starting_page.dart';
+import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_cubit.dart';
+import 'package:black_box/features/auth/presentation/bloc/auth/signup/signup_cubit.dart';
+import 'package:black_box/features/auth/presentation/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'features/auth/presentation/bloc/auth/login/login_cubit.dart';
+import 'injection_container.dart' as di;
 
-void main() {
+
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
-      statusBarColor: mainColor
+      statusBarColor: mainRedColor
     )
   );
-  runApp(const MyApp());
+  await di.init();
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => di.s1<LoginCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => di.s1<SignUpCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => di.s1<PasswordCubit>(),
+        )
+      ],
+      child: MyApp(),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -21,7 +43,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Onboarding(),
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          iconTheme: IconThemeData(color: Colors.white)
+        )
+      ),
+      home: LoginScreen(),
     );
   }
 }

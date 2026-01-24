@@ -17,7 +17,7 @@ class StartingPage extends StatelessWidget {
             Image.asset("assets/start_screen/carline.png",width: 200,),
             Text("BLACK BOX",style: TextStyle(fontStyle: FontStyle.italic,color: Colors.red,fontSize: 45,fontWeight: FontWeight.bold),),
             SizedBox(height: 35,),
-            FilledButton(onPressed: (){},style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(mainColor),fixedSize: WidgetStatePropertyAll(Size(170,40))), child: Text("Get Start",style: TextStyle(fontSize: 18),),)
+            FilledButton(onPressed: (){},style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(mainRedColor),fixedSize: WidgetStatePropertyAll(Size(170,40))), child: Text("Get Start",style: TextStyle(fontSize: 18),),)
           ],
         ),
       ),

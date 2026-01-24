@@ -21,7 +21,7 @@ class _OnboardingBasicScreenState extends State<OnboardingBasicScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: mainColor,
+      color: mainRedColor,
       child: Column(
         children: [
           Container(
@@ -57,7 +57,7 @@ class _OnboardingBasicScreenState extends State<OnboardingBasicScreen> {
                     onPressed: (){
                       widget.controller.nextPage(duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
                     },
-                    child: Text("Next",style: TextStyle(color: mainColor,fontSize: 25,fontWeight: FontWeight.bold),),
+                    child: Text("Next",style: TextStyle(color: mainRedColor,fontSize: 25,fontWeight: FontWeight.bold),),
                   ),
                   SizedBox(
                     width: MediaQuery.sizeOf(context).width,

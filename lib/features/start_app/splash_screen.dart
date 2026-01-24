@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
       body: Container(
         width: MediaQuery.sizeOf(context).width,
         height: MediaQuery.sizeOf(context).height,
-        color: mainColor,
+        color: mainRedColor,
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
