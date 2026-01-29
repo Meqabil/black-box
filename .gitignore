@@ -47,6 +47,16 @@ unlinked.ds
 unlinked_spec.ds
 
 # Android related
+
+/build/
+/android/.gradle/
+/android/.gradle
+/android/build/
+/.flutter-plugins
+/.flutter-plugins-dependencies
+/.pub-cache/
+
+
 **/android/**/gradle-wrapper.jar
 .gradle/
 **/android/captures/
