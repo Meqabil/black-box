@@ -269,7 +269,7 @@ class _HomeContentState extends State<HomeContent> {
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Transform.rotate(
-                angle: arrowAngle * 3.1416 / 180, // تحويل درجة لراديان
+                angle: arrowAngle * 3.1416 / 180,    
                 child: const Icon(
                   Icons.arrow_back_outlined,
                   size: 16,
