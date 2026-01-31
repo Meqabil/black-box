@@ -10,6 +10,7 @@ import 'package:black_box/features/auth/presentation/screens/password/password_w
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+// ignore: must_be_immutable
 class NewPasswordPage extends StatefulWidget {
   NewPasswordPage({super.key,required this.email,required this.otp});
   String email;

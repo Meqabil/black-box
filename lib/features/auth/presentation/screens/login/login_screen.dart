@@ -1,5 +1,4 @@
 
-import 'package:black_box/core/constants/colors.dart';
 import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/core/network/network_info_imp.dart';
 import 'package:black_box/core/ui/snackbar/exception_snackbar.dart';

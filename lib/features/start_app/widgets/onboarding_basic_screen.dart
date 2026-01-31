@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constants/colors.dart';
 
+// ignore: must_be_immutable
 class OnboardingBasicScreen extends StatefulWidget {
   OnboardingBasicScreen({super.key,required this.title,required this.subtitle,required this.image,required this.currentPage,required this.controller,required this.titleSize,required this.subtitleSize});
   String image;

@@ -2,6 +2,7 @@
 import 'package:black_box/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Dot extends StatelessWidget {
   Dot({super.key,required this.size,required this.filled,required this.position,required this.controller});
   double size;
