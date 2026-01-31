@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/hom-e/bnv/analysis.dart';
-import 'package:flutter_app/hom-e/bnv/home.dart';
-import 'package:flutter_app/hom-e/bnv/profile.dart';
+
 
 import 'analysis.dart';
 import 'home.dart';

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/hom-e/notification.dart';
+
+import '../notification.dart';
+
 
 class HomeContent extends StatefulWidget {
   const HomeContent({super.key});
