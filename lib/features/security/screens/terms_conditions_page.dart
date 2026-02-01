@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'shared_widgets.dart';
 
 class TermsConditionsPage extends StatelessWidget {
-  final bool isDark; // 1. إضافة متغير حالة الثيم
-  const TermsConditionsPage(
-      {super.key, required this.isDark}); // 2. تحديث الـ Constructor
+  final bool isDark;
+  const TermsConditionsPage({super.key, required this.isDark});
 
   @override
   Widget build(BuildContext context) {
-    // 3. تعريف الألوان بناءً على حالة الثيم
     Color bgColor = isDark ? kNavyBlue : Colors.white;
     Color textColor = isDark ? Colors.white : Colors.black;
     Color subTextColor = isDark ? Colors.white70 : Colors.black87;
@@ -18,9 +16,7 @@ class TermsConditionsPage extends StatelessWidget {
       extendBody: true,
       body: Stack(
         children: [
-          // الطبقة الخلفية تتغير حسب الثيم
           buildWhiteLayer(bgColor, 130),
-
           Positioned(
             top: 130,
             left: 0,
@@ -39,7 +35,7 @@ class TermsConditionsPage extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      color: textColor, // اللون الأساسي للنص
+                      color: textColor,
                     ),
                   ),
                   const SizedBox(height: 25),
@@ -80,17 +76,13 @@ class TermsConditionsPage extends StatelessWidget {
               ),
             ),
           ),
-
-          // الهيدر الثابت (يظل أبيض فوق الخلفية الحمراء)
-
           Positioned(
             top: 0,
             left: 0,
             right: 0,
             child: Container(
               height: 130,
-              padding: const EdgeInsets.only(
-                  top: 35), // تعديل الارتفاع كما طلبته سابقاً
+              padding: const EdgeInsets.only(top: 35),
               child: _buildHeader(context, "Terms And Conditions"),
             ),
           ),
@@ -100,7 +92,6 @@ class TermsConditionsPage extends StatelessWidget {
     );
   }
 
-  // العناوين تظل باللون الأحمر لتمييز الفقرات
   Widget _buildSectionTitle(String title) {
     return Padding(
       padding: const EdgeInsets.only(top: 20, bottom: 8),
@@ -115,7 +106,6 @@ class TermsConditionsPage extends StatelessWidget {
     );
   }
 
-  // تعديل الـ Body لاستقبال اللون المتغير
   Widget _buildSectionBody(String text, Color color) {
     return Text(
       text,
@@ -128,7 +118,6 @@ class TermsConditionsPage extends StatelessWidget {
     );
   }
 
-  // تعديل الـ Bullet لاستقبال اللون المتغير
   Widget _buildBulletPoint(String text, Color color) {
     return Padding(
       padding: const EdgeInsets.only(left: 15, top: 5),

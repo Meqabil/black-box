@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'shared_widgets.dart';
 import 'edit_profile_page.dart';
 import 'security_page.dart';
+import 'SettingsPage.dart';
+import 'help_faq_page.dart';
+import 'logout_dialog.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -13,6 +16,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   String currentUserName = "John Smith";
   bool isDarkMode = false;
+  bool isPushEnabled = true;
 
   @override
   Widget build(BuildContext context) {
@@ -58,12 +62,14 @@ class _ProfilePageState extends State<ProfilePage> {
                             builder: (context) => EditProfilePage(
                                   initialName: currentUserName,
                                   initialDark: isDarkMode,
+                                  initialPush: isPushEnabled,
                                 )),
                       );
                       if (result != null) {
                         setState(() {
                           currentUserName = result['name'];
                           isDarkMode = result['dark'];
+                          isPushEnabled = result['push'];
                         });
                       }
                     }),
@@ -76,12 +82,42 @@ class _ProfilePageState extends State<ProfilePage> {
                                 SecurityPage(isDark: isDarkMode)),
                       );
                     }),
-                    _buildNavButton(Icons.settings_outlined, "Setting",
-                        kMainRed, textColor, () {}),
+                    _buildNavButton(
+                        Icons.settings_outlined, "Setting", kMainRed, textColor,
+                        () async {
+                      final result = await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SettingsPage(
+                            isDark: isDarkMode,
+                            pushEnabled: isPushEnabled,
+                          ),
+                        ),
+                      );
+
+                      if (result != null && result is bool) {
+                        setState(() {
+                          isPushEnabled = result;
+                        });
+                      }
+                    }),
                     _buildNavButton(Icons.help_outline, "Help",
-                        const Color(0xFFE57373), textColor, () {}),
+                        const Color(0xFFE57373), textColor, () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HelpFAQPage(isDark: isDarkMode),
+                        ),
+                      );
+                    }),
                     _buildNavButton(Icons.logout, "Logout",
-                        const Color(0xFF4FC3F7), textColor, () {}),
+                        const Color(0xFF4FC3F7), textColor, () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return LogoutDialog(isDark: isDarkMode);
+                          });
+                    }),
                   ],
                 ),
               ),
@@ -111,6 +147,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ],
         ),
       );
+
   Widget _buildUserImage() => Container(
         padding: const EdgeInsets.all(4),
         decoration:
@@ -142,8 +179,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     fontWeight: FontWeight.w600,
                     color: txtColor)),
             const Spacer(),
-            Icon(Icons.arrow_forward_ios,
-                size: 16, color: txtColor.withOpacity(0.3)),
+            //Icon(Icons.arrow_forward_ios,
+            //   size: 16, color: txtColor.withOpacity(0.3)),
           ],
         ),
       ),

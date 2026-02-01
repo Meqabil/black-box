@@ -5,9 +5,14 @@ import 'shared_widgets.dart';
 class EditProfilePage extends StatefulWidget {
   final String initialName;
   final bool initialDark;
+  final bool initialPush;
 
-  const EditProfilePage(
-      {super.key, required this.initialName, required this.initialDark});
+  const EditProfilePage({
+    super.key,
+    required this.initialName,
+    required this.initialDark,
+    required this.initialPush,
+  });
 
   @override
   State<EditProfilePage> createState() => _EditProfilePageState();
@@ -15,7 +20,11 @@ class EditProfilePage extends StatefulWidget {
 
 class _EditProfilePageState extends State<EditProfilePage> {
   final _formKey = GlobalKey<FormState>();
+
   late TextEditingController _nameController;
+  late TextEditingController _phoneController;
+  late TextEditingController _emailController;
+
   late bool _isDark;
   late bool _pushNotifications;
 
@@ -23,8 +32,18 @@ class _EditProfilePageState extends State<EditProfilePage> {
   void initState() {
     super.initState();
     _nameController = TextEditingController(text: widget.initialName);
+    _phoneController = TextEditingController(text: "0123456789");
+    _emailController = TextEditingController(text: "john@example.com");
     _isDark = widget.initialDark;
-    _pushNotifications = true;
+    _pushNotifications = widget.initialPush;
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _phoneController.dispose();
+    _emailController.dispose();
+    super.dispose();
   }
 
   @override
@@ -72,13 +91,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       const SizedBox(height: 15),
                       _field(
                           "Username", _nameController, false, false, textColor),
-                      _field("Phone", TextEditingController(text: "2012345678"),
-                          false, true, textColor),
-                      _field(
-                          "Email Address",
-                          TextEditingController(text: "john@example.com"),
-                          true,
-                          false,
+                      _field("Phone", _phoneController, false, true, textColor),
+                      _field("Email Address", _emailController, true, false,
                           textColor),
                       const SizedBox(height: 10),
                       _rowSwitch(
@@ -92,8 +106,12 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       Center(
                         child: SizedBox(
                           width: 180,
-                          height: 50,
+                          height: 45,
                           child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: kMainRed,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30))),
                             onPressed: () {
                               if (_formKey.currentState!.validate()) {
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -105,6 +123,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                     backgroundColor: kFieldFillColor,
                                     behavior: SnackBarBehavior.floating,
                                     margin: const EdgeInsets.all(20),
+                                    duration:
+                                        const Duration(milliseconds: 1500),
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(20)),
@@ -112,25 +132,18 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                 );
 
                                 Future.delayed(
-                                    const Duration(milliseconds: 600), () {
+                                    const Duration(milliseconds: 1600), () {
                                   Navigator.pop(context, {
                                     'name': _nameController.text,
-                                    'dark': _isDark
+                                    'dark': _isDark,
+                                    'push': _pushNotifications,
                                   });
                                 });
                               }
                             },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: kMainRed,
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 15),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30))),
                             child: const Text("Update Profile",
                                 style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                )),
+                                    color: Colors.white, fontSize: 15)),
                           ),
                         ),
                       ),
@@ -142,7 +155,13 @@ class _EditProfilePageState extends State<EditProfilePage> {
           ),
         ],
       ),
-      bottomNavigationBar: buildCommonBottomBar(),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
+        child: buildCommonBottomBar(),
+      ),
     );
   }
 
@@ -206,7 +225,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
           const SizedBox(height: 10),
           TextFormField(
             controller: cont,
-            keyboardType: isPhone ? TextInputType.number : TextInputType.text,
+            style: TextStyle(color: txtColor, fontWeight: FontWeight.w400),
+            keyboardType: isPhone
+                ? TextInputType.number
+                : (isEmail ? TextInputType.emailAddress : TextInputType.text),
             inputFormatters:
                 isPhone ? [FilteringTextInputFormatter.digitsOnly] : null,
             decoration: InputDecoration(
@@ -215,10 +237,29 @@ class _EditProfilePageState extends State<EditProfilePage> {
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                   borderSide: BorderSide.none),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(color: kMainRed, width: 1)),
+              errorStyle: const TextStyle(color: kMainRed),
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             ),
-            validator: (v) => (v == null || v.isEmpty) ? 'Required' : null,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'This field cannot be empty';
+              }
+              if (isEmail) {
+                if (!value.contains('@') || !value.contains('.')) {
+                  return 'Please enter a valid email (must contain @ and .)';
+                }
+              }
+              if (isPhone) {
+                if (value.length < 8) {
+                  return 'Please enter a valid phone number';
+                }
+              }
+              return null;
+            },
           ),
         ],
       ),
