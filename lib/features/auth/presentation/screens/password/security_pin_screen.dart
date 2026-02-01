@@ -1,33 +1,54 @@
-
-import 'package:black_box/core/errors/auth_exception.dart';
-import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_cubit.dart';
-import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_state.dart';
-
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grad_project/login/password_page/new_password_screen.dart';
 
-import '../../../../../core/constants/colors.dart';
-import '../../../../../core/ui/snackbar/exception_snackbar.dart';
-import '../../../../../core/ui/snackbar/success_snackbar.dart';
-import 'new_password_screen.dart';
+const Color _mainRedColor = Color(0xFFA30015);
 
-
-
-// ignore: must_be_immutable
 class SecurityPinScreen extends StatefulWidget {
-  SecurityPinScreen({super.key,required this.email});
-  String email;
+  const SecurityPinScreen({super.key});
+
   @override
   State<SecurityPinScreen> createState() => _SecurityPinScreenState();
 }
 
 class _SecurityPinScreenState extends State<SecurityPinScreen> {
   final int pinLength = 6;
-  String fullOtp = '';
   final List<TextEditingController> _controllers =
-  List.generate(6, (_) => TextEditingController());
+      List.generate(6, (_) => TextEditingController());
   final List<FocusNode> _focusNodes = List.generate(6, (_) => FocusNode());
+
+  int _secondsRemaining = 30;
+  Timer? _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _startTimer();
+  }
+
+  void _startTimer() {
+    _timer?.cancel();
+    setState(() {
+      _secondsRemaining = 30;
+    });
+
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (_secondsRemaining == 0) {
+        timer.cancel();
+      } else {
+        setState(() {
+          _secondsRemaining--;
+        });
+      }
+    });
+  }
+
+  String get _formattedTime {
+    final minutes = (_secondsRemaining ~/ 60).toString().padLeft(2, '0');
+    final seconds = (_secondsRemaining % 60).toString().padLeft(2, '0');
+    return '$minutes:$seconds';
+  }
 
   Widget _buildPinBox(int index) {
     return SizedBox(
@@ -38,13 +59,12 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
         focusNode: _focusNodes[index],
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
-        textDirection: TextDirection.ltr,
         maxLength: 1,
         inputFormatters: [FilteringTextInputFormatter.digitsOnly],
         style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
-          color: mainRedColor,
+          color: _mainRedColor,
         ),
         decoration: InputDecoration(
           counterText: '',
@@ -61,7 +81,7 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(50),
-            borderSide: const BorderSide(color: mainRedColor, width: 2),
+            borderSide: const BorderSide(color: _mainRedColor, width: 2),
           ),
         ),
         onChanged: (value) {
@@ -76,9 +96,9 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
     );
   }
 
-
   @override
   void dispose() {
+    _timer?.cancel();
     for (var controller in _controllers) {
       controller.dispose();
     }
@@ -87,11 +107,11 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
     }
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
-      backgroundColor: mainRedColor,
+      backgroundColor: _mainRedColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -116,11 +136,9 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                   ),
                 ),
                 child: SingleChildScrollView(
-                  keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                   padding:
-                  const EdgeInsets.symmetric(horizontal: 50, vertical: 40),
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 40),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const Text(
                         "Enter Security Pin",
@@ -133,67 +151,64 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                       const SizedBox(height: 80),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children:
-                        List.generate(pinLength, (index) => _buildPinBox(index)),
+                        children: List.generate(
+                            pinLength, (index) => _buildPinBox(index)),
                       ),
                       const SizedBox(height: 80),
                       SizedBox(
                         width: 250,
                         height: 50,
-                        child: BlocListener<PasswordCubit,PasswordState>(
-                          listener: (context,state){
-                            if(state is SuccessPassword){
-                              SuccessSnackBar snack = SuccessSnackBar();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                  snack.show(state.message)
-                              );
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewPasswordPage(email: widget.email, otp: fullOtp)));
-                            } else if(state is FailurePassword){
-                              ExceptionSnackBar snack = ExceptionSnackBar();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                  snack.show(state.message)
-                              );
-                            }
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const NewPasswordPage(),
+                              ),
+                            );
                           },
-                          child: ElevatedButton(
-                            onPressed: () async{
-                              for(int i = 0;i < 6;i++){
-                                fullOtp += _controllers[i].text;
-                              }
-                              if(fullOtp.length < 5){
-                                ExceptionSnackBar snack = ExceptionSnackBar();
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                    snack.show(InCompleteOtpException().message)
-                                );
-                              }else{
-                                context.read<PasswordCubit>().verifyPin(email: widget.email, otp: fullOtp);
-                              }
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: mainRedColor,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25),
-                              ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: _mainRedColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25),
                             ),
-                            child: const Text(
-                              "Verify",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
+                          ),
+                          child: const Text(
+                            "Verify",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
                       ),
                       const SizedBox(height: 15),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          "Send Again",
-                          style: TextStyle(
-                            color: Color(0xFFC26C78),
-                            fontWeight: FontWeight.bold,
+
+                      GestureDetector(
+                        onTap: _secondsRemaining == 0
+                            ? () {
+                                _startTimer();
+                              }
+                            : null,
+                        child: Container(
+                          width: 250,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.red.shade50,
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            _secondsRemaining == 0
+                                ? 'Send Again'
+                                : 'Send Again $_formattedTime',
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
