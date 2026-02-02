@@ -6,10 +6,11 @@ class NotificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const Color brandRed = Color(0xFFA3000B);
+    //const Color mainred = Color(0xFFA3000B);
+    const Color primaryred = Color(0xFF9B0D15);
 
     return Scaffold(
-      backgroundColor: brandRed,
+      backgroundColor: primaryred,
       body: Stack(
         children: [
           Column(
@@ -44,7 +45,7 @@ class NotificationScreen extends StatelessWidget {
                       ),
                       child: const Icon(
                         Icons.notifications_none,
-                        color: brandRed,
+                        color: primaryred,
                         size: 20,
                       ),
                     ),
@@ -52,7 +53,6 @@ class NotificationScreen extends StatelessWidget {
                 ),
               ),
 
-              // المنطقة البيضاء (قائمة التنبيهات)
               Expanded(
                 child: Container(
                   width: double.infinity,
@@ -192,3 +192,4 @@ class NotificationScreen extends StatelessWidget {
     );
   }
 }
+

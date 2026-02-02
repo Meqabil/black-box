@@ -1,9 +1,8 @@
-import 'package:black_box/features/auth/presentation/screens/hom-e/bnv/analysis.dart';
-import 'package:black_box/features/auth/presentation/screens/hom-e/bnv/home.dart';
-import 'package:black_box/features/auth/presentation/screens/hom-e/bnv/profile.dart';
-import 'package:black_box/features/auth/presentation/screens/hom-e/notification.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_app/hom-e/bnv/analysis.dart';
+import 'package:flutter_app/hom-e/bnv/home.dart';
+import 'package:flutter_app/hom-e/bnv/profile.dart';
+import 'package:flutter_app/hom-e/notification.dart';
 
 class BNVScreen extends StatefulWidget {
   const BNVScreen({super.key});
