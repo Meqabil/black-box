@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:grad_project/hom-e/quickly_analysis.dart';
 
 class HomeContent extends StatefulWidget {
   final VoidCallback onNotificationTap;
+
   const HomeContent({super.key, required this.onNotificationTap});
 
   @override
@@ -70,8 +72,11 @@ class _HomeContentState extends State<HomeContent> {
                   const SizedBox(height: 20),
                   Row(
                     children: [
-                      _buildStatItem("Total Active Cars", "1", Colors.white,
-                       arrowAngle: 135,   
+                      _buildStatItem(
+                        "Total Active Cars",
+                        "1",
+                        Colors.white,
+                        arrowAngle: 135,
                       ),
                       Container(
                         width: 2,
@@ -144,53 +149,64 @@ class _HomeContentState extends State<HomeContent> {
                   padding: const EdgeInsets.all(25),
                   child: Column(
                     children: [
-                      Container(
-                        padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: cardPink,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: IntrinsicHeight(
-                          child: Row(
-                            children: [
-                              _buildCircularIndicator(),
+                      InkWell(
+                        borderRadius: BorderRadius.circular(30),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const QuicklyAnalysis(),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                            color: cardPink,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: IntrinsicHeight(
+                            child: Row(
+                              children: [
+                                _buildCircularIndicator(),
 
-                              const VerticalDivider(
-                                thickness: 1.5,
-                                color: Colors.white,
-                                width: 30,
-                                indent: 5,
-                                endIndent: 5,
-                              ),
-                              Expanded(
-                                child: Column(
-                                  children: [
-                                    _buildSmallStat(
-                                      iconWidget: Image.asset(
-                                        'assets/crashed_car.png',
-                                        width: 52,
-                                        height: 44,
-                                      ),
-                                      title: "Total accidents",
-                                      value: "1",
-                                      valColor: Colors.black,
-                                    ),
-                                    const Divider(color: Colors.white),
-                                    _buildSmallStat(
-                                      iconWidget: Image.asset(
-                                        'assets/security_time.png',
-                                        width: 52,
-                                        height: 44,
-                                        color: Colors.black,
-                                      ),
-                                      title: "Safety Score Overview",
-                                      value: "90%",
-                                      valColor: primaryRed,
-                                    ),
-                                  ],
+                                const VerticalDivider(
+                                  thickness: 1.5,
+                                  color: Colors.white,
+                                  width: 30,
+                                  indent: 5,
+                                  endIndent: 5,
                                 ),
-                              ),
-                            ],
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      _buildSmallStat(
+                                        iconWidget: Image.asset(
+                                          'assets/crashed_car.png',
+                                          width: 52,
+                                          height: 44,
+                                        ),
+                                        title: "Total accidents",
+                                        value: "1",
+                                        valColor: Colors.black,
+                                      ),
+                                      const Divider(color: Colors.white),
+                                      _buildSmallStat(
+                                        iconWidget: Image.asset(
+                                          'assets/security_time.png',
+                                          width: 52,
+                                          height: 44,
+                                          color: Colors.black,
+                                        ),
+                                        title: "Safety Score Overview",
+                                        value: "90%",
+                                        valColor: primaryRed,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -257,15 +273,15 @@ class _HomeContentState extends State<HomeContent> {
               height: 20,
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey, width: 1),
+                border: Border.all(color: Colors.black, width: 1),
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Transform.rotate(
-                angle: arrowAngle * 3.1416 / 180,  
+                angle: arrowAngle * 3.1416 / 180,
                 child: const Icon(
                   Icons.arrow_back_outlined,
                   size: 16,
-                  color: Colors.grey,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -353,3 +369,4 @@ class _HomeContentState extends State<HomeContent> {
     );
   }
 }
+
