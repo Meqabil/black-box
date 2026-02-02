@@ -27,19 +27,16 @@ class _SignupState extends State<Signup> {
   final TextEditingController _confirmPasswordController =
       TextEditingController();
 
-  bool _termsAccepted = false; // <-- هنا بنخزن حالة الـ checkbox
+  bool _termsAccepted = false; 
 
-  // Email validation (Gmail only)
   bool isValidGmail(String email) {
     return RegExp(r'^[a-zA-Z0-9._%+-]+@gmail\.com$').hasMatch(email);
   }
 
-  // Mobile validation (11 digits)
   bool isValidMobile(String mobile) {
     return RegExp(r'^\d{11}$').hasMatch(mobile);
   }
 
-  // Password validation (min 6 chars, at least 1 letter & 1 number)
   bool isValidPassword(String password) {
     return RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$').hasMatch(password);
   }
@@ -219,7 +216,7 @@ class _SignupState extends State<Signup> {
                                           ),
                                         );
                                       }
-                                    : null, // مش هينفذ إلا لو الشروط متفعل عليها
+                                    : null,  
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: _mainRedColor,
                                   shape: RoundedRectangleBorder(
