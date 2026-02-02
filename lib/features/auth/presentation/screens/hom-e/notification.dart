@@ -52,7 +52,6 @@ class NotificationScreen extends StatelessWidget {
                 ),
               ),
 
-              // المنطقة البيضاء (قائمة التنبيهات)
               Expanded(
                 child: Container(
                   width: double.infinity,
