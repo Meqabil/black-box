@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../edit_profile/screens/edit_profile_page.dart';
 import 'shared_widgets.dart';
-import 'edit_profile_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -19,11 +19,12 @@ class _ProfilePageState extends State<ProfilePage> {
     Color textColor = isDarkMode ? Colors.white : Colors.black;
 
     return Scaffold(
+
       backgroundColor: kMainRed,
       extendBody: true,
       body: Stack(
         children: [
-          buildWhiteLayer(bgColor, 200), // ارتفاع 200 للبروفايل
+          buildWhiteLayer(bgColor, 200),
           Column(
             children: [
               const SizedBox(height: 50),
@@ -69,7 +70,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ],
       ),
-      bottomNavigationBar: buildCommonBottomBar(),
+      //bottomNavigationBar: buildCommonBottomBar(),
     );
   }
 

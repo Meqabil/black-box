@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'shared_widgets.dart';
 
+import '../../profile/screens/shared_widgets.dart';
 class EditProfilePage extends StatefulWidget {
   final String initialName;
   final bool initialDark;
@@ -80,7 +79,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           ),
         ],
       ),
-      bottomNavigationBar: buildCommonBottomBar(),
+      //bottomNavigationBar: buildCommonBottomBar(),
     );
   }
 

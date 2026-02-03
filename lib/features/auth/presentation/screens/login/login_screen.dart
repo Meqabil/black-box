@@ -1,9 +1,11 @@
 
 import 'package:black_box/core/constants/colors.dart';
+import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/core/network/network_info_imp.dart';
 import 'package:black_box/core/ui/snackbar/exception_snackbar.dart';
 import 'package:black_box/features/auth/presentation/screens/login/widgets/login_screen_widgets.dart';
+import 'package:black_box/features/home/bnv/bnv.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bloc/auth/login/login_cubit.dart';
@@ -139,7 +141,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 );
               }
               if(state is LoginSuccess){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => SuccessScreen()));
+                pref!.setString("login_state", "logged_in");
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => BNVScreen()));
               }
             },
             builder: (context, st) {

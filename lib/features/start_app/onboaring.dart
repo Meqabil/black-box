@@ -41,7 +41,6 @@ class _OnboardingState extends State<Onboarding> {
                 titleSize: 22,
                 subtitleSize: 18,
             ),
-
           ],
         ),
       ),
