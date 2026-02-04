@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../notification.dart';
-
-
 class HomeContent extends StatefulWidget {
-  const HomeContent({super.key});
+  final VoidCallback onNotificationTap;
+  const HomeContent({super.key, required this.onNotificationTap});
 
   @override
   State<HomeContent> createState() => _HomeContentState();
@@ -59,15 +57,7 @@ class _HomeContentState extends State<HomeContent> {
                           shape: BoxShape.circle,
                         ),
                         child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    const NotificationScreen(),
-                              ),
-                            );
-                          },
+                          onTap: widget.onNotificationTap,
                           child: Icon(
                             Icons.notifications_none,
                             color: primaryRed,
@@ -81,7 +71,7 @@ class _HomeContentState extends State<HomeContent> {
                   Row(
                     children: [
                       _buildStatItem("Total Active Cars", "1", Colors.white,
-                       arrowAngle: 135,   
+                        arrowAngle: 135,
                       ),
                       Container(
                         width: 2,
@@ -177,7 +167,7 @@ class _HomeContentState extends State<HomeContent> {
                                   children: [
                                     _buildSmallStat(
                                       iconWidget: Image.asset(
-                                        'assets/Crashed_Car.png',
+                                        'assets/crashed_car.png',
                                         width: 52,
                                         height: 44,
                                       ),
@@ -188,7 +178,7 @@ class _HomeContentState extends State<HomeContent> {
                                     const Divider(color: Colors.white),
                                     _buildSmallStat(
                                       iconWidget: Image.asset(
-                                        'assets/Security_Time.png',
+                                        'assets/security_time.png',
                                         width: 52,
                                         height: 44,
                                         color: Colors.black,
@@ -234,11 +224,11 @@ class _HomeContentState extends State<HomeContent> {
                         'assets/car.png',
                         height: 180,
                         errorBuilder: (context, error, stackTrace) =>
-                            const Icon(
-                              Icons.directions_car,
-                              size: 100,
-                              color: Colors.grey,
-                            ),
+                        const Icon(
+                          Icons.directions_car,
+                          size: 100,
+                          color: Colors.grey,
+                        ),
                       ),
                     ],
                   ),
@@ -252,11 +242,11 @@ class _HomeContentState extends State<HomeContent> {
   }
 
   Widget _buildStatItem(
-    String label,
-    String value,
-    Color valueColor, {
-    double arrowAngle = 0,
-  }) {
+      String label,
+      String value,
+      Color valueColor, {
+        double arrowAngle = 0,
+      }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -271,7 +261,7 @@ class _HomeContentState extends State<HomeContent> {
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Transform.rotate(
-                angle: arrowAngle * 3.1416 / 180,    
+                angle: arrowAngle * 3.1416 / 180,
                 child: const Icon(
                   Icons.arrow_back_outlined,
                   size: 16,
@@ -308,7 +298,7 @@ class _HomeContentState extends State<HomeContent> {
               width: 70,
               height: 70,
               child: CircularProgressIndicator(
-                value: 0.5,
+                value: 0.9,
                 strokeWidth: 4,
                 color: primaryRed,
                 backgroundColor: Colors.white,

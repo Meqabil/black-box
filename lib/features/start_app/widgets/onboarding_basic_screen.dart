@@ -1,23 +1,22 @@
+import 'package:black_box/features/auth/presentation/screens/login/login_screen.dart';
 import 'package:black_box/features/start_app/widgets/dots.dart';
 import 'package:flutter/material.dart';
-
 import '../../../core/constants/colors.dart';
 
 class OnboardingBasicScreen extends StatefulWidget {
-  OnboardingBasicScreen({super.key,required this.title,required this.subtitle,required this.image,required this.currentPage,required this.controller,required this.titleSize,required this.subtitleSize});
-  String image;
-  String title;
-  String subtitle;
-  int currentPage;
-  PageController controller ;
-  double titleSize;
-  double subtitleSize;
+  const OnboardingBasicScreen({super.key,required this.title,required this.subtitle,required this.image,required this.currentPage,required this.controller,required this.titleSize,required this.subtitleSize});
+  final String image;
+  final String title;
+  final String subtitle;
+  final int currentPage;
+  final PageController controller ;
+  final double titleSize;
+  final double subtitleSize;
   @override
   State<OnboardingBasicScreen> createState() => _OnboardingBasicScreenState();
 }
 
 class _OnboardingBasicScreenState extends State<OnboardingBasicScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -55,7 +54,11 @@ class _OnboardingBasicScreenState extends State<OnboardingBasicScreen> {
                   SizedBox(height: 25,),
                   TextButton(
                     onPressed: (){
-                      widget.controller.nextPage(duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
+                      if (widget.currentPage == 0) {
+                        widget.controller.nextPage(duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
+                        return;
+                      }
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> LoginScreen()));
                     },
                     child: Text("Next",style: TextStyle(color: mainRedColor,fontSize: 25,fontWeight: FontWeight.bold),),
                   ),
