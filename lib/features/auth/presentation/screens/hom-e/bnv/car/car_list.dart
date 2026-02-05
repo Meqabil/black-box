@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/hom-e/bnv/car/car_ditail.dart';
+import 'package:grad_project/hom-e/bnv/car/car_ditail/car_ditail.dart';
 
-class CarListScreen extends StatelessWidget {
+class CarListScreen extends StatefulWidget {
   final VoidCallback onBackToHome;
   final VoidCallback onNotificationTap;
 
@@ -10,14 +10,48 @@ class CarListScreen extends StatelessWidget {
     required this.onBackToHome,
     required this.onNotificationTap,
   });
+  @override
+  State<CarListScreen> createState() => _CarListScreenState();
+}
+
+class _CarListScreenState extends State<CarListScreen> {
+  static const Color primaryRed = Color(0xFF9B0D15);
+  static const Color lightRed = Color(0xFFE27C76);
+  static const Color oceanRed = Color(0xFF6E0000);
+
+  final TextEditingController searchController = TextEditingController();
+
+  final List<String> allCars = [
+    "#0001",
+    "#0002",
+    "#0003",
+    "#0004",
+    "#0005",
+    "#0006",
+    "#0007",
+    "#0008",
+  ];
+
+  List<String> filteredCars = [];
+
+  @override
+  void initState() {
+    super.initState();
+    filteredCars = allCars;
+  }
+
+  void filterCars(String value) {
+    setState(() {
+      filteredCars = allCars
+          .where((car) => car.toLowerCase().contains(value.toLowerCase()))
+          .toList();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    const Color primaryRed = Color(0xFF9B0D15);
-    const Color lightRed = Color(0xFFE27C76);
-    const Color oceanRed = Color(0xFF6E0000);
-
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: primaryRed,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -27,16 +61,14 @@ class CarListScreen extends StatelessWidget {
         leading: Transform.translate(
           offset: const Offset(0, 25),
           child: GestureDetector(
-            onTap: onBackToHome,
+            onTap: widget.onBackToHome,
             child: const Icon(Icons.arrow_back, color: Colors.white),
           ),
         ),
 
         title: Transform.translate(
           offset: const Offset(0, 25),
-          child: const Text(
-            'View Cars', 
-            style: TextStyle(color: Colors.white)),
+          child: const Text('View Cars', style: TextStyle(color: Colors.white)),
         ),
 
         centerTitle: true,
@@ -47,7 +79,7 @@ class CarListScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(right: 20),
               child: GestureDetector(
-                onTap: onNotificationTap,
+                onTap: widget.onNotificationTap,
                 child: Container(
                   padding: const EdgeInsets.all(6),
                   decoration: const BoxDecoration(
@@ -126,12 +158,17 @@ class CarListScreen extends StatelessWidget {
                     ),
                     alignment: Alignment.centerRight,
                     padding: const EdgeInsets.symmetric(horizontal: 15),
-                    child: const Text(
-                      "Car Id",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 14,
-                        fontStyle: FontStyle.italic,
+                    child: TextField(
+                      controller: searchController,
+                      onChanged: filterCars,
+                      textAlign: TextAlign.right,
+                      decoration: const InputDecoration(
+                        hintText: "Car Id",
+                        hintStyle: TextStyle(
+                          color: Colors.grey,
+                          fontStyle: FontStyle.italic,
+                        ),
+                        border: InputBorder.none,
                       ),
                     ),
                   ),
@@ -153,22 +190,22 @@ class CarListScreen extends StatelessWidget {
                 ),
               ),
               child: GridView.builder(
+                itemCount: filteredCars.length + 1,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
                   mainAxisSpacing: 20,
                   crossAxisSpacing: 20,
                   childAspectRatio: 0.8,
                 ),
-                itemCount: 9,
                 itemBuilder: (context, index) {
-                  if (index < 8) {
+                  if (index < filteredCars.length) {
                     return _buildCarItem(
                       context,
                       index == 0 ? oceanRed : lightRed,
-                      "#000${index + 1}",
+                      filteredCars[index],
                     );
                   } else {
-                    return _buildAddCarItem(lightRed);
+                    return _buildAddCarItem(context, lightRed);
                   }
                 },
               ),
@@ -259,29 +296,147 @@ class CarListScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildAddCarItem(Color color) {
-    return Column(
-      children: [
-        Container(
-          height: 97.63,
-          width: 105,
-          padding: const EdgeInsets.all(15),
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(20),
+  Widget _buildAddCarItem(BuildContext context, Color color) {
+    return GestureDetector(
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (context) {
+            return Dialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              insetPadding: const EdgeInsets.all(30),
+              child: Container(
+                width: 339,
+                height: 335,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Text(
+                      "New Car",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1A1A1A),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    SizedBox(
+                      width: 268,
+                      height: 40,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "# Car ID",
+                          filled: true,
+                          fillColor: const Color(0xFFF8DADA),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            borderSide: BorderSide.none,
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                            vertical: 15,
+                            horizontal: 20,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 268,
+                      height: 40,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "# Driver Name",
+                          filled: true,
+                          fillColor: const Color(0xFFF8DADA),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            borderSide: BorderSide.none,
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                            vertical: 15,
+                            horizontal: 20,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 25),
+                    SizedBox(
+                      height: 45,
+                      width: 218,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFA3000B),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          minimumSize: const Size(double.infinity, 50),
+                        ),
+                        child: const Text(
+                          "Save",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    SizedBox(
+                      height: 45,
+                      width: 218,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFF8DADA),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          minimumSize: const Size(double.infinity, 50),
+                        ),
+                        child: const Text(
+                          "Cancel",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
+      child: Column(
+        children: [
+          Container(
+            height: 97.63,
+            width: 105,
+            padding: const EdgeInsets.all(15),
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Image.asset("assets/plus.png", width: 39, height: 39),
           ),
-          child: Image.asset("assets/plus.png", width: 39, height: 39),
-        ),
-        const SizedBox(height: 5),
-        const Text(
-          "Add Car",
-          style: TextStyle(
-            color: Color(0xFF004444),
-            fontWeight: FontWeight.bold,
-            fontSize: 12,
+          const SizedBox(height: 5),
+          const Text(
+            "Add Car",
+            style: TextStyle(
+              color: Color(0xFF004444),
+              fontWeight: FontWeight.bold,
+              fontSize: 12,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
