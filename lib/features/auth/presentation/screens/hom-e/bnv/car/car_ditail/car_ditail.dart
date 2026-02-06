@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/hom-e/bnv/car/car_ditail/analysis/acceleration_analysis.dart';
-import 'package:grad_project/hom-e/bnv/car/car_ditail/analysis/accident_history.dart';
 import 'package:grad_project/hom-e/bnv/car/car_ditail/analysis/latitude_analysis.dart';
 import 'package:grad_project/hom-e/bnv/car/car_ditail/analysis/location_analysis.dart';
 import 'package:grad_project/hom-e/bnv/car/car_ditail/analysis/longitude_analysis.dart';
@@ -8,6 +7,7 @@ import 'package:grad_project/hom-e/bnv/car/car_ditail/analysis/oil_analysis.dart
 import 'package:grad_project/hom-e/bnv/car/car_ditail/analysis/speed_analysis.dart';
 import 'package:grad_project/hom-e/bnv/car/car_ditail/driving_event.dart';
 import 'package:grad_project/hom-e/notification.dart';
+import 'package:grad_project/hom-e/quickly_analysis.dart';
 
 class CarDitialScreen extends StatefulWidget {
   final VoidCallback onBackToHome;
@@ -23,7 +23,6 @@ class CarDitialScreen extends StatefulWidget {
 }
 
 class _CarDitialScreenState extends State<CarDitialScreen> {
- 
   final TextEditingController searchController = TextEditingController();
 
   final List<String> allParameters = [
@@ -119,7 +118,7 @@ class _CarDitialScreenState extends State<CarDitialScreen> {
       ),
       body: Column(
         children: [
-          const SizedBox(height: 5), 
+          const SizedBox(height: 5), // Statistics Row
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             child: Row(
@@ -144,7 +143,7 @@ class _CarDitialScreenState extends State<CarDitialScreen> {
                 ),
               ],
             ),
-          ),
+          ), // Search Bar
           Container(
             height: 30,
             width: 330,
@@ -289,7 +288,7 @@ class _CarDitialScreenState extends State<CarDitialScreen> {
                             img = "assets/Oil.png";
                             break;
                           case "Accidents History":
-                            destination = const AccidentHistoryScreen();
+                            destination = QuicklyAnalysis(onNotificationTap: () { }, onBackToHome: () { },);
                             color = Colors.blue.shade300;
                             img = "assets/accident_history.png";
                             break;
