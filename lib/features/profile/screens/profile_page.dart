@@ -1,13 +1,18 @@
+import 'package:black_box/core/constants/global.dart';
+import 'package:black_box/core/constants/links.dart';
+import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
+import 'package:black_box/features/auth/presentation/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
-import '../../edit_profile/screens/edit_profile_page.dart';
+import 'edit_profile_page.dart';
 import 'shared_widgets.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
-
+  const ProfilePage({super.key,required this.owner});
+  final OwnerEntity owner;
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
+
 
 class _ProfilePageState extends State<ProfilePage> {
   String currentUserName = "John Smith";
@@ -17,9 +22,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     Color bgColor = isDarkMode ? kNavyBlue : Colors.white;
     Color textColor = isDarkMode ? Colors.white : Colors.black;
-
     return Scaffold(
-
       backgroundColor: kMainRed,
       extendBody: true,
       body: Stack(
@@ -30,7 +33,7 @@ class _ProfilePageState extends State<ProfilePage> {
               const SizedBox(height: 50),
               _buildTopNav("Profile", false),
               const SizedBox(height: 20),
-              _buildUserImage(),
+              _buildUserImage(widget.owner.profileImage),
               Expanded(
                 child: ListView(
                   padding: const EdgeInsets.fromLTRB(30, 10, 30, 100),
@@ -38,8 +41,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     Center(
                       child: Column(
                         children: [
-                          Text(currentUserName, style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: textColor)),
-                          const Text("ID: 25030024", style: TextStyle(color: Colors.grey, fontSize: 14)),
+                          Text(widget.owner.name, style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: textColor)),
+                          Text("ID : ${widget.owner.id.toString()}", style: TextStyle(color: Colors.grey, fontSize: 14)),
                         ],
                       ),
                     ),
@@ -62,7 +65,12 @@ class _ProfilePageState extends State<ProfilePage> {
                     _buildNavButton(Icons.shield_outlined, "Security", const Color(0xFF4FC3F7), textColor, () {}),
                     _buildNavButton(Icons.settings_outlined, "Setting", kMainRed, textColor, () {}),
                     _buildNavButton(Icons.help_outline, "Help", const Color(0xFFE57373), textColor, () {}),
-                    _buildNavButton(Icons.logout, "Logout", const Color(0xFF4FC3F7), textColor, () {}),
+                    _buildNavButton(Icons.logout, "Logout", const Color(0xFF4FC3F7), textColor, () {
+                      pref!.remove("login_state");
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => LoginScreen())
+                      );
+                    }),
                   ],
                 ),
               ),
@@ -88,11 +96,11 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  Widget _buildUserImage() {
+  Widget _buildUserImage(String? link) {
     return Container(
       padding: const EdgeInsets.all(4),
       decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-      child: const CircleAvatar(radius: 60, backgroundImage: NetworkImage("https://i.pravatar.cc/300")),
+      child: CircleAvatar(radius: 60, backgroundImage: (link == '' || link == null) ? NetworkImage("https://i.pravatar.cc/300") : NetworkImage("https://black-box-fdgsfrb2a8cqa5be.germanywestcentral-01.azurewebsites.net/storage/$link"!)),
     );
   }
 

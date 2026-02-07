@@ -8,6 +8,7 @@ class OwnerEntity{
   final String phoneNumber;
   final String createdAt;
   final String updatedAt;
+  final String profileImage;
 
 
   OwnerEntity({
@@ -19,6 +20,7 @@ class OwnerEntity{
     required this.birthDate,
     required this.phoneNumber,
     required this.createdAt,
-    required this.updatedAt
+    required this.updatedAt,
+    required this.profileImage
   });
 }

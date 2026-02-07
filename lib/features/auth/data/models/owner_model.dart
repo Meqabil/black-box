@@ -11,6 +11,7 @@ class OwnerModel extends OwnerEntity{
     required super.phoneNumber,
     required super.createdAt,
     required super.updatedAt,
+    required super.profileImage
   });
 
   factory OwnerModel.fromJson(Map<String,dynamic> json){
@@ -24,6 +25,7 @@ class OwnerModel extends OwnerEntity{
       phoneNumber: json['phone_number'] ?? '',
       createdAt: json['created_at'] ?? '',
       updatedAt: json['updated_at'] ?? '',
+      profileImage: json['profile_image'] ?? ''
     );
   }
 }

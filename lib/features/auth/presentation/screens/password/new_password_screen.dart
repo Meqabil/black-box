@@ -4,16 +4,16 @@ import 'package:black_box/core/ui/snackbar/exception_snackbar.dart';
 import 'package:black_box/core/ui/snackbar/success_snackbar.dart';
 import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_cubit.dart';
 import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_state.dart';
-import 'package:black_box/features/auth/presentation/screens/login/login_success.dart';
+import 'package:black_box/features/auth/presentation/screens/password/new_password_success.dart';
 import 'package:black_box/features/auth/presentation/screens/password/password_widgets.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NewPasswordPage extends StatefulWidget {
-  NewPasswordPage({super.key,required this.email,required this.otp});
-  String email;
-  String otp;
+  const NewPasswordPage({super.key,required this.email,required this.otp});
+  final String email;
+  final String otp;
   @override
   State<NewPasswordPage> createState() => _NewPasswordScreenState();
 }
@@ -127,7 +127,7 @@ class _NewPasswordScreenState extends State<NewPasswordPage> {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                     snack.show(state.message)
                                 );
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => SuccessScreen()));
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewPasswordSuccessScreen()));
                               } else if(state is FailurePassword){
                                 ExceptionSnackBar snack = ExceptionSnackBar();
                                 ScaffoldMessenger.of(context).showSnackBar(

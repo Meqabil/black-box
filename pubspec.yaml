@@ -45,6 +45,8 @@ dependencies:
   fl_chart: ^0.66.2
   shared_preferences: ^2.5.3
   syncfusion_flutter_charts: ^29.1.38
+  image_picker: ^1.2.0
+  wechat_assets_picker: ^10.1.0
 
 dev_dependencies:
   flutter_test:
@@ -85,10 +87,20 @@ flutter:
     - assets/start_screen/car2.png
     - assets/start_screen/carline_inverse.png
     - assets/start_screen/carline.png
-    - assets/car.png
     - assets/crashed_car.png
     - assets/security_time.png
     - assets/small_car.png
+    - assets/check.png
+    - assets/Acceleration.png
+    - assets/accident_history.png
+    - assets/Latitude.png
+    - assets/Longitude.png
+    - assets/Oil.png
+    - assets/speed.png
+    - assets/traffic_jam.png
+    - assets/plus.png
+    - assets/Location.png
+
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

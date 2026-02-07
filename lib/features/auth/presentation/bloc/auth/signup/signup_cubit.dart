@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:black_box/core/errors/auth_exception.dart';
 import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/core/network/network_info_imp.dart';
@@ -18,10 +20,11 @@ class SignUpCubit extends Cubit<SignUpState>{
     required String password,
     required String phoneNumber,
     required String birthDate,
-    required String nationalNumber}) async{
+    required String nationalNumber,
+    File? profileImage}) async{
     try{
-      emit(InitialSignUp());
-      OwnerEntity owner = await signUpUseCase(name: name,email: email,password: password,phoneNumber: phoneNumber,birthDate: birthDate,nationalNumber: nationalNumber);
+      emit(LoadingSignUp());
+      OwnerEntity owner = await signUpUseCase(name: name,email: email,password: password,phoneNumber: phoneNumber,birthDate: birthDate,nationalNumber: nationalNumber,profileImage: profileImage);
       emit(SuccessSignUp(owner));
     } on DioException catch (e){
       if(await network.isConnected){
@@ -32,6 +35,9 @@ class SignUpCubit extends Cubit<SignUpState>{
             emit(FailureSignUp(PhoneHasAlreadyTakenException().message));
           } else if (e.response!.data['data']['national_number'] != null){
             emit(FailureSignUp(NationalNumberHasAlreadyTakenException().message));
+          }else{
+            print("ee ${e.response?.data}");
+            emit(FailureSignUp("Something wrong happened !"));
           }
         }
       }else{

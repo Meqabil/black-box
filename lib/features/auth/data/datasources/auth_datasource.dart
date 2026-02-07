@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/features/auth/data/models/owner_model.dart';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
 import 'package:dio/dio.dart';
@@ -9,15 +12,16 @@ class AuthDatasource{
   AuthDatasource(this.dio);
 
   Future<OwnerEntity> login(String email,String password) async{
-
       FormData formData = FormData.fromMap({"email": email,"password":password});
       final response = await dio.post("$mainAPILink/auth/login",data: formData);
       final status = response.data['status'];
       if(status == "success"){
+        String token = response.data['data']['token'];
+        pref!.setString("token", token);
         final owner = OwnerModel.fromJson(response.data['data']['user']);
         return owner;
       }
-      return OwnerEntity(id: 0, name: "Unknown", email: "Unknown", role: "not detected", nationalNumber: "0", birthDate: "0", phoneNumber: '0' , createdAt: '0', updatedAt: '0');
+      return OwnerEntity(id: 0, name: "Unknown", email: "Unknown", role: "not detected", nationalNumber: "0", birthDate: "0", phoneNumber: '0' , createdAt: '0', updatedAt: '0',profileImage: '');
   }
 
   Future<OwnerEntity> signUp({
@@ -26,7 +30,15 @@ class AuthDatasource{
     required String password,
     required String phoneNumber,
     required String birthDate,
-    required String nationalNumber}) async{
+    required String nationalNumber,
+    File? profileImage}) async{
+    MultipartFile? multipartFile;
+    if(profileImage != null){
+      multipartFile = await MultipartFile.fromFile(
+        filename: profileImage.path.split('/').last,
+        profileImage.path,
+      );
+    }
     FormData formData = FormData.fromMap(
       {
         "name": name,
@@ -36,15 +48,18 @@ class AuthDatasource{
         "phone_number": phoneNumber,
         "national_number": nationalNumber,
         "birth_date": birthDate,
+        "profile_image" : multipartFile
       }
     );
     final response = await dio.post("$mainAPILink/auth/register",data: formData);
     final status = response.data['status'];
     if(status== 'success'){
+      String token = response.data['data']['token'];
+      pref!.setString("token", token);
       final owner = OwnerModel.fromJson(response.data['data']['user']);
       return owner;
     }
-    return OwnerEntity(id: 0, name: "Unknown", email: "Unknown", role: "not detected", nationalNumber: "0", birthDate: "0", phoneNumber: '0' , createdAt: '0', updatedAt: '0');
+    return OwnerEntity(id: 0, name: "Unknown", email: "Unknown", role: "not detected", nationalNumber: "0", birthDate: "0", phoneNumber: '0' , createdAt: '0', updatedAt: '0', profileImage: '');
   }
 
   Future<String> sendResetPasswordPin (String email) async{

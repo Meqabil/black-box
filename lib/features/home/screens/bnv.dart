@@ -1,19 +1,21 @@
-import 'package:black_box/features/analysis/analysis.dart';
+
+import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
+import 'package:black_box/features/drivers/presentation/screens/driver_screen.dart';
 import 'package:black_box/features/profile/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 import '../notification.dart';
+import '../../cars/presentation/screens/car_list.dart';
 import 'home.dart';
 
 class BNVScreen extends StatefulWidget {
-  const BNVScreen({super.key});
-
+  const BNVScreen({super.key,required this.owner});
+  final OwnerEntity owner;
   @override
   State<BNVScreen> createState() => _BNVScreenState();
 }
 
 class _BNVScreenState extends State<BNVScreen> {
   int _selectedIndex = 0;
-
   List<Widget> get _pages => [
     HomeContent(
       onNotificationTap: () {
@@ -22,15 +24,23 @@ class _BNVScreenState extends State<BNVScreen> {
         });
       },
     ),
-    const Analysis(),
-    const ProfilePage(),
-    NotificationScreen(
+    CarListScreen(
+      onNotificationTap: (){
+      },
+      onBackToHome: () {  },
+    ),
+
+    DriverScreen(),
+
+    ProfilePage(owner: widget.owner,),
+
+    /*NotificationScreen(
       onBackToHome: () {
         setState(() {
           _selectedIndex = 0; // Home
         });
       },
-    ),
+    ),*/
   ];
 
   void _onItemTapped(int index) {
@@ -75,9 +85,18 @@ class _BNVScreenState extends State<BNVScreen> {
             GestureDetector(
               onTap: () => _onItemTapped(2),
               child: Icon(
-                Icons.person_outline,
+                Icons.people,
                 size: 30,
                 color: _selectedIndex == 2 ? Colors.black : Colors.white,
+              ),
+            ),
+
+            GestureDetector(
+              onTap: () => _onItemTapped(3),
+              child: Icon(
+                Icons.person_outline,
+                size: 30,
+                color: _selectedIndex == 3 ? Colors.black : Colors.white,
               ),
             ),
           ],

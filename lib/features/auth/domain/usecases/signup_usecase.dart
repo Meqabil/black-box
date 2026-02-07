@@ -1,4 +1,5 @@
 
+import 'dart:io';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
 import 'package:black_box/features/auth/domain/repositories/auth_repository.dart';
 
@@ -12,8 +13,9 @@ class SignUpUseCase {
     required String password,
     required String phoneNumber,
     required String birthDate,
-    required String nationalNumber
+    required String nationalNumber,
+    File? profileImage
 }) async{
-    return _authRepository.signUpAsOwner(name: name, email: email, password: password, phoneNumber: phoneNumber, birthDate: birthDate, nationalNumber: nationalNumber);
+    return _authRepository.signUpAsOwner(name: name, email: email, password: password, phoneNumber: phoneNumber, birthDate: birthDate, nationalNumber: nationalNumber,profileImage: profileImage);
   }
 }

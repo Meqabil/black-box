@@ -1,4 +1,6 @@
 
+import 'dart:io';
+
 import 'package:black_box/features/auth/data/datasources/auth_datasource.dart';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
 import 'package:black_box/features/auth/domain/repositories/auth_repository.dart';
@@ -19,8 +21,9 @@ class AuthRepositoryImpl extends AuthRepository{
     required String password,
     required String phoneNumber,
     required String birthDate,
-    required String nationalNumber}) async{
-    return authDatasource.signUp(name: name, email: email, password: password, phoneNumber: phoneNumber, birthDate: birthDate, nationalNumber: nationalNumber);
+    required String nationalNumber,
+    File? profileImage}) async{
+    return authDatasource.signUp(name: name, email: email, password: password, phoneNumber: phoneNumber, birthDate: birthDate, nationalNumber: nationalNumber,profileImage: profileImage);
   }
   @override
   Future<String> sendResetPasswordPin({required String email}){

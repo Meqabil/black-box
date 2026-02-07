@@ -1,17 +1,15 @@
 
-import 'package:black_box/core/constants/colors.dart';
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/core/network/network_info_imp.dart';
 import 'package:black_box/core/ui/snackbar/exception_snackbar.dart';
 import 'package:black_box/features/auth/presentation/screens/login/widgets/login_screen_widgets.dart';
-import 'package:black_box/features/home/bnv/bnv.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../core/constants/colors.dart';
+import '../../../../home/screens/bnv.dart';
 import '../../bloc/auth/login/login_cubit.dart';
 import '../../bloc/auth/login/login_state.dart';
-import 'login_success.dart';
-
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -29,9 +27,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final _formKey = GlobalKey<FormState>();
 
-  static const Color _mainRedColor = Color(0xFFA30015);
-  static const Color _textFieldColor = Color(0xFFFADBD8);
-  static const Color _textColor = Color(0xFF4A4A4A);
 
   // Email validation (Gmail only)
   bool isValidGmail(String email) {
@@ -41,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: _mainRedColor,
+      backgroundColor: mainRedColor,
       resizeToAvoidBottomInset: true,
       body: SafeArea(
         bottom: false,
@@ -102,12 +97,12 @@ class _LoginScreenState extends State<LoginScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 20),
-          buildLabel(text:"Username Or Email",textColor: _textColor),
+          buildLabel(text:"Username Or Email",textColor: textColor),
           const SizedBox(height: 8),
           buildTextField(
             hint: "example@gmail.com",
             controller: _emailController,
-            textFieldColor: _textFieldColor,
+            textFieldColor: textFieldColor,
             validator: (value) {
               if (value == null || value.isEmpty) return "Email is required";
               if (!isValidGmail(value)) return "Email must end with @gmail.com";
@@ -116,12 +111,12 @@ class _LoginScreenState extends State<LoginScreen> {
             autovalidateMode: AutovalidateMode.onUserInteraction,
           ),
           const SizedBox(height: 30),
-          buildLabel(text:"Password",textColor: _textColor),
+          buildLabel(text:"Password",textColor: textColor),
           const SizedBox(height: 8),
           buildPasswordField(
             controller: _passwordController,
             isPasswordVisible: _isPasswordVisible,
-            textFieldColor: _textFieldColor,
+            textFieldColor: textFieldColor,
             onPressed: () => setState(() => _isPasswordVisible = !_isPasswordVisible),
             validator: (value) {
               if (value == null || value.isEmpty) return "Password is required";
@@ -140,15 +135,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   snack.show(state.message)
                 );
               }
-              if(state is LoginSuccess){
-                pref!.setString("login_state", "logged_in");
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => BNVScreen()));
+              else if(state is LoginSuccess){
+                saveUserData(state.owner);
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => BNVScreen(owner: state.owner,)));
+              }
+              else if(state is LoginLoading){
+
               }
             },
             builder: (context, st) {
               return buildLoginButton(
                   context: context,
-                  backgroundColor: _mainRedColor,
+                  backgroundColor: mainRedColor,
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       context.read<LoginCubit>().login(_emailController.text.trim(),_passwordController.text.trim());

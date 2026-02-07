@@ -32,7 +32,12 @@ class _AnalysisState extends State<Analysis> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.arrow_back, color: Colors.transparent),
+                  IconButton(
+                    onPressed: (){
+                      Navigator.of(context).pop();
+                    },
+                      icon: Icon(Icons.arrow_back, color: Colors.white)
+                  ),
                   Text("Analysis", style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
                   const CircleAvatar(backgroundColor: Colors.white24, child: Icon(Icons.notifications_none, color: Colors.white)),
                 ],
