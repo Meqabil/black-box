@@ -2,7 +2,7 @@
 import 'package:black_box/features/drivers/domain/usecases/delete_driver_usecase.dart';
 import 'package:black_box/features/drivers/domain/usecases/get_all_dirvers_usecase.dart';
 import 'package:black_box/features/drivers/domain/usecases/update_driver_usecase.dart';
-import 'package:black_box/features/drivers/presentation/cubit/car/driver_state.dart';
+import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import '../../../../../core/network/network_info.dart';
@@ -29,8 +29,7 @@ class DriverCubit extends Cubit<DriverState>{
     required String phone}) async{
     emit(DriverLoading());
     try{
-      final drivers = await getAllDriversUseCase();
-      final driver = await addDriverUseCase(
+      await addDriverUseCase(
         token: token,
         name: name,
         phone: phone,
@@ -39,7 +38,8 @@ class DriverCubit extends Cubit<DriverState>{
         licenseNumber: licenseNumber,
         nationalNumber: nationalNumber,
       );
-      drivers.add(driver);
+      emit(DriverAdded());
+      final drivers = await getAllDriversUseCase();
       emit(DriverSuccess(drivers));
     }
     on DioException catch (e) {

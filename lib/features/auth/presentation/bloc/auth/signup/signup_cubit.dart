@@ -18,23 +18,16 @@ class SignUpCubit extends Cubit<SignUpState>{
     required String name,
     required String email,
     required String password,
-    required String phoneNumber,
-    required String birthDate,
-    required String nationalNumber,
     File? profileImage}) async{
     try{
       emit(LoadingSignUp());
-      OwnerEntity owner = await signUpUseCase(name: name,email: email,password: password,phoneNumber: phoneNumber,birthDate: birthDate,nationalNumber: nationalNumber,profileImage: profileImage);
+      OwnerEntity owner = await signUpUseCase(name: name,email: email,password: password,profileImage: profileImage);
       emit(SuccessSignUp(owner));
     } on DioException catch (e){
       if(await network.isConnected){
         if(e.response!.data != null){
           if(e.response!.data['data']['email'] != null){
             emit(FailureSignUp(EmailHasAlreadyTakenException().message));
-          } else if (e.response!.data['data']['phone_number'] != null){
-            emit(FailureSignUp(PhoneHasAlreadyTakenException().message));
-          } else if (e.response!.data['data']['national_number'] != null){
-            emit(FailureSignUp(NationalNumberHasAlreadyTakenException().message));
           }else{
             print("ee ${e.response?.data}");
             emit(FailureSignUp("Something wrong happened !"));

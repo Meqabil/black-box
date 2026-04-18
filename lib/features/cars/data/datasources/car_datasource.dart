@@ -1,4 +1,6 @@
 
+import 'dart:io';
+
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/constants/links.dart';
 import 'package:black_box/features/cars/data/models/car_model.dart';
@@ -8,18 +10,23 @@ import 'package:dio/dio.dart';
 class CarDataSource{
 
   Future<CarEntity> addCar({
+    File? image,
     required String token,
     required int id,
-    required String make,
-    required String model,
+    required String name,
+    required String vClass,
     required String plateNumber,
-    required String year}) async{
+  }) async{
     FormData formData = FormData.fromMap({
       "driver_id": id,
-      "make": make,
-      "model": model,
+      "vehicle_name": name,
+      "vehicle_class": vClass,
       "plate_number": plateNumber,
-      "year": year,
+      if (image != null)
+        'image': await MultipartFile.fromFile(
+          image.path,
+          filename: image.path.split('/').last,
+        )
     });
     final response = await dio.post(
       "$mainAPILink/vehicles/add",
@@ -33,10 +40,9 @@ class CarDataSource{
     );
     final status = response.data['data'];
     if(status == "success "){
-
       return CarModel.fromJson(response.data['data']);
     }
-    return CarModel(id: 0, ownerId: 'Unknown', plateNumber: 'Unknown', make: 'Unknown', model: 'Unknown', year: 'Unknown', driverId: 'Unknown', createdAt: 'Unknown', updatedAt: 'Unknown');
+    return CarModel(id: 0, ownerId: 'Unknown', plateNumber: 'Unknown', name: 'Unknown', vClass: 'Unknown', driverId: 'Unknown', createdAt: 'Unknown', updatedAt: 'Unknown');
   }
 
 
@@ -47,17 +53,65 @@ class CarDataSource{
       options: Options(
         contentType: "application/json",
         headers: {
-          "Authorization": "Bearer $token",
+          "Authorization": "Bearer 12|zYTacBzNLmW3mSIoVYJrgDB4sq0spO1MiE6c2e9sa0dac396",
         }
       )
     );
     final status = response.data['status'];
     if(status == "success"){
-      cars = response.data['data'].map(
+      cars = response.data['data']['vehicles'].map(
           (car) => CarModel.fromJson(car)
       ).toList();
       return cars;
     }
     return [];
+  }
+
+  updateCar({
+    File? image,
+    required int carId,
+    required String driverId,
+    required String name,
+    required String vClass,
+    required String plateNumber,
+  }) async{
+    MultipartFile? multipartFile;
+    if(image != null){
+      multipartFile = await MultipartFile.fromFile(
+        filename: image.path.split('/').last,
+        image.path,
+      );
+    }
+      final FormData formData = FormData.fromMap({
+        "_method": "patch",
+        "vehicle_name": name,
+        "vehicle_class": vClass,
+        "plate_number": plateNumber,
+        "driver_id": driverId,
+        "image" :multipartFile
+    });
+    await dio.post(
+      "$mainAPILink/vehicles/update/$carId",
+      data: formData,
+      options: Options(
+        headers: {
+          "Authorization": "Bearer $token",
+          "Accept": "application/json",
+        }
+      )
+    );
+
+  }
+
+  Future<void> deleteCar(int id) async{
+    final response = await dio.delete(
+      "$mainAPILink/vehicles/delete/$id",
+      options: Options(
+        contentType: "application/json",
+        headers: {
+          "Authorization": "Bearer $token"
+        }
+      )
+    );
   }
 }

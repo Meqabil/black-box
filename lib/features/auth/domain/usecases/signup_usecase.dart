@@ -11,11 +11,8 @@ class SignUpUseCase {
     required String name,
     required String email,
     required String password,
-    required String phoneNumber,
-    required String birthDate,
-    required String nationalNumber,
     File? profileImage
 }) async{
-    return _authRepository.signUpAsOwner(name: name, email: email, password: password, phoneNumber: phoneNumber, birthDate: birthDate, nationalNumber: nationalNumber,profileImage: profileImage);
+    return _authRepository.signUpAsOwner(name: name, email: email, password: password,profileImage: profileImage);
   }
 }

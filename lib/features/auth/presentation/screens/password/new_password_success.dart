@@ -1,7 +1,10 @@
 import 'dart:async';
 import 'package:black_box/features/auth/presentation/screens/login/login_screen.dart';
+import 'package:black_box/features/auth/presentation/screens/password/widgets/new_password_success/dot.dart';
 
 import 'package:flutter/material.dart';
+
+import '';
 
 class NewPasswordSuccessScreen extends StatefulWidget {
   const NewPasswordSuccessScreen({super.key});
@@ -38,22 +41,7 @@ class _NewPasswordSuccessScreenState extends State<NewPasswordSuccessScreen> {
     move();
   }
 
-  // Dot Widget
-  Widget _buildDot(bool visible) {
-    return AnimatedOpacity(
-      opacity: visible ? 1 : 0,
-      duration: const Duration(milliseconds: 250),
-      child: Container(
-        width: 15,
-        height: 15,
-        margin: const EdgeInsets.symmetric(horizontal: 6),
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          shape: BoxShape.circle,
-        ),
-      ),
-    );
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -82,9 +70,9 @@ class _NewPasswordSuccessScreenState extends State<NewPasswordSuccessScreen> {
                     key: const ValueKey('dots'),
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      _buildDot(_visibleDots >= 1),
-                      _buildDot(_visibleDots >= 2),
-                      _buildDot(_visibleDots >= 3),
+                      Dot(visible:_visibleDots >= 1),
+                      Dot(visible:_visibleDots >= 2),
+                      Dot(visible:_visibleDots >= 3),
                     ],
                   ),
                 ),

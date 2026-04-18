@@ -38,7 +38,7 @@ class _SpScreenState extends State<SpScreen>
         child: FadeTransition(
           opacity: controller,
           child: Image.asset(
-            "assets/car.png",
+            "assets/driver.png",
             width: 180,
           ),
         ),

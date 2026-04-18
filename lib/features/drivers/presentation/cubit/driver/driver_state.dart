@@ -4,6 +4,7 @@ sealed class DriverState{}
 class DriverInitial extends DriverState{}
 class DriverLoading extends DriverState{}
 
+class DriverAdded extends DriverState{}
 class DriverUpdated extends DriverState{}
 class DriverDeleted extends DriverState{}
 class DriverFailure extends DriverState{

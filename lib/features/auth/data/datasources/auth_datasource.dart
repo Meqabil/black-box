@@ -4,7 +4,6 @@ import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/features/auth/data/models/owner_model.dart';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
 import 'package:dio/dio.dart';
-
 import '../../../../core/constants/links.dart';
 
 class AuthDatasource{
@@ -15,6 +14,7 @@ class AuthDatasource{
       FormData formData = FormData.fromMap({"email": email,"password":password});
       final response = await dio.post("$mainAPILink/auth/login",data: formData);
       final status = response.data['status'];
+      print("$response");
       if(status == "success"){
         String token = response.data['data']['token'];
         pref!.setString("token", token);
@@ -28,9 +28,6 @@ class AuthDatasource{
     required String name,
     required String email,
     required String password,
-    required String phoneNumber,
-    required String birthDate,
-    required String nationalNumber,
     File? profileImage}) async{
     MultipartFile? multipartFile;
     if(profileImage != null){
@@ -45,9 +42,6 @@ class AuthDatasource{
         "email": email,
         "password": password,
         "password_confirmation": password,
-        "phone_number": phoneNumber,
-        "national_number": nationalNumber,
-        "birth_date": birthDate,
         "profile_image" : multipartFile
       }
     );

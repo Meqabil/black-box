@@ -21,4 +21,14 @@ class DriverRepositoryImpl implements DriverRepository{
   Future<List> getAllDrivers() {
     return carDataSource.getAllDrivers();
   }
+
+  @override
+  Future<void> deleteDriver(int id) async{
+    carDataSource.deleteDriver(id);
+  }
+
+  @override
+  Future<void> updateDriver({required int id, required String name, required String email, required String phone, required String nationalNumber, required String licenseNumber}) async {
+    carDataSource.updateDriver(id: id, name: name, email: email, phone: phone, nationalNumber: nationalNumber, licenseNumber: licenseNumber);
+  }
 }

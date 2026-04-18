@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../auth/presentation/screens/hom-e/notification.dart';
+import '../../../home/notification.dart';
 
 class EvaluateAccident extends StatefulWidget {
   final VoidCallback onNotificationTap;
@@ -101,11 +101,7 @@ class _EvaluateAccidentState extends State<EvaluateAccident> {
               onTap: () {
                 Navigator.of(context, rootNavigator: true).push(
                   MaterialPageRoute(
-                    builder: (context) => NotificationScreen(
-                      onBackToHome: () {
-                        Navigator.pop(context);
-                      },
-                    ),
+                    builder: (context) => NotificationScreen(),
                   ),
                 );
               },

@@ -8,9 +8,6 @@ abstract class AuthRepository{
     required String name,
     required String email,
     required String password,
-    required String phoneNumber,
-    required String birthDate,
-    required String nationalNumber,
     File? profileImage});
   Future<String> sendResetPasswordPin({required String email});
   Future<String> verifyPin({required String email,required String otp});

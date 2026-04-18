@@ -41,6 +41,50 @@ class DriverDataSource{
     return DriverModel(id: 0, ownerId: '', userId: '', name: 'Unknown', email: 'Unknown', phone: 'Unknown',nationalNumber: "Unknown",licenseNumber: "Unknown", createdAt: 'Unknown', updatedAt: 'Unknown');
   }
 
+  updateDriver({
+    required int id,
+    required String name,
+    required String email,
+    required String phone,
+    required String nationalNumber,
+    required String licenseNumber,
+  }) async{
+    final FormData formData = FormData.fromMap({
+      "_method": "patch",
+      "national_number": nationalNumber,
+      "license_number": licenseNumber,
+      "phone" : phone,
+      "name": name,
+      "email": email,
+    });
+    final response = await dio.post(
+      "$mainAPILink/drivers/update/$id",
+      data: formData,
+      options: Options(
+        contentType: "application/json",
+        headers: {
+          "Authorization": "Bearer $token"
+        }
+      )
+    );
+    print(response);
+  }
+
+
+  deleteDriver(int id) async{
+    final res = await dio.delete(
+      "$mainAPILink/drivers/delete/$id",
+      options: Options(
+        contentType: "application/json",
+        headers: {
+          "Authorization": "Bearer $token",
+        }
+      )
+    );
+
+  }
+
+
 
   Future<List> getAllDrivers() async{
     List drivers = [];
@@ -58,8 +102,12 @@ class DriverDataSource{
       drivers = response.data['data']['drivers'].map(
           (driver) => DriverModel.fromJson(driver)
       ).toList();
+      drivers = drivers.where((dr) => dr.ownerId == pref!.getString("id")).toList();
       return drivers;
     }
     return [];
   }
 }
+
+
+

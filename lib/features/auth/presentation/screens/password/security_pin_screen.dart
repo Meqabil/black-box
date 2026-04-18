@@ -2,6 +2,8 @@
 import 'package:black_box/core/errors/auth_exception.dart';
 import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_cubit.dart';
 import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_state.dart';
+import 'package:black_box/features/auth/presentation/screens/password/widgets/security_pin/otp_cells.dart';
+import 'package:black_box/features/auth/presentation/screens/password/widgets/security_pin/verify_otp_button.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,8 +17,8 @@ import 'new_password_screen.dart';
 
 
 class SecurityPinScreen extends StatefulWidget {
-  SecurityPinScreen({super.key,required this.email});
-  String email;
+  const SecurityPinScreen({super.key,required this.email});
+  final String email;
   @override
   State<SecurityPinScreen> createState() => _SecurityPinScreenState();
 }
@@ -27,53 +29,6 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
   final List<TextEditingController> _controllers =
   List.generate(6, (_) => TextEditingController());
   final List<FocusNode> _focusNodes = List.generate(6, (_) => FocusNode());
-
-  Widget _buildPinBox(int index) {
-    return SizedBox(
-      width: 45,
-      height: 55,
-      child: TextField(
-        controller: _controllers[index],
-        focusNode: _focusNodes[index],
-        keyboardType: TextInputType.number,
-        textAlign: TextAlign.center,
-        textDirection: TextDirection.ltr,
-        maxLength: 1,
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-        style: const TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-          color: mainRedColor,
-        ),
-        decoration: InputDecoration(
-          counterText: '',
-          filled: true,
-          fillColor: Colors.white,
-          contentPadding: const EdgeInsets.symmetric(vertical: 10),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(50),
-            borderSide: const BorderSide(color: Colors.grey, width: 1.5),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(50),
-            borderSide: const BorderSide(color: Colors.grey, width: 1.5),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(50),
-            borderSide: const BorderSide(color: mainRedColor, width: 2),
-          ),
-        ),
-        onChanged: (value) {
-          if (value.isNotEmpty && index < pinLength - 1) {
-            FocusScope.of(context).requestFocus(_focusNodes[index + 1]);
-          }
-          if (value.isEmpty && index > 0) {
-            FocusScope.of(context).requestFocus(_focusNodes[index - 1]);
-          }
-        },
-      ),
-    );
-  }
 
 
   @override
@@ -94,6 +49,8 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
       body: SafeArea(
         child: Column(
           children: [
+
+            // Page Title
             const SizedBox(height: 60),
             const Text(
               "Security Pin",
@@ -104,11 +61,13 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
               ),
             ),
             const SizedBox(height: 80),
+
+            // Page Content
             Expanded(
               child: Container(
                 width: double.infinity,
                 decoration: const BoxDecoration(
-                  color: Colors.white,
+                  color: backgroundGreen,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40),
                     topRight: Radius.circular(40),
@@ -130,12 +89,15 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                         ),
                       ),
                       const SizedBox(height: 80),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children:
-                        List.generate(pinLength, (index) => _buildPinBox(index)),
+                      OtpCells(
+                        onSubmit: (value){
+                          setState(() {
+                            fullOtp =  value;
+                          });
+                        },
                       ),
                       const SizedBox(height: 80),
+                      // verify button
                       SizedBox(
                         width: 250,
                         height: 50,
@@ -154,12 +116,9 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                               );
                             }
                           },
-                          child: ElevatedButton(
+                          child: VerifyOtpButton(
                             onPressed: () async{
-                              for(int i = 0;i < 6;i++){
-                                fullOtp += _controllers[i].text;
-                              }
-                              if(fullOtp.length < 5){
+                              if(fullOtp.length < 6){
                                 ExceptionSnackBar snack = ExceptionSnackBar();
                                 ScaffoldMessenger.of(context).showSnackBar(
                                     snack.show(InCompleteOtpException().message)
@@ -168,20 +127,6 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                                 context.read<PasswordCubit>().verifyPin(email: widget.email, otp: fullOtp);
                               }
                             },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: mainRedColor,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25),
-                              ),
-                            ),
-                            child: const Text(
-                              "Verify",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
                           ),
                         ),
                       ),

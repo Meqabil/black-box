@@ -7,19 +7,17 @@ import '../../../../core/constants/colors.dart';
 import '../cubit/car/car_state.dart';
 import '../widgets/car_page/state_item.dart';
 
-class CarListScreen extends StatefulWidget {
-  final VoidCallback onBackToHome;
+class CarsListScreen extends StatefulWidget {
   final VoidCallback onNotificationTap;
-  const CarListScreen({
+  const CarsListScreen({
     super.key,
-    required this.onBackToHome,
     required this.onNotificationTap,
   });
   @override
-  State<CarListScreen> createState() => _CarListScreenState();
+  State<CarsListScreen> createState() => _CarListScreenState();
 }
 
-class _CarListScreenState extends State<CarListScreen> {
+class _CarListScreenState extends State<CarsListScreen> {
   final TextEditingController searchController = TextEditingController();
   final formKey = GlobalKey<FormState>();
   @override
@@ -47,20 +45,9 @@ class _CarListScreenState extends State<CarListScreen> {
         title: Text('View Cars', style: TextStyle(color: Colors.white)),
         centerTitle: true,
         actions: [
-          Container(
-            padding: const EdgeInsets.all(6),
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-            ),
-            child: GestureDetector(
-              onTap: widget.onNotificationTap,
-              child: Icon(
-                Icons.notifications_none,
-                color: mainRedColor,
-                size: 24,
-              ),
-            ),
+          GestureDetector(
+            onTap: widget.onNotificationTap,
+            child: const CircleAvatar(backgroundColor: Colors.white,radius: 18, child: Icon(Icons.notifications_none, color: mainRedColor)),
           ),
           SizedBox(width: 20,)
         ],
@@ -115,7 +102,9 @@ class _CarListScreenState extends State<CarListScreen> {
                 child: BlocBuilder<CarCubit,CarState>(
                   builder: (context,state) {
                     if(state is CarUpdated){
-                      context.read<CarCubit>().getAllCars();
+                      Future.delayed(Duration(seconds: 1),() {
+                         context.read<CarCubit>().getAllCars();
+                      },);
                     }
                     if(state is CarFailure){
                       return Center(

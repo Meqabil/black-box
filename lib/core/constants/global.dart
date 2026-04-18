@@ -1,6 +1,7 @@
 
 import 'dart:io';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
+import 'package:black_box/features/cars/data/datasources/car_datasource.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -93,4 +94,16 @@ getSavedUserData(){
       updatedAt: pref!.getString("updated_at") ?? 'Unknown',
       profileImage: pref!.getString("profile_image") ?? ''
   );
+}
+
+
+Future<bool> isDriverConnectedToCar(int id) async{
+  CarDataSource carDataSource = CarDataSource();
+  List cars = await carDataSource.getAllCars();
+  print("${cars[5].driverId} $id");
+  if(cars.any((car) => int.parse(car.driverId) == id,)){
+    print("yes");
+    return true;
+  }
+  return false;
 }

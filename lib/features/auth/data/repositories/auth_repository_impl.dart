@@ -19,11 +19,8 @@ class AuthRepositoryImpl extends AuthRepository{
     required String name,
     required String email,
     required String password,
-    required String phoneNumber,
-    required String birthDate,
-    required String nationalNumber,
     File? profileImage}) async{
-    return authDatasource.signUp(name: name, email: email, password: password, phoneNumber: phoneNumber, birthDate: birthDate, nationalNumber: nationalNumber,profileImage: profileImage);
+    return authDatasource.signUp(name: name, email: email, password: password,profileImage: profileImage);
   }
   @override
   Future<String> sendResetPasswordPin({required String email}){

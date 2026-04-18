@@ -1,15 +1,11 @@
 
-import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/core/network/network_info_imp.dart';
-import 'package:black_box/core/ui/snackbar/exception_snackbar.dart';
-import 'package:black_box/features/auth/presentation/screens/login/widgets/login_screen_widgets.dart';
+import 'package:black_box/features/auth/presentation/screens/login/widgets/login_form.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../../core/constants/colors.dart';
-import '../../../../home/screens/bnv.dart';
-import '../../bloc/auth/login/login_cubit.dart';
-import '../../bloc/auth/login/login_state.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -20,18 +16,11 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   NetworkInfo network = NetworkInfoImpl();
-  bool _isPasswordVisible = false;
-
+  final bool _isPasswordVisible = false;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
   final _formKey = GlobalKey<FormState>();
 
-
-  // Email validation (Gmail only)
-  bool isValidGmail(String email) {
-    return RegExp(r'^[a-zA-Z0-9._%+-]+@gmail\.com$').hasMatch(email);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   topRight: Radius.circular(40),
                                 ),
                               ),
-                              child: _buildLoginForm(),
+                              child: LoginForm(formKey: _formKey,textColor: textColor, emailController: _emailController, passwordController: _passwordController, isPasswordVisible: _isPasswordVisible,),
                             ),
                           ),
                         ],
@@ -86,81 +75,6 @@ class _LoginScreenState extends State<LoginScreen> {
             );
           }),
         ),
-      ),
-    );
-  }
-
-  Widget _buildLoginForm() {
-    return Form(
-      key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 20),
-          buildLabel(text:"Username Or Email",textColor: textColor),
-          const SizedBox(height: 8),
-          buildTextField(
-            hint: "example@gmail.com",
-            controller: _emailController,
-            textFieldColor: textFieldColor,
-            validator: (value) {
-              if (value == null || value.isEmpty) return "Email is required";
-              if (!isValidGmail(value)) return "Email must end with @gmail.com";
-              return null;
-            },
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-          ),
-          const SizedBox(height: 30),
-          buildLabel(text:"Password",textColor: textColor),
-          const SizedBox(height: 8),
-          buildPasswordField(
-            controller: _passwordController,
-            isPasswordVisible: _isPasswordVisible,
-            textFieldColor: textFieldColor,
-            onPressed: () => setState(() => _isPasswordVisible = !_isPasswordVisible),
-            validator: (value) {
-              if (value == null || value.isEmpty) return "Password is required";
-              return null;
-            },
-            autoValidateMode: AutovalidateMode.onUserInteraction,
-          ),
-          const SizedBox(height: 70),
-
-          const SizedBox(height: 15),
-          BlocConsumer<LoginCubit,LoginState>(
-            listener: (context,state){
-              if(state is LoginFailure){
-                ExceptionSnackBar snack = ExceptionSnackBar();
-                ScaffoldMessenger.of(context).showSnackBar(
-                  snack.show(state.message)
-                );
-              }
-              else if(state is LoginSuccess){
-                saveUserData(state.owner);
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => BNVScreen(owner: state.owner,)));
-              }
-              else if(state is LoginLoading){
-
-              }
-            },
-            builder: (context, st) {
-              return buildLoginButton(
-                  context: context,
-                  backgroundColor: mainRedColor,
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      context.read<LoginCubit>().login(_emailController.text.trim(),_passwordController.text.trim());
-                    }
-                  }
-              );
-            },
-          ),
-          buildForgotPassword(context: context),
-          const SizedBox(height: 50),
-          buildBottomRegisterText(
-              context: context,
-          ),
-        ],
       ),
     );
   }

@@ -1,17 +1,22 @@
 import 'package:black_box/core/constants/colors.dart';
+import 'package:black_box/core/constants/fonts.dart';
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_cubit.dart';
 import 'package:black_box/features/auth/presentation/bloc/auth/signup/signup_cubit.dart';
-
+import 'package:black_box/features/auth/presentation/screens/login/login_screen.dart';
+import 'package:black_box/features/auth/presentation/screens/password/new_password_success.dart';
+import 'package:black_box/features/auth/presentation/screens/sign_up/signup_screen.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
-import 'package:black_box/features/drivers/presentation/cubit/car/driver_cubit.dart';
+import 'package:black_box/features/auth/presentation/screens/password/security_pin_screen.dart';
+import 'package:black_box/features/cars/presentation/screens/cars_list_screen.dart';
+import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
+import 'package:black_box/features/start_app/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'features/analysis/calender.dart';
 import 'features/auth/presentation/bloc/auth/login/login_cubit.dart';
-
-import 'features/start_app/splash_screen.dart';
 import 'injection_container.dart' as di;
 
 
@@ -24,6 +29,7 @@ void main() async{
     )
   );
   pref = await SharedPreferences.getInstance();
+  print(token);
   await di.init();
   runApp(
     MultiBlocProvider(
@@ -39,7 +45,8 @@ void main() async{
         ),
         BlocProvider(
           create: (context) => di.s1<CarCubit>(),
-        ),BlocProvider(
+        ),
+        BlocProvider(
           create: (context) => di.s1<DriverCubit>(),
         ),
       ],
@@ -55,13 +62,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: AppFonts.poppins,
         primaryColor: mainRedColor,
         colorScheme: ColorScheme(brightness: Brightness.light, primary: mainRedColor, onPrimary: Colors.white, secondary: Colors.red, onSecondary: Colors.blue, error: Colors.red, onError: Colors.red, surface: Colors.white, onSurface: Colors.black),
         appBarTheme: AppBarTheme(
           iconTheme: IconThemeData(color: Colors.white)
         )
       ),
-      home: SplashScreen(),
+      home: SignupScreen(),
     );
   }
 }

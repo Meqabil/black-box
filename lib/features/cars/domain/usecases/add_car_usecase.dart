@@ -7,18 +7,17 @@ class AddCarUseCase {
   call({
     required String token,
     required int id,
-    required String make,
-    required String model,
+    required String name,
+    required String vClass,
     required String plateNumber,
-    required String year}) async{
+  }) async{
     return _carRepository.addCar(
       token: token,
       id: id,
-      make: make,
-      model: model,
+      name: name,
+      vClass: vClass,
       plateNumber:
       plateNumber,
-      year: year
     );
   }
 }

@@ -1,45 +1,11 @@
 import 'package:black_box/core/constants/colors.dart';
-import 'package:black_box/core/ui/snackbar/exception_snackbar.dart';
-import 'package:black_box/core/ui/snackbar/success_snackbar.dart';
-import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_cubit.dart';
-import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_state.dart';
-import 'package:black_box/features/auth/presentation/screens/password/security_pin_screen.dart';
+import 'package:black_box/features/auth/presentation/screens/password/widgets/forget_password/check_email.dart';
+import 'package:black_box/features/auth/presentation/screens/password/widgets/forget_password/send_verification_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-
-InputDecoration _inputDecoration({required String hint, Widget? suffixIcon}) {
-  return InputDecoration(
-    filled: true,
-    fillColor: textFieldColor,
-    hintText: hint,
-    hintStyle: TextStyle(color: Colors.grey[600], fontSize: 14),
-    suffixIcon: suffixIcon,
-    contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(30),
-      borderSide: BorderSide.none,
-    ),
-    enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(30),
-      borderSide: BorderSide.none,
-    ),
-  );
-}
-
-Widget _buildLabel(String text) {
-  return Align(
-    alignment: Alignment.centerLeft,
-    child: Text(
-      text,
-      style: TextStyle(
-        color: labelColor,
-        fontWeight: FontWeight.bold,
-        fontSize: 14,
-      ),
-    ),
-  );
-}
+import '../../bloc/auth/new_password/password_cubit.dart';
+import '../../widgets/input_label.dart';
+import '../functions/is_valid_gmail.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
@@ -51,28 +17,21 @@ class ForgotPasswordScreen extends StatefulWidget {
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final TextEditingController _emailController = TextEditingController();
   String? _emailError;
-  bool _isEmailValid = false;
+  ValueNotifier<bool>  _isEmailValid = ValueNotifier(false);
 
-  bool _isValidGmail(String email) {
-    return email.trim().endsWith("@gmail.com");
-  }
-
-  void _validateAndNext(BuildContext context) {
-    if (!_isValidGmail(_emailController.text)) {
+  void validateAndNext() {
+    if (!isValidGmail(_emailController.text)) {
       setState(() {
         _emailError = "Email must end with @gmail.com";
-        _isEmailValid = false;
+        _isEmailValid.value = false;
       });
     } else {
       setState(() {
         _emailError = null;
-        _isEmailValid = true;
+        _isEmailValid.value = true;
       });
     }
   }
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,10 +59,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               child: Container(
                 width: double.infinity,
                 decoration: const BoxDecoration(
-                  color: Colors.white,
+                  color: backgroundGreen,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(40),
-                    topRight: Radius.circular(40),
+                    topLeft: Radius.circular(70),
+                    topRight: Radius.circular(70),
                   ),
                 ),
                 child: SingleChildScrollView(
@@ -127,71 +86,41 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         style: TextStyle(color: Colors.grey[600], fontSize: 14),
                       ),
                       const SizedBox(height: 80),
-                      _buildLabel("Enter Email Address"),
+                      InputLabel(text:"Enter Email Address", textColor: Colors.black,),
                       const SizedBox(height: 8),
-                      TextField(
-                        controller: _emailController,
+                      CheckEmail(
+                        emailController: _emailController,
+                        emailError: _emailError,
                         onChanged: (value) {
-                          if (_isValidGmail(value)) {
+                          if (isValidGmail(value)) {
                             setState(() {
                               _emailError = null;
-                              _isEmailValid = true;
+                              _isEmailValid.value = true;
                             });
                           } else {
                             setState(() {
                               _emailError = "Email must end with @gmail.com";
-                              _isEmailValid = false;
+                              _isEmailValid.value = false;
                             });
                           }
                         },
-                        decoration: _inputDecoration(
-                          hint: "example@gmail.com",
-                        ).copyWith(
-                          errorText: _emailError,
-                        ),
                       ),
                       const SizedBox(height: 40),
-                      Center(
-                        child: SizedBox(
-                          width: 250,
-                          height: 50,
-                          child: BlocListener<PasswordCubit,PasswordState>(
-                            listener: (context,state){
-                              if(state is SuccessPassword){
-                                SuccessSnackBar snack = SuccessSnackBar();
-                                ScaffoldMessenger.of(context).showSnackBar(snack.show(state.message));
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => SecurityPinScreen(email: _emailController.text.trim())));
-                              } else if(state is FailurePassword){
-                                ExceptionSnackBar snack = ExceptionSnackBar();
-                                ScaffoldMessenger.of(context).showSnackBar(snack.show(state.message));
-                              }
-                            },
-                            child: ElevatedButton(
-                              onPressed: _isEmailValid
+                      ValueListenableBuilder(
+                          valueListenable: _isEmailValid,
+                          builder: (context, value, child) {
+                            return SendVerificationButton(
+                              email: _emailController.text,
+                              backgroundColor: _isEmailValid.value
+                                  ? mainRedColor
+                                  : Colors.grey,
+                              onPressed: _isEmailValid.value
                                   ? () {
-                                _validateAndNext(context);
+                                validateAndNext();
                                 context.read<PasswordCubit>().sendResetPassword(email: _emailController.text.trim());
-                              }
-                                  : null,
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: _isEmailValid
-                                    ? mainRedColor
-                                    : Colors.grey,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                ),
-                              ),
-                              child: const Text(
-                                "Send Verification Code",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
+                              } : null,
+                            );
+                          },
                       ),
                     ],
                   ),

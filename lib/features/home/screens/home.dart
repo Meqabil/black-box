@@ -1,3 +1,5 @@
+import 'package:black_box/core/constants/colors.dart';
+import 'package:black_box/features/cars/presentation/screens/quickly_analysis.dart';
 import 'package:flutter/material.dart';
 
 class HomeContent extends StatefulWidget {
@@ -9,15 +11,11 @@ class HomeContent extends StatefulWidget {
 }
 
 class _HomeContentState extends State<HomeContent> {
-  final Color primaryRed = const Color(0xFF8B0012);
-  final Color white = const Color(0xFFFFFFFF);
-  final Color cardPink = const Color(0xFFFDE8E8);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      backgroundColor: primaryRed,
+      backgroundColor: mainRedColor,
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -60,7 +58,7 @@ class _HomeContentState extends State<HomeContent> {
                           onTap: widget.onNotificationTap,
                           child: Icon(
                             Icons.notifications_none,
-                            color: primaryRed,
+                            color: mainRedColor,
                             size: 24,
                           ),
                         ),
@@ -131,106 +129,120 @@ class _HomeContentState extends State<HomeContent> {
               ),
             ),
             Expanded(
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: white,
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(60),
-                    topRight: Radius.circular(60),
-                  ),
-                ),
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.all(25),
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: cardPink,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: IntrinsicHeight(
-                          child: Row(
-                            children: [
-                              _buildCircularIndicator(),
+              child: InkWell(
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => QuicklyAnalysis(
+                          onNotificationTap: (){
 
-                              const VerticalDivider(
-                                thickness: 1.5,
-                                color: Colors.white,
-                                width: 30,
-                                indent: 5,
-                                endIndent: 5,
-                              ),
-                              Expanded(
-                                child: Column(
-                                  children: [
-                                    _buildSmallStat(
-                                      iconWidget: Image.asset(
-                                        'assets/crashed_car.png',
-                                        width: 52,
-                                        height: 44,
-                                      ),
-                                      title: "Total accidents",
-                                      value: "1",
-                                      valColor: Colors.black,
-                                    ),
-                                    const Divider(color: Colors.white),
-                                    _buildSmallStat(
-                                      iconWidget: Image.asset(
-                                        'assets/security_time.png',
-                                        width: 52,
-                                        height: 44,
-                                        color: Colors.black,
-                                      ),
-                                      title: "Safety Score Overview",
-                                      value: "90%",
-                                      valColor: primaryRed,
-                                    ),
-                                  ],
+                          },
+                          onBackToHome: (){
+
+                          }
+                      )
+                  )
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(60),
+                      topRight: Radius.circular(60),
+                    ),
+                  ),
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.all(25),
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                            color: cardPink,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: IntrinsicHeight(
+                            child: Row(
+                              children: [
+                                _buildCircularIndicator(),
+                                const VerticalDivider(
+                                  thickness: 1.5,
+                                  color: Colors.white,
+                                  width: 30,
+                                  indent: 5,
+                                  endIndent: 5,
                                 ),
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      _buildSmallStat(
+                                        iconWidget: Image.asset(
+                                          'assets/crashed_car.png',
+                                          width: 52,
+                                          height: 44,
+                                        ),
+                                        title: "Total accidents",
+                                        value: "1",
+                                        valColor: Colors.black,
+                                      ),
+                                      const Divider(color: Colors.white),
+                                      _buildSmallStat(
+                                        iconWidget: Image.asset(
+                                          'assets/security_time.png',
+                                          width: 52,
+                                          height: 44,
+                                          color: Colors.black,
+                                        ),
+                                        title: "Safety Score Overview",
+                                        value: "90%",
+                                        valColor: mainRedColor,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(15),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: const Column(
+                            children: [
+                              Text(
+                                "Active Hardware Alerts",
+                                style: TextStyle(
+                                  color: Color(0xFF8B0012),
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(height: 5),
+                              Text(
+                                "--No Hardware Alerts--",
+                                style: TextStyle(color: Colors.black54),
                               ),
                             ],
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 20),
-                      Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15),
+                        const SizedBox(height: 20),
+                        Image.asset(
+                          'assets/car.png',
+                          height: 180,
+                          errorBuilder: (context, error, stackTrace) =>
+                          const Icon(
+                            Icons.directions_car,
+                            size: 100,
+                            color: Colors.grey,
+                          ),
                         ),
-                        child: const Column(
-                          children: [
-                            Text(
-                              "Active Hardware Alerts",
-                              style: TextStyle(
-                                color: Color(0xFF8B0012),
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            Text(
-                              "--No Hardware Alerts--",
-                              style: TextStyle(color: Colors.black54),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      Image.asset(
-                        'assets/car.png',
-                        height: 180,
-                        errorBuilder: (context, error, stackTrace) =>
-                        const Icon(
-                          Icons.directions_car,
-                          size: 100,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -300,7 +312,7 @@ class _HomeContentState extends State<HomeContent> {
               child: CircularProgressIndicator(
                 value: 0.9,
                 strokeWidth: 4,
-                color: primaryRed,
+                color: mainRedColor,
                 backgroundColor: Colors.white,
               ),
             ),

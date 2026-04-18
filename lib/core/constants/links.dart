@@ -1,2 +1,4 @@
-const String mainAPILink = "https://black-box-fdgsfrb2a8cqa5be.germanywestcentral-01.azurewebsites.net/api";
+const String mainAPILink = "https://graduation-ach9geg6b5fvbgcr.germanywestcentral-01.azurewebsites.net/api";
+const String mainStorageLink = "https://graduation-ach9geg6b5fvbgcr.germanywestcentral-01.azurewebsites.net/storage";
+
 

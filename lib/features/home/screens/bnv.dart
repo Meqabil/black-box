@@ -1,10 +1,10 @@
 
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
-import 'package:black_box/features/drivers/presentation/screens/driver_screen.dart';
+import 'package:black_box/features/drivers/presentation/screens/drivers_list_screen.dart';
+import 'package:black_box/features/home/notification.dart';
 import 'package:black_box/features/profile/screens/profile_page.dart';
 import 'package:flutter/material.dart';
-import '../notification.dart';
-import '../../cars/presentation/screens/car_list.dart';
+import '../../cars/presentation/screens/cars_list_screen.dart';
 import 'home.dart';
 
 class BNVScreen extends StatefulWidget {
@@ -19,28 +19,25 @@ class _BNVScreenState extends State<BNVScreen> {
   List<Widget> get _pages => [
     HomeContent(
       onNotificationTap: () {
-        setState(() {
-          _selectedIndex = 3;
-        });
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => NotificationScreen()));
       },
     ),
-    CarListScreen(
+    CarsListScreen(
       onNotificationTap: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => NotificationScreen()));
       },
-      onBackToHome: () {  },
     ),
-
-    DriverScreen(),
-
-    ProfilePage(owner: widget.owner,),
-
-    /*NotificationScreen(
-      onBackToHome: () {
-        setState(() {
-          _selectedIndex = 0; // Home
-        });
+    DriversListScreen(
+      onNotificationTap: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => NotificationScreen()));
       },
-    ),*/
+    ),
+    ProfilePage(
+      onNotificationTap: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => NotificationScreen()));
+      },
+      owner: widget.owner,
+    ),
   ];
 
   void _onItemTapped(int index) {

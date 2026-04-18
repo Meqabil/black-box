@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3f2e24b3-625f-4a05-9f05-4000efad446e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/cars_list_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/screens/drivers_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/black_box.iml" beforeDir="false" afterPath="$PROJECT_DIR$/black_box.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constants/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/colors.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constants/global.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/global.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constants/links.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/links.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/data/datasources/auth_datasource.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/data/datasources/auth_datasource.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/data/repositories/auth_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/data/repositories/auth_repository_impl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/domain/repositories/auth_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/domain/repositories/auth_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/domain/usecases/signup_usecase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/domain/usecases/signup_usecase.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/bloc/auth/signup/signup_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/bloc/auth/signup/signup_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/hom-e/notification.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/login/login_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/login/login_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/login/widgets/login_screen_widgets.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/forget_password_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/forget_password_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/new_password_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/new_password_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/new_password_success.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/new_password_success.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/password_widgets.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/security_pin_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/security_pin_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/sign_up/signup_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/sign_up/signup_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/sign_up/widgets/sign_up_screen_widgets.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/car_try.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/car_try.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/data/datasources/car_datasource.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/data/datasources/car_datasource.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/data/models/car_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/data/models/car_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/data/repositories/car_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/data/repositories/car_repository_impl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/domain/entities/car_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/domain/entities/car_entity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/domain/repositories/car_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/domain/repositories/car_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/domain/usecases/add_car_usecase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/domain/usecases/add_car_usecase.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/cubit/car/car_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/cubit/car/car_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/cubit/car/car_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/cubit/car/car_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/acceleration_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/acceleration_analysis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/accident_history.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/accident_history.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/latitude_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/latitude_analysis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/location_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/location_analysis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/longitude_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/longitude_analysis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/oil_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/oil_analysis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/speed_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/speed_analysis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/car_ditail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/car_details.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/driving_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/driving_event.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_list.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/evaluate_accident.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/evaluate_accident.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/quickly_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/quickly_analysis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/data/datasources/driver_datasource.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/data/datasources/driver_datasource.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/data/repositories/driver_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/data/repositories/driver_repository_impl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/domain/repositories/driver_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/domain/repositories/driver_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/cubit/car/driver_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/cubit/driver/driver_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/cubit/car/driver_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/cubit/driver/driver_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/screens/driver_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/notification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/notification.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/screens/bnv.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/screens/bnv.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/screens/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/screens/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/screens/quickly_analysis.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/screens/edit_profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/screens/edit_profile_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/screens/profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/screens/profile_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/screens/shared_widgets.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/injection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/injection.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="36DO28jJe8TkPAxqeAwgX2SdLyN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/workstation/AndroidStudioProjects/black_box/assets/fonts&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\assets\fonts" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\assets" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\cars\presentation\screens" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\home\screens" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\auth\presentation\screens\functions" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\auth\presentation\widgets" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\core\ui\widgets" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\profile" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\cars\presentation" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f2e24b3-625f-4a05-9f05-4000efad446e" name="Changes" comment="" />
+      <created>1764537473993</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764537473993</updated>
+    </task>
+    <servers />
+  </component>
+</project>

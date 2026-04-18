@@ -1,6 +1,7 @@
+import 'package:black_box/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../../auth/presentation/screens/hom-e/notification.dart';
+import '../../../home/notification.dart';
 import 'evaluate_accident.dart';
 
 class QuicklyAnalysis extends StatefulWidget {
@@ -18,16 +19,12 @@ class QuicklyAnalysis extends StatefulWidget {
 }
 
 class _QuicklyAnalysisState extends State<QuicklyAnalysis> {
-  final Color mainred = const Color(0xFF9B0D15);
-  final Color white = const Color(0xFFFFFFFF);
-  final Color cardPink = const Color(0xFFFDE8E8);
-
   Map<String, String> accidentSeverity = {};
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mainred,
+      backgroundColor: mainRedColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -49,11 +46,7 @@ class _QuicklyAnalysisState extends State<QuicklyAnalysis> {
               onTap: () {
                 Navigator.of(context, rootNavigator: true).push(
                   MaterialPageRoute(
-                    builder: (context) => NotificationScreen(
-                      onBackToHome: () {
-                        Navigator.pop(context);
-                      },
-                    ),
+                    builder: (context) => NotificationScreen(),
                   ),
                 );
               },
@@ -126,7 +119,7 @@ class _QuicklyAnalysisState extends State<QuicklyAnalysis> {
                                 ),
                                 title: "Safety Score Overview",
                                 value: "90%",
-                                valColor: mainred,
+                                valColor: mainRedColor,
                               ),
                             ],
                           ),
@@ -173,7 +166,7 @@ class _QuicklyAnalysisState extends State<QuicklyAnalysis> {
                         time: "18:27",
                         date: "30-4-2026",
                         actionText: "Evaluate Accident >",
-                        actionColor: mainred,
+                        actionColor: mainRedColor,
                       ),
                       const SizedBox(height: 25),
                       _buildAccidentItem(
@@ -238,7 +231,7 @@ class _QuicklyAnalysisState extends State<QuicklyAnalysis> {
               child: CircularProgressIndicator(
                 value: 0.9,
                 strokeWidth: 4,
-                color: mainred,
+                color: mainRedColor,
                 backgroundColor: Colors.white,
               ),
             ),

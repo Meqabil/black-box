@@ -34,10 +34,9 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
     "Live Tracking",
     "Coolant Temp",
     "DTC Codes",
-    "Speed",
     "Road Bump",
     "Fuel Level",
-    "Accidents History",
+
   ];
 
   List<String> filteredParameters = [];
@@ -54,8 +53,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
           .where(
             (parameter) =>
             parameter.toLowerCase().startsWith(value.toLowerCase()),
-      )
-          .toList();
+      ).toList();
     });
   }
 
@@ -257,40 +255,30 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                         String img;
 
                         switch (param) {
-                          case "Speed":
+                          case "Live Tracking":
                             destination = const Analysis();
                             color = Colors.blue.shade300;
                             img = "assets/speed.png";
                             break;
-                          case "Longitude":
+                          case "Coolant Temp":
                             destination = const LongitudeAnalysisScreen();
                             color = Colors.red.shade800;
                             img = "assets/Longitude.png";
                             break;
-                          case "Latitude":
+                          case "DTC Codes":
                             destination = const LatitudeAnalysisScreen();
                             color = Colors.blue.shade400;
                             img = "assets/Latitude.png";
                             break;
-                          case "Acceleration":
+                          case "Road Bump":
                             destination = const AccelerationAnalysisScreen();
                             color = Colors.red.shade900;
                             img = "assets/Acceleration.png";
                             break;
-                          case "Location":
+                          case "Fuel Level":
                             destination = const LocationAnalysisScreen();
                             color = Colors.blue.shade300;
                             img = "assets/Location.png";
-                            break;
-                          case "Oil":
-                            destination = const OilAnalysisScreen();
-                            color = Colors.red.shade900;
-                            img = "assets/Oil.png";
-                            break;
-                          case "Accidents History":
-                            destination = QuicklyAnalysis(onNotificationTap: () { }, onBackToHome: () { },);
-                            color = Colors.blue.shade300;
-                            img = "assets/accident_history.png";
                             break;
                           default:
                             destination = const SizedBox();

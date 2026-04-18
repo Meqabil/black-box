@@ -1,5 +1,6 @@
 import 'package:black_box/core/ui/widgets/search_items.dart';
 import 'package:black_box/features/drivers/presentation/widgets/driver_page/driver_items_grid.dart';
+import 'package:black_box/features/drivers/presentation/widgets/driver_page/state_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/constants/colors.dart';
@@ -7,29 +8,17 @@ import '../cubit/driver/driver_cubit.dart';
 import '../cubit/driver/driver_state.dart';
 
 
-class DriverScreen extends StatefulWidget {
-  const DriverScreen({super.key});
+class DriversListScreen extends StatefulWidget {
+  const DriversListScreen({super.key,required this.onNotificationTap});
+  final void Function()? onNotificationTap;
   @override
-  State<DriverScreen> createState() => _DriverScreenState();
+  State<DriversListScreen> createState() => _DriversListScreenState();
 }
 
-class _DriverScreenState extends State<DriverScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return DriverListScreen();
-  }
-}
-
-class DriverListScreen extends StatefulWidget {
-  const DriverListScreen({super.key});
-  @override
-  State<DriverListScreen> createState() => _DriverListScreenState();
-}
-
-class _DriverListScreenState extends State<DriverListScreen> {
+class _DriversListScreenState extends State<DriversListScreen> {
   static const Color primaryRed = Color(0xFF9B0D15);
-
   final TextEditingController searchController = TextEditingController();
+  int numberOfDrivers = 0;
   final formKey = GlobalKey<FormState>();
   Future<void> onRefresh() async {
     context.read<DriverCubit>().getAllDrivers();
@@ -61,19 +50,9 @@ class _DriverListScreenState extends State<DriverListScreen> {
         title: Text('View Cars', style: TextStyle(color: Colors.white)),
         centerTitle: true,
         actions: [
-          Container(
-            padding: const EdgeInsets.all(6),
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-            ),
-            child: GestureDetector(
-              child: Icon(
-                Icons.notifications_none,
-                color: mainRedColor,
-                size: 24,
-              ),
-            ),
+          GestureDetector(
+            onTap: widget.onNotificationTap,
+            child: const CircleAvatar(backgroundColor: Colors.white,radius: 18, child: Icon(Icons.notifications_none, color: mainRedColor)),
           ),
           SizedBox(width: 20,)
         ],
@@ -81,7 +60,35 @@ class _DriverListScreenState extends State<DriverListScreen> {
 
       body: Column(
         children: [
-          const SizedBox(height: 100),
+          SizedBox(
+              height: 100,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(width: 15,),
+                StateItem(
+                    label: "Total  drivers",
+                    value: "8",
+                    valueColor: Colors.green,
+                    arrowAngle: 135
+                ),
+                SizedBox(width: 35,),
+                BlocListener<DriverCubit,DriverState>(
+                  listener: (context,state){
+                    if(state is DriverSuccess) numberOfDrivers = state.driversList.length;
+                    setState(() {});
+                  },
+                  child: StateItem(
+                      label: "Total active drivers",
+                      value: numberOfDrivers.toString(),
+                      valueColor: Colors.white,
+                      arrowAngle: 135
+                  ),
+                ),
+                SizedBox(width: 15,),
+              ],
+            ),
+          ),
           SearchItems(searchController: searchController,hint: "Driver Id",),
           const SizedBox(height: 20),
 
@@ -101,13 +108,26 @@ class _DriverListScreenState extends State<DriverListScreen> {
                 child: BlocConsumer<DriverCubit, DriverState>(
                     listener: (context,state){
                       if (state is DriverUpdated || state is DriverAdded || state is DriverDeleted) {
-                        context.read<DriverCubit>().getAllDrivers();
+                        Future.delayed(Duration(seconds: 2),(){
+                          context.read<DriverCubit>().getAllDrivers();
+                        });
                       }
                     },
                     builder: (context, state) {
                       if (state is DriverFailure) {
                         return Center(
-                          child: Text(state.message),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(state.message,style: TextStyle(fontSize: 18),),
+                              IconButton(
+                                icon: Icon(Icons.refresh,color: Colors.red,size: 30,),
+                                onPressed: (){
+                                  context.read<DriverCubit>().getAllDrivers();
+                                },
+                              )
+                            ],
+                          ),
                         );
                       }
                       else if (state is DriverSuccess) {

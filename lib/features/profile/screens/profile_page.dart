@@ -1,14 +1,16 @@
+import 'package:black_box/core/constants/colors.dart';
 import 'package:black_box/core/constants/global.dart';
-import 'package:black_box/core/constants/links.dart';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
 import 'package:black_box/features/auth/presentation/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
+import '../widgets/white_layer.dart';
 import 'edit_profile_page.dart';
-import 'shared_widgets.dart';
+
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key,required this.owner});
+  const ProfilePage({super.key,required this.owner,required this.onNotificationTap});
   final OwnerEntity owner;
+  final void Function()? onNotificationTap;
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
@@ -20,19 +22,28 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    Color bgColor = isDarkMode ? kNavyBlue : Colors.white;
-    Color textColor = isDarkMode ? Colors.white : Colors.black;
     return Scaffold(
-      backgroundColor: kMainRed,
+      backgroundColor: primaryRed,
       extendBody: true,
+      appBar: AppBar(
+        backgroundColor: primaryRed,
+        centerTitle: true,
+        toolbarHeight: 90,
+        title: Text("Profile",style:  const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+        actions: [
+          InkWell(
+            onTap: widget.onNotificationTap,
+            child: const CircleAvatar(backgroundColor: Colors.white24, child: Icon(Icons.notifications_none, color: Colors.white))
+          ),
+          SizedBox(width: 20,),
+        ],
+      ),
       body: Stack(
         children: [
-          buildWhiteLayer(bgColor, 200),
+          WhiteLayer(color:Colors.white, top: 140),
           Column(
             children: [
               const SizedBox(height: 50),
-              _buildTopNav("Profile", false),
-              const SizedBox(height: 20),
               _buildUserImage(widget.owner.profileImage),
               Expanded(
                 child: ListView(
@@ -63,7 +74,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       }
                     }),
                     _buildNavButton(Icons.shield_outlined, "Security", const Color(0xFF4FC3F7), textColor, () {}),
-                    _buildNavButton(Icons.settings_outlined, "Setting", kMainRed, textColor, () {}),
+                    _buildNavButton(Icons.settings_outlined, "Setting", primaryRed, textColor, () {}),
                     _buildNavButton(Icons.help_outline, "Help", const Color(0xFFE57373), textColor, () {}),
                     _buildNavButton(Icons.logout, "Logout", const Color(0xFF4FC3F7), textColor, () {
                       pref!.remove("login_state");
@@ -82,25 +93,13 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  Widget _buildTopNav(String title, bool canBack) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Icon(Icons.arrow_back, color: canBack ? Colors.white : Colors.transparent),
-          Text(title, style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-          const CircleAvatar(backgroundColor: Colors.white24, child: Icon(Icons.notifications_none, color: Colors.white)),
-        ],
-      ),
-    );
-  }
+
 
   Widget _buildUserImage(String? link) {
     return Container(
       padding: const EdgeInsets.all(4),
       decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-      child: CircleAvatar(radius: 60, backgroundImage: (link == '' || link == null) ? NetworkImage("https://i.pravatar.cc/300") : NetworkImage("https://black-box-fdgsfrb2a8cqa5be.germanywestcentral-01.azurewebsites.net/storage/$link"!)),
+      child: CircleAvatar(radius: 60, backgroundImage: (link == '' || link == null) ? NetworkImage("https://i.pravatar.cc/300") : NetworkImage("https://black-box-fdgsfrb2a8cqa5be.germanywestcentral-01.azurewebsites.net/storage/$link")),
     );
   }
 

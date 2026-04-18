@@ -14,11 +14,15 @@ import 'package:black_box/features/cars/data/datasources/car_datasource.dart';
 import 'package:black_box/features/cars/data/repositories/car_repository_impl.dart';
 import 'package:black_box/features/cars/domain/repositories/car_repository.dart';
 import 'package:black_box/features/cars/domain/usecases/add_car_usecase.dart';
+import 'package:black_box/features/cars/domain/usecases/delete_car_usecase.dart';
 import 'package:black_box/features/cars/domain/usecases/get_all_cars_usecase.dart';
+import 'package:black_box/features/cars/domain/usecases/update_car_usecase.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/drivers/domain/usecases/add_driver_usecase.dart';
+import 'package:black_box/features/drivers/domain/usecases/delete_driver_usecase.dart';
 import 'package:black_box/features/drivers/domain/usecases/get_all_dirvers_usecase.dart';
-import 'package:black_box/features/drivers/presentation/cubit/car/driver_cubit.dart';
+import 'package:black_box/features/drivers/domain/usecases/update_driver_usecase.dart';
+import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 import 'features/auth/presentation/bloc/auth/login/login_cubit.dart';
@@ -41,11 +45,11 @@ Future<void> initAuthFeature() async{
   );
 
   s1.registerFactory(
-      () => CarCubit(s1(),s1())
+      () => CarCubit(s1(),s1(),s1(),s1())
   );
 
   s1.registerFactory(
-      () => DriverCubit(s1(), s1())
+      () => DriverCubit(s1(), s1(),s1(),s1())
   );
 
   s1.registerLazySingleton(() => LoginAsOwnerUseCase(s1()));
@@ -54,8 +58,12 @@ Future<void> initAuthFeature() async{
   s1.registerLazySingleton(() => SendResetPasswordUseCase(s1()));
   s1.registerLazySingleton(() => VerifyPinUseCase(s1()));
   s1.registerLazySingleton(() => AddCarUseCase(s1()));
+  s1.registerLazySingleton(() => DeleteCarUseCase(s1()));
+  s1.registerLazySingleton(() => UpdateCarUseCase(s1()));
   s1.registerLazySingleton(() => GetAllCarsUseCase(s1()));
   s1.registerLazySingleton(() => AddDriverUseCase(s1()));
+  s1.registerLazySingleton(() => UpdateDriverUseCase(s1()));
+  s1.registerLazySingleton(() => DeleteDriverUseCase(s1()));
   s1.registerLazySingleton(() => GetAllDriversUseCase(s1()));
 
   s1.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(s1()));
