@@ -2,42 +2,41 @@
 import 'package:black_box/features/analysis/analysis.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../auth/presentation/screens/hom-e/notification.dart';
+import '../../../../home/notification.dart';
 import '../quickly_analysis.dart';
 import 'analysis/acceleration_analysis.dart';
 import 'analysis/latitude_analysis.dart';
 import 'analysis/location_analysis.dart';
 import 'analysis/longitude_analysis.dart';
 import 'analysis/oil_analysis.dart';
-import 'analysis/speed_analysis.dart';
 import 'driving_event.dart';
 
-class CarDitialScreen extends StatefulWidget {
+class CarDetailsScreen extends StatefulWidget {
   final VoidCallback onBackToHome;
   final VoidCallback onNotificationTap;
-  const CarDitialScreen({
+  const CarDetailsScreen({
     super.key,
     required this.onBackToHome,
     required this.onNotificationTap,
     required this.carName,
-    required this.ID
+    required this.id
   });
   final String carName;
-  final String ID;
+  final String id;
   @override
-  State<CarDitialScreen> createState() => _CarDitialScreenState();
+  State<CarDetailsScreen> createState() => _CarDetailsScreenState();
 }
 
-class _CarDitialScreenState extends State<CarDitialScreen> {
+class _CarDetailsScreenState extends State<CarDetailsScreen> {
   final TextEditingController searchController = TextEditingController();
 
   final List<String> allParameters = [
+    "Live Tracking",
+    "Coolant Temp",
+    "DTC Codes",
     "Speed",
-    "Longitude",
-    "Latitude",
-    "Acceleration",
-    "Location",
-    "Oil",
+    "Road Bump",
+    "Fuel Level",
     "Accidents History",
   ];
 
@@ -85,7 +84,7 @@ class _CarDitialScreenState extends State<CarDitialScreen> {
         title: Transform.translate(
           offset: const Offset(0, 25),
           child:  Text(
-            '${widget.carName} ID : ${widget.ID}',
+            '${widget.carName} : ${widget.id}',
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
@@ -109,11 +108,7 @@ class _CarDitialScreenState extends State<CarDitialScreen> {
               onPressed: () {
                 Navigator.of(context, rootNavigator: true).push(
                   MaterialPageRoute(
-                    builder: (context) => NotificationScreen(
-                      onBackToHome: () {
-                        Navigator.pop(context);
-                      },
-                    ),
+                    builder: (context) => NotificationScreen(),
                   ),
                 );
               },
