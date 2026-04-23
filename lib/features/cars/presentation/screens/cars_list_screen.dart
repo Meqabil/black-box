@@ -20,6 +20,7 @@ class CarsListScreen extends StatefulWidget {
 class _CarListScreenState extends State<CarsListScreen> {
   final TextEditingController searchController = TextEditingController();
   final formKey = GlobalKey<FormState>();
+  int totalCars = 0;
   @override
   void initState(){
     super.initState();
@@ -41,7 +42,7 @@ class _CarListScreenState extends State<CarsListScreen> {
       appBar: AppBar(
         backgroundColor: primaryRed,
         elevation: 0,
-        toolbarHeight: 90,
+        toolbarHeight: 70,
         title: Text('View Cars', style: TextStyle(color: Colors.white)),
         centerTitle: true,
         actions: [
@@ -73,17 +74,17 @@ class _CarListScreenState extends State<CarsListScreen> {
                   margin: const EdgeInsets.symmetric(horizontal: 20),
                 ),
                 StateItem(
-                  label:"Total Cars",
-                  value:"8",
+                  label:"Total Car",
+                  value:"$totalCars",
                   valueColor:const Color(0xFF0068FF),
                   arrowAngle: -135,
                 ),
               ],
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
           SearchItems(searchController: searchController,hint: "Car Id",),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
 
           Expanded(
             child: RefreshIndicator(
@@ -99,11 +100,18 @@ class _CarListScreenState extends State<CarsListScreen> {
                     topRight: Radius.circular(60),
                   ),
                 ),
-                child: BlocBuilder<CarCubit,CarState>(
+                child: BlocConsumer<CarCubit,CarState>(
+                  listener: (context,state){
+                    if(state is CarSuccess){
+                      setState(() {
+                        totalCars = state.carsList.length;
+                      });
+                    }
+                  },
                   builder: (context,state) {
                     if(state is CarUpdated){
                       Future.delayed(Duration(seconds: 1),() {
-                         context.read<CarCubit>().getAllCars();
+                        context.read<CarCubit>().getAllCars();
                       },);
                     }
                     if(state is CarFailure){
@@ -123,6 +131,7 @@ class _CarListScreenState extends State<CarsListScreen> {
                       );
                     }
                     else if(state is CarSuccess){
+
                       return CarItemsGrid(state: state);
                     }
                     else if(state is CarWarning){

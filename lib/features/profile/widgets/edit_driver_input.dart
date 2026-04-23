@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../core/constants/colors.dart';
 
 class EditDriverInput extends StatelessWidget {
-  const EditDriverInput({super.key,required this.label,required this.controller,});
+  const EditDriverInput({super.key,required this.label,required this.controller,this.readOnly});
   final String label;
+  final bool? readOnly;
   final TextEditingController controller;
 
   @override
@@ -16,6 +17,7 @@ class EditDriverInput extends StatelessWidget {
         const SizedBox(height: 8),
         TextFormField(
           controller: controller,
+          readOnly: readOnly ?? false,
           decoration: InputDecoration(
               filled: true,
               fillColor: textFieldColor,

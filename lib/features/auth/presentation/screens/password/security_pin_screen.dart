@@ -76,7 +76,7 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                 child: SingleChildScrollView(
                   keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                   padding:
-                  const EdgeInsets.symmetric(horizontal: 50, vertical: 40),
+                  const EdgeInsets.symmetric(horizontal: 10, vertical: 40),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [

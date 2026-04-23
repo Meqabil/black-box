@@ -64,68 +64,71 @@ class _NewPasswordScreenState extends State<NewPasswordPage> {
                   keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                   padding:
                   const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(height: 50,),
-                      NewPasswordField(
-                        label: " New Password",
-                        controller: _newPasswordController,
-                        obscure: obscureNew,
-                        onToggle: () {
-                          setState(() => obscureNew = !obscureNew);
-                        },
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return "Password is required";
-                          }
-                          if (value.length < 6) {
-                            return "Password must be at least 6 characters";
-                          }
-                          if (!RegExp(r'[A-Z]').hasMatch(value)) {
-                            return "Password must contain at least one uppercase letter";
-                          }
-                          if (!RegExp(r'[a-z]').hasMatch(value)) {
-                            return "Password must contain at least one lowercase letter";
-                          }
-                          if (!RegExp(r'\d').hasMatch(value)) {
-                            return "Password must contain at least one number";
-                          }
-                          if (!RegExp(
-                            r'[!@#$%^&*(),.?":{}|<>]',
-                          ).hasMatch(value)) {
-                            return "Password must contain at least one special character";
-                          }
-                          return null;
-                        },
-                      ),
-                      const SizedBox(height: 20),
-                      NewPasswordField(
-                        label: " Confirm New Password",
-                        controller: _confirmPasswordController,
-                        obscure: obscureConfirm,
-                        onToggle: () {
-                          setState(() => obscureConfirm = !obscureConfirm);
-                        },
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return "Please confirm your password";
-                          }
-                          if (value != _newPasswordController.text) {
-                            return "Passwords do not match";
-                          }
-                          return null;
-                        },
-                      ),
-                      const SizedBox(height: 100),
-                      ChangePasswordButton(
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(height: 50,),
+                        NewPasswordField(
+                          label: " New Password",
+                          controller: _newPasswordController,
+                          obscure: obscureNew,
+                          onToggle: () {
+                            setState(() => obscureNew = !obscureNew);
+                          },
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Password is required";
+                            }
+                            if (value.length < 8) {
+                              return "Password must be at least 8 characters";
+                            }
+                            if (!RegExp(r'[A-Z]').hasMatch(value)) {
+                              return "Password must contain at least one uppercase letter";
+                            }
+                            if (!RegExp(r'[a-z]').hasMatch(value)) {
+                              return "Password must contain at least one lowercase letter";
+                            }
+                            if (!RegExp(r'\d').hasMatch(value)) {
+                              return "Password must contain at least one number";
+                            }
+                            if (!RegExp(
+                              r'[!@#$%^&*(),.?":{}|<>]',
+                            ).hasMatch(value)) {
+                              return "Password must contain at least one special character";
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(height: 20),
+                        NewPasswordField(
+                          label: " Confirm New Password",
+                          controller: _confirmPasswordController,
+                          obscure: obscureConfirm,
+                          onToggle: () {
+                            setState(() => obscureConfirm = !obscureConfirm);
+                          },
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Please confirm your password";
+                            }
+                            if (value != _newPasswordController.text) {
+                              return "Passwords do not match";
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(height: 100),
+                        ChangePasswordButton(
                           onPressed: (){
                             if(_formKey.currentState!.validate()){
                               context.read<PasswordCubit>().resetPassword(email: widget.email, otp: widget.otp, password: _newPasswordController.text.trim());
                             }
                           }
-                      ),
-                    ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

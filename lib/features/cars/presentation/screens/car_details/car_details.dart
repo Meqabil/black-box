@@ -1,8 +1,10 @@
 
 import 'package:black_box/features/analysis/analysis.dart';
+import 'package:black_box/features/cars/domain/entities/car_entity.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../home/notification.dart';
+import '../edit_car_screen.dart';
 import '../quickly_analysis.dart';
 import 'analysis/acceleration_analysis.dart';
 import 'analysis/latitude_analysis.dart';
@@ -18,11 +20,9 @@ class CarDetailsScreen extends StatefulWidget {
     super.key,
     required this.onBackToHome,
     required this.onNotificationTap,
-    required this.carName,
-    required this.id
+    required this.car,
   });
-  final String carName;
-  final String id;
+  final CarEntity car;
   @override
   State<CarDetailsScreen> createState() => _CarDetailsScreenState();
 }
@@ -66,25 +66,32 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         toolbarHeight: 80,
-        leading: Transform.translate(
-          offset: const Offset(0, 25),
-          child: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {
-              if (Navigator.canPop(context)) {
-                Navigator.pop(context);
-              } else {
-                widget.onBackToHome();
-              }
-            },
-          ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
+            } else {
+              widget.onBackToHome();
+            }
+          },
         ),
-        title: Transform.translate(
-          offset: const Offset(0, 25),
-          child:  Text(
-            '${widget.carName} : ${widget.id}',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '${widget.car.name} : ${widget.car.id}',
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
+            IconButton(
+              onPressed: (){
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => EditCarScreen(imageUrl : widget.car.image ?? '',carId: widget.car.id.toString(),name: widget.car.name, vClass: widget.car.vClass, plateNumber: widget.car.plateNumber, driverId: widget.car.driverId,))
+                );
+              },
+              icon: Icon(Icons.edit_calendar),
+            )
+          ],
         ),
         centerTitle: true,
         actions: [

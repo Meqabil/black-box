@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   topRight: Radius.circular(40),
                                 ),
                               ),
-                              child: LoginForm(formKey: _formKey,textColor: textColor, emailController: _emailController, passwordController: _passwordController, isPasswordVisible: _isPasswordVisible,),
+                              child: LoginForm(formKey: _formKey,textColor: Colors.black, emailController: _emailController, passwordController: _passwordController, isPasswordVisible: _isPasswordVisible,),
                             ),
                           ),
                         ],

@@ -206,6 +206,7 @@ class _HomeContentState extends State<HomeContent> {
                           ),
                         ),
                         const SizedBox(height: 20),
+
                         Container(
                           width: double.infinity,
                           padding: const EdgeInsets.all(15),
@@ -349,12 +350,12 @@ class _HomeContentState extends State<HomeContent> {
           children: [
             Text(
               title,
-              style: const TextStyle(fontSize: 11, color: Colors.black54),
+              style: const TextStyle(fontSize: 9, color: Colors.black54),
             ),
             Text(
               value,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: valColor,
               ),

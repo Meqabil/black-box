@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         context,
         MaterialPageRoute(builder: (_) => pref!.getString("login_state") == null ?
         Onboarding() :
-        BNVScreen(owner: getSavedUserData())),
+        BNVScreen()),
       );
     });
   }

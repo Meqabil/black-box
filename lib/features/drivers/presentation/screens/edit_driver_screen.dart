@@ -7,19 +7,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class EditDriverScreen extends StatefulWidget {
   final int id;
   final String name;
-  final String email;
-  final String phone;
-  final String nationalNumber;
-  final String licenseNumber;
 
   const EditDriverScreen({
     super.key,
     required this.id,
     required this.name,
-    required this.email,
-    required this.phone,
-    required this.nationalNumber,
-    required this.licenseNumber,
   });
 
   @override
@@ -47,10 +39,6 @@ class _EditDriverScreenState extends State<EditDriverScreen> {
 
     idController = TextEditingController(text: "Driver ID : ${widget.id}");
     nameController = TextEditingController(text: widget.name);
-    emailController = TextEditingController(text: widget.email);
-    phoneController = TextEditingController(text: widget.phone);
-    nationalController = TextEditingController(text: widget.nationalNumber);
-    licenseController = TextEditingController(text: widget.licenseNumber);
   }
 
   @override

@@ -75,7 +75,7 @@ class _DriversListScreenState extends State<DriversListScreen> {
                 SizedBox(width: 35,),
                 BlocListener<DriverCubit,DriverState>(
                   listener: (context,state){
-                    if(state is DriverSuccess) numberOfDrivers = state.driversList.length;
+                    if(state is DriverSuccess) numberOfDrivers = 5;//state.driversList.length;
                     setState(() {});
                   },
                   child: StateItem(
@@ -105,7 +105,8 @@ class _DriversListScreenState extends State<DriversListScreen> {
               child: RefreshIndicator(
 
                 onRefresh: onRefresh,
-                child: BlocConsumer<DriverCubit, DriverState>(
+                child: Container(),
+                /*child: BlocConsumer<DriverCubit, DriverState>(
                     listener: (context,state){
                       if (state is DriverUpdated || state is DriverAdded || state is DriverDeleted) {
                         Future.delayed(Duration(seconds: 2),(){
@@ -135,7 +136,7 @@ class _DriversListScreenState extends State<DriversListScreen> {
                       }
                       return Center(child: CircularProgressIndicator(),);
                     }
-                ),
+                ),*/
               ),
             ),
           ),
@@ -144,25 +145,3 @@ class _DriversListScreenState extends State<DriversListScreen> {
     );
   }
 }
-/*
-
-BlocBuilder<CarCubit,CarState>(
-  builder: (context,state) {
-    if(state is CarUpdated){
-      context.read<CarCubit>().getAllCars();
-    }
-    if(state is CarFailure){
-      return Center(
-        child: Text(state.message),
-      );
-    }
-    else if(state is CarSuccess){
-      return CarItemsGrid(state: state);
-    }
-    else if(state is CarWarning){
-      return CarItemsGrid(state: state);
-    }
-    return Center(child: CircularProgressIndicator(),);
-  }
-)
- */

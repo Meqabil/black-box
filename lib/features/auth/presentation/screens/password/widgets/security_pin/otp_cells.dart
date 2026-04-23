@@ -16,6 +16,7 @@ class OtpCells extends StatelessWidget {
       borderRadius: BorderRadius.circular(90),
       fieldWidth: 50,
       fieldHeight: 50,
+      margin: EdgeInsets.only(left: 4),
       alignment: Alignment.topLeft,
       textStyle: const TextStyle(
         fontSize: 18,

@@ -10,65 +10,118 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f2e24b3-625f-4a05-9f05-4000efad446e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/cars_list_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/screens/drivers_list_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/black_box.iml" beforeDir="false" afterPath="$PROJECT_DIR$/black_box.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/constants/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/colors.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/.filecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/app.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/debug_android_application.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/debug_android_application.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/flutter_assets.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/kernel_snapshot_program.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/kernel_snapshot_program.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/kernel_snapshot_program.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/kernel_snapshot_program.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/outputs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/program.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c772ab93569ad86fa2e243b57814e1e4/program.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/8.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/8.3/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/8.3/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/8.3/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/8.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/8.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/8.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/8.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/8.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/8.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/8.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/8.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/assets/debug/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/assets/debug/flutter_assets/AssetManifest.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/assets/debug/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/assets/debug/flutter_assets/AssetManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/assets/debug/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/assets/debug/flutter_assets/NOTICES.Z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/assets/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/assets/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/AssetManifest.bin.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/AssetManifest.bin.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/AssetManifest.json.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/AssetManifest.json.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/NOTICES.Z.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/NOTICES.Z.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/AssetManifest.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/AssetManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/NOTICES.Z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/libs.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/libs.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/FUdmsyBUru5oKcNP0a+oZq5UWsg=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/FUdmsyBUru5oKcNP0a+oZq5UWsg=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/myDRdMn+vSFkDgxWobRIMUeCjbk=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/kotlin/compileDebugKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/kotlin/compileDebugKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/kotlin/compileDebugKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/kotlin/compileDebugKotlin/local-state/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/connectivity_plus/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/connectivity_plus/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/f872507f30e2ff2523f0f1d19160266e.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/f872507f30e2ff2523f0f1d19160266e.cache.dill.track.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_plugin_android_lifecycle/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_plugin_android_lifecycle/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/image_picker_android/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/image_picker_android/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/path_provider_android/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/path_provider_android/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/photo_manager/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/photo_manager/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/photo_manager/kotlin/compileDebugKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/photo_manager/kotlin/compileDebugKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/photo_manager/kotlin/compileDebugKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/photo_manager/kotlin/compileDebugKotlin/local-state/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/shared_preferences_android/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/shared_preferences_android/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/shared_preferences_android/kotlin/compileDebugKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/shared_preferences_android/kotlin/compileDebugKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/shared_preferences_android/kotlin/compileDebugKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/shared_preferences_android/kotlin/compileDebugKotlin/local-state/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/video_player_android/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/video_player_android/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/core/constants/global.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/global.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/core/constants/links.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/links.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/errors/auth_exception.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/errors/auth_exception.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/auth/data/datasources/auth_datasource.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/data/datasources/auth_datasource.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/data/models/owner_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/data/models/owner_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/auth/data/repositories/auth_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/data/repositories/auth_repository_impl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/domain/entities/owner_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/domain/entities/owner_entity.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/auth/domain/repositories/auth_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/domain/repositories/auth_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/auth/domain/usecases/signup_usecase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/domain/usecases/signup_usecase.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/bloc/auth/signup/signup_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/bloc/auth/signup/signup_cubit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/hom-e/notification.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/functions/terms_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/functions/terms_dialog.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/login/login_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/login/login_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/login/widgets/login_screen_widgets.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/forget_password_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/forget_password_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/login/widgets/login_form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/login/widgets/login_form.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/new_password_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/new_password_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/new_password_success.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/new_password_success.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/password_widgets.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/security_pin_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/security_pin_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/widgets/security_pin/otp_cells.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/password/widgets/security_pin/otp_cells.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/sign_up/signup_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/sign_up/signup_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/sign_up/widgets/sign_up_screen_widgets.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/car_try.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/car_try.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/presentation/screens/sign_up/widgets/sign_up_form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/presentation/screens/sign_up/widgets/sign_up_form.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/cars/data/datasources/car_datasource.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/data/datasources/car_datasource.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/cars/data/models/car_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/data/models/car_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/cars/data/repositories/car_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/data/repositories/car_repository_impl.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/domain/entities/car_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/domain/entities/car_entity.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/cars/domain/repositories/car_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/domain/repositories/car_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/cars/domain/usecases/add_car_usecase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/domain/usecases/add_car_usecase.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/cubit/car/car_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/cubit/car/car_cubit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/cubit/car/car_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/cubit/car/car_state.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/acceleration_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/acceleration_analysis.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/accident_history.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/accident_history.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/latitude_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/latitude_analysis.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/location_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/location_analysis.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/longitude_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/longitude_analysis.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/oil_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/oil_analysis.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/analysis/speed_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/analysis/speed_analysis.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/car_ditail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/car_details.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_ditail/driving_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/driving_event.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_list.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/evaluate_accident.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/evaluate_accident.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/quickly_analysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/quickly_analysis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/car_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/car_details/car_details.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/cars_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/cars_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/screens/edit_car_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/screens/edit_car_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/widgets/car_page/car_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/widgets/car_page/car_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/widgets/car_page/car_items_grid.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/widgets/car_page/car_items_grid.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/widgets/car_page/dialogues/add_car_dialogue.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/widgets/car_page/dialogues/add_car_dialogue.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/cars/presentation/widgets/car_page/dialogues/delete_car_dialogue.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/cars/presentation/widgets/car_page/dialogues/delete_car_dialogue.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/drivers/data/datasources/driver_datasource.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/data/datasources/driver_datasource.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/data/models/driver_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/data/models/driver_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/drivers/data/repositories/driver_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/data/repositories/driver_repository_impl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/domain/entities/driver_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/domain/entities/driver_entity.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/drivers/domain/repositories/driver_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/domain/repositories/driver_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/cubit/car/driver_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/cubit/driver/driver_cubit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/cubit/car/driver_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/cubit/driver/driver_state.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/screens/driver_screen.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/home/notification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/notification.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/domain/usecases/add_driver_usecase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/domain/usecases/add_driver_usecase.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/domain/usecases/update_driver_usecase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/domain/usecases/update_driver_usecase.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/cubit/driver/driver_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/cubit/driver/driver_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/cubit/driver/driver_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/cubit/driver/driver_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/screens/drivers_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/screens/drivers_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/screens/edit_driver_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/screens/edit_driver_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/widgets/driver_page/dialogues/add_driver_dialogue.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/widgets/driver_page/dialogues/add_driver_dialogue.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/widgets/driver_page/dialogues/delete_driver_dialogue.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/widgets/driver_page/dialogues/delete_driver_dialogue.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/widgets/driver_page/driver_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/widgets/driver_page/driver_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/drivers/presentation/widgets/driver_page/driver_items_grid.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/drivers/presentation/widgets/driver_page/driver_items_grid.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/home/screens/bnv.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/screens/bnv.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/home/screens/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/screens/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/home/screens/quickly_analysis.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/profile/screens/edit_profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/screens/edit_profile_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/profile/screens/profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/screens/profile_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/profile/screens/shared_widgets.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/screens/edit_profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/screens/edit_profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/screens/profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/screens/profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/widgets/edit_driver_input.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/widgets/edit_driver_input.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/start_app/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/start_app/splash_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/injection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/injection.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +166,7 @@
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/workstation/AndroidStudioProjects/black_box/assets/fonts&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/workstation/AndroidStudioProjects/black_box/lib/features/owner&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -123,18 +176,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\assets\fonts" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\owner" />
       <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\assets" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\assets\icon" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\assets\fonts" />
       <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\cars\presentation\screens" />
-      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features" />
-      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\home\screens" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\auth\presentation\screens\functions" />
-      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\auth\presentation\widgets" />
-      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\core\ui\widgets" />
-      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\profile" />
-      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\cars\presentation" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\auth\presentation" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\auth\data\datasources" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\assets\profile" />
+      <recent name="C:\Users\workstation\AndroidStudioProjects\black_box\lib\features\profile\widgets" />
     </key>
   </component>
   <component name="RunManager">

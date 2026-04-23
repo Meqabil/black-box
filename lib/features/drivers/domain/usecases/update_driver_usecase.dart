@@ -12,6 +12,6 @@ class UpdateDriverUseCase{
     required String nationalNumber,
     required String licenseNumber,
   }) {
-    _driverRepository.updateDriver(id: id, name: name, email: email, phone: phone, nationalNumber: nationalNumber, licenseNumber: licenseNumber);
+    _driverRepository.updateDriver(id: id, name: name,);
   }
 }

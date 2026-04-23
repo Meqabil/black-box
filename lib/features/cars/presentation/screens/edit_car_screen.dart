@@ -42,7 +42,6 @@ class _EditCarScreenState extends State<EditCarScreen> {
   late TextEditingController vClassController;
   late TextEditingController plateController;
   late TextEditingController driverController;
-  late TextEditingController yearController;
   File? file;
   final formKey = GlobalKey<FormState>();
 
@@ -50,7 +49,7 @@ class _EditCarScreenState extends State<EditCarScreen> {
   void initState() {
     super.initState();
 
-    carController = TextEditingController(text: widget.carId);
+    carController = TextEditingController(text: "Car ID : ${widget.carId}");
     nameController = TextEditingController(text: widget.name);
     vClassController = TextEditingController(text: widget.vClass);
     plateController = TextEditingController(text: widget.plateNumber);
@@ -63,7 +62,7 @@ class _EditCarScreenState extends State<EditCarScreen> {
     vClassController.dispose();
     plateController.dispose();
     driverController.dispose();
-    yearController.dispose();
+
     super.dispose();
   }
 
@@ -167,23 +166,15 @@ class _EditCarScreenState extends State<EditCarScreen> {
                       EditInfoInput(
                         hint: "# Car ID",
                         controller: carController,
-                        validator: (val) {
-                          if (val == null || val.isEmpty) return "Field can't be empty";
-                          if (int.tryParse(val) == null) return "Driver ID must be a number";
-                          return null;
-                        },
+                        readOnly: true,
                       )
                       ,EditInfoInput(
                         hint: "# Driver ID",
                         controller: driverController,
-                        validator: (val) {
-                          if (val == null || val.isEmpty) return "Field can't be empty";
-                          if (int.tryParse(val) == null) return "Driver ID must be a number";
-                          return null;
-                        },
+                        readOnly: true,
                       ),
                       EditInfoInput(
-                        hint: '# Car namer',
+                        hint: '# Car name',
                         controller: nameController,
                         validator: (val) => val!.isEmpty ? "Field can't be empty" : null,
                       ),
@@ -192,20 +183,7 @@ class _EditCarScreenState extends State<EditCarScreen> {
                         controller: vClassController,
                         validator: (val) => val!.isEmpty ? "Field can't be empty" : null,
                       ),
-                      EditInfoInput(
-                        hint: '# Car Year',
-                        controller: yearController,
-                        validator: (val) {
-                          if (val == null || val.isEmpty) return "Field can't be empty";
 
-                          final year = int.tryParse(val);
-                          if (year == null) return "Enter a valid year";
-                          if (year < 1900 || year > DateTime.now().year) {
-                            return "Year must be between 1900 and now";
-                          }
-                          return null;
-                        },
-                      ),
                       EditInfoInput(
                         hint: '# Plate Number',
                         controller: plateController,
@@ -219,13 +197,14 @@ class _EditCarScreenState extends State<EditCarScreen> {
                           listener: (context,state){
                             if(state is CarUpdated){
                               Navigator.of(context).pop();
+                              Navigator.of(context).pop();
                             }
                           },
                           child: ElevatedButton(
                             onPressed: () {
                               if (formKey.currentState!.validate()) {
                                 context.read<CarCubit>().updateCar(
-                                    carId: int.parse(carController.text.trim()),
+                                    carId: int.parse(widget.carId),
                                     driverId: driverController.text.trim(),
                                     name: nameController.text.trim(),
                                     vClass: vClassController.text.trim(),

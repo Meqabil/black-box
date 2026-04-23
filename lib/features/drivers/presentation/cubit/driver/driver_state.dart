@@ -1,4 +1,6 @@
 
+import 'package:black_box/features/drivers/domain/entities/driver_entity.dart';
+
 sealed class DriverState{}
 
 class DriverInitial extends DriverState{}
@@ -12,6 +14,13 @@ class DriverFailure extends DriverState{
   DriverFailure(this.message);
 }
 class DriverSuccess extends DriverState{
+  DriverEntity driver;
+  DriverSuccess(this.driver);
+}
+
+/*
+class DriverSuccess extends DriverState{
   List driversList;
   DriverSuccess(this.driversList);
 }
+*/

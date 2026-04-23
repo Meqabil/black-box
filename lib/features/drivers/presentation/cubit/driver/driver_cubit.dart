@@ -20,23 +20,12 @@ class DriverCubit extends Cubit<DriverState>{
 
 
   addDriver({
-    required String token,
     required String name,
-    required String email,
-    required String password,
-    required String nationalNumber,
-    required String licenseNumber,
-    required String phone}) async{
+  }) async{
     emit(DriverLoading());
     try{
       await addDriverUseCase(
-        token: token,
         name: name,
-        phone: phone,
-        email: email,
-        password: password,
-        licenseNumber: licenseNumber,
-        nationalNumber: nationalNumber,
       );
       emit(DriverAdded());
       final drivers = await getAllDriversUseCase();
@@ -93,7 +82,7 @@ class DriverCubit extends Cubit<DriverState>{
     }
   }
 
-  getAllDrivers() async {
+  Future<void> getAllDrivers() async {
     emit(DriverLoading());
     try {
       final drivers = await getAllDriversUseCase();

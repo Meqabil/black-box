@@ -109,13 +109,7 @@ class AddDriverDialogue extends StatelessWidget {
                           onPressed: () {
                             if(formKey.currentState!.validate()){
                               context.read<DriverCubit>().addDriver(
-                                  token: token,
                                   name: nameController.text.trim(),
-                                  email: emailController.text.trim(),
-                                  password: passwordController.text.trim(),
-                                  nationalNumber: nationalNumberController.text.trim(),
-                                  licenseNumber: licenseNumberController.text.trim(),
-                                  phone: phoneController.text.trim()
                               );
                             }
                           },

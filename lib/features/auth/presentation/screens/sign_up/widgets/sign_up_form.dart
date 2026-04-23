@@ -99,6 +99,7 @@ class _SignUpFormState extends State<SignUpForm> {
           const SizedBox(height: 20),
           Spacer(),
           TermsText(
+
             onTap: (){
               showDialog(
                 context: context, 
@@ -106,6 +107,12 @@ class _SignUpFormState extends State<SignUpForm> {
                   return termsDialog(
                     context: context,
                     checked: agreed,
+                    onChanged: (val){
+                      setState(() {
+                        agreed = !agreed;
+                      });
+                      Navigator.of(context).pop();
+                    },
                     onTap: (){
                       setState(() {
                         agreed = !agreed;
@@ -126,7 +133,7 @@ class _SignUpFormState extends State<SignUpForm> {
                 listener: (context,state){
                   if(state is SuccessSignUp){
                     saveUserData(state.owner);
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => BNVScreen(owner: state.owner,)));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => BNVScreen()));
                   } else if(state is FailureSignUp){
                     ExceptionSnackBar snack = ExceptionSnackBar();
                     ScaffoldMessenger.of(context).showSnackBar(

@@ -1,7 +1,6 @@
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../../../core/constants/colors.dart';
 import '../../../cubit/car/car_cubit.dart';
 import '../../../cubit/car/car_state.dart';
@@ -37,7 +36,7 @@ class DeleteCarDialogue extends StatelessWidget {
                       width: 148,
                       child: ElevatedButton(
                         onPressed: () {
-                          context.read<CarCubit>().deleteCar(car.id);
+                          context.read<CarCubit>().deleteCarWithDriver(carId: car.id,driverId: int.parse(car.driverId));
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: mainRedColor,
@@ -68,6 +67,7 @@ class DeleteCarDialogue extends StatelessWidget {
 
                           minimumSize: const Size(140, 50),
                         ),
+
                         child: const Text(
                           "Cancel",
                           style: TextStyle(color: Colors.white),

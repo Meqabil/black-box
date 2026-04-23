@@ -3,7 +3,6 @@ import 'package:black_box/features/cars/domain/entities/car_entity.dart';
 
 abstract class CarRepository{
   Future<CarEntity> addCar({
-    required String token,
     required int id,
     required String name,
     required String vClass,

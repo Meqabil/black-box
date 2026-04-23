@@ -12,4 +12,8 @@ abstract class AuthRepository{
   Future<String> sendResetPasswordPin({required String email});
   Future<String> verifyPin({required String email,required String otp});
   Future<String> resetPassword({required String email,required String otp,required String password});
+  Future<OwnerEntity> showOneOwner({required int id});
+  Future<void> updateOwner({required int id,required String name,File? image});
+  Future<void> deleteOwner({required int id});
+
 }

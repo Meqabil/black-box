@@ -15,7 +15,7 @@ class CarItemsGrid extends StatelessWidget {
         crossAxisCount: 3,
         mainAxisSpacing: 20,
         crossAxisSpacing: 20,
-        childAspectRatio: 0.8,
+        childAspectRatio: 0.65,
       ),
       itemBuilder: (context, index) {
         if (index < state.carsList.length) {

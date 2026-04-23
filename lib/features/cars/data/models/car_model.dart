@@ -24,7 +24,7 @@ class CarModel extends CarEntity{
         driverId: json['driver_id'] ?? '',
         createdAt: json['created_at'] ?? '',
         updatedAt: json['updated_at'],
-        image: json['image'] != null ? "$mainStorageLink/${json['image']}" : '',
+        image: json['image'] != null ? "${AppLink.rootStorage}/${json['image']}" : '',
     );
   }
   Map<String,dynamic> toJson(CarModel model){

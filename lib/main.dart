@@ -1,25 +1,21 @@
+import 'package:black_box/core/api/dio_helper.dart';
 import 'package:black_box/core/constants/colors.dart';
 import 'package:black_box/core/constants/fonts.dart';
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_cubit.dart';
 import 'package:black_box/features/auth/presentation/bloc/auth/signup/signup_cubit.dart';
-import 'package:black_box/features/auth/presentation/screens/login/login_screen.dart';
-import 'package:black_box/features/auth/presentation/screens/password/new_password_success.dart';
-import 'package:black_box/features/auth/presentation/screens/sign_up/signup_screen.dart';
+import 'package:black_box/features/auth/presentation/bloc/owner/owner_cubit.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
-import 'package:black_box/features/auth/presentation/screens/password/security_pin_screen.dart';
-import 'package:black_box/features/cars/presentation/screens/cars_list_screen.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
-import 'package:black_box/features/start_app/splash_screen.dart';
+import 'package:black_box/features/home/notification.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'features/analysis/calender.dart';
 import 'features/auth/presentation/bloc/auth/login/login_cubit.dart';
+import 'features/start_app/splash_screen.dart';
 import 'injection_container.dart' as di;
-
-
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,8 +25,8 @@ void main() async{
     )
   );
   pref = await SharedPreferences.getInstance();
-  print(token);
   await di.init();
+  DioHelper.init();
   runApp(
     MultiBlocProvider(
       providers: [
@@ -39,6 +35,9 @@ void main() async{
         ),
         BlocProvider(
           create: (context) => di.s1<SignUpCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => di.s1<OwnerCubit>(),
         ),
         BlocProvider(
           create: (context) => di.s1<PasswordCubit>(),
@@ -53,6 +52,7 @@ void main() async{
       child: MyApp(),
     )
   );
+  print(pref!.getString("token"));
 }
 
 class MyApp extends StatelessWidget {
@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.white)
         )
       ),
-      home: SignupScreen(),
+      home: NotificationScreen(),
     );
   }
 }

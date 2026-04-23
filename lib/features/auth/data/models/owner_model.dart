@@ -6,12 +6,11 @@ class OwnerModel extends OwnerEntity{
     required super.name,
     required super.email,
     required super.role,
-    required super.nationalNumber,
-    required super.birthDate,
-    required super.phoneNumber,
     required super.createdAt,
     required super.updatedAt,
-    required super.profileImage
+    required super.profileImage,
+    required super.driversCount,
+    required super.vehiclesCount,
   });
 
   factory OwnerModel.fromJson(Map<String,dynamic> json){
@@ -20,12 +19,11 @@ class OwnerModel extends OwnerEntity{
       name: json['name'] ?? '',
       email: json['email'],
       role: json['role'] ?? '',
-      nationalNumber: json['national_number'] ?? '',
-      birthDate: json['birth_date'] ?? '',
-      phoneNumber: json['phone_number'] ?? '',
       createdAt: json['created_at'] ?? '',
       updatedAt: json['updated_at'] ?? '',
-      profileImage: json['profile_image'] ?? ''
+      profileImage: json['profile_image'] ?? '',
+      driversCount: json['drivers_count'] ?? '',
+      vehiclesCount: json['vehicles_count'] ?? '',
     );
   }
 }

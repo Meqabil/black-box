@@ -1,18 +1,27 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../../core/constants/global.dart';
 import '../../../../../../core/ui/widgets/dialoge_input.dart';
 import '../../../cubit/car/car_cubit.dart';
 import '../../../cubit/car/car_state.dart';
 
-class AddCarDialogue extends StatelessWidget {
-  AddCarDialogue({super.key});
-  final TextEditingController driverIdController = TextEditingController();
+class AddCarDialogue extends StatefulWidget {
+  const AddCarDialogue({super.key});
+
+  @override
+  State<AddCarDialogue> createState() => _AddCarDialogueState();
+}
+
+class _AddCarDialogueState extends State<AddCarDialogue> {
+  final TextEditingController driverNameController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
-  final TextEditingController vClassController = TextEditingController();
   final TextEditingController plateNumberController = TextEditingController();
+
   final formKey = GlobalKey<FormState>();
+
+  String vehicleClass = 'suv';
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -50,29 +59,48 @@ class AddCarDialogue extends StatelessWidget {
                       ),
                       const SizedBox(height: 20),
                       DialogueInput(
-                        hint: "# Driver ID",
-                        controller: driverIdController,
-                        validator: (val){
-                          if (val == null || val.isEmpty) return "This Field can't be empty !";
-                          if(int.tryParse(val) == null) return "Driver Id should be number !";
-                          return null;
-                        },
+                        hint: "# Driver Name",
+                        controller: driverNameController,
+
                       ),
                       DialogueInput(
-                        hint: '# Car Maker',
+                        hint: '# Car Name',
                         controller: nameController,
                         validator: (val){
                           if (val == null || val.isEmpty) return "This Field can't be empty !";
                           return null;
                         },
                       ),
-                      DialogueInput(
-                        hint: '# Car Class',
-                        controller: vClassController,
-                        validator: (val){
-                          if (val == null || val.isEmpty) return "This Field can't be empty !";
-                          return null;
-                        },
+                      Container(
+                        alignment: Alignment.bottomCenter,
+                        width: double.infinity,
+                        constraints: BoxConstraints(minHeight: 50,maxHeight: 50),
+                        child: DropdownButtonFormField(
+                          items: [
+                            DropdownMenuItem(value: 'sedan',child: Text("Sedan")),
+                            DropdownMenuItem(value: 'heavy_duty',child: Text("Heavy Duty")),
+                          ],
+                          onChanged: (val){
+                            setState(() {
+                              vehicleClass = val ?? vehicleClass;
+                            });
+                          },
+                          hint: Text("# Car Class"),
+                          decoration: InputDecoration(
+                            constraints: BoxConstraints(maxHeight: 50,minHeight: 50),
+                            hintStyle: TextStyle(fontSize: 13),
+                            filled: true,
+                            fillColor: const Color(0xFFF8DADA),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(90),
+                              borderSide: BorderSide.none,
+                            ),
+                            contentPadding: const EdgeInsets.symmetric(
+                              vertical: 10,
+                              horizontal: 20,
+                            ),
+                          ),
+                        ),
                       ),
                       DialogueInput(
                         hint: '# Plate Number',
@@ -87,13 +115,12 @@ class AddCarDialogue extends StatelessWidget {
                         height: 45,
                         width: 218,
                         child: ElevatedButton(
-                          onPressed: () {
+                          onPressed: () async{
                             if(formKey.currentState!.validate()){
-                              context.read<CarCubit>().addCar(
-                                  token: token,
-                                  id: int.parse(driverIdController.text.trim()),
-                                  name: nameController.text.trim(),
-                                  vClass: vClassController.text.trim(),
+                              context.read<CarCubit>().addCarWithDriver(
+                                  driverName: driverNameController.text.trim(),
+                                  carName: nameController.text.trim(),
+                                  vClass: vehicleClass,
                                   plateNumber: plateNumberController.text.trim(),
 
                               );

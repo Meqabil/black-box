@@ -28,7 +28,7 @@ class DeleteDriverDialogue extends StatelessWidget {
               children: [
                 Text("Delete driver",style: TextStyle(color: mainRedColor,fontSize: 22,fontWeight: FontWeight.bold),),
                 SizedBox(height: 12,),
-                Text("Do you really want to delete this driver with plate number (${driver.nationalNumber})",style: TextStyle(fontSize: 16,),textAlign: TextAlign.center,),
+                Text("Do you really want to delete this driver with plate number (${driver.name})",style: TextStyle(fontSize: 16,),textAlign: TextAlign.center,),
                 Spacer(),
                 (state is! DriverLoading) ?  Row(
                   children: [

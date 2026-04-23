@@ -19,13 +19,8 @@ class CarItem extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) =>
-                CarDetailsScreen(onBackToHome: () {}, onNotificationTap: () {},carName: car.name,id: car.id.toString(),),
+                CarDetailsScreen(onBackToHome: () {}, onNotificationTap: () {},car:car),
           ),
-        );
-      },
-      onDoubleTap: (){
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => EditCarScreen(imageUrl : car.image ?? '',carId: car.id.toString(),name: car.name, vClass: car.vClass, plateNumber: car.plateNumber, driverId: car.driverId,))
         );
       },
       onLongPress: (){
@@ -39,53 +34,36 @@ class CarItem extends StatelessWidget {
       },
       child: Column(
         children: [
-          Stack(
-            children: [
-              Container(
-                height: 97.63,
-                width: 105,
-                padding: car.image == '' ?  const EdgeInsets.all(15) : const EdgeInsets.all(0),
-                decoration: BoxDecoration(
-                  color: color,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: car.image == '' || car.image == null ? Image.asset(
-                  "assets/traffic_jam.png",
-                  width: 90,
-                  height: 107,
-                  color: Colors.white,
-                  fit: BoxFit.fill,
-                ) : ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.network(
-                    car.image ?? '',
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
+          Container(
+            width: 105,
+            height: 91.63,
+            padding: car.image == '' ?  const EdgeInsets.all(15) : const EdgeInsets.all(0),
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: car.image == '' || car.image == null ? Image.asset(
+              "assets/traffic_jam.png",
+              width: 90,
+              height: 90,
+              color: Colors.white,
+              fit: BoxFit.fill,
+            ) : ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.network(
+                car.image ?? '',
+                width: double.infinity,
+                fit: BoxFit.cover,
               ),
-              car.driverId != '' ? Positioned(
-                right: 0,
-                bottom: 0,
-                child: Container(
-                  height: 28,
-                  width: 28,
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: mainRedColor,
-                    borderRadius: BorderRadius.circular(90)
-                  ),
-                  child: Image.asset("assets/concar.png",width: 15,height: 15,color: Colors.white,fit: BoxFit.contain,)
-                ),
-              ) : SizedBox()
-            ],
+            ),
           ),
+
           const SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(car.name,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18,color: mainRedColor),
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14,color: mainRedColor),
               ),
             ],
           ),

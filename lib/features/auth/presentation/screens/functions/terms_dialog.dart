@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import '../../../../../core/constants/colors.dart';
 import '../../../../../core/constants/messages.dart';
 
-AlertDialog termsDialog({required BuildContext context,required bool checked, void Function()? onTap}){
+AlertDialog termsDialog({required BuildContext context,required bool checked, void Function()? onTap,required void Function(bool?)? onChanged}){
   return AlertDialog(
     titlePadding: EdgeInsets.only(top: 8,left: 8,right: 4),
     title: Row(
       children: [
-        Text("\nTerms and Conditions",style: TextStyle(color: mainRedColor),),
+        Text("\nTerms and Conditions",style: TextStyle(color: mainRedColor,fontSize: 18,fontWeight: FontWeight.bold),),
         Spacer(),
         IconButton(
           onPressed: (){
@@ -26,10 +26,11 @@ AlertDialog termsDialog({required BuildContext context,required bool checked, vo
         child: Row(
           children: [
             Checkbox(
+
               value: checked,
-              onChanged: (val){}
+              onChanged: onChanged,
             ),
-            Text('I accept all the terms and conditions',style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),)
+            Text('Accept terms and conditions',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),overflow: TextOverflow.ellipsis,)
           ],
         ),
       ),

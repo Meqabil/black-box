@@ -1,7 +1,5 @@
-
 import 'dart:io';
-
-import 'package:black_box/core/constants/global.dart';
+import 'package:black_box/core/api/dio_helper.dart';
 import 'package:black_box/core/constants/links.dart';
 import 'package:black_box/features/cars/data/models/car_model.dart';
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';
@@ -11,7 +9,6 @@ class CarDataSource{
 
   Future<CarEntity> addCar({
     File? image,
-    required String token,
     required int id,
     required String name,
     required String vClass,
@@ -28,17 +25,11 @@ class CarDataSource{
           filename: image.path.split('/').last,
         )
     });
-    final response = await dio.post(
-      "$mainAPILink/vehicles/add",
+    final response = await DioHelper.dio.post(
+      AppLink.addVehicle,
       data: formData,
-      options: Options(
-        contentType: "application/json",
-        headers: {
-          "Authorization": "Bearer $token"
-        }
-      )
     );
-    final status = response.data['data'];
+    final status = response.data['status'];
     if(status == "success "){
       return CarModel.fromJson(response.data['data']);
     }
@@ -48,14 +39,8 @@ class CarDataSource{
 
   Future<List> getAllCars() async{
     List cars = [];
-    final response = await dio.get(
-        '$mainAPILink/vehicles/show-all',
-      options: Options(
-        contentType: "application/json",
-        headers: {
-          "Authorization": "Bearer 12|zYTacBzNLmW3mSIoVYJrgDB4sq0spO1MiE6c2e9sa0dac396",
-        }
-      )
+    final response = await DioHelper.dio.get(
+      AppLink.showAllVehicle,
     );
     final status = response.data['status'];
     if(status == "success"){
@@ -90,28 +75,16 @@ class CarDataSource{
         "driver_id": driverId,
         "image" :multipartFile
     });
-    await dio.post(
-      "$mainAPILink/vehicles/update/$carId",
+    await DioHelper.dio.post(
+      "${AppLink.updateVehicle}$carId",
       data: formData,
-      options: Options(
-        headers: {
-          "Authorization": "Bearer $token",
-          "Accept": "application/json",
-        }
-      )
     );
 
   }
 
   Future<void> deleteCar(int id) async{
-    final response = await dio.delete(
-      "$mainAPILink/vehicles/delete/$id",
-      options: Options(
-        contentType: "application/json",
-        headers: {
-          "Authorization": "Bearer $token"
-        }
-      )
+    await DioHelper.dio.delete(
+      "${AppLink.deleteVehicle}$id",
     );
   }
 }

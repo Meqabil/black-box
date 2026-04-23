@@ -14,7 +14,7 @@ class DriverItemsGrid extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return GridView.builder(
-      itemCount: state.driversList.length + 1,
+      itemCount: 5,//state.driversList.length + 1,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         mainAxisSpacing: 10,
@@ -22,11 +22,12 @@ class DriverItemsGrid extends StatelessWidget {
         childAspectRatio: 0.8,
       ),
       itemBuilder: (context, index) {
-        if (index < state.driversList.length) {
-          return DriverItem(
-              driver: state.driversList[index],
-
-          );
+        if (index < 5/*state.driversList.length*/) {
+          return Container();
+          // return DriverItem(
+          //     driver:5,// state.driversList[index],
+          //
+          // );
         } else {
           return AddDriverItem(color: lightRed);
         }

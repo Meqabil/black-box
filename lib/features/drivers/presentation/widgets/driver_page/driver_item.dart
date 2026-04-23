@@ -30,10 +30,6 @@ class _DriverItemState extends State<DriverItem> {
             EditDriverScreen(
                 id: widget.driver.id,
                 name: widget.driver.name,
-                email: widget.driver.email,
-                phone: widget.driver.phone,
-                nationalNumber: widget.driver.nationalNumber,
-                licenseNumber: widget.driver.licenseNumber
             )));
       },
       onLongPress: () {
@@ -88,7 +84,7 @@ class _DriverItemState extends State<DriverItem> {
             Spacer(),
             const SizedBox(height: 5),
             Text(
-              widget.driver.name,
+              widget.driver.name == '' ? "Unknown" : widget.driver.name,
               style: const TextStyle(fontWeight: FontWeight.bold,
                   color: Colors.white,
                   fontSize: 18,

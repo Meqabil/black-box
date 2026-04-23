@@ -8,11 +8,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../features/auth/presentation/screens/login/login_screen.dart';
 import 'colors.dart';
 Dio dio = Dio();
 SharedPreferences? pref;
 
-String token = pref!.getString("token") ?? '';
+logOut(BuildContext context ){
+  pref!.remove("login_state");
+  Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => LoginScreen())
+  );
+}
 
 Future<File?> pickImages(BuildContext context) async {
   final List<AssetEntity>? result = await AssetPicker.pickAssets(
@@ -72,13 +78,12 @@ saveUserData(OwnerEntity owner){
   pref!.setString("role", owner.role);
   pref!.setString("email", owner.email);
   pref!.setString("id", owner.id.toString());
-  pref!.setString("national_id", owner.nationalNumber);
-  pref!.setString("birth_date", owner.birthDate);
   pref!.setString("created_at", owner.createdAt);
   pref!.setString("updated_at", owner.updatedAt);
-  pref!.setString("phone_number", owner.phoneNumber);
   pref!.setString("profile_image", owner.profileImage);
-  pref!.setString("token", token);
+  pref!.setString("vehicles_count", owner.vehiclesCount);
+  pref!.setString("drivers_count", owner.driversCount);
+  pref!.setString("token", pref!.getString("token") ?? 'Unknown');
 }
 
 getSavedUserData(){
@@ -87,9 +92,8 @@ getSavedUserData(){
       name: pref!.getString("name") ?? 'Unknown',
       email: pref!.getString("email") ?? 'Unknown',
       role: pref!.getString("role") ?? 'Unknown',
-      nationalNumber: pref!.getString("national_nid") ?? 'Unknown',
-      birthDate: pref!.getString("birth_date") ?? 'Unknown',
-      phoneNumber: pref!.getString("phone_number") ?? 'Unknown',
+      driversCount: pref!.getString("drivers_count") ?? 'Unknown',
+      vehiclesCount: pref!.getString("vehicles_count") ?? 'Unknown',
       createdAt: pref!.getString("created_at") ?? 'Unknown',
       updatedAt: pref!.getString("updated_at") ?? 'Unknown',
       profileImage: pref!.getString("profile_image") ?? ''

@@ -9,13 +9,12 @@ class CarRepositoryImpl implements CarRepository{
   CarRepositoryImpl(this.carDataSource);
   @override
   Future<CarEntity> addCar({
-    required String token,
     required int id,
     required String name,
     required String vClass,
     required String plateNumber,
   }) {
-    return carDataSource.addCar(token: token, id: id, name: name, vClass: vClass, plateNumber: plateNumber,);
+    return carDataSource.addCar(id: id, name: name, vClass: vClass, plateNumber: plateNumber,);
   }
   @override
   Future<List> getAllCars() {

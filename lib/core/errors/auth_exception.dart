@@ -23,7 +23,7 @@ class EmailHasAlreadyTakenException extends AuthException {
 }
 
 class PhoneHasAlreadyTakenException extends AuthException {
-  PhoneHasAlreadyTakenException() : super("The phone number is used by other owner");
+  PhoneHasAlreadyTakenException() : super("The phone number is used by other owners");
 }
 
 class NationalNumberHasAlreadyTakenException extends AuthException {

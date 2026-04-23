@@ -82,7 +82,7 @@ class _LoginFormState extends State<LoginForm> {
               }
               else if(state is LoginSuccess){
                 saveUserData(state.owner);
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => BNVScreen(owner: state.owner,)));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => BNVScreen()));
               }
               else if(state is LoginLoading){
 

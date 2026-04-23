@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/features/auth/data/models/owner_model.dart';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
@@ -12,16 +11,15 @@ class AuthDatasource{
 
   Future<OwnerEntity> login(String email,String password) async{
       FormData formData = FormData.fromMap({"email": email,"password":password});
-      final response = await dio.post("$mainAPILink/auth/login",data: formData);
+      final response = await dio.post(AppLink.login,data: formData);
       final status = response.data['status'];
-      print("$response");
+      final token = response.data['data']["token"];
       if(status == "success"){
-        String token = response.data['data']['token'];
         pref!.setString("token", token);
         final owner = OwnerModel.fromJson(response.data['data']['user']);
         return owner;
       }
-      return OwnerEntity(id: 0, name: "Unknown", email: "Unknown", role: "not detected", nationalNumber: "0", birthDate: "0", phoneNumber: '0' , createdAt: '0', updatedAt: '0',profileImage: '');
+      return OwnerEntity(id: 0, name: "Unknown", email: "Unknown", role: "not detected",driversCount: "0",vehiclesCount: "0",createdAt: '0',updatedAt: '0',profileImage: '');
   }
 
   Future<OwnerEntity> signUp({
@@ -45,22 +43,23 @@ class AuthDatasource{
         "profile_image" : multipartFile
       }
     );
-    final response = await dio.post("$mainAPILink/auth/register",data: formData);
+    final response = await dio.post(AppLink.register,data: formData);
     final status = response.data['status'];
+    final token = response.data['data']['token'];
+    print(token);
     if(status== 'success'){
-      String token = response.data['data']['token'];
       pref!.setString("token", token);
       final owner = OwnerModel.fromJson(response.data['data']['user']);
       return owner;
     }
-    return OwnerEntity(id: 0, name: "Unknown", email: "Unknown", role: "not detected", nationalNumber: "0", birthDate: "0", phoneNumber: '0' , createdAt: '0', updatedAt: '0', profileImage: '');
+    return OwnerEntity(id: 0, name: "Unknown", email: "Unknown", role: "not detected", driversCount: "0", vehiclesCount: '0' , createdAt: '0', updatedAt: '0', profileImage: '');
   }
 
   Future<String> sendResetPasswordPin (String email) async{
     FormData formData = FormData.fromMap({
       "email": email
     });
-    final response = await dio.post("$mainAPILink/forget-password",data: formData);
+    final response = await dio.post(AppLink.forgetPassword,data: formData);
     final status = response.data['status'];
     if(status == "success"){
       return "Verification code has been sent ✔";
@@ -73,7 +72,7 @@ class AuthDatasource{
       "email": email,
       "otp": otp
     });
-    final response = await dio.post("$mainAPILink/verify-otp",data: formData);
+    final response = await dio.post(AppLink.verifyOtp,data: formData);
     final status = response.data['status'];
     if(status == "success"){
       return "Verification code has been sent ✔";
@@ -88,7 +87,7 @@ class AuthDatasource{
       "password": password,
       "password_confirmation": password
     });
-    final response = await dio.post("$mainAPILink/reset-password",data: formData);
+    final response = await dio.post(AppLink.resetPassword,data: formData);
     final status = response.data['status'];
     if(status == "success"){
       return "Password has been changed ✔";
