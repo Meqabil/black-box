@@ -1,1 +1,0 @@
-com.flutterandies.photo_manager
