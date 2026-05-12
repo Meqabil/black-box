@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../home/notification.dart';
+import '../../../notifications/presentation/screens/notification_screen.dart';
 
 class EvaluateAccident extends StatefulWidget {
   final VoidCallback onNotificationTap;

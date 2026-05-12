@@ -1,12 +1,10 @@
 
+import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/core/network/network_info_imp.dart';
 import 'package:black_box/features/auth/presentation/screens/login/widgets/login_form.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../../core/constants/colors.dart';
-
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -25,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mainRedColor,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       resizeToAvoidBottomInset: true,
       body: SafeArea(
         bottom: false,
@@ -36,14 +34,16 @@ class _LoginScreenState extends State<LoginScreen> {
               physics: const PageScrollPhysics(),
               slivers: [
                 SliverToBoxAdapter(
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                    child: IntrinsicHeight(
-                      child: Column(
-                        children: [
-                          const SizedBox(height: 60),
-                          const Text(
-                            "Welcome",
+                  child: SizedBox(
+                    height: height - width * 0.048,
+                    width: width,
+                    child: Column(
+                      children: [
+                        Container(
+                          height: height * 0.21,
+                          alignment: Alignment.center,
+                          child: Text(
+                            AppLocalizations.of(context)!.onboarding_title_1,
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 28,
@@ -51,23 +51,22 @@ class _LoginScreenState extends State<LoginScreen> {
                               letterSpacing: 1.0,
                             ),
                           ),
-                          const SizedBox(height: 80),
-                          Expanded(
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                              width: double.infinity,
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(40),
-                                  topRight: Radius.circular(40),
-                                ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            padding: EdgeInsets.only(left: width * .049,right: width * .049, top: width * 0.048,bottom: 0),
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).colorScheme.secondary,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(70),
+                                topRight: Radius.circular(70),
                               ),
-                              child: LoginForm(formKey: _formKey,textColor: Colors.black, emailController: _emailController, passwordController: _passwordController, isPasswordVisible: _isPasswordVisible,),
                             ),
+                            child: LoginForm(formKey: _formKey,textColor: Theme.of(context).colorScheme.onSurface, emailController: _emailController, passwordController: _passwordController, isPasswordVisible: _isPasswordVisible,),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 )

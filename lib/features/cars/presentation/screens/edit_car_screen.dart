@@ -139,7 +139,7 @@ class _EditCarScreenState extends State<EditCarScreen> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text("Edit Image ",style: TextStyle(fontSize: 10),),
-                        Icon(Icons.edit,color: mainRedColor,size: 12,),
+                        Icon(Icons.edit,color: AppColor.mainRedColor,size: 12,),
                       ],
                     )
                   ),

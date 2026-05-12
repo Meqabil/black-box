@@ -8,8 +8,6 @@ class FormTextField extends StatelessWidget {
   const FormTextField({
     super.key,
     required this.label,
-    required this.labelColor,
-    required this.fillColor,
     required this.controller,
     required this.hint,
     required this.validator,
@@ -17,8 +15,6 @@ class FormTextField extends StatelessWidget {
     required this.autoValidateMode,
   });
   final String label;
-  final Color labelColor;
-  final Color fillColor;
   final TextEditingController controller;
   final String hint;
   final String? Function(String?)? validator;
@@ -29,16 +25,16 @@ class FormTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        InputLabel(text: label,textColor: Colors.black,),
+        InputLabel(text: label,textColor: Theme.of(context).colorScheme.onSurface,),
         const SizedBox(height: 8),
         TextFormField(
           controller: controller,
           readOnly: readOnly,
           validator: validator,
-          decoration: inputDecoration(hint: hint, fillColor: fillColor),
+          decoration: inputDecoration(hint: hint,),
         ),
         const SizedBox(height: 15),
       ],
-    );;
+    );
   }
 }

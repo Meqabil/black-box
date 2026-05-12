@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:black_box/core/api/dio_helper.dart';
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/features/auth/data/models/owner_model.dart';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
@@ -6,8 +7,8 @@ import 'package:dio/dio.dart';
 import '../../../../core/constants/links.dart';
 
 class AuthDatasource{
-  final Dio dio;
-  AuthDatasource(this.dio);
+
+  AuthDatasource();
 
   Future<OwnerEntity> login(String email,String password) async{
       FormData formData = FormData.fromMap({"email": email,"password":password});
@@ -93,6 +94,21 @@ class AuthDatasource{
       return "Password has been changed ✔";
     }
     return "";
+  }
+
+
+  Future<void> changePassword({required String currentPassword,required String newPassword}) async {
+    FormData formData = FormData.fromMap({
+      "current_password": currentPassword,
+      "new_password": newPassword,
+      "new_password_confirmation": newPassword
+    });
+    final response = await DioHelper.dio.post(AppLink.changePassword,data: formData);
+    final status = response.data['status'];
+    if(status == "success"){
+      print("password changed successfully");
+    }
+    print("response ::::::::: $response");
   }
 }
 

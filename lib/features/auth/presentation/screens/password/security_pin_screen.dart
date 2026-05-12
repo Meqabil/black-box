@@ -1,19 +1,18 @@
 
 import 'package:black_box/core/errors/auth_exception.dart';
-import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_cubit.dart';
-import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_state.dart';
+import 'package:black_box/features/auth/presentation/cubit/auth/new_password/password_cubit.dart';
+import 'package:black_box/features/auth/presentation/cubit/auth/new_password/password_state.dart';
 import 'package:black_box/features/auth/presentation/screens/password/widgets/security_pin/otp_cells.dart';
 import 'package:black_box/features/auth/presentation/screens/password/widgets/security_pin/verify_otp_button.dart';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../../core/constants/colors.dart';
+import '../../../../../core/constants/global.dart';
 import '../../../../../core/ui/snackbar/exception_snackbar.dart';
 import '../../../../../core/ui/snackbar/success_snackbar.dart';
 import 'new_password_screen.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 class SecurityPinScreen extends StatefulWidget {
@@ -45,50 +44,51 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: mainRedColor,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: SafeArea(
         child: Column(
           children: [
-
             // Page Title
-            const SizedBox(height: 60),
-            const Text(
-              "Security Pin",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 26,
-                fontWeight: FontWeight.bold,
+            Container(
+              height: height * 0.21,
+              alignment: Alignment.center,
+              child: Text(
+                AppLocalizations.of(context)!.auth_security_pin,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.0,
+                ),
               ),
             ),
-            const SizedBox(height: 80),
-
             // Page Content
             Expanded(
               child: Container(
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: backgroundGreen,
+                width: width,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(40),
-                    topRight: Radius.circular(40),
+                    topLeft: Radius.circular(70),
+                    topRight: Radius.circular(70),
                   ),
                 ),
                 child: SingleChildScrollView(
                   keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                   padding:
-                  const EdgeInsets.symmetric(horizontal: 10, vertical: 40),
+                  EdgeInsets.symmetric(horizontal: width * .02, vertical: width * .18),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Text(
-                        "Enter Security Pin",
+                      Text(
+                        AppLocalizations.of(context)!.auth_enter_pin,
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF3A3A3A),
+                          color: Theme.of(context).colorScheme.onSurface,
                         ),
                       ),
-                      const SizedBox(height: 80),
+                      SizedBox(height: width * .17),
                       OtpCells(
                         onSubmit: (value){
                           setState(() {
@@ -96,11 +96,11 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                           });
                         },
                       ),
-                      const SizedBox(height: 80),
+                      SizedBox(height: width * .18),
                       // verify button
                       SizedBox(
-                        width: 250,
-                        height: 50,
+                        width: width * .57,
+                        height: width * .112,
                         child: BlocListener<PasswordCubit,PasswordState>(
                           listener: (context,state){
                             if(state is SuccessPassword){
@@ -108,7 +108,7 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                               ScaffoldMessenger.of(context).showSnackBar(
                                   snack.show(state.message)
                               );
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewPasswordPage(email: widget.email, otp: fullOtp)));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewPasswordScreen(email: widget.email, otp: fullOtp)));
                             } else if(state is FailurePassword){
                               ExceptionSnackBar snack = ExceptionSnackBar();
                               ScaffoldMessenger.of(context).showSnackBar(
@@ -130,13 +130,13 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 15),
+                      SizedBox(height: width * .038),
                       TextButton(
                         onPressed: () {},
-                        child: const Text(
-                          "Send Again",
+                        child: Text(
+                          AppLocalizations.of(context)!.auth_resend_pin(60),
                           style: TextStyle(
-                            color: Color(0xFFC26C78),
+                            color: AppColor.lightRed,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

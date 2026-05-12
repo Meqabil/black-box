@@ -1,6 +1,7 @@
 import 'package:black_box/features/cars/presentation/widgets/car_page/dialogues/delete_car_dialogue.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/constants/colors.dart';
+import '../../../../../core/constants/global.dart';
 import '../../../domain/entities/car_entity.dart';
 import '../../screens/car_details/car_details.dart';
 import '../../screens/edit_car_screen.dart';
@@ -19,7 +20,7 @@ class CarItem extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) =>
-                CarDetailsScreen(onBackToHome: () {}, onNotificationTap: () {},car:car),
+                CarDetailsScreen(car:car),
           ),
         );
       },
@@ -35,8 +36,8 @@ class CarItem extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 105,
-            height: 91.63,
+            width: width * 0.235,
+            height: width * 0.221,
             padding: car.image == '' ?  const EdgeInsets.all(15) : const EdgeInsets.all(0),
             decoration: BoxDecoration(
               color: color,
@@ -44,8 +45,8 @@ class CarItem extends StatelessWidget {
             ),
             child: car.image == '' || car.image == null ? Image.asset(
               "assets/traffic_jam.png",
-              width: 90,
-              height: 90,
+              width: width * .2025,
+              height: width * .2025,
               color: Colors.white,
               fit: BoxFit.fill,
             ) : ClipRRect(
@@ -58,12 +59,12 @@ class CarItem extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 5),
+          SizedBox(height: width * .045/4),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(car.name,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14,color: mainRedColor),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14,color: Theme.of(context).splashColor),
               ),
             ],
           ),

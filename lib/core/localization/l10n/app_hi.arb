@@ -1,0 +1,242 @@
+{
+  "@@locale": "hi",
+
+  "app_title": "BlackBox ऐप",
+
+  "common_yes": "हाँ",
+  "common_no": "नहीं",
+  "common_cancel": "रद्द करें",
+  "common_save": "सेव करें",
+  "common_save_changes": "परिवर्तन सेव करें",
+  "common_continue": "जारी रखें",
+  "common_next": "अगला",
+
+  "auth_login": "लॉगिन",
+  "auth_space_login": "Log In",
+  "auth_logout": "लॉग आउट",
+  "auth_confirm_logout": "क्या आप वाकई लॉग आउट करना चाहते हैं?",
+  "auth_signup": "साइन अप",
+  "auth_create_account": "खाता बनाएं",
+  "auth_already_have_account": "पहले से खाता है? ",
+  "auth_no_account": "खाता नहीं है?",
+  "auth_forgot_password": "पासवर्ड भूल गए?",
+  "auth_reset_password": "पासवर्ड रीसेट करें?",
+  "auth_change_password": "पासवर्ड बदलें",
+  "auth_continue": "जारी रखने पर, आप सहमत हैं\n",
+  "auth_terms": "उपयोग की शर्तें और गोपनीयता नीति",
+  "auth_email": "ईमेल",
+  "auth_password": "पासवर्ड",
+  "auth_confirm_password": "पासवर्ड की पुष्टि करें",
+  "auth_new_password": "नया पासवर्ड",
+  "auth_confirm_new_password": "नए पासवर्ड की पुष्टि करें",
+  "auth_enter_email": "ईमेल पता दर्ज करें",
+  "auth_password_hint": "अपना पासवर्ड दर्ज करें",
+  "full_name": "पूरा नाम",
+  "email_hint": "example@gmail.com",
+  "name_hint": "John Doe",
+
+  "required_name": "पूरा नाम आवश्यक है",
+  "required_email": "ईमेल आवश्यक है",
+  "email_end": "ईमेल @gmail.com पर समाप्त होना चाहिए",
+  "required_password": "पासवर्ड आवश्यक है",
+  "required_confirm_password": "पासवर्ड की पुष्टि आवश्यक है",
+  "password_do_not_match": "पासवर्ड मेल नहीं खाते",
+  "min_password": "पासवर्ड कम से कम 8 अक्षर का होना चाहिए और इसमें संख्या होनी चाहिए",
+  "send_verification_code": "वेरिफिकेशन कोड भेजें",
+  "password_changed_successfully": "पासवर्ड सफलतापूर्वक\nबदल दिया गया है",
+  "forget_password_title": "अपने खाते से जुड़ा ईमेल दर्ज करें, हम आपको पासवर्ड रीसेट सिक्योरिटी पिन भेजेंगे।",
+
+  "auth_security_pin": "सुरक्षा पिन",
+  "auth_enter_pin": "सुरक्षा पिन दर्ज करें",
+  "verify": "सत्यापित करें",
+  "auth_resend_pin": "{seconds} सेकंड में फिर से भेजें",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "होम",
+  "home_welcome": "नमस्ते, वापस स्वागत है",
+  "home_good_morning": "शुभ प्रभात",
+  "home_looks_good": "अच्छा\nलग रहा है",
+  "home_safety_score": "सुरक्षा स्कोर ओवरव्यू",
+  "home_total_accidents": "कुल दुर्घटनाएँ",
+  "total_active_cars": "कुल सक्रिय कारें",
+  "total_cars": "कुल कारें",
+
+  "home_active_cars": "आपकी कारों में से {percentage}% सक्रिय हैं",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "कारें",
+  "car_view_all": "सभी कारें देखें",
+  "car_add": "कार जोड़ें",
+  "car_edit": "कार संपादित करें",
+
+  "car_name": "कार का नाम",
+  "car_plate": "कार प्लेट",
+  "car_type": "कार का प्रकार",
+  "car_driver_name": "ड्राइवर का नाम",
+
+  "car_item_title": "कार #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "लाइव ट्रैकिंग",
+  "tracking_last_updates": "अंतिम अपडेट",
+
+  "event_title": "ड्राइविंग इवेंट्स",
+  "event_speeding": "स्पीडिंग",
+  "event_hard_braking": "हार्ड ब्रेकिंग",
+  "event_aggressive_turns": "आक्रामक टर्न",
+  "event_crash": "क्रैश",
+
+  "event_location": "{location} में",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/h",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "तीव्रता",
+  "event_severity_low": "कम",
+  "event_severity_medium": "मध्यम",
+  "event_severity_high": "उच्च",
+  "event_severity_critical": "गंभीर",
+
+  "event_reason": "कारण",
+  "event_last_speed": "अंतिम दर्ज गति",
+
+  "notification_title": "नोटिफिकेशन",
+  "notification_today": "आज",
+  "notification_yesterday": "कल",
+  "notification_earlier": "इस सप्ताह पहले",
+
+  "notification_fuel_alert": "ईंधन रिसाव अलर्ट!",
+  "notification_fuel_desc": "वाहन {car} जिसे {driver} चला रहा है, में ईंधन स्तर में तेज गिरावट की सूचना मिली है।",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "गंभीर क्रैश का पता चला!",
+  "notification_crash_desc": "वाहन {car} जिसे {driver} चला रहा है, में गंभीर टक्कर की सूचना मिली है।",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "प्रोफाइल",
+  "profile_edit": "मेरी प्रोफाइल संपादित करें",
+  "update_profile": "प्रोफाइल अपडेट करें",
+  "user_name": "यूजर नाम",
+
+  "security_title": "सुरक्षा",
+  "change_password": "पासवर्ड बदलें",
+
+  "settings_title": "सेटिंग्स",
+  "settings_notifications": "नोटिफिकेशन सेटिंग्स",
+  "settings_general_notifications": "सामान्य नोटिफिकेशन",
+  "account_settings": "खाता सेटिंग्स",
+  "push_notification": "पुश नोटिफिकेशन",
+  "dark_mode": "डार्क मोड चालू",
+
+  "help_title": "सहायता केंद्र",
+  "help_and_faq": "सहायता & FAQ",
+  "help_contact": "हमसे संपर्क करें",
+  "help_faq": "FAQ",
+  "how_help": "हम आपकी कैसे मदद कर सकते हैं?",
+  "on_wh_num": "व्हाट्सएप नंबर पर",
+
+  "question1": "BlackBox का उपयोग कैसे करें?",
+  "answer1": "अपनी कार में BlackBox डिवाइस लगाएं, ऐप में लॉगिन करें और ड्राइविंग शुरू करें। ऐप स्वचालित रूप से आपका ड्राइविंग डेटा रिकॉर्ड और प्रदर्शित करेगा।",
+  "question2": "BlackBox का उपयोग करने में कितना खर्च आता है?",
+  "answer2": "लागत चुने गए प्लान और सेवाओं पर निर्भर करती है। कृपया मूल्य निर्धारण के लिए कंपनी से संपर्क करें।",
+  "question3": "सपोर्ट से कैसे संपर्क करें?",
+  "answer3": "आप कंपनी के आधिकारिक नंबर पर व्हाट्सएप के माध्यम से या कार्यालय समय में कंपनी ऑफिस जाकर सपोर्ट से संपर्क कर सकते हैं।",
+  "question4": "अगर पासवर्ड भूल जाएं तो कैसे रीसेट करें?",
+  "answer4": "लॉगिन स्क्रीन पर 'Forgot Password' विकल्प का उपयोग करें और निर्देशों का पालन करें।",
+  "question5": "क्या कोई गोपनीयता या डेटा सुरक्षा उपाय हैं?",
+  "answer5": "हाँ। आपका डेटा सुरक्षित रूप से संग्रहीत और सुरक्षित है, और आपकी अनुमति के बिना साझा नहीं किया जाता सिवाय कानून द्वारा आवश्यक होने के।",
+  "question6": "क्या मैं ऐप में सेटिंग्स अनुकूलित कर सकता हूँ?",
+  "answer6": "हाँ। आप नोटिफिकेशन और प्राथमिकताओं जैसी उपलब्ध सेटिंग्स को ऐप में अनुकूलित कर सकते हैं।",
+  "question7": "मेरा खाता कैसे डिलीट करें?",
+  "answer7": "अपना खाता डिलीट करने के लिए, कृपया कंपनी से व्हाट्सएप या ऑफिस के माध्यम से संपर्क करें।",
+  "question8": "मैं अपनी एनालिटिक्स हिस्ट्री कैसे एक्सेस कर सकता हूँ?",
+  "answer8": "आप ऐप के History या Analytics सेक्शन में अपनी पिछली ट्रिप्स और ड्राइविंग एनालिटिक्स देख सकते हैं।",
+  "question9": "क्या मैं ऐप को ऑफलाइन उपयोग कर सकता हूँ?",
+  "answer9": "ऐप में सीमित ऑफलाइन कार्यक्षमता है। डेटा सिंक और पूर्ण सुविधाओं के लिए इंटरनेट कनेक्शन आवश्यक है।",
+
+  "terms_title": "नियम और शर्तें",
+  "terms_accept": "नियम और शर्तें स्वीकार करें",
+  "terms_full": "1. शर्तों की स्वीकृति\nइस एप्लिकेशन को इंस्टॉल या उपयोग करके आप इन नियमों और शर्तों से सहमत हैं। यदि आप सहमत नहीं हैं, तो कृपया ऐप का उपयोग बंद करें।\n\n2. एप्लिकेशन का उद्देश्य\nयह एप्लिकेशन वाहन ब्लैक बॉक्स और टेलीमैटिक्स सिस्टम है जो केवल सूचनात्मक, सुरक्षा और विश्लेषणात्मक उद्देश्यों के लिए वाहन प्रदर्शन और ड्राइविंग व्यवहार की निगरानी करता है।\n\n3. एकत्र किए गए डेटा पैरामीटर\nएप्लिकेशन वाहन और ड्राइविंग डेटा एकत्र और संसाधित कर सकता है, जिसमें शामिल हैं लेकिन सीमित नहीं:\n\n• वाहन की गति\n• ईंधन खपत और स्तर\n• त्वरण और मंदन\n• कठिन ब्रेकिंग और तेज त्वरण घटनाएँ\n• तेज मोड़\n• GPS स्थान डेटा (अक्षांश और देशांतर)\n• यात्रा दूरी, अवधि और समय\n• ड्राइवर और वाहन पहचान डेटा\n\nऐप का उपयोग करके आप इन पैरामीटरों के संग्रह के लिए स्पष्ट सहमति देते हैं।\n\n4. सेवा उपलब्धता\nतकनीकी सीमाओं के कारण ऐप की निरंतर, रीयल-टाइम या त्रुटि-मुक्त संचालन की गारंटी नहीं है।",
+
+  "validation_password_mismatch": "पासवर्ड मेल नहीं खाते",
+  "validation_invalid_phone": "अमान्य फोन नंबर",
+  "validation_incorrect_pin": "गलत PIN",
+  "validation_empty_fields": "कृपया सभी फ़ील्ड भरें",
+
+  "empty_no_cars": "कोई कार नहीं मिली",
+  "empty_no_notifications": "अभी कोई नोटिफिकेशन नहीं",
+  "empty_no_events": "कोई इवेंट उपलब्ध नहीं",
+
+  "status_loading": "लोड हो रहा है...",
+  "status_success": "ऑपरेशन सफल",
+  "status_error": "कुछ गलत हो गया",
+
+  "confirm_delete_car": "क्या आप वाकई इस कार को डिलीट करना चाहते हैं?",
+  "confirm_reset_password": "क्या आप वाकई अपना पासवर्ड रीसेट करना चाहते हैं?",
+
+  "search_hint": "खोजें...",
+  "search_no_results": "कोई परिणाम नहीं मिला",
+  "filter": "फ़िल्टर",
+  "sort": "सॉर्ट",
+
+  "onboarding_title_1": "स्वागत है",
+  "onboarding_desc_1": "Black Box Manager में",
+
+  "onboarding_title_2": "अपनी ड्राइव के पीछे की कहानी देखें,",
+  "onboarding_desc_2": "हर यात्रा रिकॉर्ड करना, हर मील का विश्लेषण करना।",
+
+  "error_email_exists": "यह ईमेल पहले से मौजूद है",
+  "error_wrong_password": "गलत पासवर्ड",
+  "error_phone_exists": "यह फोन नंबर पहले से उपयोग में है",
+  "error_sp_ch": "पासवर्ड में कम से कम एक विशेष वर्ण होना चाहिए",
+  "error_up": "पासवर्ड में कम से कम एक अपरकेस अक्षर होना चाहिए",
+  "error_low": "पासवर्ड में कम से कम एक लोअरकेस अक्षर होना चाहिए",
+  "error_num": "पासवर्ड में कम से कम एक संख्या होनी चाहिए",
+  "error_required": "यह फ़ील्ड आवश्यक है",
+  "error_invalid_email": "अमान्य ईमेल पता",
+  "error_password_short": "पासवर्ड कम से कम {length} अक्षर का होना चाहिए",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

@@ -1,12 +1,13 @@
 
 
 class AppLink{
-  static const String _rootApi = "https://graduation-ach9geg6b5fvbgcr.germanywestcentral-01.azurewebsites.net/api";
-  static const String rootStorage = "https://graduation-ach9geg6b5fvbgcr.germanywestcentral-01.azurewebsites.net/storage";
+  static const String _rootApi = "https://graduation-black-box.azurewebsites.net/api";
+  static const String rootStorage = "https://graduation-black-box.azurewebsites.net/storage";
 
   // Authentication
   static const String register = "$_rootApi/auth/register";
   static const String login = "$_rootApi/auth/login";
+  static const String changePassword = "$_rootApi/auth/change-password";
   static const String forgetPassword = "$_rootApi/forget-password";
   static const String verifyOtp = "$_rootApi/verify-otp";
   static const String resetPassword = "$_rootApi/reset-password";
@@ -35,6 +36,15 @@ class AppLink{
   static const String updateDriver = "$_rootApi/drivers/update/";
   static const String deleteDriver = "$_rootApi/drivers/delete/";
   static const String driverScore = "$_rootApi/drivers/";
+
+  // Notifications
+  static const String getNotifications = "$_rootApi/notifications/";
+
+
+  // Show All Crashes
+  static const String showAllCrashes = "$_rootApi/crashes/show-all";
+  static const String deleteCrash = "$_rootApi/crashes/delete/";
+
 
 
 

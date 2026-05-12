@@ -1,17 +1,18 @@
+import 'package:black_box/core/ui/widgets/notification_button.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/cars/presentation/widgets/car_page/car_items_grid.dart';
 import 'package:black_box/core/ui/widgets/search_items.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/constants/colors.dart';
+import '../../../../core/constants/global.dart';
+import '../../../home/presentation/widgets/stat_item.dart';
 import '../cubit/car/car_state.dart';
-import '../widgets/car_page/state_item.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CarsListScreen extends StatefulWidget {
-  final VoidCallback onNotificationTap;
   const CarsListScreen({
     super.key,
-    required this.onNotificationTap,
   });
   @override
   State<CarsListScreen> createState() => _CarListScreenState();
@@ -38,53 +39,59 @@ class _CarListScreenState extends State<CarsListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: primaryRed,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
-        backgroundColor: primaryRed,
         elevation: 0,
-        toolbarHeight: 70,
-        title: Text('View Cars', style: TextStyle(color: Colors.white)),
+        toolbarHeight: width * .18,
+        title: Text(AppLocalizations.of(context)!.car_view_all, style: TextStyle(color: Colors.white)),
         centerTitle: true,
         actions: [
-          GestureDetector(
-            onTap: widget.onNotificationTap,
-            child: const CircleAvatar(backgroundColor: Colors.white,radius: 18, child: Icon(Icons.notifications_none, color: mainRedColor)),
-          ),
-          SizedBox(width: 20,)
+          NotificationButton(),
+          SizedBox(width: width * .045,)
         ],
       ),
 
       body: Column(
         children: [
-          const SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-            child: Row(
+          Container(
+            height: height * .22,
+            width: width,
+            padding: EdgeInsets.all(width * .045),
+            child: Column(
               children: [
-                StateItem(
-                  label:"Total Active Cars",
-                  value:"1",
-                  valueColor: Colors.white,
-                  arrowAngle: 135,
-                ),
                 Container(
-                  width: 2,
-                  height: 40,
-                  color: const Color(0xFFDFF7E2),
-                  margin: const EdgeInsets.symmetric(horizontal: 20),
+
+                  padding: EdgeInsets.symmetric(vertical: width * .045, horizontal: width * .055),
+                  child: Row(
+
+                    children: [
+                      StatItem(
+                        label: AppLocalizations.of(context)!.total_active_cars,
+                        value:"1",
+                        valueColor: Colors.white,
+                        arrowAngle: 135,
+                      ),
+                      Container(
+                        width: 2,
+                        height: width * .09,
+                        color: const Color(0xFFDFF7E2),
+                        margin: EdgeInsets.symmetric(horizontal: width * .09),
+                      ),
+                      StatItem(
+                        label:AppLocalizations.of(context)!.total_cars,
+                        value:"$totalCars",
+                        valueColor:const Color(0xFF0068FF),
+                        arrowAngle: -135,
+                      ),
+                    ],
+                  ),
                 ),
-                StateItem(
-                  label:"Total Car",
-                  value:"$totalCars",
-                  valueColor:const Color(0xFF0068FF),
-                  arrowAngle: -135,
-                ),
+                SizedBox(height: width * .045/4),
+                SearchItems(searchController: searchController,hint: AppLocalizations.of(context)!.car_plate,),
+                SizedBox(height: width * .022),
               ],
             ),
           ),
-          const SizedBox(height: 5),
-          SearchItems(searchController: searchController,hint: "Car Id",),
-          const SizedBox(height: 10),
 
           Expanded(
             child: RefreshIndicator(
@@ -92,12 +99,13 @@ class _CarListScreenState extends State<CarsListScreen> {
                 context.read<CarCubit>().getAllCars();
               },
               child: Container(
+                width: width,
                 padding: const EdgeInsets.all(25),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(60),
-                    topRight: Radius.circular(60),
+                    topLeft: Radius.circular(70),
+                    topRight: Radius.circular(70),
                   ),
                 ),
                 child: BlocConsumer<CarCubit,CarState>(
@@ -114,6 +122,12 @@ class _CarListScreenState extends State<CarsListScreen> {
                         context.read<CarCubit>().getAllCars();
                       },);
                     }
+                    if(state is CarDeleted){
+                      Future.delayed(Duration(seconds: 1),() {
+                        context.read<CarCubit>().getAllCars();
+                      },);
+                    }
+
                     if(state is CarFailure){
                       return Center(
                         child: Column(
@@ -121,7 +135,7 @@ class _CarListScreenState extends State<CarsListScreen> {
                           children: [
                             Text(state.message,style: TextStyle(fontSize: 16,),),
                             IconButton(
-                              icon: Icon(Icons.refresh,color: Colors.red,size: 30,),
+                              icon: Icon(Icons.refresh,color: Colors.red,size: width * .065,),
                               onPressed: (){
                                 context.read<CarCubit>().getAllCars();
                               },
@@ -131,7 +145,6 @@ class _CarListScreenState extends State<CarsListScreen> {
                       );
                     }
                     else if(state is CarSuccess){
-
                       return CarItemsGrid(state: state);
                     }
                     else if(state is CarWarning){

@@ -1,0 +1,242 @@
+{
+  "@@locale": "ms",
+
+  "app_title": "Aplikasi BlackBox",
+
+  "common_yes": "Ya",
+  "common_no": "Tidak",
+  "common_cancel": "Batal",
+  "common_save": "Simpan",
+  "common_save_changes": "Simpan Perubahan",
+  "common_continue": "Teruskan",
+  "common_next": "Seterusnya",
+
+  "auth_login": "Log Masuk",
+  "auth_space_login": "Log In",
+  "auth_logout": "Log Keluar",
+  "auth_confirm_logout": "Adakah anda pasti mahu log keluar?",
+  "auth_signup": "Daftar",
+  "auth_create_account": "Cipta Akaun",
+  "auth_already_have_account": "Sudah ada akaun? ",
+  "auth_no_account": "Tiada akaun?",
+  "auth_forgot_password": "Lupa Kata Laluan?",
+  "auth_reset_password": "Tetap Semula Kata Laluan?",
+  "auth_change_password": "Tukar Kata Laluan",
+  "auth_continue": "Dengan meneruskan, anda bersetuju dengan\n",
+  "auth_terms": "Terma Penggunaan dan Dasar Privasi",
+  "auth_email": "Emel",
+  "auth_password": "Kata Laluan",
+  "auth_confirm_password": "Sahkan Kata Laluan",
+  "auth_new_password": "Kata Laluan Baharu",
+  "auth_confirm_new_password": "Sahkan Kata Laluan Baharu",
+  "auth_enter_email": "Masukkan alamat emel",
+  "auth_password_hint": "Masukkan kata laluan anda",
+  "full_name": "Nama Penuh",
+  "email_hint": "contoh@gmail.com",
+  "name_hint": "John Doe",
+
+  "required_name": "Nama Penuh diperlukan",
+  "required_email": "Emel diperlukan",
+  "email_end": "Emel mesti berakhir dengan @gmail.com",
+  "required_password": "Kata laluan diperlukan",
+  "required_confirm_password": "Sahkan kata laluan diperlukan",
+  "password_do_not_match": "Kata laluan tidak sepadan",
+  "min_password": "Kata laluan mesti sekurang-kurangnya 8 aksara dan mengandungi nombor",
+  "send_verification_code": "Hantar Kod Pengesahan",
+  "password_changed_successfully": "Kata Laluan Telah Berjaya\nDitukar",
+  "forget_password_title": "Masukkan emel yang berkaitan dengan akaun anda dan kami akan hantar Pin Keselamatan tetapan semula kata laluan.",
+
+  "auth_security_pin": "Pin Keselamatan",
+  "auth_enter_pin": "Masukkan pin keselamatan",
+  "verify": "Sahkan",
+  "auth_resend_pin": "Hantar semula dalam {seconds}s",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Laman Utama",
+  "home_welcome": "Hai, Selamat Kembali",
+  "home_good_morning": "Selamat Pagi",
+  "home_looks_good": "Kelihatan\nBaik",
+  "home_safety_score": "Gambaran Keseluruhan Skor Keselamatan",
+  "home_total_accidents": "Jumlah kemalangan",
+  "total_active_cars": "Jumlah Kereta Aktif",
+  "total_cars": "Jumlah Kereta",
+
+  "home_active_cars": "{percentage}% daripada kereta anda adalah aktif",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Kereta",
+  "car_view_all": "Lihat Semua Kereta",
+  "car_add": "Tambah Kereta",
+  "car_edit": "Edit Kereta",
+
+  "car_name": "Nama Kereta",
+  "car_plate": "Nombor Plat Kereta",
+  "car_type": "Jenis Kereta",
+  "car_driver_name": "Nama Pemandu",
+
+  "car_item_title": "Kereta #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Penjejakan Langsung",
+  "tracking_last_updates": "Kemaskini Terkini",
+
+  "event_title": "Peristiwa Memandu",
+  "event_speeding": "Memecut",
+  "event_hard_braking": "Brekan Keras",
+  "event_aggressive_turns": "Pusingan Agresif",
+  "event_crash": "Kemalangan",
+
+  "event_location": "Di {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/j",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Keterukan",
+  "event_severity_low": "Rendah",
+  "event_severity_medium": "Sederhana",
+  "event_severity_high": "Tinggi",
+  "event_severity_critical": "Kritikal",
+
+  "event_reason": "Sebab",
+  "event_last_speed": "Kelajuan Terakhir Direkod",
+
+  "notification_title": "Pemberitahuan",
+  "notification_today": "Hari Ini",
+  "notification_yesterday": "Semalam",
+  "notification_earlier": "Awal Minggu Ini",
+
+  "notification_fuel_alert": "Amaran Kebocoran Bahan Api!",
+  "notification_fuel_desc": "Kenderaan {car} yang dipandu oleh {driver} melaporkan penurunan mendadak tahap bahan api.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Kemalangan kritikal dikesan!",
+  "notification_crash_desc": "Kenderaan {car} yang dipandu oleh {driver} melaporkan perlanggaran teruk.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Profil",
+  "profile_edit": "Edit Profil Saya",
+  "update_profile": "Kemas Kini Profil",
+  "user_name": "Nama Pengguna",
+
+  "security_title": "Keselamatan",
+  "change_password": "Tukar Kata Laluan",
+
+  "settings_title": "Tetapan",
+  "settings_notifications": "Tetapan Pemberitahuan",
+  "settings_general_notifications": "Pemberitahuan Am",
+  "account_settings": "Tetapan Akaun",
+  "push_notification": "Pemberitahuan Push",
+  "dark_mode": "Mod Gelap Hidup",
+
+  "help_title": "Pusat Bantuan",
+  "help_and_faq": "Bantuan & Soalan Lazim",
+  "help_contact": "Hubungi Kami",
+  "help_faq": "Soalan Lazim",
+  "how_help": "Bagaimana Kami Boleh Membantu Anda?",
+  "on_wh_num": "Pada Nombor WhatsApp",
+
+  "question1": "Bagaimana cara menggunakan BlackBox?",
+  "answer1": "Pasang peranti BlackBox dalam kereta anda, log masuk ke aplikasi, dan mulakan memandu. Aplikasi akan secara automatik merakam dan memaparkan data memandu anda.",
+  "question2": "Berapakah kos untuk menggunakan BlackBox?",
+  "answer2": "Kos bergantung pada pelan dan perkhidmatan yang dipilih. Sila hubungi syarikat untuk butiran harga.",
+  "question3": "Bagaimana cara menghubungi sokongan?",
+  "answer3": "Anda boleh menghubungi sokongan melalui WhatsApp menggunakan nombor rasmi syarikat atau melawat pejabat syarikat semasa waktu pejabat.",
+  "question4": "Bagaimana saya boleh menetapkan semula kata laluan jika saya terlupa?",
+  "answer4": "Gunakan pilihan 'Lupa Kata Laluan' pada skrin log masuk dan ikuti arahan untuk menetapkan semula kata laluan.",
+  "question5": "Adakah terdapat langkah privasi atau keselamatan data?",
+  "answer5": "Ya. Data anda disimpan dengan selamat dan dilindungi, dan tidak dikongsi tanpa kebenaran anda kecuali jika dikehendaki oleh undang-undang.",
+  "question6": "Bolehkah saya menyesuaikan tetapan dalam aplikasi?",
+  "answer6": "Ya. Anda boleh menyesuaikan tetapan yang tersedia seperti pemberitahuan dan keutamaan dalam aplikasi.",
+  "question7": "Bagaimana cara saya memadam akaun saya?",
+  "answer7": "Untuk memadam akaun anda, sila hubungi syarikat melalui WhatsApp atau lawati pejabat syarikat.",
+  "question8": "Bagaimana saya mengakses sejarah analitik saya?",
+  "answer8": "Anda boleh melihat perjalanan lalu dan analitik memandu dalam bahagian Sejarah atau Analitik aplikasi.",
+  "question9": "Bolehkah saya menggunakan aplikasi secara luar talian?",
+  "answer9": "Aplikasi mempunyai fungsi luar talian yang terhad. Sambungan internet diperlukan untuk menyegerakkan data dan mengakses ciri penuh.",
+
+  "terms_title": "Terma dan Syarat",
+  "terms_accept": "Terima terma dan syarat",
+  "terms_full": "1. Penerimaan Terma\nDengan memasang atau menggunakan aplikasi ini, anda bersetuju dengan Terma dan Syarat ini. Jika anda tidak bersetuju, sila hentikan penggunaan aplikasi.\n\n2. Tujuan Aplikasi\nAplikasi ini adalah sistem kotak hitam kenderaan dan telematik yang digunakan untuk memantau prestasi kenderaan dan tingkah laku memandu untuk tujuan maklumat, keselamatan, dan analisis sahaja.\n\n3. Parameter Data yang Dikumpul\nAplikasi boleh mengumpul dan memproses data kenderaan dan memandu, termasuk tetapi tidak terhad kepada:\n\n• Kelajuan kenderaan\n• Penggunaan dan tahap bahan api\n• Pecutan dan nyahpecutan\n• Peristiwa brekan keras dan pecutan pantas\n• Pusingan tajam\n• Data lokasi GPS (latitud dan longitud)\n• Jarak, tempoh dan masa perjalanan\n• Data pengenalan pemandu dan kenderaan\n\nDengan menggunakan aplikasi, anda secara jelas memberi kebenaran untuk pengumpulan parameter ini.\n\n4. Ketersediaan Perkhidmatan\nOperasi berterusan, masa nyata atau bebas ralat aplikasi tidak dijamin disebabkan oleh had teknikal.",
+
+  "validation_password_mismatch": "Kata laluan tidak sepadan",
+  "validation_invalid_phone": "Nombor telefon tidak sah",
+  "validation_incorrect_pin": "PIN salah",
+  "validation_empty_fields": "Sila isi semua medan",
+
+  "empty_no_cars": "Tiada kereta dijumpai",
+  "empty_no_notifications": "Belum ada pemberitahuan",
+  "empty_no_events": "Tiada peristiwa tersedia",
+
+  "status_loading": "Memuatkan...",
+  "status_success": "Operasi berjaya",
+  "status_error": "Sesuatu yang salah berlaku",
+
+  "confirm_delete_car": "Adakah anda pasti mahu memadam kereta ini?",
+  "confirm_reset_password": "Adakah anda pasti mahu menetapkan semula kata laluan anda?",
+
+  "search_hint": "Cari...",
+  "search_no_results": "Tiada hasil dijumpai",
+  "filter": "Penapis",
+  "sort": "Isih",
+
+  "onboarding_title_1": "Selamat Datang",
+  "onboarding_desc_1": "Ke Black Box Manager",
+
+  "onboarding_title_2": "Lihat Kisah Di Sebalik Pemanduan Anda,",
+  "onboarding_desc_2": "Merakam setiap perjalanan, menganalisis setiap batu.",
+
+  "error_email_exists": "Emel ini sudah wujud",
+  "error_wrong_password": "Kata laluan salah",
+  "error_phone_exists": "Nombor telefon ini sudah digunakan",
+  "error_sp_ch": "Kata laluan mesti mengandungi sekurang-kurangnya satu aksara khas",
+  "error_up": "Kata laluan mesti mengandungi sekurang-kurangnya satu huruf besar",
+  "error_low": "Kata laluan mesti mengandungi sekurang-kurangnya satu huruf kecil",
+  "error_num": "Kata laluan mesti mengandungi sekurang-kurangnya satu nombor",
+  "error_required": "Medan ini diperlukan",
+  "error_invalid_email": "Alamat emel tidak sah",
+  "error_password_short": "Kata laluan mesti sekurang-kurangnya {length} aksara",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

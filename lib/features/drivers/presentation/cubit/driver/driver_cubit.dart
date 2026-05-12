@@ -1,6 +1,8 @@
 
+import 'package:black_box/features/drivers/domain/entities/driver_entity.dart';
 import 'package:black_box/features/drivers/domain/usecases/delete_driver_usecase.dart';
 import 'package:black_box/features/drivers/domain/usecases/get_all_dirvers_usecase.dart';
+import 'package:black_box/features/drivers/domain/usecases/show_one_driver.dart';
 import 'package:black_box/features/drivers/domain/usecases/update_driver_usecase.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
 import 'package:bloc/bloc.dart';
@@ -11,11 +13,12 @@ import '../../../domain/usecases/add_driver_usecase.dart';
 
 class DriverCubit extends Cubit<DriverState>{
   GetAllDriversUseCase getAllDriversUseCase;
+  ShowOneDriverUseCase showOneDriverUseCase;
   AddDriverUseCase addDriverUseCase;
   UpdateDriverUseCase updateDriverUseCase;
   DeleteDriverUseCase deleteDriverUseCase;
   NetworkInfo network = NetworkInfoImpl();
-  DriverCubit(this.getAllDriversUseCase,this.addDriverUseCase,this.updateDriverUseCase,this.deleteDriverUseCase) : super(DriverInitial());
+  DriverCubit(this.getAllDriversUseCase,this.addDriverUseCase,this.updateDriverUseCase,this.deleteDriverUseCase,this.showOneDriverUseCase) : super(DriverInitial());
 
 
 
@@ -71,6 +74,23 @@ class DriverCubit extends Cubit<DriverState>{
     try{
       await deleteDriverUseCase(id);
       emit(DriverDeleted());
+    } on DioException catch (e) {
+      if (await network.isConnected) {
+        if (e.response != null) {
+          emit(DriverFailure("${e.response}"));
+        }
+      } else {
+        emit(DriverFailure("No Internet connection"));
+      }
+    }
+  }
+
+
+  showOneDriver(int id) async{
+    emit(DriverLoading());
+    try{
+      DriverEntity driver = await showOneDriverUseCase(id);
+      emit(OneDriverSuccess(driver));
     } on DioException catch (e) {
       if (await network.isConnected) {
         if (e.response != null) {

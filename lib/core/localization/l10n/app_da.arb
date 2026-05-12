@@ -1,0 +1,242 @@
+{
+  "@@locale": "da",
+
+  "app_title": "BlackBox App",
+
+  "common_yes": "Ja",
+  "common_no": "Nej",
+  "common_cancel": "Annuller",
+  "common_save": "Gem",
+  "common_save_changes": "Gem Ændringer",
+  "common_continue": "Fortsæt",
+  "common_next": "Næste",
+
+  "auth_login": "Log ind",
+  "auth_space_login": "Log ind",
+  "auth_logout": "Log ud",
+  "auth_confirm_logout": "Er du sikker på, at du vil logge ud?",
+  "auth_signup": "Tilmeld dig",
+  "auth_create_account": "Opret Konto",
+  "auth_already_have_account": "Har du allerede en konto? ",
+  "auth_no_account": "Har du ikke en konto?",
+  "auth_forgot_password": "Glemt Adgangskode?",
+  "auth_reset_password": "Nulstil Adgangskode?",
+  "auth_change_password": "Skift Adgangskode",
+  "auth_continue": "Ved at fortsætte accepterer du\n",
+  "auth_terms": "Vilkår for Brug og Privatlivspolitik",
+  "auth_email": "E-mail",
+  "auth_password": "Adgangskode",
+  "auth_confirm_password": "Bekræft Adgangskode",
+  "auth_new_password": "Ny Adgangskode",
+  "auth_confirm_new_password": "Bekræft Ny Adgangskode",
+  "auth_enter_email": "Indtast e-mailadresse",
+  "auth_password_hint": "Indtast din adgangskode",
+  "full_name": "Fuldt Navn",
+  "email_hint": "eksempel@gmail.com",
+  "name_hint": "Lars Nielsen",
+
+  "required_name": "Fuldt navn er påkrævet",
+  "required_email": "E-mail er påkrævet",
+  "email_end": "E-mail skal slutte med @gmail.com",
+  "required_password": "Adgangskode er påkrævet",
+  "required_confirm_password": "Bekræftelse af adgangskode er påkrævet",
+  "password_do_not_match": "Adgangskoderne stemmer ikke overens",
+  "min_password": "Adgangskoden skal have mindst 8 tegn og indeholde tal",
+  "send_verification_code": "Send Bekræftelseskode",
+  "password_changed_successfully": "Adgangskoden er\nÆndret",
+  "forget_password_title": "Indtast den e-mail, der er knyttet til din konto, og vi sender dig en sikkerheds-PIN til nulstilling af adgangskode.",
+
+  "auth_security_pin": "Sikkerheds-PIN",
+  "auth_enter_pin": "Indtast sikkerheds-PIN",
+  "verify": "Bekræft",
+  "auth_resend_pin": "Send igen om {seconds}s",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Hjem",
+  "home_welcome": "Hej, Velkommen Tilbage",
+  "home_good_morning": "God Morgen",
+  "home_looks_good": "Ser\nGodt Ud",
+  "home_safety_score": "Oversigt over Sikkerhedspoint",
+  "home_total_accidents": "Samlet Antal Ulykker",
+  "total_active_cars": "Samlet Aktive Biler",
+  "total_cars": "Samlet Biler",
+
+  "home_active_cars": "{percentage}% af dine biler er aktive",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Biler",
+  "car_view_all": "Vis Biler",
+  "car_add": "Tilføj Bil",
+  "car_edit": "Rediger Bil",
+
+  "car_name": "Bilnavn",
+  "car_plate": "Nummerplade",
+  "car_type": "Biltype",
+  "car_driver_name": "Chaufførens Navn",
+
+  "car_item_title": "Bil #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Live-sporing",
+  "tracking_last_updates": "Seneste Opdateringer",
+
+  "event_title": "Kørehændelser",
+  "event_speeding": "Hastighedsovertrædelse",
+  "event_hard_braking": "Hård Opbremsning",
+  "event_aggressive_turns": "Aggressive Sving",
+  "event_crash": "Ulykke",
+
+  "event_location": "I {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/t",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Alvorlighed",
+  "event_severity_low": "Lav",
+  "event_severity_medium": "Middel",
+  "event_severity_high": "Høj",
+  "event_severity_critical": "Kritisk",
+
+  "event_reason": "Årsag",
+  "event_last_speed": "Sidst Registrerede Hastighed",
+
+  "notification_title": "Notifikationer",
+  "notification_today": "I dag",
+  "notification_yesterday": "I går",
+  "notification_earlier": "Tidligere Denne Uge",
+
+  "notification_fuel_alert": "Brændstoflek Advarsel!",
+  "notification_fuel_desc": "Køretøj {car} kørt af {driver} rapporterede et hurtigt fald i brændstofniveauet.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Kritisk kollision registreret!",
+  "notification_crash_desc": "Køretøj {car} kørt af {driver} rapporterede en alvorlig kollision.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Profil",
+  "profile_edit": "Rediger Min Profil",
+  "update_profile": "Opdater Profil",
+  "user_name": "Brugernavn",
+
+  "security_title": "Sikkerhed",
+  "change_password": "Skift Adgangskode",
+
+  "settings_title": "Indstillinger",
+  "settings_notifications": "Notifikationsindstillinger",
+  "settings_general_notifications": "Generel Notifikation",
+  "account_settings": "Kontoindstillinger",
+  "push_notification": "Push-notifikationer",
+  "dark_mode": "Mørk Tilstand Til",
+
+  "help_title": "Hjælpecenter",
+  "help_and_faq": "Hjælp & FAQ",
+  "help_contact": "Kontakt Os",
+  "help_faq": "Ofte Stillede Spørgsmål",
+  "how_help": "Hvordan Kan Vi Hjælpe Dig?",
+  "on_wh_num": "På WhatsApp-nummer",
+
+  "question1": "Hvordan bruger jeg BlackBox?",
+  "answer1": "Installer BlackBox-enheden i din bil, log ind på appen og begynd at køre. Appen registrerer og viser automatisk dine køredata.",
+  "question2": "Hvad koster det at bruge BlackBox?",
+  "answer2": "Prisen afhænger af det valgte abonnement og tjenester. Kontakt virksomheden for prisoplysninger.",
+  "question3": "Hvordan kontakter jeg support?",
+  "answer3": "Du kan kontakte support via WhatsApp med virksomhedens officielle nummer eller besøge virksomhedskontoret i åbningstiden.",
+  "question4": "Hvordan kan jeg nulstille min adgangskode, hvis jeg glemmer den?",
+  "answer4": "Brug indstillingen 'Glemt adgangskode' på loginskærmen og følg instruktionerne for at nulstille din adgangskode.",
+  "question5": "Er der privatlivs- eller datasikkerhedsforanstaltninger?",
+  "answer5": "Ja. Dine data opbevares og beskyttes sikkert og deles ikke uden din tilladelse, medmindre det er påkrævet ved lov.",
+  "question6": "Kan jeg tilpasse indstillinger i appen?",
+  "answer6": "Ja. Du kan tilpasse tilgængelige indstillinger som notifikationer og præferencer i appen.",
+  "question7": "Hvordan kan jeg slette min konto?",
+  "answer7": "For at slette din konto skal du kontakte virksomheden via WhatsApp eller besøge virksomhedskontoret.",
+  "question8": "Hvordan får jeg adgang til min analysehistorik?",
+  "answer8": "Du kan se dine tidligere ture og køreanalyser i afsnittet Historik eller Analyser i appen.",
+  "question9": "Kan jeg bruge appen offline?",
+  "answer9": "Appen har begrænset offline-funktionalitet. Der kræves en internetforbindelse for at synkronisere data og få adgang til alle funktioner.",
+
+  "terms_title": "Vilkår og Betingelser",
+  "terms_accept": "Accepter vilkår og betingelser",
+  "terms_full": "1. Accept af Vilkår\nVed at installere eller bruge denne app accepterer du disse Vilkår og Betingelser. Hvis du ikke accepterer, bedes du ophøre med at bruge appen.\n\n2. Appens Formål\nDenne app er et køretøjs-blackbox og telematikssystem, der bruges til at overvåge køretøjets ydeevne og køreadfærd udelukkende til informations-, sikkerheds- og analytiske formål.\n\n3. Indsamlede Dataparametre\nAppen kan indsamle og behandle køretøjs- og køredata, herunder men ikke begrænset til:\n\n• Køretøjshastighed\n• Brændstofforbrug og brændstofniveau\n• Acceleration og deceleration\n• Hård opbremsning og hurtig acceleration\n• Skarpe sving\n• GPS-positionsdata (bredde- og længdegrad)\n• Rejseafstand, varighed og tidspunkt\n• Fører- og køretøjsidentifikationsdata\n\nVed at bruge appen giver du udtrykkeligt samtykke til indsamlingen af disse parametre.\n\n4. Tjenestetilgængelighed\nKontinuerlig, realtids- eller fejlfri drift af appen er ikke garanteret på grund af tekniske begrænsninger.",
+
+  "validation_password_mismatch": "Adgangskoderne stemmer ikke overens",
+  "validation_invalid_phone": "Ugyldigt telefonnummer",
+  "validation_incorrect_pin": "Forkert PIN",
+  "validation_empty_fields": "Udfyld venligst alle felter",
+
+  "empty_no_cars": "Ingen biler fundet",
+  "empty_no_notifications": "Ingen notifikationer endnu",
+  "empty_no_events": "Ingen hændelser tilgængelige",
+
+  "status_loading": "Indlæser...",
+  "status_success": "Handling lykkedes",
+  "status_error": "Noget gik galt",
+
+  "confirm_delete_car": "Er du sikker på, at du vil slette denne bil?",
+  "confirm_reset_password": "Er du sikker på, at du vil nulstille din adgangskode?",
+
+  "search_hint": "Søg...",
+  "search_no_results": "Ingen resultater fundet",
+  "filter": "Filtrer",
+  "sort": "Sortér",
+
+  "onboarding_title_1": "Velkommen",
+  "onboarding_desc_1": "Til Black Box Manager",
+
+  "onboarding_title_2": "Se Historien Bag Din Køretur,",
+  "onboarding_desc_2": "Registrerer hver rejse, analyserer hver kilometer.",
+
+  "error_email_exists": "Denne e-mailadresse findes allerede",
+  "error_wrong_password": "Forkert adgangskode",
+  "error_phone_exists": "Dette telefonnummer er allerede i brug",
+  "error_sp_ch": "Adgangskoden skal indeholde mindst ét specialtegn",
+  "error_up": "Adgangskoden skal indeholde mindst ét stort bogstav",
+  "error_low": "Adgangskoden skal indeholde mindst ét lille bogstav",
+  "error_num": "Adgangskoden skal indeholde mindst ét tal",
+  "error_required": "Dette felt er påkrævet",
+  "error_invalid_email": "Ugyldig e-mailadresse",
+  "error_password_short": "Adgangskoden skal have mindst {length} tegn",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

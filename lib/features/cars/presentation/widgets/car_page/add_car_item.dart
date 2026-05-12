@@ -1,6 +1,9 @@
 import 'package:black_box/features/cars/presentation/widgets/car_page/dialogues/add_car_dialogue.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/constants/global.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddCarItem extends StatelessWidget {
   AddCarItem({super.key,required this.color});
@@ -25,20 +28,20 @@ class AddCarItem extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 97.63,
-            width: 105,
+            height: width * .225,
+            width: width * .235,
             padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
               color: color,
               borderRadius: BorderRadius.circular(20),
             ),
-            child: Image.asset("assets/plus.png", width: 39, height: 39),
+            child: Image.asset("assets/plus.png", width: width * .09, height: width * .045),
           ),
           const SizedBox(height: 5),
-          const Text(
-            "Add Car",
+          Text(
+            AppLocalizations.of(context)!.car_add,
             style: TextStyle(
-              color: Color(0xFF004444),
+              color: Theme.of(context).colorScheme.onSurface,
               fontWeight: FontWeight.bold,
               fontSize: 12,
             ),

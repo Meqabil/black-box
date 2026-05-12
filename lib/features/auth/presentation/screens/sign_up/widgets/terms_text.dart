@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../../core/constants/colors.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class TermsText extends StatelessWidget {
   const TermsText({super.key,this.onTap});
   final void Function()? onTap;
@@ -12,12 +11,12 @@ class TermsText extends StatelessWidget {
       child: Center(
         child: Text.rich(
           TextSpan(
-            text: "By continuing, you agree to\n",
-            style: TextStyle(fontSize: 14, color: Colors.grey[800]),
+            text: AppLocalizations.of(context)!.auth_continue,
+            style: TextStyle(fontSize: 14, color: Theme.of(context).colorScheme.onSurface),
             children: [
               TextSpan(
-                text: "Terms of Use and Privacy Policy.",
-                style: TextStyle(color: mainRedColor,fontSize: 14, fontWeight: FontWeight.bold,height: 0.6),
+                text: AppLocalizations.of(context)!.auth_terms,
+                style: TextStyle(color: AppColor.mainRedColor,fontSize: 14, fontWeight: FontWeight.bold,height: 0.6),
               ),
             ],
           ),

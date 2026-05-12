@@ -1,0 +1,274 @@
+{
+  "@@locale": "en",
+
+  "app_title": "BlackBox App",
+
+  "common_yes": "Yes",
+  "common_no": "No",
+  "common_cancel": "Cancel",
+  "common_save": "Save",
+  "common_save_changes": "Save Changes",
+  "common_continue": "Continue",
+  "common_next": "Next",
+
+  "auth_login": "Login",
+  "auth_space_login": "Log In",
+  "auth_logout": "Logout",
+  "auth_confirm_logout": "Are you sure you want to log out?",
+  "auth_signup": "Sign Up",
+  "auth_create_account": "Create Account",
+  "auth_already_have_account": "Already have an account? ",
+  "auth_no_account": "Don’t have an account?",
+  "auth_forgot_password": "Forgot Password?",
+  "auth_reset_password": "Reset Password?",
+  "auth_change_password": "Change Password",
+  "auth_continue": "By continuing, you agree to\n",
+  "auth_terms": "Terms of Use and Privacy Policy",
+  "auth_email": "Email",
+  "auth_password": "Password",
+  "auth_confirm_password": "Confirm Password",
+  "auth_new_password": "New Password",
+  "auth_confirm_new_password": "Confirm New Password",
+  "auth_enter_email": "Enter email address",
+  "auth_password_hint": "Enter your password",
+  "full_name": "Full Name",
+  "email_hint": "example@gmail.com",
+  "name_hint": "John Doe",
+
+  "required_name": "Full Name is required",
+  "required_email": "Email is required",
+  "email_end": "Email must end with @gmail.com",
+  "required_password": "Password is required",
+  "required_confirm_password": "Confirm Password is required",
+  "password_do_not_match": "Passwords do not match",
+  "min_password": "Password must be at least 8 characters and contain numbers",
+  "send_verification_code": "Send Verification Code",
+  "password_changed_successfully": "Password Has Been\nChanged Successfully",
+  "forget_password_title": "Enter the email associated with your account and we'll send you password reset Security Pin.",
+
+  "auth_security_pin": "Security Pin",
+  "auth_enter_pin": "Enter security pin",
+  "verify": "Verify",
+  "auth_resend_pin": "Send again in {seconds}s",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Home",
+  "home_welcome": "Hi, Welcome Back",
+  "home_good_morning": "Good Morning",
+  "home_looks_good": "Looks\nGood",
+  "home_safety_score": "Safety Score Overview",
+  "home_total_accidents": "Total accidents",
+  "total_active_cars": "Total Active Cars",
+  "total_cars": "Total Cars",
+
+
+  "home_active_cars": "{percentage}% of your cars are active",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Cars",
+  "car_view_all": "View Cars",
+  "car_add": "Add Car",
+  "car_edit": "Edit Car",
+
+  "car_name": "Car Name",
+  "car_plate": "Plate Number",
+  "car_type": "Car Class",
+  "car_driver_name": "Driver Name",
+
+  "car_item_title": "Car #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Live Tracking",
+  "tracking_last_updates": "Last Updates",
+
+  "event_title": "Driving Events",
+  "event_speeding": "Speeding",
+  "event_hard_braking": "Hard Braking",
+  "event_aggressive_turns": "Aggressive Turns",
+  "event_crash": "Crash",
+
+  "event_location": "In {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/h",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Severity",
+  "event_severity_low": "Low",
+  "event_severity_medium": "Medium",
+  "event_severity_high": "High",
+  "event_severity_critical": "Critical",
+
+  "event_reason": "Reason",
+  "event_last_speed": "Last Recorded Speed",
+
+  "notification_title": "Notifications",
+  "notification_today": "Today",
+  "notification_yesterday": "Yesterday",
+  "notification_earlier": "Earlier This Week",
+
+  "notification_fuel_alert": "Fuel Leak Alert!",
+  "notification_fuel_desc": "Vehicle {car} driven by {driver} reported a rapid drop in fuel level.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Critical crash detected!",
+  "notification_crash_desc": "Vehicle {car} driven by {driver} reported a severe collision.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Profile",
+  "profile_edit": "Edit My Profile",
+  "update_profile": "Update Profile",
+  "user_name": "User Name",
+
+  "security_title": "Security",
+  "change_password": "Change Password",
+
+  "settings_title": "Settings",
+  "settings_notifications": "Notification Settings",
+  "settings_general_notifications": "General Notification",
+  "account_settings": "Account Settings",
+  "push_notification": "Push Notifications",
+  "dark_mode": "Turn Dark Mode",
+
+  "help_title": "Help Center",
+  "help_and_faq": "Help & FAQS",
+  "help_contact": "Contact Us",
+  "help_faq": "FAQ",
+  "how_help": "How Can We Help You?",
+  "on_wh_num": "On Whatsapp Number",
+  "language": "Language",
+
+
+  "question1": "How to use BlackBox?",
+  "answer1": "Install the BlackBox device in your car, log in to the app, and start driving. The app will automatically record and display your driving data.",
+  "question2": "How much does it cost to use BlackBox?",
+  "answer2": "The cost depends on the selected plan and services. Please contact the company for pricing details.",
+  "question3": "How to contact support?",
+  "answer3": "You can contact support via WhatsApp using the official company number or by visiting the company office during working hours.",
+  "question4": "How can I reset my password if I forget it?",
+  "answer4": "Use the 'Forgot Password' option on the login screen and follow the instructions to reset your password.",
+  "question5": "Are there any privacy or data security measures in place?",
+  "answer5": "Yes. Your data is securely stored and protected, and it is not shared without your permission except when required by law.",
+  "question6": "Can I customize settings within the application?",
+  "answer6": "Yes. You can customize available settings such as notifications and preferences within the app.",
+  "question7": "How can I delete my account?",
+  "answer7": "To delete your account, please contact the company via WhatsApp or visit the company office.",
+  "question8": "How do I access my analytics history?",
+  "answer8": "You can view your past trips and driving analytics in the History or Analytics section of the app.",
+  "question9": "Can I use the app offline?",
+  "answer9": "The app has limited offline functionality. An internet connection is required to sync data and access full features.",
+
+
+
+
+  "terms_title": "Terms and Conditions",
+  "terms_accept": "Accept terms and conditions",
+  "terms_full": "1. Acceptance of Terms\nBy installing or using this application, you agree to these Terms and Conditions. If you do not agree, please discontinue use of the app.\n\n2. Purpose of the Application\nThis application is a vehicle black box and telematics system used to monitor vehicle performance and driving behavior for informational, safety, and analytical purposes only.\n\n3. Data Parameters Collected\nThe application may collect and process vehicle and driving data, including but not limited to:\n\n• Vehicle speed\n• Fuel consumption and fuel level\n• Acceleration and deceleration\n• Harsh braking and rapid acceleration events\n• Sharp cornering\n• GPS location data (latitude and longitude)\n• Trip distance, duration, and time\n• Driver and vehicle identification data\n\nBy using the app, you explicitly consent to the collection of these parameters.\n\n4. Service Availability\nContinuous, real-time, or error-free operation of the app is not guaranteed due to technical limitations.",
+
+
+  "validation_password_mismatch": "Passwords do not match",
+  "validation_invalid_phone": "Invalid phone number",
+  "validation_incorrect_pin": "Incorrect PIN",
+  "validation_empty_fields": "Please fill all fields",
+
+  "empty_no_cars": "No cars found",
+  "empty_no_notifications": "No notifications yet",
+  "empty_no_events": "No events available",
+
+  "status_loading": "Loading...",
+  "status_success": "Operation successful",
+  "status_error": "Something went wrong",
+
+  "confirm_delete_car": "Do you really want to delete this car with plate number ",
+  "confirm_reset_password": "Are you sure you want to reset your password?",
+
+  "search": "Search",
+  "search_hint": "Search...",
+  "search_no_results": "No results found",
+  "filter": "Filter",
+  "sort": "Sort",
+
+  "onboarding_title_1": "Welcome",
+  "onboarding_desc_1": "To Black Box Manager",
+
+  "onboarding_title_2": "See the Story Behind Your Drive,",
+  "onboarding_desc_2": "Recording every journey, analyzing every mile.",
+
+
+
+
+
+
+
+
+
+  "delete_car": "Delete Car",
+  "sedan": "Sedan",
+  "heavy_duty": "Heavy Duty",
+  "current_password": "Current Password",
+  "password_requirement": "Must be at least 8 characters long and contain both letters and numbers.",
+  "current_password_is_not_correct": "The current password is incorrect.",
+
+
+
+  "error_email_exists": "This email already exists",
+  "error_wrong_password": "Incorrect password",
+  "error_phone_exists": "This phone number is already used",
+  "error_sp_ch": "Password must contain at least one special character",
+  "error_up": "Password must contain at least one uppercase letter",
+  "error_low": "Password must contain at least one lowercase letter",
+  "error_num": "Password must contain at least one number",
+  "error_required": "This field is required",
+  "error_invalid_email": "Invalid email address",
+  "error_password_short": "Password must be at least {length} characters",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+
+
+
+
+
+
+
+}

@@ -5,15 +5,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../core/constants/colors.dart';
 import '../../../../../../core/constants/global.dart';
 import '../../../../../../core/ui/snackbar/exception_snackbar.dart';
-import '../../../../../home/screens/bnv.dart';
-import '../../../bloc/auth/login/login_cubit.dart';
-import '../../../bloc/auth/login/login_state.dart';
+import '../../../../../../bnv.dart';
+import '../../../cubit/auth/login/login_cubit.dart';
+import '../../../cubit/auth/login/login_state.dart';
 import '../../functions/is_valid_gmail.dart';
 import 'bottom_register_text.dart';
 import 'form_text_field.dart';
 import '../../../widgets/input_label.dart';
 import 'login_button.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class LoginForm extends StatefulWidget {
   LoginForm({
     super.key,
@@ -42,29 +43,30 @@ class _LoginFormState extends State<LoginForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 20),
-          InputLabel(text:"Username Or Email",textColor: widget.textColor),
+          InputLabel(text: AppLocalizations.of(context)!.auth_email,textColor: widget.textColor),
           const SizedBox(height: 8),
           FormTextField(
-            hint: "example@gmail.com",
+
+            hint: AppLocalizations.of(context)!.email_hint,
             controller: widget.emailController,
-            textFieldColor: textFieldColor,
+            textFieldColor: AppColor.textFieldColor,
             validator: (value) {
-              if (value == null || value.isEmpty) return "Email is required";
-              if (!isValidGmail(value)) return "Email must end with @gmail.com";
+              if (value == null || value.isEmpty) return AppLocalizations.of(context)!.required_email;
+              if (!isValidGmail(value)) return AppLocalizations.of(context)!.email_end;
               return null;
             },
             autoValidateMode: AutovalidateMode.onUserInteraction,
           ),
           const SizedBox(height: 30),
-          InputLabel(text:"Password",textColor: widget.textColor),
+          InputLabel(text: AppLocalizations.of(context)!.auth_password,textColor: widget.textColor),
           const SizedBox(height: 8),
           PasswordField(
             controller: widget.passwordController,
             isPasswordVisible: widget.isPasswordVisible,
-            textFieldColor: textFieldColor,
+            textFieldColor: AppColor.textFieldColor,
             onPressed: () => setState(() => widget.isPasswordVisible = !widget.isPasswordVisible),
             validator: (value) {
-              if (value == null || value.isEmpty) return "Password is required";
+              if (value == null || value.isEmpty) return AppLocalizations.of(context)!.required_password;
               return null;
             },
             autoValidateMode: AutovalidateMode.onUserInteraction,
@@ -90,7 +92,7 @@ class _LoginFormState extends State<LoginForm> {
             },
             builder: (context, st) {
               return LoginButton(
-                  backgroundColor: mainRedColor,
+                  backgroundColor: Theme.of(context).colorScheme.primary,
                   onPressed: () {
                     if (widget.formKey.currentState!.validate()) {
                       context.read<LoginCubit>().login(widget.emailController.text.trim(),widget.passwordController.text.trim());

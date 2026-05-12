@@ -1,36 +1,37 @@
-
 import 'package:flutter/material.dart';
-
 import '../../../../../core/constants/colors.dart';
-import '../../../../../core/constants/messages.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../../../../../core/constants/global.dart';
 AlertDialog termsDialog({required BuildContext context,required bool checked, void Function()? onTap,required void Function(bool?)? onChanged}){
   return AlertDialog(
-    titlePadding: EdgeInsets.only(top: 8,left: 8,right: 4),
+    titlePadding: EdgeInsets.only(top: width * .025,left: width * .025,right: width * .014),
+    backgroundColor: Theme.of(context).colorScheme.secondary,
     title: Row(
       children: [
-        Text("\nTerms and Conditions",style: TextStyle(color: mainRedColor,fontSize: 18,fontWeight: FontWeight.bold),),
+        Text(AppLocalizations.of(context)!.terms_title,style: TextStyle(color: AppColor.mainRedColor,fontSize: width * .043,fontWeight: FontWeight.bold),),
         Spacer(),
         IconButton(
           onPressed: (){
             Navigator.of(context).pop();
           },
-          icon: Icon(Icons.close_rounded,color: mainRedColor,size: 30,),
+          icon: Icon(Icons.close_rounded,color: AppColor.mainRedColor,size: width * .069,),
         )
       ],
     ),
-    content: Text(AppMessages.signUpTerms,style: TextStyle(fontSize: 12),),
+    content: Text(
+      AppLocalizations.of(context)!.terms_full,
+      style: TextStyle(fontSize: width * .0268),
+    ),
     actions: [
       InkWell(
         onTap: onTap,
         child: Row(
           children: [
             Checkbox(
-
               value: checked,
               onChanged: onChanged,
             ),
-            Text('Accept terms and conditions',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),overflow: TextOverflow.ellipsis,)
+            Text(AppLocalizations.of(context)!.terms_accept,style: TextStyle(fontSize: width * .021,fontWeight: FontWeight.bold),overflow: TextOverflow.ellipsis,)
           ],
         ),
       ),

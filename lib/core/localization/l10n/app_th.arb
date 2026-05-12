@@ -1,0 +1,242 @@
+{
+  "@@locale": "th",
+
+  "app_title": "แอป BlackBox",
+
+  "common_yes": "ใช่",
+  "common_no": "ไม่ใช่",
+  "common_cancel": "ยกเลิก",
+  "common_save": "บันทึก",
+  "common_save_changes": "บันทึกการเปลี่ยนแปลง",
+  "common_continue": "ดำเนินการต่อ",
+  "common_next": "ถัดไป",
+
+  "auth_login": "เข้าสู่ระบบ",
+  "auth_space_login": "Log In",
+  "auth_logout": "ออกจากระบบ",
+  "auth_confirm_logout": "คุณแน่ใจหรือไม่ว่าต้องการออกจากระบบ?",
+  "auth_signup": "สมัครสมาชิก",
+  "auth_create_account": "สร้างบัญชี",
+  "auth_already_have_account": "มีบัญชีอยู่แล้ว? ",
+  "auth_no_account": "ยังไม่มีบัญชี?",
+  "auth_forgot_password": "ลืมรหัสผ่าน?",
+  "auth_reset_password": "รีเซ็ตรหัสผ่าน?",
+  "auth_change_password": "เปลี่ยนรหัสผ่าน",
+  "auth_continue": "การดำเนินการต่อถือว่าคุณยอมรับ\n",
+  "auth_terms": "ข้อกำหนดการใช้งานและนโยบายความเป็นส่วนตัว",
+  "auth_email": "อีเมล",
+  "auth_password": "รหัสผ่าน",
+  "auth_confirm_password": "ยืนยันรหัสผ่าน",
+  "auth_new_password": "รหัสผ่านใหม่",
+  "auth_confirm_new_password": "ยืนยันรหัสผ่านใหม่",
+  "auth_enter_email": "กรอกที่อยู่อีเมล",
+  "auth_password_hint": "กรอกรหัสผ่านของคุณ",
+  "full_name": "ชื่อ-นามสกุล",
+  "email_hint": "example@gmail.com",
+  "name_hint": "John Doe",
+
+  "required_name": "ต้องระบุชื่อ-นามสกุล",
+  "required_email": "ต้องระบุอีเมล",
+  "email_end": "อีเมลต้องลงท้ายด้วย @gmail.com",
+  "required_password": "ต้องระบุรหัสผ่าน",
+  "required_confirm_password": "ต้องยืนยันรหัสผ่าน",
+  "password_do_not_match": "รหัสผ่านไม่ตรงกัน",
+  "min_password": "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษรและมีตัวเลข",
+  "send_verification_code": "ส่งรหัสยืนยัน",
+  "password_changed_successfully": "เปลี่ยนรหัสผ่าน\nสำเร็จแล้ว",
+  "forget_password_title": "กรอกอีเมลที่เชื่อมโยงกับบัญชีของคุณ เราจะส่ง PIN ความปลอดภัยสำหรับรีเซ็ตรหัสผ่านให้คุณ",
+
+  "auth_security_pin": "PIN ความปลอดภัย",
+  "auth_enter_pin": "กรอก PIN ความปลอดภัย",
+  "verify": "ยืนยัน",
+  "auth_resend_pin": "ส่งใหม่ใน {seconds} วินาที",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "หน้าหลัก",
+  "home_welcome": "สวัสดี ยินดีต้อนรับกลับ",
+  "home_good_morning": "สวัสดีตอนเช้า",
+  "home_looks_good": "ดูเหมือน\nจะดี",
+  "home_safety_score": "ภาพรวมคะแนนความปลอดภัย",
+  "home_total_accidents": "อุบัติเหตุทั้งหมด",
+  "total_active_cars": "รถที่ใช้งานอยู่ทั้งหมด",
+  "total_cars": "รถทั้งหมด",
+
+  "home_active_cars": "รถของคุณ {percentage}% อยู่ในสถานะใช้งาน",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "รถยนต์",
+  "car_view_all": "ดูรถทั้งหมด",
+  "car_add": "เพิ่มรถ",
+  "car_edit": "แก้ไขรถ",
+
+  "car_name": "ชื่อรถ",
+  "car_plate": "ป้ายทะเบียนรถ",
+  "car_type": "ประเภทรถ",
+  "car_driver_name": "ชื่อผู้ขับขี่",
+
+  "car_item_title": "รถ #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "ติดตามแบบเรียลไทม์",
+  "tracking_last_updates": "อัปเดตล่าสุด",
+
+  "event_title": "เหตุการณ์การขับขี่",
+  "event_speeding": "ขับเร็วเกินกำหนด",
+  "event_hard_braking": "เบรกกระทันหัน",
+  "event_aggressive_turns": "เลี้ยวกะทันหัน",
+  "event_crash": "เกิดอุบัติเหตุ",
+
+  "event_location": "ที่ {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} กม./ชม.",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "ระดับความรุนแรง",
+  "event_severity_low": "ต่ำ",
+  "event_severity_medium": "ปานกลาง",
+  "event_severity_high": "สูง",
+  "event_severity_critical": "วิกฤติ",
+
+  "event_reason": "เหตุผล",
+  "event_last_speed": "ความเร็วที่บันทึกครั้งล่าสุด",
+
+  "notification_title": "การแจ้งเตือน",
+  "notification_today": "วันนี้",
+  "notification_yesterday": "เมื่อวาน",
+  "notification_earlier": "ต้นสัปดาห์นี้",
+
+  "notification_fuel_alert": "แจ้งเตือนน้ำมันรั่ว!",
+  "notification_fuel_desc": "รถ {car} ที่ขับโดย {driver} มีรายงานว่าระดับน้ำมันลดลงอย่างรวดเร็ว",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "ตรวจพบอุบัติเหตุรุนแรง!",
+  "notification_crash_desc": "รถ {car} ที่ขับโดย {driver} มีรายงานการชนอย่างรุนแรง",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "โปรไฟล์",
+  "profile_edit": "แก้ไขโปรไฟล์ของฉัน",
+  "update_profile": "อัปเดตโปรไฟล์",
+  "user_name": "ชื่อผู้ใช้",
+
+  "security_title": "ความปลอดภัย",
+  "change_password": "เปลี่ยนรหัสผ่าน",
+
+  "settings_title": "การตั้งค่า",
+  "settings_notifications": "การตั้งค่าการแจ้งเตือน",
+  "settings_general_notifications": "การแจ้งเตือนทั่วไป",
+  "account_settings": "การตั้งค่าบัญชี",
+  "push_notification": "การแจ้งเตือนแบบพุช",
+  "dark_mode": "โหมดมืดเปิดอยู่",
+
+  "help_title": "ศูนย์ช่วยเหลือ",
+  "help_and_faq": "ช่วยเหลือ & คำถามที่พบบ่อย",
+  "help_contact": "ติดต่อเรา",
+  "help_faq": "คำถามที่พบบ่อย",
+  "how_help": "เราจะช่วยคุณได้อย่างไร?",
+  "on_wh_num": "ผ่านเบอร์ WhatsApp",
+
+  "question1": "วิธีใช้ BlackBox?",
+  "answer1": "ติดตั้งอุปกรณ์ BlackBox ในรถของคุณ ล็อกอินเข้าสู่แอป แล้วเริ่มขับรถ แอปจะบันทึกและแสดงข้อมูลการขับขี่โดยอัตโนมัติ",
+  "question2": "การใช้ BlackBox มีค่าใช้จ่ายเท่าไหร่?",
+  "answer2": "ค่าใช้จ่ายขึ้นอยู่กับแพ็คเกจและบริการที่เลือก โปรดติดต่อบริษัทเพื่อสอบถามรายละเอียดราคา",
+  "question3": "ติดต่อฝ่ายสนับสนุนได้อย่างไร?",
+  "answer3": "คุณสามารถติดต่อผ่าน WhatsApp ด้วยเบอร์ทางการของบริษัท หรือมาที่สำนักงานบริษัทในเวลาทำการ",
+  "question4": "ลืมรหัสผ่าน จะรีเซ็ตอย่างไร?",
+  "answer4": "ใช้ตัวเลือก 'ลืมรหัสผ่าน' บนหน้าจอเข้าสู่ระบบ แล้วทำตามขั้นตอน",
+  "question5": "มีมาตรการคุ้มครองความเป็นส่วนตัวและข้อมูลหรือไม่?",
+  "answer5": "มี ข้อมูลของคุณถูกเก็บรักษาอย่างปลอดภัยและไม่ถูกเปิดเผยโดยไม่ได้รับอนุญาตจากคุณ ยกเว้นตามที่กฎหมายกำหนด",
+  "question6": "ฉันสามารถปรับแต่งการตั้งค่าในแอปได้หรือไม่?",
+  "answer6": "ได้ คุณสามารถปรับแต่งการตั้งค่าที่มี เช่น การแจ้งเตือนและความชอบต่างๆ ได้ในแอป",
+  "question7": "ฉันจะลบบัญชีได้อย่างไร?",
+  "answer7": "เพื่อลบบัญชี โปรดติดต่อบริษัทผ่าน WhatsApp หรือมาที่สำนักงานบริษัท",
+  "question8": "ฉันจะเข้าถึงประวัติการวิเคราะห์ได้อย่างไร?",
+  "answer8": "คุณสามารถดูการเดินทางในอดีตและการวิเคราะห์การขับขี่ได้ในส่วนประวัติหรือการวิเคราะห์ของแอป",
+  "question9": "ฉันสามารถใช้แอปแบบออฟไลน์ได้หรือไม่?",
+  "answer9": "แอปมีฟังก์ชันออฟไลน์จำกัด ต้องเชื่อมต่ออินเทอร์เน็ตเพื่อซิงค์ข้อมูลและใช้งานฟีเจอร์ทั้งหมด",
+
+  "terms_title": "ข้อกำหนดและเงื่อนไข",
+  "terms_accept": "ยอมรับข้อกำหนดและเงื่อนไข",
+  "terms_full": "1. การยอมรับข้อกำหนด\nการติดตั้งหรือใช้งานแอปพลิเคชันนี้ ถือว่าคุณยอมรับข้อกำหนดและเงื่อนไข หากไม่ยอมรับ โปรดหยุดการใช้งานแอป\n\n2. วัตถุประสงค์ของแอปพลิเคชัน\nแอปพลิเคชันนี้เป็นระบบกล่องดำรถยนต์และเทเลเมติกส์ ใช้เพื่อติดตามประสิทธิภาพรถยนต์และพฤติกรรมการขับขี่เพื่อวัตถุประสงค์ด้านข้อมูล ความปลอดภัย และการวิเคราะห์เท่านั้น\n\n3. พารามิเตอร์ข้อมูลที่เก็บรวบรวม\nแอปพลิเคชันอาจเก็บรวบรวมและประมวลผลข้อมูลรถยนต์และการขับขี่ รวมถึง:\n\n• ความเร็วของรถ\n• การบริโภคและระดับน้ำมันเชื้อเพลิง\n• การเร่งและลดความเร็ว\n• เหตุการณ์เบรกแรงและเร่งเร็ว\n• การเลี้ยวฉับพลัน\n• ข้อมูลตำแหน่ง GPS (ละติจูดและลองจิจูด)\n• ระยะทาง ระยะเวลา และเวลาของการเดินทาง\n• ข้อมูลประจำตัวผู้ขับขี่และรถยนต์\n\nการใช้งานแอปถือว่าคุณยินยอมอย่างชัดเจนให้เก็บรวบรวมพารามิเตอร์เหล่านี้\n\n4. การให้บริการ\nเนื่องจากข้อจำกัดทางเทคนิค ไม่สามารถรับประกันการทำงานของแอปแบบต่อเนื่อง เรียลไทม์ หรือปราศจากข้อผิดพลาดได้",
+
+  "validation_password_mismatch": "รหัสผ่านไม่ตรงกัน",
+  "validation_invalid_phone": "เบอร์โทรศัพท์ไม่ถูกต้อง",
+  "validation_incorrect_pin": "PIN ไม่ถูกต้อง",
+  "validation_empty_fields": "กรุณากรอกข้อมูลให้ครบทุกช่อง",
+
+  "empty_no_cars": "ไม่พบรถยนต์",
+  "empty_no_notifications": "ยังไม่มีแจ้งเตือน",
+  "empty_no_events": "ไม่มีเหตุการณ์",
+
+  "status_loading": "กำลังโหลด...",
+  "status_success": "ดำเนินการสำเร็จ",
+  "status_error": "เกิดข้อผิดพลาด",
+
+  "confirm_delete_car": "คุณแน่ใจหรือไม่ว่าต้องการลบรถคันนี้?",
+  "confirm_reset_password": "คุณแน่ใจหรือไม่ว่าต้องการรีเซ็ตรหัสผ่าน?",
+
+  "search_hint": "ค้นหา...",
+  "search_no_results": "ไม่พบผลลัพธ์",
+  "filter": "ตัวกรอง",
+  "sort": "เรียงลำดับ",
+
+  "onboarding_title_1": "ยินดีต้อนรับ",
+  "onboarding_desc_1": "สู่ Black Box Manager",
+
+  "onboarding_title_2": "ดูเรื่องราวเบื้องหลังการขับขี่ของคุณ",
+  "onboarding_desc_2": "บันทึกทุกการเดินทาง วิเคราะห์ทุกไมล์",
+
+  "error_email_exists": "อีเมลนี้มีอยู่แล้ว",
+  "error_wrong_password": "รหัสผ่านไม่ถูกต้อง",
+  "error_phone_exists": "เบอร์โทรศัพท์นี้ถูกใช้แล้ว",
+  "error_sp_ch": "รหัสผ่านต้องมีอักขระพิเศษอย่างน้อย 1 ตัว",
+  "error_up": "รหัสผ่านต้องมีตัวพิมพ์ใหญ่อย่างน้อย 1 ตัว",
+  "error_low": "รหัสผ่านต้องมีตัวพิมพ์เล็กอย่างน้อย 1 ตัว",
+  "error_num": "รหัสผ่านต้องมีตัวเลขอย่างน้อย 1 ตัว",
+  "error_required": "ช่องนี้จำเป็นต้องกรอก",
+  "error_invalid_email": "ที่อยู่อีเมลไม่ถูกต้อง",
+  "error_password_short": "รหัสผ่านต้องมีอย่างน้อย {length} ตัวอักษร",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

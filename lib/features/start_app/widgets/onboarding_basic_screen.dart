@@ -3,6 +3,7 @@ import 'package:black_box/features/start_app/widgets/dots.dart';
 import 'package:flutter/material.dart';
 import '../../../core/constants/colors.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class OnboardingBasicScreen extends StatefulWidget {
   const OnboardingBasicScreen({super.key,required this.title,required this.subtitle,required this.image,required this.currentPage,required this.controller,required this.titleSize,required this.subtitleSize});
   final String image;
@@ -20,12 +21,12 @@ class _OnboardingBasicScreenState extends State<OnboardingBasicScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: mainRedColor,
+      color: AppColor.mainRedColor,
       child: Column(
         children: [
           Container(
               padding: EdgeInsets.symmetric(horizontal: 22),
-              height:MediaQuery.sizeOf(context).height / 2.8,
+              height:MediaQuery.sizeOf(context).height * .33048,
               alignment: Alignment.centerLeft,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -40,11 +41,11 @@ class _OnboardingBasicScreenState extends State<OnboardingBasicScreen> {
             child: Container(
               width: MediaQuery.sizeOf(context).width,
               decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(70),
-                      topRight: Radius.circular(70)
-                  )
+                color: Theme.of(context).colorScheme.secondary,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(70),
+                    topRight: Radius.circular(70)
+                )
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -60,7 +61,7 @@ class _OnboardingBasicScreenState extends State<OnboardingBasicScreen> {
                       }
                       Navigator.of(context).push(MaterialPageRoute(builder: (context)=> LoginScreen()));
                     },
-                    child: Text("Next",style: TextStyle(color: mainRedColor,fontSize: 25,fontWeight: FontWeight.bold),),
+                    child: Text(AppLocalizations.of(context)!.common_next,style: TextStyle(color: AppColor.mainRedColor,fontSize: 25,fontWeight: FontWeight.bold),),
                   ),
                   SizedBox(
                     width: MediaQuery.sizeOf(context).width,

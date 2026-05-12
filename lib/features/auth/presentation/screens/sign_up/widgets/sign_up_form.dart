@@ -5,9 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../core/constants/colors.dart';
 import '../../../../../../core/constants/global.dart';
 import '../../../../../../core/ui/snackbar/exception_snackbar.dart';
-import '../../../../../home/screens/bnv.dart';
-import '../../../bloc/auth/signup/signup_cubit.dart';
-import '../../../bloc/auth/signup/signup_state.dart';
+import '../../../../../../bnv.dart';
+import '../../../cubit/auth/signup/signup_cubit.dart';
+import '../../../cubit/auth/signup/signup_state.dart';
 import '../../functions/is_valid_gmail.dart';
 import '../../functions/terms_dialog.dart';
 import '../../sign_up/widgets/password_field.dart';
@@ -15,6 +15,7 @@ import '../../sign_up/widgets/form_text_field.dart';
 import '../functions/is_vaild_password.dart';
 import 'bottom_login_text.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SignUpForm extends StatefulWidget {
   SignUpForm({super.key,required this.image});
   File? image;
@@ -41,27 +42,23 @@ class _SignUpFormState extends State<SignUpForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           FormTextField(
-            label: "Full Name",
-            labelColor: labelColor,
-            fillColor: lightPink,
+            label: AppLocalizations.of(context)!.full_name,
             controller: _nameController,
-            hint: "John Doe",
+            hint: AppLocalizations.of(context)!.name_hint,
             validator: (value) {
-              if (value == null || value.isEmpty) return "Full Name is required";
+              if (value == null || value.isEmpty) return AppLocalizations.of(context)!.required_name;
               return null;
             },
             autoValidateMode: AutovalidateMode.onUserInteraction,
             readOnly: false,
           ),
           FormTextField(
-            label: "Email",
-            labelColor: labelColor,
-            fillColor: lightPink,
+            label: AppLocalizations.of(context)!.auth_email,
             controller: _emailController,
-            hint: "example@gmail.com",
+            hint: AppLocalizations.of(context)!.email_hint,
             validator: (value) {
-              if (value == null || value.isEmpty) return "Email is required";
-              if (!isValidGmail(value)) return "Email must end with @gmail.com";
+              if (value == null || value.isEmpty) return AppLocalizations.of(context)!.required_email;
+              if (!isValidGmail(value)) return AppLocalizations.of(context)!.email_end;
               return null;
             },
             autoValidateMode: AutovalidateMode.onUserInteraction,
@@ -69,37 +66,35 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
 
           PasswordField(
-            label: "Password",
-            labelColor: labelColor,
-            fillColor: lightPink,
+            label: AppLocalizations.of(context)!.auth_password,
+            labelColor: AppColor.labelColor,
+            fillColor: AppColor.lightPink,
             controller: _passwordController,
             isVisible: _isPasswordVisible,
             onToggle: () => setState(() => _isPasswordVisible = !_isPasswordVisible),
             validator: (value) {
-              if (value == null || value.isEmpty) return "Password is required";
+              if (value == null || value.isEmpty) return AppLocalizations.of(context)!.required_password;
               if (!isValidPassword(value)) {
-                return "Password must be at least 6 characters and contain numbers";
+                return AppLocalizations.of(context)!.min_password;
               }
               return null;
             },
           ),
           PasswordField(
-            label: "Confirm Password",
-            labelColor: labelColor,
-            fillColor: lightPink,
+            label:AppLocalizations.of(context)!.auth_confirm_password,
+            labelColor: AppColor.labelColor,
+            fillColor: AppColor.lightPink,
             controller: _confirmPasswordController,
             isVisible: _isConfirmPasswordVisible,
             onToggle: () => setState(() => _isConfirmPasswordVisible = !_isConfirmPasswordVisible),
             validator: (value) {
-              if (value == null || value.isEmpty) return "Confirm Password is required";
-              if (value != _passwordController.text) return "Passwords do not match";
+              if (value == null || value.isEmpty) return AppLocalizations.of(context)!.required_confirm_password;
+              if (value != _passwordController.text) return AppLocalizations.of(context)!.password_do_not_match;
               return null;
             },
           ),
-          const SizedBox(height: 20),
-          Spacer(),
+          SizedBox(height: width * .16),
           TermsText(
-
             onTap: (){
               showDialog(
                 context: context, 
@@ -124,16 +119,16 @@ class _SignUpFormState extends State<SignUpForm> {
               );
             },
           ),
-          const SizedBox(height: 15),
+          SizedBox(height: width * .039),
           Center(
             child: SizedBox(
-              width: 250,
-              height: 50,
+              width: width * .57,
+              height: width * .113,
               child: BlocListener<SignUpCubit,SignUpState>(
                 listener: (context,state){
                   if(state is SuccessSignUp){
                     saveUserData(state.owner);
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => BNVScreen()));
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => BNVScreen()));
                   } else if(state is FailureSignUp){
                     ExceptionSnackBar snack = ExceptionSnackBar();
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -156,14 +151,14 @@ class _SignUpFormState extends State<SignUpForm> {
                     }
                   } : null,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:agreed ? mainRedColor : Colors.grey,
+                    backgroundColor:agreed ? AppColor.mainRedColor : Colors.grey,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                     elevation: 5,
                   ),
                   child: Text(
-                    "Sign Up",
+                    AppLocalizations.of(context)!.auth_signup,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -174,9 +169,9 @@ class _SignUpFormState extends State<SignUpForm> {
               ),
             ),
           ),
-          const SizedBox(height: 15),
+          SizedBox(height: width * .036),
           BottomLoginText(),
-          const SizedBox(height: 20),
+          SizedBox(height: 0.037),
 
         ],
       ),

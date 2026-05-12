@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../../../core/constants/global.dart';
 import '../../../../../../../core/ui/snackbar/exception_snackbar.dart';
 import '../../../../../../../core/ui/snackbar/success_snackbar.dart';
-import '../../../../bloc/auth/new_password/password_cubit.dart';
-import '../../../../bloc/auth/new_password/password_state.dart';
+import '../../../../cubit/auth/new_password/password_cubit.dart';
+import '../../../../cubit/auth/new_password/password_state.dart';
 import '../../security_pin_screen.dart';
 
 class SendVerificationButton extends StatefulWidget {
@@ -21,8 +22,8 @@ class _SendVerificationButtonState extends State<SendVerificationButton> {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: 250,
-        height: 50,
+        width: width * .57,
+        height: width * .113,
         child: BlocListener<PasswordCubit,PasswordState>(
           listener: (context,state){
             if(state is SuccessPassword){
@@ -42,11 +43,11 @@ class _SendVerificationButtonState extends State<SendVerificationButton> {
                 borderRadius: BorderRadius.circular(25),
               ),
             ),
-            child: const Text(
+            child: Text(
               "Send Verification Code",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 14,
+                fontSize: width * .0315,
                 fontWeight: FontWeight.bold,
               ),
             ),

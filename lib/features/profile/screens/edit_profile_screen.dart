@@ -1,8 +1,9 @@
 import 'dart:io';
 
 import 'package:black_box/core/constants/colors.dart';
-import 'package:black_box/features/auth/presentation/bloc/owner/owner_cubit.dart';
-import 'package:black_box/features/auth/presentation/bloc/owner/owner_state.dart';
+import 'package:black_box/core/ui/widgets/notification_button.dart';
+import 'package:black_box/features/auth/presentation/cubit/owner/owner_cubit.dart';
+import 'package:black_box/features/auth/presentation/cubit/owner/owner_state.dart';
 import 'package:black_box/features/profile/widgets/edit_driver_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,6 +12,7 @@ import '../../../core/constants/images.dart';
 import '../../../core/constants/links.dart';
 import '../widgets/white_layer.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EditProfileScreen extends StatefulWidget {
   final String id;
@@ -39,29 +41,23 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryRed,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
-        backgroundColor: primaryRed,
         centerTitle: true,
         toolbarHeight: 90,
-        title: Text("Edit My Profile",style:  const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+        title: Text(AppLocalizations.of(context)!.profile_edit,style:  const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
         actions: [
-          InkWell(
-            onTap: () async{
-
-            },
-            child: const CircleAvatar(backgroundColor: Colors.white24, child: Icon(Icons.notifications_none, color: Colors.white))
-          ),
+          NotificationButton(),
           SizedBox(width: 20,),
         ],
       ),
       extendBody: true,
       body: Stack(
         children: [
-          WhiteLayer(color: Colors.white,top: 140),
+          WhiteLayer(color: Theme.of(context).colorScheme.secondary,top: 90),
           Column(
             children: [
-              const SizedBox(height: 70),
+              const SizedBox(height: 20),
               Stack(
                 children: [
                   InkWell(
@@ -72,7 +68,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     },
                     child: CircleAvatar(
                       radius: 60,
-                      backgroundColor: Colors.white,
+                      backgroundColor: Theme.of(context).colorScheme.secondary,
                       child: CircleAvatar(
                         radius: 56,
                         backgroundImage: image != null ?
@@ -90,8 +86,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         setState(() {});
                       },
                       child: Container(
-                        padding: const EdgeInsets.all(6),
-                        decoration: const BoxDecoration(color: primaryRed, shape: BoxShape.circle),
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(color: Theme.of(context).colorScheme.primary, shape: BoxShape.circle),
                         child: const Icon(Icons.camera_alt, color: Colors.white, size: 18),
                       ),
                     ),
@@ -107,35 +103,18 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       Center(
                         child: Column(
                           children: [
-                            Text(widget.name, style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: textColor)),
-                            const Text("ID: 25030024", style: TextStyle(color: Colors.grey)),
+                            Text(widget.name, style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: AppColor.textBlackColor)),
+                            Text("ID: ${widget.id}", style: TextStyle(color: Colors.grey)),
                           ],
                         ),
                       ),
                       const SizedBox(height: 30),
-                      Text("Account Settings", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
+                      Text("Account Settings", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: AppColor.textBlackColor)),
                       const SizedBox(height: 15),
-                      EditDriverInput(controller: _nameController, label: "User Name",),
-                      EditDriverInput(controller: _emailController, label: "Email",readOnly: true,),
+                      EditOwnerInput(controller: _nameController, label: "User Name",),
+                      EditOwnerInput(controller: _emailController, label: "Email",readOnly: true,),
 
-                      SwitchListTile(
-                        title: Text("Push Notifications",
-                        style: TextStyle(fontSize: 16, color: Colors.black)),
-                        activeColor: mainRedColor,
-                        value: true,
-                        onChanged: (bool value) {
 
-                        },
-                      ),
-                      SwitchListTile(
-                        title: Text("Turn Dark Theme ",
-                        style: TextStyle(fontSize: 16, color: Colors.black)),
-                        activeColor: mainRedColor,
-                        value: true,
-                        onChanged: (bool value) {
-
-                        },
-                      ),
                       const SizedBox(height: 30),
 
                       Center(
@@ -145,7 +124,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                             builder: (context,state) {
                               if(state is OwnerSuccess){
                                 return ElevatedButton(
-                                  style: ElevatedButton.styleFrom(backgroundColor: primaryRed, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))),
+                                  style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.primary, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))),
                                   onPressed: (){
                                     context.read<OwnerCubit>().updateOwner(
                                       id: state.owner.id,
@@ -154,13 +133,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                     );
                                     Navigator.pop(context);
                                   },
-                                  child: const Text("Update Profile",style: TextStyle(color: Colors.white, fontSize: 18)),
+                                  child: Text(AppLocalizations.of(context)!.update_profile,style: TextStyle(color: Colors.white, fontSize: 18)),
                                 );
                               }
                               return ElevatedButton(
                                 onPressed: () {},
-                                style: ElevatedButton.styleFrom(backgroundColor: primaryRed, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))),
-                                child: const Text("Update Profile", style: TextStyle(color: Colors.white, fontSize: 18)),
+                                style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.primary, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))),
+                                child: Text(AppLocalizations.of(context)!.update_profile, style: TextStyle(color: Colors.white, fontSize: 18)),
                               );
                             }
                           ),

@@ -28,7 +28,7 @@ class DialogueInput extends StatelessWidget {
           hintText: hint ?? "",
           hintStyle: TextStyle(fontSize: 13),
           filled: true,
-          fillColor: const Color(0xFFF8DADA),
+
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(90),
             borderSide: BorderSide.none,

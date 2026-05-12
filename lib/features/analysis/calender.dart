@@ -13,12 +13,12 @@ class _CalenderScreenState extends State<CalenderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mainRedColor,
+      backgroundColor:AppColor.mainRedColor,
       appBar: AppBar(
         toolbarHeight: 120,
         title: Text("Driving Events ",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
         centerTitle: true,
-        backgroundColor: mainRedColor,
+        backgroundColor: AppColor.mainRedColor,
         iconTheme: IconThemeData(color: Colors.white),
         actions: [
           IconButton(
@@ -28,7 +28,7 @@ class _CalenderScreenState extends State<CalenderScreen> {
               ),
               onPressed: (){
 
-              }, icon: Icon(Icons.notifications_none,color:mainRedColor,size: 35,)),
+              }, icon: Icon(Icons.notifications_none,color: AppColor.mainRedColor,size: 35,)),
           SizedBox(width: 20,)
         ],
       ),
@@ -56,47 +56,45 @@ class _CalenderScreenState extends State<CalenderScreen> {
                 ),
                 child: SingleChildScrollView(
                   padding: const EdgeInsets.all(30),
-                  child: Container(
-                    child: Column(
-                      children: [
-                        CalendarDatePicker(initialDate: DateTime.now(), firstDate: DateTime(DateTime.april), lastDate: DateTime.now(), onDateChanged: (v){}),
-                        SizedBox(height: 25,),
-                        MaterialButton(
-                          color: mainRedColor,
-                          padding: EdgeInsets.symmetric(horizontal: 65,vertical: 2),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                          onPressed: (){
+                  child: Column(
+                    children: [
+                      CalendarDatePicker(initialDate: DateTime.now(), firstDate: DateTime(DateTime.april), lastDate: DateTime.now(), onDateChanged: (v){}),
+                      SizedBox(height: 25,),
+                      MaterialButton(
+                        color: AppColor.mainRedColor,
+                        padding: EdgeInsets.symmetric(horizontal: 65,vertical: 2),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                        onPressed: (){
 
-                          },
-                          child: Text("Search",style: TextStyle(color: Colors.white,fontSize: 18),),
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              width: 57,
-                              height: 53,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFD96B6B),
-                                borderRadius: BorderRadius.circular(22)
-                              ),
-                              child: Icon(Icons.car_crash_outlined),
+                        },
+                        child: Text("Search",style: TextStyle(color: Colors.white,fontSize: 18),),
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            width: 57,
+                            height: 53,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFD96B6B),
+                              borderRadius: BorderRadius.circular(22)
                             ),
-                            SizedBox(width: 15,),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Speeding",style: TextStyle(fontSize: 18,color: Color(0xFF052224)),),
-                                Text("18:27-April 30",style: TextStyle(fontSize: 14,color: Color(0xFF0068FF)),),
-                              ],
-                            ),
-                            Container(height:40,child: VerticalDivider(width: 45,thickness: 1,color: mainRedColor,)),
-                            Text("142 Km/H")
-                          ],
-                        ),
-                        Text("in 100 km/h zone")
-                      ],
-                    ),
+                            child: Icon(Icons.car_crash_outlined),
+                          ),
+                          SizedBox(width: 15,),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Speeding",style: TextStyle(fontSize: 18,color: Color(0xFF052224)),),
+                              Text("18:27-April 30",style: TextStyle(fontSize: 14,color: Color(0xFF0068FF)),),
+                            ],
+                          ),
+                          Container(height:40,child: VerticalDivider(width: 45,thickness: 1,color: AppColor.mainRedColor,)),
+                          Text("142 Km/H")
+                        ],
+                      ),
+                      Text("in 100 km/h zone")
+                    ],
                   ),
                 ),
               ),

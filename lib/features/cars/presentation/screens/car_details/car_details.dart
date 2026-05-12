@@ -1,25 +1,22 @@
 
-import 'package:black_box/features/analysis/analysis.dart';
+import 'package:black_box/core/constants/images.dart';
+import 'package:black_box/core/ui/widgets/notification_button.dart';
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';
+import 'package:black_box/features/cars/presentation/screens/car_details/analysis/live_tracking.dart';
+import 'package:black_box/features/cars/presentation/widgets/car_page/car_detials/car_parameter.dart';
+import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
+import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
+import 'package:black_box/features/notifications/presentation/screens/notification_screen.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../home/notification.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../core/constants/colors.dart';
+import '../../../../home/presentation/widgets/stat_item.dart';
 import '../edit_car_screen.dart';
-import '../quickly_analysis.dart';
-import 'analysis/acceleration_analysis.dart';
-import 'analysis/latitude_analysis.dart';
-import 'analysis/location_analysis.dart';
-import 'analysis/longitude_analysis.dart';
-import 'analysis/oil_analysis.dart';
-import 'driving_event.dart';
+import '../driving_events/driving_event.dart';
 
 class CarDetailsScreen extends StatefulWidget {
-  final VoidCallback onBackToHome;
-  final VoidCallback onNotificationTap;
   const CarDetailsScreen({
     super.key,
-    required this.onBackToHome,
-    required this.onNotificationTap,
     required this.car,
   });
   final CarEntity car;
@@ -36,46 +33,27 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
     "DTC Codes",
     "Road Bump",
     "Fuel Level",
-
   ];
+
 
   List<String> filteredParameters = [];
 
+
+
   @override
   void initState() {
-    super.initState();
     filteredParameters = allParameters;
-  }
-
-  void filterParameters(String value) {
-    setState(() {
-      filteredParameters = allParameters
-          .where(
-            (parameter) =>
-            parameter.toLowerCase().startsWith(value.toLowerCase()),
-      ).toList();
-    });
+    context.read<DriverCubit>().showOneDriver(int.tryParse(widget.car.driverId) ?? 0);
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    const Color primaryRed = Color(0xFF9B0D15);
     return Scaffold(
-      backgroundColor: primaryRed,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
         elevation: 0,
         toolbarHeight: 80,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            if (Navigator.canPop(context)) {
-              Navigator.pop(context);
-            } else {
-              widget.onBackToHome();
-            }
-          },
-        ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -97,27 +75,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(top: 10, right: 20),
-            child: IconButton(
-              icon: Container(
-                padding: const EdgeInsets.all(6),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                ),
-                child: const Icon(
-                  Icons.notifications_none,
-                  color: Color(0xFF9B0D15),
-                  size: 20,
-                ),
-              ),
-              onPressed: () {
-                Navigator.of(context, rootNavigator: true).push(
-                  MaterialPageRoute(
-                    builder: (context) => NotificationScreen(),
-                  ),
-                );
-              },
-            ),
+            child: NotificationButton()
           ),
         ],
       ),
@@ -128,10 +86,10 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             child: Row(
               children: [
-                _buildStatItem(
-                  "Total Active Cars",
-                  "1",
-                  Colors.white,
+                StatItem(
+                  label: "Total Active Cars",
+                  value:"1",
+                  valueColor:Colors.white,
                   arrowAngle: 135,
                 ),
                 Container(
@@ -140,16 +98,17 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                   color: const Color(0xFFDFF7E2),
                   margin: const EdgeInsets.symmetric(horizontal: 20),
                 ),
-                _buildStatItem(
-                  "Total Cars",
-                  "8",
-                  const Color(0xFF0068FF),
+                StatItem(
+                  label: "Total Cars",
+                  value: "8",
+                  valueColor:  Color(0xFF0068FF),
                   arrowAngle: -135,
                 ),
               ],
             ),
-          ), // Search Bar
-          Container(
+          ),
+          // Search Bar
+          /*Container(
             height: 30,
             width: 330,
             decoration: BoxDecoration(
@@ -191,14 +150,14 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                 ),
               ],
             ),
-          ),
-          const SizedBox(height: 25),
+          ),*/
+          const SizedBox(height: 65),
           Expanded(
             child: Container(
               width: double.infinity,
               padding: const EdgeInsets.only(top: 30, left: 25, right: 25),
-              decoration: const BoxDecoration(
-                color: Colors.white,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.secondary,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(50),
                   topRight: Radius.circular(50),
@@ -207,170 +166,99 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
               child: Column(
                 children: [
                   Expanded(
-                    child: ListView.builder(
-                      padding: const EdgeInsets.only(top: 10),
-                      itemCount: filteredParameters.length + 1,
-                      itemBuilder: (context, index) {
-                        if (index == 0) {
-                          return Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text(
-                                "",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                      const DrivingEventsScreen(),
+                    child: ListView(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            BlocBuilder<DriverCubit,DriverState>(
+                              builder: (context,state) {
+                                if(state is OneDriverSuccess){
+                                  return TextButton(
+                                    onPressed: () {
+                                      String driverName = '';
+                                      driverName = state.driver.name;
+                                      if(driverName == '') driverName = "Unknown";
+
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => DrivingScreen(
+                                            driverId: widget.car.driverId,
+                                            carId: widget.car.id.toString(),
+                                            driverName: driverName,
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: const Row(
+                                      children: [
+                                        Text(
+                                          "View Driving Events",
+                                          style: TextStyle(
+                                            color: Color(0xFF0068FF),
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Icon(
+                                          Icons.chevron_right,
+                                          size: 18,
+                                          color: Color(0xFF0068FF),
+                                        ),
+                                      ],
                                     ),
                                   );
-                                },
-                                child: const Row(
-                                  children: [
-                                    Text(
-                                      "View Driving Events",
-                                      style: TextStyle(
-                                        color: Color(0xFF0068FF),
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Icon(
-                                      Icons.chevron_right,
-                                      size: 18,
-                                      color: Color(0xFF0068FF),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          );
-                        }
+                                }
+                                else {
+                                  return Container();
+                                }
 
-                        String param = filteredParameters[index - 1];
-
-                        Widget destination;
-                        Color color;
-                        String img;
-
-                        switch (param) {
-                          case "Live Tracking":
-                            destination = const Analysis();
-                            color = Colors.blue.shade300;
-                            img = "assets/speed.png";
-                            break;
-                          case "Coolant Temp":
-                            destination = const LongitudeAnalysisScreen();
-                            color = Colors.red.shade800;
-                            img = "assets/Longitude.png";
-                            break;
-                          case "DTC Codes":
-                            destination = const LatitudeAnalysisScreen();
-                            color = Colors.blue.shade400;
-                            img = "assets/Latitude.png";
-                            break;
-                          case "Road Bump":
-                            destination = const AccelerationAnalysisScreen();
-                            color = Colors.red.shade900;
-                            img = "assets/Acceleration.png";
-                            break;
-                          case "Fuel Level":
-                            destination = const LocationAnalysisScreen();
-                            color = Colors.blue.shade300;
-                            img = "assets/Location.png";
-                            break;
-                          default:
-                            destination = const SizedBox();
-                            color = Colors.grey;
-                            img = "";
-                        }
-
-                        return Column(
-                          children: [
-                            const SizedBox(height: 5),
-                            _buildDetailRow(
-                              context,
-                              img,
-                              param,
-                              color,
-                              destination,
+                              }
                             ),
                           ],
-                        );
-                      },
-                    ),
+                        ),
+                        CarParameter(
+                          context:context,
+                          imagePath: AppImages.liveTracking,
+                          title:"Live Tracking",
+                          iconBgColor: Colors.blue.shade300,
+                          destinationPage: LiveTracking(),
+                        ),
+                        CarParameter(
+                          context:context,
+                          imagePath: AppImages.coolant,
+                          title:"Coolant Temp",
+                          iconBgColor: Colors.blue.shade300,
+                          destinationPage: NotificationScreen(),
+                        ),
+                        CarParameter(
+                          context:context,
+                          imagePath: AppImages.dtc,
+                          title:"DTC Codes",
+                          iconBgColor: AppColor.mainRedColor,
+                          destinationPage: NotificationScreen(),
+                        ),
+                        CarParameter(
+                          context:context,
+                          imagePath: AppImages.roadBump,
+                          title:"Road Bump",
+                          iconBgColor: Colors.blue.shade300,
+                          destinationPage: NotificationScreen(),
+                        ),
+                        CarParameter(
+                          context:context,
+                          imagePath: AppImages.fuelLevel,
+                          title:"Fuel Level",
+                          iconBgColor: AppColor.mainRedColor,
+                          destinationPage: NotificationScreen(),
+                        ),
+                      ],
+                    )
                   ),
                 ],
               ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDetailRow(
-      BuildContext context,
-      String imagePath,
-      String title,
-      Color iconBgColor,
-      Widget destinationPage,
-      ) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: iconBgColor,
-              shape: BoxShape.circle,
-            ),
-            child: Image.asset(
-              imagePath,
-              width: 28,
-              height: 28,
-              fit: BoxFit.contain,
-              color: Colors.white,
-            ),
-          ),
-          const SizedBox(width: 20),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black87,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => destinationPage),
-                  );
-                },
-                child: const Text(
-                  "Last Updates",
-                  style: TextStyle(
-                    color: Color(0xFF0068FF),
-                    fontSize: 13,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ],
           ),
         ],
       ),

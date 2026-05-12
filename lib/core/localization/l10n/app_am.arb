@@ -1,0 +1,242 @@
+{
+  "@@locale": "am",
+
+  "app_title": "ብላክቦክስ አፕ",
+
+  "common_yes": "አዎ",
+  "common_no": "አይ",
+  "common_cancel": "ይቅር",
+  "common_save": "አስቀምጥ",
+  "common_save_changes": "ለውጦችን አስቀምጥ",
+  "common_continue": "ቀጥል",
+  "common_next": "ቀጣይ",
+
+  "auth_login": "ግባ",
+  "auth_space_login": "Log In",
+  "auth_logout": "ውጣ",
+  "auth_confirm_logout": "እውነት ለመውጣት ይፈልጋሉ?",
+  "auth_signup": "ተመዝገብ",
+  "auth_create_account": "አካውንት ፍጠር",
+  "auth_already_have_account": "አካውንት አለዎት? ",
+  "auth_no_account": "አካውንት የለዎትም?",
+  "auth_forgot_password": "ፓስወርድ ረሱ?",
+  "auth_reset_password": "ፓስወርድ ዳግም አስጀምር?",
+  "auth_change_password": "ፓስወርድ ቀይር",
+  "auth_continue": "መቀጠል ማለት ተስማምተዋል\n",
+  "auth_terms": "የአጠቃቀም ውሎች እና የግላዊነት ፖሊሲ",
+  "auth_email": "ኢሜይል",
+  "auth_password": "ፓስወርድ",
+  "auth_confirm_password": "ፓስወርድ አረጋግጥ",
+  "auth_new_password": "አዲስ ፓስወርድ",
+  "auth_confirm_new_password": "አዲስ ፓስወርድ አረጋግጥ",
+  "auth_enter_email": "ኢሜይል አድራሻ ያስገቡ",
+  "auth_password_hint": "ፓስወርድዎን ያስገቡ",
+  "full_name": "ሙሉ ስም",
+  "email_hint": "example@gmail.com",
+  "name_hint": "John Doe",
+
+  "required_name": "ሙሉ ስም ያስፈልጋል",
+  "required_email": "ኢሜይል ያስፈልጋል",
+  "email_end": "ኢሜይል @gmail.com በማብቃት መጨረስ አለበት",
+  "required_password": "ፓስወርድ ያስፈልጋል",
+  "required_confirm_password": "ፓስወርድ ማረጋገጫ ያስፈልጋል",
+  "password_do_not_match": "ፓስወርዶቹ አይዛመዱም",
+  "min_password": "ፓስወርድ ቢያንስ 8 ቁምፊዎች መሆን እና ቁጥሮችን መያዝ አለበት",
+  "send_verification_code": "የማረጋገጫ ኮድ ላክ",
+  "password_changed_successfully": "ፓስወርድ በተሳካ ሁኔታ\nተቀይሯል",
+  "forget_password_title": "ከአካውንትዎ ጋር የተገናኘውን ኢሜይል ያስገቡ፣ ፓስወርድ ዳግም ለማስጀመር የደህንነት ፒን እንልክልዎታለን።",
+
+  "auth_security_pin": "የደህንነት ፒን",
+  "auth_enter_pin": "የደህንነት ፒን ያስገቡ",
+  "verify": "አረጋግጥ",
+  "auth_resend_pin": "በ{seconds} ሰከንድ ውስጥ እንደገና ላክ",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "መነሻ",
+  "home_welcome": "ሰላም፣ እንኳን ተመለሱ",
+  "home_good_morning": "እንደምን አደሩ",
+  "home_looks_good": "ጥሩ\nይመስላል",
+  "home_safety_score": "የደህንነት ነጥብ አጠቃላይ እይታ",
+  "home_total_accidents": "ጠቅላላ አደጋዎች",
+  "total_active_cars": "ጠቅላላ ንቁ መኪኖች",
+  "total_cars": "ጠቅላላ መኪኖች",
+
+  "home_active_cars": "ከመኪኖችዎ {percentage}% ንቁ ናቸው",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "መኪኖች",
+  "car_view_all": "ሁሉንም መኪኖች ይመልከቱ",
+  "car_add": "መኪና ጨምር",
+  "car_edit": "መኪና አርትዕ",
+
+  "car_name": "የመኪና ስም",
+  "car_plate": "የመኪና ታርጋ",
+  "car_type": "የመኪና አይነት",
+  "car_driver_name": "የአሽከርካሪ ስም",
+
+  "car_item_title": "መኪና #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "ቀጥታ መከታተል",
+  "tracking_last_updates": "የቅርብ ጊዜ ዝማኔዎች",
+
+  "event_title": "የመንዳት ክስተቶች",
+  "event_speeding": "ፍጥነት መብለጥ",
+  "event_hard_braking": "ከባድ ብሬክ",
+  "event_aggressive_turns": "ጠበኛ መዞር",
+  "event_crash": "አደጋ",
+
+  "event_location": "በ{location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} ኪ.ሜ/ሰ",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "ክብደት",
+  "event_severity_low": "ዝቅተኛ",
+  "event_severity_medium": "መካከለኛ",
+  "event_severity_high": "ከፍተኛ",
+  "event_severity_critical": "አስጊ",
+
+  "event_reason": "ምክንያት",
+  "event_last_speed": "የመጨረሻው የተመዘገበ ፍጥነት",
+
+  "notification_title": "ማሳወቂያዎች",
+  "notification_today": "ዛሬ",
+  "notification_yesterday": "ትናንት",
+  "notification_earlier": "በዚህ ሳምንት ቀደም ብሎ",
+
+  "notification_fuel_alert": "የነዳጅ ፍሳሽ ማሳወቂያ!",
+  "notification_fuel_desc": "በ{driver} የሚነዳው {car} መኪና የነዳጅ መጠን በፍጥነት መቀነሱን ሪፖርት አድርጓል።",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "ከባድ አደጋ ተገኝቷል!",
+  "notification_crash_desc": "በ{driver} የሚነዳው {car} መኪና ከባድ ግጭት ሪፖርት አድርጓል።",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "ፕሮፋይል",
+  "profile_edit": "ፕሮፋይሌን አርትዕ",
+  "update_profile": "ፕሮፋይል አዘምን",
+  "user_name": "የተጠቃሚ ስም",
+
+  "security_title": "ደህንነት",
+  "change_password": "ፓስወርድ ቀይር",
+
+  "settings_title": "ቅንብሮች",
+  "settings_notifications": "የማሳወቂያ ቅንብሮች",
+  "settings_general_notifications": "አጠቃላይ ማሳወቂያዎች",
+  "account_settings": "የአካውንት ቅንብሮች",
+  "push_notification": "ፑሽ ማሳወቂያዎች",
+  "dark_mode": "ጨለማ ሁነታ በርቷል",
+
+  "help_title": "የእርዳታ ማእከል",
+  "help_and_faq": "እርዳታ እና ተደጋጋሚ ጥያቄዎች",
+  "help_contact": "አግኙን",
+  "help_faq": "FAQ",
+  "how_help": "እንዴት ልንረዳዎ እንችላለን?",
+  "on_wh_num": "በዋትስአፕ ቁጥር",
+
+  "question1": "ብላክቦክስን እንዴት መጠቀም ይቻላል?",
+  "answer1": "ብላክቦክስ መሣሪያውን በመኪናዎ ውስጥ ይጫኑ፣ ወደ አፕ ግቡ እና መንዳት ይጀምሩ። አፑ በራስ-ሰር የመንዳት ውሂብዎን ይመዘግባል እና ያሳያል።",
+  "question2": "ብላክቦክስን ለመጠቀም ምን ያህል ያስከፍላል?",
+  "answer2": "ወጪው እንደ የተመረጠው እቅድ እና አገልግሎቶች ይወሰናል። ዝርዝር ዋጋ ለማግኘት ከኩባንያው ጋር ያግኙ።",
+  "question3": "ድጋፍ እንዴት ማግኘት ይቻላል?",
+  "answer3": "በኩባንያው ኦፊሴላዊ ቁጥር በዋትስአፕ ወይም በስራ ሰዓት በኩባንያው ቢሮ በመሄድ ድጋፍ ማግኘት ይችላሉ።",
+  "question4": "ፓስወርድ ብዬ ከረሳሁ እንዴት እድሳለሁ?",
+  "answer4": "በመግቢያ ማያ ገጽ ላይ 'ፓስወርድ ረሱ' የሚለውን አማራጭ ተጠቅመው መመሪያዎቹን ይከተሉ።",
+  "question5": "የግላዊነት እና የውሂብ ደህንነት እርምጃዎች አሉ?",
+  "answer5": "አዎ። ውሂብዎ በደህና ይቀመጣል እና ያለ ፈቃድዎ አይጋራም ህግ ካስፈለገ በስተቀር።",
+  "question6": "በአፑ ውስጥ ቅንብሮችን ማበጀት እችላለሁ?",
+  "answer6": "አዎ። ማሳወቂያዎች እና ምርጫዎችን ጨምሮ ያሉ ቅንብሮችን በአፑ ውስጥ ማበጀት ይችላሉ።",
+  "question7": "አካውንቴን እንዴት መሰረዝ እችላለሁ?",
+  "answer7": "አካውንትዎን ለመሰረዝ እባክዎ በዋትስአፕ ወይም በቢሮ ከኩባንያው ጋር ያግኙ።",
+  "question8": "የታሪክ ትንታኔዬን እንዴት ማግኘት እችላለሁ?",
+  "answer8": "ቀደምት ጉዞዎችዎን እና የመንዳት ትንታኔዎችን በአፑ History ወይም Analytics ክፍል ውስጥ ማየት ይችላሉ።",
+  "question9": "አፑን ኦፍላይን መጠቀም እችላለሁ?",
+  "answer9": "አፑ የተወሰነ ኦፍላይን ተግባር አለው። ውሂብ ለማመሳሰል እና ሙሉ ባህሪያትን ለመጠቀም ኢንተርኔት ያስፈልጋል።",
+
+  "terms_title": "ውሎች እና ሁኔታዎች",
+  "terms_accept": "ውሎችን እና ሁኔታዎችን ተቀበል",
+  "terms_full": "1. ውሎችን መቀበል\nይህን አፕሊኬሽን በመጫን ወይም በመጠቀም እነዚህን ውሎች እና ሁኔታዎች ተቀብለዋል። ካልተስማሙ እባክዎ አፑን መጠቀም ያቁሙ።\n\n2. የአፕሊኬሽኑ ዓላማ\nይህ አፕሊኬሽን የተሽከርካሪ ብላክቦክስ እና ቴሌማቲክስ ስርዓት ሲሆን የተሽከርካሪ አፈጻጸም እና የመንዳት ባህሪን ለመረጃ፣ ለደህንነት እና ለትንታኔ ብቻ ይቆጣጠራል።\n\n3. የሚሰበሰቡ ውሂቦች\nአፕሊኬሽኑ የተሽከርካሪ እና የመንዳት ውሂብ ሊሰበስብ እና ሊያካሂድ ይችላል፣ ይህም የሚከተሉትን ያካትታል፡\n\n• የተሽከርካሪ ፍጥነት\n• የነዳጅ ፍጆታ እና ደረጃ\n• ማፋጠን እና ማዘግየት\n• ከባድ ብሬክ እና ፈጣን ማፋጠን\n• ጠበኛ መዞር\n• የጂፒኤስ አካባቢ (ኬንትሮስ እና ሎንጊቱድ)\n• የጉዞ ርቀት፣ ጊዜ እና ቆይታ\n• የአሽከርካሪ እና የተሽከርካሪ መታወቂያ\n\nአፑን በመጠቀም እነዚህን መለኪያዎች ለመሰብሰብ ግልጽ ፈቃድ ይሰጣሉ።\n\n4. የአገልግሎት ተገኝነት\nበቴክኒካል ገደቦች ምክንያት የአፑ ቀጣይነት፣ ቀጥታ ጊዜ ወይም ያለስህተት ስራ ማረጋገጥ አይቻልም።",
+
+  "validation_password_mismatch": "ፓስወርዶቹ አይዛመዱም",
+  "validation_invalid_phone": "ስልክ ቁጥር ልክ አይደለም",
+  "validation_incorrect_pin": "ፒን ትክክል አይደለም",
+  "validation_empty_fields": "እባክዎ ሁሉንም ሳጥኖች ይሙሉ",
+
+  "empty_no_cars": "ምንም መኪና አልተገኘም",
+  "empty_no_notifications": "እስካሁን ምንም ማሳወቂያ የለም",
+  "empty_no_events": "ምንም ክስተት የለም",
+
+  "status_loading": "በመጫን ላይ...",
+  "status_success": "ተግባሩ ተሳክቷል",
+  "status_error": "የሆነ ችግር ተፈጥሯል",
+
+  "confirm_delete_car": "ይህን መኪና ማጥፋት እንደሚፈልጉ እርግጠኛ ነዎት?",
+  "confirm_reset_password": "ፓስወርድዎን ዳግም ማስጀመር እንደሚፈልጉ እርግጠኛ ነዎት?",
+
+  "search_hint": "ፈልግ...",
+  "search_no_results": "ምንም ውጤት አልተገኘም",
+  "filter": "አጣራ",
+  "sort": "ደርድር",
+
+  "onboarding_title_1": "እንኳን ደህና መጡ",
+  "onboarding_desc_1": "ወደ ብላክ ቦክስ ማኔጅር",
+
+  "onboarding_title_2": "ከመንዳትዎ ጀርባ ያለውን ታሪክ ይመልከቱ፣",
+  "onboarding_desc_2": "እያንዳንዱን ጉዞ መዝግብ፣ እያንዳንዱን ኪሎሜትር ተንትን።",
+
+  "error_email_exists": "ይህ ኢሜይል ቀድሞ አለ",
+  "error_wrong_password": "ፓስወርድ ትክክል አይደለም",
+  "error_phone_exists": "ይህ ስልክ ቁጥር ቀድሞ ጥቅም ላይ ውሏል",
+  "error_sp_ch": "ፓስወርድ ቢያንስ አንድ ልዩ ቁምፊ መያዝ አለበት",
+  "error_up": "ፓስወርድ ቢያንስ አንድ ትልቅ ፊደል መያዝ አለበት",
+  "error_low": "ፓስወርድ ቢያንስ አንድ ትንሽ ፊደል መያዝ አለበት",
+  "error_num": "ፓስወርድ ቢያንስ አንድ ቁጥር መያዝ አለበት",
+  "error_required": "ይህ ሳጥን ያስፈልጋል",
+  "error_invalid_email": "ኢሜይል ትክክል አይደለም",
+  "error_password_short": "ፓስወርድ ቢያንስ {length} ቁምፊዎች መሆን አለበት",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

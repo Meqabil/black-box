@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/ui/widgets/main_image.dart';
 import 'package:black_box/features/auth/presentation/screens/sign_up/widgets/sign_up_form.dart';
-import '../../../../../core/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -23,7 +22,7 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mainRedColor,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       resizeToAvoidBottomInset: true,
       body: SafeArea(
         bottom: false,
@@ -49,11 +48,11 @@ class _SignupScreenState extends State<SignupScreen> {
                       children: [
                         Container(
                           margin: EdgeInsets.only(top: 80),
-                          padding: const EdgeInsets.only(left: 20,right: 20,top: 68,),
+                          padding: EdgeInsets.only(left: width * .045,right: width * .045,top: width * .18,),
                           width: double.infinity,
-                          height: MediaQuery.sizeOf(context).height,
-                          decoration: const BoxDecoration(
-                            color: backgroundGreen,
+                          height: height * .9,
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.secondary,
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(60),
                               topRight: Radius.circular(60),
@@ -62,8 +61,8 @@ class _SignupScreenState extends State<SignupScreen> {
                           child: SignUpForm(image: image,),
                         ),
                         Positioned(
-                          left: MediaQuery.sizeOf(context).width / 2 - 50,
-                          top: 15,
+                          left: width / 2 - 50,
+                          top: width * .038,
                           child: InkWell(
                             onTap: () async{
                               File? tempFile = await pickImages(context);
@@ -71,23 +70,23 @@ class _SignupScreenState extends State<SignupScreen> {
                               setState(() {});
                             },
                             child: image == null ? Container(
-                              width: 120,
-                              height: 120,
+                              width: width * .27,
+                              height: width * .27,
                               decoration: BoxDecoration(
                                 color: Color(0xFFB0B0B0),
                                 borderRadius: BorderRadius.circular(90)
                               ),
-                              child: Icon(Icons.person_outline_rounded,size: 60,color: mainRedColor,)
+                              child: Icon(Icons.person_outline_rounded,size: width * .138,color: Theme.of(context).colorScheme.primary,)
                             ) :
                             MainImage(
                               image: image,
-                              radius: 120
+                              radius: width * .268
                             ),
                           ),
                         ),
                         Positioned(
-                          left: MediaQuery.sizeOf(context).width / 2 + 30,
-                          top: 90,
+                          left: width / 2 + 30,
+                          top: width * .21,
                           child: InkWell(
                             onTap: ()async {
                               File? tempFile = await pickPhotoByCamera();
@@ -95,13 +94,13 @@ class _SignupScreenState extends State<SignupScreen> {
                               setState(() {});
                             },
                             child: Container(
-                                width: 40,
-                                height: 40,
+                                width: width * .09,
+                                height: width * .09,
                                 decoration: BoxDecoration(
-                                    color: mainRedColor,
+                                    color: Theme.of(context).colorScheme.primary,
                                     borderRadius: BorderRadius.circular(90)
                                 ),
-                                child: Icon(Icons.camera_alt_outlined,size: 20,color: Colors.white.withAlpha(200),)
+                                child: Icon(Icons.camera_alt_outlined,size: width * .045,color: Colors.white.withAlpha(200),)
                             ),
                           ),
                         ),

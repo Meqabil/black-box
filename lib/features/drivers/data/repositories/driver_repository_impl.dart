@@ -26,4 +26,9 @@ class DriverRepositoryImpl implements DriverRepository{
   Future<void> updateDriver({required int id, required String name,}) async {
     driverDataSource.updateDriver(id: id, name: name,);
   }
+
+  @override
+  Future<DriverEntity> showOneDriver(id) {
+    return driverDataSource.showOneDriver(id);
+  }
 }

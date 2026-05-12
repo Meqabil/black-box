@@ -1,6 +1,6 @@
 class DriverEntity {
   int id;
-  int ownerId;
+  String ownerId;
   String name;
   String createdAt;
   String updatedAt;

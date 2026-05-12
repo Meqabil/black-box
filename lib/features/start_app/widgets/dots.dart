@@ -22,9 +22,9 @@ class Dot extends StatelessWidget {
         width: size,
         height: size,
         decoration: BoxDecoration(
-          color: filled ? mainRedColor : Colors.white,
+          color: filled ? AppColor.mainRedColor : Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(90)),
-          border: Border.all(color: mainRedColor)
+          border: Border.all(color: AppColor.mainRedColor)
         ),
       ),
     );

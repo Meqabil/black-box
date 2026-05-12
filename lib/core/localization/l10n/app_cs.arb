@@ -1,0 +1,242 @@
+{
+  "@@locale": "cs",
+
+  "app_title": "BlackBox App",
+
+  "common_yes": "Ano",
+  "common_no": "Ne",
+  "common_cancel": "Zrušit",
+  "common_save": "Uložit",
+  "common_save_changes": "Uložit změny",
+  "common_continue": "Pokračovat",
+  "common_next": "Další",
+
+  "auth_login": "Přihlásit",
+  "auth_space_login": "Přihlásit se",
+  "auth_logout": "Odhlásit",
+  "auth_confirm_logout": "Opravdu se chcete odhlásit?",
+  "auth_signup": "Zaregistrovat",
+  "auth_create_account": "Vytvořit účet",
+  "auth_already_have_account": "Již máte účet? ",
+  "auth_no_account": "Nemáte účet?",
+  "auth_forgot_password": "Zapomenuté heslo?",
+  "auth_reset_password": "Obnovit heslo?",
+  "auth_change_password": "Změnit heslo",
+  "auth_continue": "Pokračováním souhlasíte s\n",
+  "auth_terms": "Podmínkami použití a Zásadami ochrany osobních údajů",
+  "auth_email": "E-mail",
+  "auth_password": "Heslo",
+  "auth_confirm_password": "Potvrdit heslo",
+  "auth_new_password": "Nové heslo",
+  "auth_confirm_new_password": "Potvrdit nové heslo",
+  "auth_enter_email": "Zadejte e-mailovou adresu",
+  "auth_password_hint": "Zadejte své heslo",
+  "full_name": "Celé jméno",
+  "email_hint": "priklad@gmail.com",
+  "name_hint": "Jan Novák",
+
+  "required_name": "Celé jméno je povinné",
+  "required_email": "E-mail je povinný",
+  "email_end": "E-mail musí končit na @gmail.com",
+  "required_password": "Heslo je povinné",
+  "required_confirm_password": "Potvrzení hesla je povinné",
+  "password_do_not_match": "Hesla se neshodují",
+  "min_password": "Heslo musí mít alespoň 8 znaků a obsahovat čísla",
+  "send_verification_code": "Odeslat ověřovací kód",
+  "password_changed_successfully": "Heslo bylo úspěšně změněno",
+  "forget_password_title": "Zadejte e-mail přidružený k vašemu účtu a zašleme vám bezpečnostní PIN pro obnovení hesla.",
+
+  "auth_security_pin": "Bezpečnostní PIN",
+  "auth_enter_pin": "Zadejte bezpečnostní PIN",
+  "verify": "Ověřit",
+  "auth_resend_pin": "Poslat znovu za {seconds} s",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Domů",
+  "home_welcome": "Ahoj, vítej zpět",
+  "home_good_morning": "Dobré ráno",
+  "home_looks_good": "Vypadá to\ndobře",
+  "home_safety_score": "Přehled bezpečnostního skóre",
+  "home_total_accidents": "Celkem nehod",
+  "total_active_cars": "Celkem aktivních vozidel",
+  "total_cars": "Celkem vozidel",
+
+  "home_active_cars": "{percentage}% vašich vozidel je aktivních",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Vozidla",
+  "car_view_all": "Zobrazit vozidla",
+  "car_add": "Přidat vozidlo",
+  "car_edit": "Upravit vozidlo",
+
+  "car_name": "Název vozidla",
+  "car_plate": "SPZ",
+  "car_type": "Typ vozidla",
+  "car_driver_name": "Jméno řidiče",
+
+  "car_item_title": "Vozidlo #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Živé sledování",
+  "tracking_last_updates": "Poslední aktualizace",
+
+  "event_title": "Jízdní události",
+  "event_speeding": "Překročení rychlosti",
+  "event_hard_braking": "Prudké brzdění",
+  "event_aggressive_turns": "Agresivní zatáčky",
+  "event_crash": "Nehoda",
+
+  "event_location": "V {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/h",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Závažnost",
+  "event_severity_low": "Nízká",
+  "event_severity_medium": "Střední",
+  "event_severity_high": "Vysoká",
+  "event_severity_critical": "Kritická",
+
+  "event_reason": "Důvod",
+  "event_last_speed": "Poslední zaznamenaná rychlost",
+
+  "notification_title": "Oznámení",
+  "notification_today": "Dnes",
+  "notification_yesterday": "Včera",
+  "notification_earlier": "Dříve tento týden",
+
+  "notification_fuel_alert": "Varování před únikem paliva!",
+  "notification_fuel_desc": "Vozidlo {car} řízené {driver} hlásí prudký pokles hladiny paliva.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Detekována kritická nehoda!",
+  "notification_crash_desc": "Vozidlo {car} řízené {driver} hlásí závažnou kolizi.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Profil",
+  "profile_edit": "Upravit můj profil",
+  "update_profile": "Aktualizovat profil",
+  "user_name": "Uživatelské jméno",
+
+  "security_title": "Zabezpečení",
+  "change_password": "Změnit heslo",
+
+  "settings_title": "Nastavení",
+  "settings_notifications": "Nastavení oznámení",
+  "settings_general_notifications": "Obecná oznámení",
+  "account_settings": "Nastavení účtu",
+  "push_notification": "Push oznámení",
+  "dark_mode": "Tmavý režim zapnut",
+
+  "help_title": "Centrum nápovědy",
+  "help_and_faq": "Nápověda a FAQ",
+  "help_contact": "Kontaktujte nás",
+  "help_faq": "FAQ",
+  "how_help": "Jak vám můžeme pomoci?",
+  "on_wh_num": "Na WhatsApp čísle",
+
+  "question1": "Jak používat BlackBox?",
+  "answer1": "Nainstalujte zařízení BlackBox do svého vozu, přihlaste se do aplikace a začněte řídit. Aplikace bude automaticky zaznamenávat a zobrazovat vaše jízdní údaje.",
+  "question2": "Kolik stojí používání BlackBox?",
+  "answer2": "Cena závisí na zvoleném tarifu a službách. Podrobnosti o cenách vám sdělí naše společnost.",
+  "question3": "Jak kontaktovat podporu?",
+  "answer3": "Podporu můžete kontaktovat přes WhatsApp na oficiálním čísle společnosti nebo osobní návštěvou kanceláře v pracovní době.",
+  "question4": "Jak mohu obnovit heslo, pokud ho zapomenu?",
+  "answer4": "Použijte možnost 'Zapomenuté heslo' na přihlašovací obrazovce a postupujte podle pokynů k obnovení hesla.",
+  "question5": "Existují opatření na ochranu soukromí a zabezpečení dat?",
+  "answer5": "Ano. Vaše data jsou bezpečně uložena a chráněna a nejsou sdílena bez vašeho svolení, pokud to nevyžaduje zákon.",
+  "question6": "Mohu přizpůsobit nastavení v aplikaci?",
+  "answer6": "Ano. Můžete přizpůsobit dostupná nastavení, jako jsou oznámení a preference v aplikaci.",
+  "question7": "Jak mohu smazat svůj účet?",
+  "answer7": "Chcete-li smazat svůj účet, kontaktujte prosím společnost přes WhatsApp nebo navštivte kancelář společnosti.",
+  "question8": "Jak získám přístup k historii svých analýz?",
+  "answer8": "Své minulé cesty a jízdní analýzy můžete zobrazit v sekci Historie nebo Analýzy v aplikaci.",
+  "question9": "Mohu aplikaci používat offline?",
+  "answer9": "Aplikace má omezenou offline funkčnost. Pro synchronizaci dat a přístup k plným funkcím je vyžadováno internetové připojení.",
+
+  "terms_title": "Obchodní podmínky",
+  "terms_accept": "Přijímám obchodní podmínky",
+  "terms_full": "1. Přijetí podmínek\nInstalací nebo používáním této aplikace souhlasíte s těmito obchodními podmínkami. Pokud nesouhlasíte, přestaňte aplikaci používat.\n\n2. Účel aplikace\nTato aplikace je palubní jednotka a telematický systém vozidla sloužící výhradně pro informační, bezpečnostní a analytické účely ke sledování výkonu vozidla a chování řidiče.\n\n3. Sběr datových parametrů\nAplikace může sbírat a zpracovávat údaje o vozidle a jízdě, včetně, ale ne výhradně:\n\n• Rychlost vozidla\n• Spotřeba paliva a hladina paliva\n• Zrychlování a zpomalování\n• Prudké brzdění a prudké zrychlování\n• Prudké zatáčení\n• Údaje o poloze GPS (zeměpisná šířka a délka)\n• Vzdálenost, doba trvání a čas cesty\n• Identifikační údaje řidiče a vozidla\n\nPoužíváním aplikace výslovně souhlasíte se sběrem těchto parametrů.\n\n4. Dostupnost služby\nKontinuální, nepřetržitý nebo bezchybný provoz aplikace není zaručen kvůli technickým omezením.",
+
+  "validation_password_mismatch": "Hesla se neshodují",
+  "validation_invalid_phone": "Neplatné telefonní číslo",
+  "validation_incorrect_pin": "Nesprávný PIN",
+  "validation_empty_fields": "Vyplňte prosím všechna pole",
+
+  "empty_no_cars": "Nebyla nalezena žádná vozidla",
+  "empty_no_notifications": "Zatím žádná oznámení",
+  "empty_no_events": "Nejsou k dispozici žádné události",
+
+  "status_loading": "Načítání...",
+  "status_success": "Operace úspěšná",
+  "status_error": "Něco se pokazilo",
+
+  "confirm_delete_car": "Opravdu chcete smazat toto vozidlo?",
+  "confirm_reset_password": "Opravdu chcete obnovit své heslo?",
+
+  "search_hint": "Hledat...",
+  "search_no_results": "Nebyly nalezeny žádné výsledky",
+  "filter": "Filtr",
+  "sort": "Seřadit",
+
+  "onboarding_title_1": "Vítejte",
+  "onboarding_desc_1": "v aplikaci Black Box Manager",
+
+  "onboarding_title_2": "Podívejte se na příběh za vaší jízdou,",
+  "onboarding_desc_2": "Zaznamenáváme každou cestu, analyzujeme každý kilometr.",
+
+  "error_email_exists": "Tento e-mail již existuje",
+  "error_wrong_password": "Nesprávné heslo",
+  "error_phone_exists": "Toto telefonní číslo je již používáno",
+  "error_sp_ch": "Heslo musí obsahovat alespoň jeden speciální znak",
+  "error_up": "Heslo musí obsahovat alespoň jedno velké písmeno",
+  "error_low": "Heslo musí obsahovat alespoň jedno malé písmeno",
+  "error_num": "Heslo musí obsahovat alespoň jedno číslo",
+  "error_required": "Toto pole je povinné",
+  "error_invalid_email": "Neplatná e-mailová adresa",
+  "error_password_short": "Heslo musí mít alespoň {length} znaků",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

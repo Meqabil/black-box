@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../../constants/global.dart';
 
 class SearchItems extends StatelessWidget {
   const SearchItems({super.key,required this.searchController,required this.hint});
@@ -7,18 +9,18 @@ class SearchItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 45,
-      width: MediaQuery.sizeOf(context).width - 80,
+      height: width * .09,
+      width: width,
       decoration: BoxDecoration(
-        color: const Color(0xFF052224),
+        color: const Color(0xFF1A0505),
         borderRadius: BorderRadius.circular(25),
       ),
       child: Row(
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Text(
-              "Search",
+              AppLocalizations.of(context)!.search,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 14,
@@ -34,12 +36,12 @@ class SearchItems extends StatelessWidget {
                 borderRadius: BorderRadius.circular(23),
               ),
               alignment: Alignment.centerRight,
-              padding: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal:  15),
               child: TextField(
                 controller: searchController,
-
                 textAlign: TextAlign.right,
                 decoration: InputDecoration(
+                  fillColor: Colors.transparent,
                   hintText: hint,
                   hintStyle: TextStyle(
                     color: Colors.grey,

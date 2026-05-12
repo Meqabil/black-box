@@ -20,7 +20,7 @@ class _AnalysisState extends State<Analysis> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mainRedColor,
+      backgroundColor: AppColor.mainRedColor,
 
       body: SafeArea(
         bottom: false,
@@ -87,7 +87,7 @@ class _AnalysisState extends State<Analysis> {
                           children: [
                             NavButton(
                               text: "Daily",
-                              background: position == 0 ? mainRedColor  : Colors.transparent,
+                              background: position == 0 ? AppColor.mainRedColor  : Colors.transparent,
                               onPressed: (){
                                 pageController.animateToPage(
                                   0,
@@ -101,7 +101,7 @@ class _AnalysisState extends State<Analysis> {
                             ),
                             NavButton(
                               text: "Weekly",
-                              background: position == 1 ? mainRedColor  : Colors.transparent,
+                              background: position == 1 ? AppColor.mainRedColor  : Colors.transparent,
                               onPressed: (){
                                 pageController.animateToPage(
                                   1,
@@ -114,7 +114,7 @@ class _AnalysisState extends State<Analysis> {
                             ),
                             NavButton(
                               text: "Monthly",
-                              background: position == 2 ? mainRedColor  : Colors.transparent,
+                              background: position == 2 ? AppColor.mainRedColor  : Colors.transparent,
                               onPressed: (){
                                 pageController.animateToPage(
                                   2,
@@ -127,7 +127,7 @@ class _AnalysisState extends State<Analysis> {
                             ),
                             NavButton(
                               text: "Yearly",
-                              background: position == 3 ? mainRedColor  : Colors.transparent,
+                              background: position == 3 ? AppColor.mainRedColor  : Colors.transparent,
                               onPressed: (){
                                 pageController.animateToPage(
                                   3,
@@ -266,7 +266,7 @@ class _AnalysisState extends State<Analysis> {
                                       padding: EdgeInsets.only(top: 10),
                                       child: Column(
                                         children: [
-                                          SquareArrowIcon(label: '', value: '', arrowAngle: 25, valueColor: Colors.red, iconColor: mainRedColor,onlyIcon: true,),
+                                          SquareArrowIcon(label: '', value: '', arrowAngle: 25, valueColor: Colors.red, iconColor: AppColor.mainRedColor,onlyIcon: true,),
                                           Text("Maximum Speed ",style: TextStyle(fontSize: 15),),
                                           Text("85km/H",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Color(0xFF2A0A0A)),)
                                         ],
@@ -278,7 +278,7 @@ class _AnalysisState extends State<Analysis> {
                                       padding: EdgeInsets.only(top: 10),
                                       child: Column(
                                         children: [
-                                          SquareArrowIcon(label: '', value: '', arrowAngle: 25, valueColor: Colors.red, iconColor: mainRedColor,onlyIcon: true,),
+                                          SquareArrowIcon(label: '', value: '', arrowAngle: 25, valueColor: Colors.red, iconColor: AppColor.mainRedColor,onlyIcon: true,),
                                           Text("Maximum Speed ",style: TextStyle(fontSize: 15),),
                                           Text("85km/H",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Color(0xFF2A0A0A)),)
                                         ],

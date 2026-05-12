@@ -1,0 +1,242 @@
+{
+  "@@locale": "ps",
+
+  "app_title": "بلیک باکس ایپ",
+
+  "common_yes": "هو",
+  "common_no": "نه",
+  "common_cancel": "لغوه کړئ",
+  "common_save": "وساتئ",
+  "common_save_changes": "بدلونونه وساتئ",
+  "common_continue": "دوام ورکړئ",
+  "common_next": "بل",
+
+  "auth_login": "ننوتل",
+  "auth_space_login": "Log In",
+  "auth_logout": "وتل",
+  "auth_confirm_logout": "ایا تاسو واقعاً غواړئ چې له سیسټم څخه ووځئ؟",
+  "auth_signup": "راجسټر کړئ",
+  "auth_create_account": "اکاونټ جوړ کړئ",
+  "auth_already_have_account": "مخکې اکاونټ لرئ؟ ",
+  "auth_no_account": "اکاونټ نه لرئ؟",
+  "auth_forgot_password": "پاسورډ هیر شو؟",
+  "auth_reset_password": "پاسورډ ریسیټ کړئ؟",
+  "auth_change_password": "پاسورډ بدل کړئ",
+  "auth_continue": "دوام ورکولو سره تاسو منئ چې\n",
+  "auth_terms": "د کارولو شرایط او د محرمیت پالیسي",
+  "auth_email": "ایمیل",
+  "auth_password": "پاسورډ",
+  "auth_confirm_password": "پاسورډ تایید کړئ",
+  "auth_new_password": "نوی پاسورډ",
+  "auth_confirm_new_password": "نوی پاسورډ تایید کړئ",
+  "auth_enter_email": "ایمیل آدرس ولیکئ",
+  "auth_password_hint": "خپل پاسورډ ولیکئ",
+  "full_name": "بشپړ نوم",
+  "email_hint": "example@gmail.com",
+  "name_hint": "John Doe",
+
+  "required_name": "بشپړ نوم اړین دی",
+  "required_email": "ایمیل اړین دی",
+  "email_end": "ایمیل باید په @gmail.com پای ته ورسېږي",
+  "required_password": "پاسورډ اړین دی",
+  "required_confirm_password": "د پاسورډ تایید اړین دی",
+  "password_do_not_match": "پاسورډونه سره سمون نه خوري",
+  "min_password": "پاسورډ باید لږ تر لږه ۸ حروف وي او شمېرې هم ولري",
+  "send_verification_code": "تصدیقي کوډ ولېږئ",
+  "password_changed_successfully": "پاسورډ په بریالیتوب سره\nبدل شو",
+  "forget_password_title": "د خپل اکاونټ سره تړلی ایمیل ولیکئ، موږ به تاسو ته د پاسورډ ریسیټ لپاره امنیتي پین ولېږو.",
+
+  "auth_security_pin": "امنیتي پین",
+  "auth_enter_pin": "امنیتي پین ولیکئ",
+  "verify": "تایید کړئ",
+  "auth_resend_pin": "په {seconds} ثانیو کې بیا ولېږئ",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "کور",
+  "home_welcome": "سلام، بیا ښه راغلاست",
+  "home_good_morning": "سهار مو په خیر",
+  "home_looks_good": "ښه\nښکاري",
+  "home_safety_score": "د خوندیتوب سکور لید",
+  "home_total_accidents": "ټول حادثات",
+  "total_active_cars": "ټول فعال موټرونه",
+  "total_cars": "ټول موټرونه",
+
+  "home_active_cars": "ستاسو له موټرو څخه {percentage}% فعال دي",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "موټرونه",
+  "car_view_all": "ټول موټرونه وګورئ",
+  "car_add": "موټر اضافه کړئ",
+  "car_edit": "موټر سمول",
+
+  "car_name": "د موټر نوم",
+  "car_plate": "د موټر پلیټ نمبر",
+  "car_type": "د موټر ډول",
+  "car_driver_name": "د ډرایور نوم",
+
+  "car_item_title": "موټر #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "ژوندۍ تعقیب",
+  "tracking_last_updates": "وروستي تازه معلومات",
+
+  "event_title": "ډرایوینگ پیښې",
+  "event_speeding": "تیز تګ",
+  "event_hard_braking": "کلکه بریک",
+  "event_aggressive_turns": "تیز موړونه",
+  "event_crash": "حادثه",
+
+  "event_location": "په {location} کې",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} کیلومتره فی ساعت",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "شدت",
+  "event_severity_low": "کم",
+  "event_severity_medium": "منځنی",
+  "event_severity_high": "لوړ",
+  "event_severity_critical": "ډېر خطرناک",
+
+  "event_reason": "لامل",
+  "event_last_speed": "وروستی ثبت شوی سرعت",
+
+  "notification_title": "خبرتیاوې",
+  "notification_today": "نن",
+  "notification_yesterday": "پرون",
+  "notification_earlier": "د دې اونۍ په پیل کې",
+
+  "notification_fuel_alert": "د تیلو لیک الرټ!",
+  "notification_fuel_desc": "موټر {car} چې {driver} یې چلوي، د تیلو په کچه کې ناڅاپي کموالي راپور ورکړی دی.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "جدي حادثه کشف شوه!",
+  "notification_crash_desc": "موټر {car} چې {driver} یې چلوي، د سخت ټکر راپور ورکړی دی.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "پروفایل",
+  "profile_edit": "زما پروفایل سمول",
+  "update_profile": "پروفایل تازه کړئ",
+  "user_name": "کارونکي نوم",
+
+  "security_title": "امنیت",
+  "change_password": "پاسورډ بدل کړئ",
+
+  "settings_title": "تنظیمات",
+  "settings_notifications": "د خبرتیاو تنظیمات",
+  "settings_general_notifications": "عمومي خبرتیاوې",
+  "account_settings": "د اکاونټ تنظیمات",
+  "push_notification": "پش خبرتیاوې",
+  "dark_mode": "ډارک موډ فعال دی",
+
+  "help_title": "مرستې مرکز",
+  "help_and_faq": "مرسته او ډېر پوښتل شوي پوښتنې",
+  "help_contact": "زموږ سره اړیکه",
+  "help_faq": "FAQ",
+  "how_help": "مونږ تاسو ته څنګه مرسته کولی شو؟",
+  "on_wh_num": "په واټساپ نمبر",
+
+  "question1": "بلیک باکس څنګه وکاروو؟",
+  "answer1": "خپل موټر کې بلیک باکس ډیوایس نصب کړئ، په اپلیکیشن کې ننوتل وکړئ او ډرایو پیل کړئ. اپلیکیشن به په اتومات ډول ستاسو ډرایوینگ ډاټا ثبت او ښکاره کړي.",
+  "question2": "د بلیک باکس کارولو لګښت څومره دی؟",
+  "answer2": "لګښت د انتخاب شوي پلان او خدماتو په اساس دی. مهرباني وکړئ د قیمتونو لپاره له شرکت سره اړیکه ونیسئ.",
+  "question3": "د سپورټ سره څنګه اړیکه ونیسو؟",
+  "answer3": "تاسو کولی شئ د شرکت رسمي نمبر په واټساپ له لارې یا د کاري وختونو کې د شرکت دفتر ته مراجعه کولو سره اړیکه ونیسئ.",
+  "question4": "که پاسورډ هیر شوم نو څنګه ریسیټ کړم؟",
+  "answer4": "په لاګ ان سکرین کې د 'Forgot Password' اختیار وکاروئ او لارښوونې تعقیب کړئ.",
+  "question5": "آیا د محرمیت او ډاټا امنیت تدابیر شته؟",
+  "answer5": "هو. ستاسو ډاټا په خوندي ډول ساتل کیږي او پرته له ستاسو اجازه نه شریکېږي پرته له هغه چې قانون ورته اړتیا ولري.",
+  "question6": "ایا زه په اپلیکیشن کې تنظیمات بدلولای شم؟",
+  "answer6": "هو. تاسو کولی شئ په اپلیکیشن کې شتون لرونکي تنظیمات لکه خبرتیاوې او غوره والي بدل کړئ.",
+  "question7": "زما اکاونټ څنګه ړنګ کړم؟",
+  "answer7": "د خپل اکاونټ د ړنګولو لپاره مهرباني وکړئ له شرکت سره په واټساپ یا دفتر له لارې اړیکه ونیسئ.",
+  "question8": "زما انالیټکس تاریخ ته څنګه لاسرسی ولرم؟",
+  "answer8": "تاسو کولی شئ خپلې تېرې سفرونه او ډرایوینگ انالیټکس په اپلیکیشن کې د History یا Analytics برخې کې وګورئ.",
+  "question9": "ایا زه اپلیکیشن آفلاین کارولای شم؟",
+  "answer9": "اپلیکیشن محدود آفلاین فعالیت لري. د ډاټا سنک او بشپړ فیچرونو لپاره انټرنیټ اتصال اړین دی.",
+
+  "terms_title": "شرایط او مقررات",
+  "terms_accept": "شرایط او مقررات ومنئ",
+  "terms_full": "1. د شرایطو منل\nد دې اپلیکیشن نصب یا کارولو سره تاسو دا شرایط او مقررات منئ. که نه منئ، نو مهرباني وکړئ د اپلیکیشن کارول بند کړئ.\n\n2. د اپلیکیشن هدف\nدا اپلیکیشن د موټر بلیک باکس او ټیلیماتیک سیسټم دی چې یوازې د معلوماتي، خوندیتوب او تحلیلي موخو لپاره د موټر فعالیت او ډرایوینگ چلند څارنه کوي.\n\n3. راټول شوي ډاټا پیرامیټرونه\nاپلیکیشن ممکن د موټر او ډرایوینگ ډاټا راټول او پروسیس کړي، په شمول:\n\n• د موټر سرعت\n• د تیلو مصرف او کچه\n• سرعت زیاتول او کمول\n• کلکه بریک او چټک سرعت پیښې\n• تېز موړونه\n• د GPS موقعیت ډاټا (عرض البلد او طول البلد)\n• د سفر واټن، موده او وخت\n• د ډرایور او موټر پیژندنه\n\nد اپلیکیشن په کارولو سره تاسو په روښانه ډول د دې پیرامیټرونو راټولولو ته رضایت ورکوئ.\n\n4. د خدمت شتون\nد تخنیکي محدودیتونو له امله د اپلیکیشن دوامداره، ریئل ټایم یا بې خطا کار نه شي تضمین کېدای.",
+
+  "validation_password_mismatch": "پاسورډونه سره سمون نه خوري",
+  "validation_invalid_phone": "تلفن نمبر ناسم دی",
+  "validation_incorrect_pin": "پین ناسم دی",
+  "validation_empty_fields": "مهرباني وکړئ ټولې ډکې ډکې کړئ",
+
+  "empty_no_cars": "هیڅ موټر ونه موندل شو",
+  "empty_no_notifications": "تر اوسه هیڅ خبرتیا نشته",
+  "empty_no_events": "هیڅ پیښه شتون نه لري",
+
+  "status_loading": "لګېږي...",
+  "status_success": "عملیه بریالۍ شوه",
+  "status_error": "یوه ستونزه رامنځته شوه",
+
+  "confirm_delete_car": "ایا تاسو واقعاً غواړئ دا موټر ړنګ کړئ؟",
+  "confirm_reset_password": "ایا تاسو واقعاً غواړئ خپل پاسورډ ریسیټ کړئ؟",
+
+  "search_hint": "لټون...",
+  "search_no_results": "هیڅ نتیجه ونه موندل شوه",
+  "filter": "فلتر",
+  "sort": "سمبالول",
+
+  "onboarding_title_1": "ښه راغلاست",
+  "onboarding_desc_1": "بلیک باکس مېنیجر ته",
+
+  "onboarding_title_2": "د خپل ډرایو شاته کیسه وګورئ،",
+  "onboarding_desc_2": "هر سفر ثبت کړئ، هر مایل تحلیل کړئ.",
+
+  "error_email_exists": "دا ایمیل مخکې شتون لري",
+  "error_wrong_password": "پاسورډ ناسم دی",
+  "error_phone_exists": "دا ټیلیفون نمبر مخکې کارول شوی دی",
+  "error_sp_ch": "پاسورډ باید لږ تر لږه یو خاص حرف ولري",
+  "error_up": "پاسورډ باید لږ تر لږه یو لوړ حرف ولري",
+  "error_low": "پاسورډ باید لږ تر لږه یو کوچنی حرف ولري",
+  "error_num": "پاسورډ باید لږ تر لږه یوه شمېره ولري",
+  "error_required": "دا ډګر اړین دی",
+  "error_invalid_email": "ناسم ایمیل آدرس",
+  "error_password_short": "پاسورډ باید لږ تر لږه {length} حروف ولري",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

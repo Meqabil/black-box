@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../../../../core/constants/colors.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class VerifyOtpButton extends StatelessWidget {
   const VerifyOtpButton({super.key,required this.onPressed});
 
@@ -9,13 +11,13 @@ class VerifyOtpButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: mainRedColor,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(25),
         ),
       ),
-      child: const Text(
-        "Verify",
+      child: Text(
+        AppLocalizations.of(context)!.verify,
         style: TextStyle(
           color: Colors.white,
           fontSize: 18,

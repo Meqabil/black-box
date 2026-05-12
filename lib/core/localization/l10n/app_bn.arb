@@ -1,0 +1,242 @@
+{
+  "@@locale": "bn",
+
+  "app_title": "BlackBox অ্যাপ",
+
+  "common_yes": "হ্যাঁ",
+  "common_no": "না",
+  "common_cancel": "বাতিল করুন",
+  "common_save": "সংরক্ষণ করুন",
+  "common_save_changes": "পরিবর্তন সংরক্ষণ করুন",
+  "common_continue": "চালিয়ে যান",
+  "common_next": "পরবর্তী",
+
+  "auth_login": "লগইন",
+  "auth_space_login": "Log In",
+  "auth_logout": "লগ আউট",
+  "auth_confirm_logout": "আপনি কি নিশ্চিত যে লগ আউট করতে চান?",
+  "auth_signup": "সাইন আপ",
+  "auth_create_account": "অ্যাকাউন্ট তৈরি করুন",
+  "auth_already_have_account": "ইতিমধ্যে অ্যাকাউন্ট আছে? ",
+  "auth_no_account": "অ্যাকাউন্ট নেই?",
+  "auth_forgot_password": "পাসওয়ার্ড ভুলে গেছেন?",
+  "auth_reset_password": "পাসওয়ার্ড রিসেট করবেন?",
+  "auth_change_password": "পাসওয়ার্ড পরিবর্তন করুন",
+  "auth_continue": "চালিয়ে যাওয়ার মাধ্যমে, আপনি সম্মত হচ্ছেন\n",
+  "auth_terms": "ব্যবহারের শর্তাবলী এবং গোপনীয়তা নীতি",
+  "auth_email": "ইমেইল",
+  "auth_password": "পাসওয়ার্ড",
+  "auth_confirm_password": "পাসওয়ার্ড নিশ্চিত করুন",
+  "auth_new_password": "নতুন পাসওয়ার্ড",
+  "auth_confirm_new_password": "নতুন পাসওয়ার্ড নিশ্চিত করুন",
+  "auth_enter_email": "ইমেইল ঠিকানা লিখুন",
+  "auth_password_hint": "আপনার পাসওয়ার্ড লিখুন",
+  "full_name": "পুরো নাম",
+  "email_hint": "example@gmail.com",
+  "name_hint": "John Doe",
+
+  "required_name": "পুরো নাম প্রয়োজন",
+  "required_email": "ইমেইল প্রয়োজন",
+  "email_end": "ইমেইল @gmail.com দিয়ে শেষ হতে হবে",
+  "required_password": "পাসওয়ার্ড প্রয়োজন",
+  "required_confirm_password": "পাসওয়ার্ড নিশ্চিতকরণ প্রয়োজন",
+  "password_do_not_match": "পাসওয়ার্ড মিলছে না",
+  "min_password": "পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে এবং সংখ্যা থাকতে হবে",
+  "send_verification_code": "ভেরিফিকেশন কোড পাঠান",
+  "password_changed_successfully": "পাসওয়ার্ড সফলভাবে\nপরিবর্তিত হয়েছে",
+  "forget_password_title": "আপনার অ্যাকাউন্টের সাথে যুক্ত ইমেইল লিখুন, আমরা আপনাকে পাসওয়ার্ড রিসেট সিকিউরিটি পিন পাঠাব।",
+
+  "auth_security_pin": "সিকিউরিটি পিন",
+  "auth_enter_pin": "সিকিউরিটি পিন লিখুন",
+  "verify": "যাচাই করুন",
+  "auth_resend_pin": "{seconds} সেকেন্ড পর আবার পাঠান",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "হোম",
+  "home_welcome": "হ্যালো, ফিরে আসার জন্য স্বাগতম",
+  "home_good_morning": "শুভ সকাল",
+  "home_looks_good": "ভালো\nলাগছে",
+  "home_safety_score": "নিরাপত্তা স্কোর ওভারভিউ",
+  "home_total_accidents": "মোট দুর্ঘটনা",
+  "total_active_cars": "মোট সক্রিয় গাড়ি",
+  "total_cars": "মোট গাড়ি",
+
+  "home_active_cars": "আপনার গাড়ির {percentage}% সক্রিয়",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "গাড়ি",
+  "car_view_all": "সব গাড়ি দেখুন",
+  "car_add": "গাড়ি যোগ করুন",
+  "car_edit": "গাড়ি সম্পাদনা করুন",
+
+  "car_name": "গাড়ির নাম",
+  "car_plate": "গাড়ির প্লেট",
+  "car_type": "গাড়ির ধরন",
+  "car_driver_name": "ড্রাইভারের নাম",
+
+  "car_item_title": "গাড়ি #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "লাইভ ট্র্যাকিং",
+  "tracking_last_updates": "সর্বশেষ আপডেট",
+
+  "event_title": "ড্রাইভিং ইভেন্ট",
+  "event_speeding": "স্পিডিং",
+  "event_hard_braking": "হার্ড ব্রেকিং",
+  "event_aggressive_turns": "আক্রমণাত্মক টার্ন",
+  "event_crash": "দুর্ঘটনা",
+
+  "event_location": "{location} এ",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} কিমি/ঘণ্টা",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "তীব্রতা",
+  "event_severity_low": "কম",
+  "event_severity_medium": "মাঝারি",
+  "event_severity_high": "উচ্চ",
+  "event_severity_critical": "গুরুতর",
+
+  "event_reason": "কারণ",
+  "event_last_speed": "সর্বশেষ রেকর্ড করা গতি",
+
+  "notification_title": "নোটিফিকেশন",
+  "notification_today": "আজ",
+  "notification_yesterday": "গতকাল",
+  "notification_earlier": "এই সপ্তাহের আগে",
+
+  "notification_fuel_alert": "জ্বালানি লিক অ্যালার্ট!",
+  "notification_fuel_desc": "{driver} চালিত {car} গাড়িতে জ্বালানির স্তরে দ্রুত হ্রাসের খবর পাওয়া গেছে।",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "গুরুতর দুর্ঘটনা শনাক্ত হয়েছে!",
+  "notification_crash_desc": "{driver} চালিত {car} গাড়িতে গুরুতর সংঘর্ষের খবর পাওয়া গেছে।",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "প্রোফাইল",
+  "profile_edit": "আমার প্রোফাইল সম্পাদনা করুন",
+  "update_profile": "প্রোফাইল আপডেট করুন",
+  "user_name": "ব্যবহারকারীর নাম",
+
+  "security_title": "নিরাপত্তা",
+  "change_password": "পাসওয়ার্ড পরিবর্তন করুন",
+
+  "settings_title": "সেটিংস",
+  "settings_notifications": "নোটিফিকেশন সেটিংস",
+  "settings_general_notifications": "সাধারণ নোটিফিকেশন",
+  "account_settings": "অ্যাকাউন্ট সেটিংস",
+  "push_notification": "পুশ নোটিফিকেশন",
+  "dark_mode": "ডার্ক মোড চালু",
+
+  "help_title": "সাহায্য কেন্দ্র",
+  "help_and_faq": "সাহায্য ও FAQ",
+  "help_contact": "যোগাযোগ করুন",
+  "help_faq": "FAQ",
+  "how_help": "আমরা আপনাকে কীভাবে সাহায্য করতে পারি?",
+  "on_wh_num": "হোয়াটসঅ্যাপ নম্বরে",
+
+  "question1": "BlackBox কীভাবে ব্যবহার করবেন?",
+  "answer1": "আপনার গাড়িতে BlackBox ডিভাইস ইনস্টল করুন, অ্যাপে লগইন করুন এবং ড্রাইভিং শুরু করুন। অ্যাপটি স্বয়ংক্রিয়ভাবে আপনার ড্রাইভিং ডেটা রেকর্ড ও প্রদর্শন করবে।",
+  "question2": "BlackBox ব্যবহার করতে কত খরচ হয়?",
+  "answer2": "খরচ নির্বাচিত প্ল্যান এবং সেবার উপর নির্ভর করে। দামের বিস্তারিত জানতে কোম্পানির সাথে যোগাযোগ করুন।",
+  "question3": "সাপোর্টের সাথে কীভাবে যোগাযোগ করব?",
+  "answer3": "আপনি কোম্পানির অফিসিয়াল নম্বরে হোয়াটসঅ্যাপের মাধ্যমে অথবা অফিস সময়ে কোম্পানির অফিসে গিয়ে যোগাযোগ করতে পারেন।",
+  "question4": "পাসওয়ার্ড ভুলে গেলে কীভাবে রিসেট করব?",
+  "answer4": "লগইন স্ক্রিনে 'Forgot Password' অপশন ব্যবহার করে নির্দেশনা অনুসরণ করুন।",
+  "question5": "কোনো গোপনীয়তা বা ডেটা নিরাপত্তা ব্যবস্থা আছে কি?",
+  "answer5": "হ্যাঁ। আপনার ডেটা নিরাপদে সংরক্ষিত এবং সুরক্ষিত, এবং আপনার অনুমতি ছাড়া শেয়ার করা হয় না আইনত প্রয়োজন না হলে।",
+  "question6": "আমি কি অ্যাপের সেটিংস কাস্টমাইজ করতে পারি?",
+  "answer6": "হ্যাঁ। আপনি নোটিফিকেশন এবং পছন্দসমূহের মতো উপলব্ধ সেটিংস অ্যাপে কাস্টমাইজ করতে পারেন।",
+  "question7": "আমার অ্যাকাউন্ট কীভাবে মুছে ফেলব?",
+  "answer7": "অ্যাকাউন্ট মুছে ফেলতে কোম্পানির সাথে হোয়াটসঅ্যাপ বা অফিসের মাধ্যমে যোগাযোগ করুন।",
+  "question8": "আমি কীভাবে আমার অ্যানালিটিক্স হিস্ট্রি অ্যাক্সেস করব?",
+  "answer8": "আপনি অ্যাপের History বা Analytics বিভাগে আপনার অতীত ট্রিপ এবং ড্রাইভিং অ্যানালিটিক্স দেখতে পারবেন।",
+  "question9": "আমি কি অ্যাপ অফলাইনে ব্যবহার করতে পারি?",
+  "answer9": "অ্যাপের সীমিত অফলাইন কার্যকারিতা আছে। ডেটা সিঙ্ক এবং পূর্ণ বৈশিষ্ট্যের জন্য ইন্টারনেট সংযোগ প্রয়োজন।",
+
+  "terms_title": "শর্তাবলী",
+  "terms_accept": "শর্তাবলী গ্রহণ করুন",
+  "terms_full": "১. শর্তাবলীর স্বীকৃতি\nএই অ্যাপ্লিকেশন ইনস্টল বা ব্যবহার করে আপনি এই শর্তাবলীতে সম্মত হচ্ছেন। যদি সম্মত না হন, তাহলে অ্যাপ ব্যবহার বন্ধ করুন।\n\n২. অ্যাপ্লিকেশনের উদ্দেশ্য\nএই অ্যাপ্লিকেশনটি যানবাহন ব্ল্যাক বক্স এবং টেলিমেটিক্স সিস্টেম যা শুধুমাত্র তথ্যমূলক, নিরাপত্তা এবং বিশ্লেষণাত্মক উদ্দেশ্যে যানবাহনের কর্মক্ষমতা ও ড্রাইভিং আচরণ পর্যবেক্ষণ করে।\n\n৩. সংগৃহীত ডেটা প্যারামিটার\nঅ্যাপ্লিকেশন যানবাহন ও ড্রাইভিং ডেটা সংগ্রহ ও প্রক্রিয়া করতে পারে, যার মধ্যে রয়েছে:\n\n• যানবাহনের গতি\n• জ্বালানি খরচ ও স্তর\n• ত্বরণ ও মন্থরণ\n• কঠিন ব্রেকিং ও দ্রুত ত্বরণ ঘটনা\n• তীক্ষ্ণ মোড়\n• GPS অবস্থান ডেটা (অক্ষাংশ ও দ্রাঘিমাংশ)\n• ভ্রমণ দূরত্ব, সময়কাল ও সময়\n• ড্রাইভার ও যানবাহন শনাক্তকরণ ডেটা\n\nঅ্যাপ ব্যবহার করে আপনি এই প্যারামিটার সংগ্রহের জন্য স্পষ্ট সম্মতি দিচ্ছেন।\n\n৪. সেবার প্রাপ্যতা\nপ্রযুক্তিগত সীমাবদ্ধতার কারণে অ্যাপের অবিচ্ছিন্ন, রিয়েল-টাইম বা ত্রুটিমুক্ত কার্যক্রমের গ্যারান্টি দেওয়া যায় না।",
+
+  "validation_password_mismatch": "পাসওয়ার্ড মিলছে না",
+  "validation_invalid_phone": "অবৈধ ফোন নম্বর",
+  "validation_incorrect_pin": "ভুল পিন",
+  "validation_empty_fields": "অনুগ্রহ করে সবগুলো ক্ষেত্র পূরণ করুন",
+
+  "empty_no_cars": "কোনো গাড়ি পাওয়া যায়নি",
+  "empty_no_notifications": "এখনো কোনো নোটিফিকেশন নেই",
+  "empty_no_events": "কোনো ইভেন্ট নেই",
+
+  "status_loading": "লোড হচ্ছে...",
+  "status_success": "অপারেশন সফল",
+  "status_error": "কিছু ভুল হয়েছে",
+
+  "confirm_delete_car": "আপনি কি নিশ্চিত যে এই গাড়ি মুছে ফেলতে চান?",
+  "confirm_reset_password": "আপনি কি নিশ্চিত যে পাসওয়ার্ড রিসেট করতে চান?",
+
+  "search_hint": "অনুসন্ধান করুন...",
+  "search_no_results": "কোনো ফলাফল পাওয়া যায়নি",
+  "filter": "ফিল্টার",
+  "sort": "সাজান",
+
+  "onboarding_title_1": "স্বাগতম",
+  "onboarding_desc_1": "Black Box Manager এ",
+
+  "onboarding_title_2": "আপনার ড্রাইভের পেছনের গল্প দেখুন,",
+  "onboarding_desc_2": "প্রতিটি যাত্রা রেকর্ড করা, প্রতিটি মাইল বিশ্লেষণ করা।",
+
+  "error_email_exists": "এই ইমেইলটি ইতিমধ্যে বিদ্যমান",
+  "error_wrong_password": "ভুল পাসওয়ার্ড",
+  "error_phone_exists": "এই ফোন নম্বরটি ইতিমধ্যে ব্যবহৃত হচ্ছে",
+  "error_sp_ch": "পাসওয়ার্ডে কমপক্ষে একটি বিশেষ চিহ্ন থাকতে হবে",
+  "error_up": "পাসওয়ার্ডে কমপক্ষে একটি বড় হাতের অক্ষর থাকতে হবে",
+  "error_low": "পাসওয়ার্ডে কমপক্ষে একটি ছোট হাতের অক্ষর থাকতে হবে",
+  "error_num": "পাসওয়ার্ডে কমপক্ষে একটি সংখ্যা থাকতে হবে",
+  "error_required": "এই ক্ষেত্রটি প্রয়োজনীয়",
+  "error_invalid_email": "অবৈধ ইমেইল ঠিকানা",
+  "error_password_short": "পাসওয়ার্ড কমপক্ষে {length} অক্ষরের হতে হবে",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

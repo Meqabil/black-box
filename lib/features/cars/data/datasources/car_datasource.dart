@@ -33,7 +33,7 @@ class CarDataSource{
     if(status == "success "){
       return CarModel.fromJson(response.data['data']);
     }
-    return CarModel(id: 0, ownerId: 'Unknown', plateNumber: 'Unknown', name: 'Unknown', vClass: 'Unknown', driverId: 'Unknown', createdAt: 'Unknown', updatedAt: 'Unknown');
+    return CarModel(id: 0, ownerId: '0', plateNumber: 'Unknown', name: 'Unknown', vClass: 'Unknown', driverId: 'Unknown', createdAt: 'Unknown', updatedAt: 'Unknown');
   }
 
 

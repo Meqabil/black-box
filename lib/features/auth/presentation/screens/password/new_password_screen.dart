@@ -1,20 +1,22 @@
 
-import 'package:black_box/core/constants/colors.dart';
-import 'package:black_box/features/auth/presentation/bloc/auth/new_password/password_cubit.dart';
+import 'package:black_box/features/auth/presentation/cubit/auth/new_password/password_cubit.dart';
 import 'package:black_box/features/auth/presentation/screens/password/widgets/new_password/change_password_button.dart';
 import 'package:black_box/features/auth/presentation/screens/password/widgets/new_password/new_password_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class NewPasswordPage extends StatefulWidget {
-  const NewPasswordPage({super.key,required this.email,required this.otp});
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../../../core/constants/global.dart';
+class NewPasswordScreen extends StatefulWidget {
+  const NewPasswordScreen({super.key,required this.email,required this.otp});
   final String email;
   final String otp;
   @override
-  State<NewPasswordPage> createState() => _NewPasswordScreenState();
+  State<NewPasswordScreen> createState() => _NewPasswordScreenState();
 }
 
-class _NewPasswordScreenState extends State<NewPasswordPage> {
+class _NewPasswordScreenState extends State<NewPasswordScreen> {
   final _formKey = GlobalKey<FormState>();
   final _newPasswordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
@@ -33,28 +35,30 @@ class _NewPasswordScreenState extends State<NewPasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: mainRedColor,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: SafeArea(
         child: Column(
           children: [
             // Page Title
-            const SizedBox(height: 60),
-            const Text(
-              "Security Pin",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 26,
-                fontWeight: FontWeight.bold,
+            Container(
+              height: height * 0.21,
+              alignment: Alignment.center,
+              child: Text(
+                AppLocalizations.of(context)!.auth_new_password,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.0,
+                ),
               ),
             ),
-            const SizedBox(height: 80),
-
             // Page Body
             Expanded(
               child: Container(
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: backgroundGreen,
+                width: width,
+                decoration:  BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(70),
                     topRight: Radius.circular(70),
@@ -63,15 +67,15 @@ class _NewPasswordScreenState extends State<NewPasswordPage> {
                 child: SingleChildScrollView(
                   keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                   padding:
-                  const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
+                  EdgeInsets.symmetric(horizontal: width * .059, vertical: width * .09),
                   child: Form(
                     key: _formKey,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(height: 50,),
+                        SizedBox(height: width * .099,),
                         NewPasswordField(
-                          label: " New Password",
+                          label: AppLocalizations.of(context)!.auth_new_password,
                           controller: _newPasswordController,
                           obscure: obscureNew,
                           onToggle: () {
@@ -79,31 +83,31 @@ class _NewPasswordScreenState extends State<NewPasswordPage> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return "Password is required";
+                              return AppLocalizations.of(context)!.required_password;
                             }
                             if (value.length < 8) {
-                              return "Password must be at least 8 characters";
+                              return AppLocalizations.of(context)!.min_password;
                             }
                             if (!RegExp(r'[A-Z]').hasMatch(value)) {
-                              return "Password must contain at least one uppercase letter";
+                              return AppLocalizations.of(context)!.error_up;
                             }
                             if (!RegExp(r'[a-z]').hasMatch(value)) {
-                              return "Password must contain at least one lowercase letter";
+                              return AppLocalizations.of(context)!.error_low;
                             }
                             if (!RegExp(r'\d').hasMatch(value)) {
-                              return "Password must contain at least one number";
+                              return AppLocalizations.of(context)!.error_num;
                             }
                             if (!RegExp(
                               r'[!@#$%^&*(),.?":{}|<>]',
                             ).hasMatch(value)) {
-                              return "Password must contain at least one special character";
+                              return AppLocalizations.of(context)!.error_sp_ch;
                             }
                             return null;
                           },
                         ),
-                        const SizedBox(height: 20),
+                        SizedBox(height: width * .095),
                         NewPasswordField(
-                          label: " Confirm New Password",
+                          label: AppLocalizations.of(context)!.auth_confirm_new_password,
                           controller: _confirmPasswordController,
                           obscure: obscureConfirm,
                           onToggle: () {
@@ -111,15 +115,15 @@ class _NewPasswordScreenState extends State<NewPasswordPage> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return "Please confirm your password";
+                              return AppLocalizations.of(context)!.auth_confirm_new_password;
                             }
                             if (value != _newPasswordController.text) {
-                              return "Passwords do not match";
+                              return AppLocalizations.of(context)!.password_do_not_match;
                             }
                             return null;
                           },
                         ),
-                        const SizedBox(height: 100),
+                        SizedBox(height: width * .25),
                         ChangePasswordButton(
                           onPressed: (){
                             if(_formKey.currentState!.validate()){

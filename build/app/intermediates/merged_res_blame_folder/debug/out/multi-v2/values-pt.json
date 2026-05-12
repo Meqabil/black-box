@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.black.box.black_box.app-mergeDebugResources-42:/values-pt/values-pt.xml",
+            "outputFile": "com.black.box.black_box.app-mergeDebugResources-44:/values-pt/values-pt.xml",
             "map": [
                 {
                     "source": "C:\\Users\\workstation\\.gradle\\caches\\transforms-3\\889ae3adf7a24645889ee22f4dad2cac\\transformed\\core-1.13.1\\res\\values-pt\\values-pt.xml",

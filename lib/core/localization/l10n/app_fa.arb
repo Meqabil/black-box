@@ -1,0 +1,242 @@
+{
+  "@@locale": "fa",
+
+  "app_title": "اپلیکیشن BlackBox",
+
+  "common_yes": "بله",
+  "common_no": "خیر",
+  "common_cancel": "لغو",
+  "common_save": "ذخیره",
+  "common_save_changes": "ذخیره تغییرات",
+  "common_continue": "ادامه",
+  "common_next": "بعدی",
+
+  "auth_login": "ورود",
+  "auth_space_login": "ورود",
+  "auth_logout": "خروج",
+  "auth_confirm_logout": "آیا مطمئن هستید که می‌خواهید خارج شوید؟",
+  "auth_signup": "ثبت‌نام",
+  "auth_create_account": "ایجاد حساب کاربری",
+  "auth_already_have_account": "از قبل حساب کاربری دارید؟ ",
+  "auth_no_account": "حساب کاربری ندارید؟",
+  "auth_forgot_password": "رمز عبور را فراموش کرده‌اید؟",
+  "auth_reset_password": "بازنشانی رمز عبور؟",
+  "auth_change_password": "تغییر رمز عبور",
+  "auth_continue": "با ادامه دادن، شما موافقت خود را با\n",
+  "auth_terms": "شرایط استفاده و سیاست حریم خصوصی",
+  "auth_email": "ایمیل",
+  "auth_password": "رمز عبور",
+  "auth_confirm_password": "تأیید رمز عبور",
+  "auth_new_password": "رمز عبور جدید",
+  "auth_confirm_new_password": "تأیید رمز عبور جدید",
+  "auth_enter_email": "آدرس ایمیل را وارد کنید",
+  "auth_password_hint": "رمز عبور خود را وارد کنید",
+  "full_name": "نام کامل",
+  "email_hint": "example@gmail.com",
+  "name_hint": "محمد حسینی",
+
+  "required_name": "نام کامل الزامی است",
+  "required_email": "ایمیل الزامی است",
+  "email_end": "ایمیل باید با @gmail.com خاتمه یابد",
+  "required_password": "رمز عبور الزامی است",
+  "required_confirm_password": "تأیید رمز عبور الزامی است",
+  "password_do_not_match": "رمزهای عبور مطابقت ندارند",
+  "min_password": "رمز عبور باید حداقل ۸ کاراکتر و شامل اعداد باشد",
+  "send_verification_code": "ارسال کد تأیید",
+  "password_changed_successfully": "رمز عبور با موفقیت تغییر کرد",
+  "forget_password_title": "ایمیل مرتبط با حساب خود را وارد کنید تا ما PIN امنیتی بازنشانی رمز عبور را برای شما ارسال کنیم.",
+
+  "auth_security_pin": "PIN امنیتی",
+  "auth_enter_pin": "PIN امنیتی را وارد کنید",
+  "verify": "تأیید",
+  "auth_resend_pin": "ارسال مجدد در {seconds} ثانیه",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "صفحه اصلی",
+  "home_welcome": "سلام، خوش آمدید",
+  "home_good_morning": "صبح بخیر",
+  "home_looks_good": "خوب\nبه نظر می‌رسد",
+  "home_safety_score": "نمای کلی امتیاز ایمنی",
+  "home_total_accidents": "مجموع تصادفات",
+  "total_active_cars": "مجموع خودروهای فعال",
+  "total_cars": "مجموع خودروها",
+
+  "home_active_cars": "{percentage}٪ از خودروهای شما فعال هستند",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "خودروها",
+  "car_view_all": "مشاهده خودروها",
+  "car_add": "افزودن خودرو",
+  "car_edit": "ویرایش خودرو",
+
+  "car_name": "نام خودرو",
+  "car_plate": "پلاک خودرو",
+  "car_type": "نوع خودرو",
+  "car_driver_name": "نام راننده",
+
+  "car_item_title": "خودرو #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "ردیابی زنده",
+  "tracking_last_updates": "آخرین به‌روزرسانی‌ها",
+
+  "event_title": "رویدادهای رانندگی",
+  "event_speeding": "سرعت غیرمجاز",
+  "event_hard_braking": "ترمز ناگهانی",
+  "event_aggressive_turns": "پیچ‌های ناگهانی",
+  "event_crash": "تصادف",
+
+  "event_location": "در {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} کیلومتر بر ساعت",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "شدت",
+  "event_severity_low": "کم",
+  "event_severity_medium": "متوسط",
+  "event_severity_high": "زیاد",
+  "event_severity_critical": "بحرانی",
+
+  "event_reason": "دلیل",
+  "event_last_speed": "آخرین سرعت ثبت شده",
+
+  "notification_title": "اعلان‌ها",
+  "notification_today": "امروز",
+  "notification_yesterday": "دیروز",
+  "notification_earlier": "اوایل این هفته",
+
+  "notification_fuel_alert": "هشدار نشت سوخت!",
+  "notification_fuel_desc": "خودرو {car} که توسط {driver} رانندگی می‌شود کاهش سریع سطح سوخت را گزارش کرده است.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "تصادف بحرانی تشخیص داده شد!",
+  "notification_crash_desc": "خودرو {car} که توسط {driver} رانندگی می‌شود یک برخورد شدید را گزارش کرده است.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "پروفایل",
+  "profile_edit": "ویرایش پروفایل من",
+  "update_profile": "به‌روزرسانی پروفایل",
+  "user_name": "نام کاربری",
+
+  "security_title": "امنیت",
+  "change_password": "تغییر رمز عبور",
+
+  "settings_title": "تنظیمات",
+  "settings_notifications": "تنظیمات اعلان",
+  "settings_general_notifications": "اعلان عمومی",
+  "account_settings": "تنظیمات حساب",
+  "push_notification": "اعلان‌های فشاری",
+  "dark_mode": "حالت تاریک فعال",
+
+  "help_title": "مرکز راهنمایی",
+  "help_and_faq": "راهنما و سوالات متداول",
+  "help_contact": "تماس با ما",
+  "help_faq": "سوالات متداول",
+  "how_help": "چگونه می‌توانیم به شما کمک کنیم؟",
+  "on_wh_num": "در شماره واتس‌اپ",
+
+  "question1": "چگونه از BlackBox استفاده کنم؟",
+  "answer1": "دستگاه BlackBox را در خودروی خود نصب کنید، وارد برنامه شوید و رانندگی را شروع کنید. برنامه به طور خودکار داده‌های رانندگی شما را ثبت و نمایش می‌دهد.",
+  "question2": "هزینه استفاده از BlackBox چقدر است؟",
+  "answer2": "هزینه به طرح و خدمات انتخاب شده بستگی دارد. لطفاً برای جزئیات قیمت با شرکت تماس بگیرید.",
+  "question3": "چگونه با پشتیبانی تماس بگیرم؟",
+  "answer3": "می‌توانید از طریق واتس‌اپ با استفاده از شماره رسمی شرکت یا با مراجعه به دفتر شرکت در ساعات کاری با پشتیبانی تماس بگیرید.",
+  "question4": "اگر رمز عبور خود را فراموش کردم چگونه می‌توانم آن را بازنشانی کنم؟",
+  "answer4": "از گزینه 'رمز عبور را فراموش کرده‌اید' در صفحه ورود استفاده کنید و دستورالعمل‌ها را برای بازنشانی رمز عبور خود دنبال کنید.",
+  "question5": "آیا اقدامات حریم خصوصی یا امنیت داده‌ها وجود دارد؟",
+  "answer5": "بله. داده‌های شما با امنیت ذخیره و محافظت می‌شوند و بدون اجازه شما به اشتراک گذاشته نمی‌شوند مگر اینکه قانون الزام کند.",
+  "question6": "آیا می‌توانم تنظیمات داخل برنامه را سفارشی کنم؟",
+  "answer6": "بله. می‌توانید تنظیمات موجود مانند اعلان‌ها و اولویت‌ها را در داخل برنامه سفارشی کنید.",
+  "question7": "چگونه می‌توانم حساب خود را حذف کنم؟",
+  "answer7": "برای حذف حساب خود، لطفاً از طریق واتس‌اپ با شرکت تماس بگیرید یا به دفتر شرکت مراجعه کنید.",
+  "question8": "چگونه به تاریخچه تحلیل‌های خود دسترسی پیدا کنم؟",
+  "answer8": "می‌توانید سفرهای گذشته و تحلیل‌های رانندگی خود را در بخش تاریخچه یا تحلیل برنامه مشاهده کنید.",
+  "question9": "آیا می‌توانم از برنامه به صورت آفلاین استفاده کنم؟",
+  "answer9": "برنامه عملکرد آفلاین محدودی دارد. اتصال به اینترنت برای همگام‌سازی داده‌ها و دسترسی به ویژگی‌های کامل مورد نیاز است.",
+
+  "terms_title": "شرایط و قوانین",
+  "terms_accept": "پذیرش شرایط و قوانین",
+  "terms_full": "1. پذیرش شرایط\nبا نصب یا استفاده از این برنامه، شما این شرایط و قوانین را می‌پذیرید. اگر موافق نیستید، لطفاً استفاده از برنامه را متوقف کنید.\n\n2. هدف برنامه\nاین برنامه یک سیستم جعبه سیاه و تله‌ماتیک خودرو است که برای نظارت بر عملکرد خودرو و رفتار رانندگی فقط برای اهداف اطلاعاتی، ایمنی و تحلیلی استفاده می‌شود.\n\n3. پارامترهای داده جمع‌آوری شده\nبرنامه ممکن است داده‌های خودرو و رانندگی را جمع‌آوری و پردازش کند، از جمله اما نه محدود به:\n\n• سرعت خودرو\n• مصرف سوخت و سطح سوخت\n• شتاب و کاهش سرعت\n• ترمز ناگهانی و رویدادهای شتاب ناگهانی\n• پیچ‌های تند\n• داده‌های موقعیت مکانی GPS (عرض و طول جغرافیایی)\n• مسافت، مدت و زمان سفر\n• داده‌های شناسایی راننده و خودرو\n\nبا استفاده از برنامه، شما به صراحت با جمع‌آوری این پارامترها موافقت می‌کنید.\n\n4. در دسترس بودن سرویس\nعملکرد مداوم، بی‌وقفه یا بدون خطای برنامه به دلیل محدودیت‌های فنی تضمین نمی‌شود.",
+
+  "validation_password_mismatch": "رمزهای عبور مطابقت ندارند",
+  "validation_invalid_phone": "شماره تلفن نامعتبر",
+  "validation_incorrect_pin": "PIN نادرست",
+  "validation_empty_fields": "لطفاً همه فیلدها را پر کنید",
+
+  "empty_no_cars": "هیچ خودرویی یافت نشد",
+  "empty_no_notifications": "هنوز اعلانی وجود ندارد",
+  "empty_no_events": "هیچ رویدادی در دسترس نیست",
+
+  "status_loading": "در حال بارگذاری...",
+  "status_success": "عملیات موفقیت‌آمیز بود",
+  "status_error": "مشکلی پیش آمده است",
+
+  "confirm_delete_car": "آیا مطمئن هستید که می‌خواهید این خودرو را حذف کنید؟",
+  "confirm_reset_password": "آیا مطمئن هستید که می‌خواهید رمز عبور خود را بازنشانی کنید؟",
+
+  "search_hint": "جستجو...",
+  "search_no_results": "نتیجه‌ای یافت نشد",
+  "filter": "فیلتر",
+  "sort": "مرتب‌سازی",
+
+  "onboarding_title_1": "خوش آمدید",
+  "onboarding_desc_1": "به Black Box Manager",
+
+  "onboarding_title_2": "داستان پشت رانندگی خود را ببینید،",
+  "onboarding_desc_2": "ثبت هر سفر، تحلیل هر کیلومتر.",
+
+  "error_email_exists": "این ایمیل از قبل وجود دارد",
+  "error_wrong_password": "رمز عبور اشتباه است",
+  "error_phone_exists": "این شماره تلفن قبلاً استفاده شده است",
+  "error_sp_ch": "رمز عبور باید حداقل شامل یک کاراکتر ویژه باشد",
+  "error_up": "رمز عبور باید حداقل شامل یک حرف بزرگ باشد",
+  "error_low": "رمز عبور باید حداقل شامل یک حرف کوچک باشد",
+  "error_num": "رمز عبور باید حداقل شامل یک عدد باشد",
+  "error_required": "این فیلد الزامی است",
+  "error_invalid_email": "آدرس ایمیل نامعتبر است",
+  "error_password_short": "رمز عبور باید حداقل {length} کاراکتر باشد",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

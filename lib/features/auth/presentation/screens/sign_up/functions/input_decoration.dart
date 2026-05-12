@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-InputDecoration inputDecoration({required String hint, Widget? suffixIcon,required Color fillColor,}) => InputDecoration(
+InputDecoration inputDecoration({required String hint, Widget? suffixIcon,}) => InputDecoration(
   filled: true,
-  fillColor: fillColor,
   hintText: hint,
   hintStyle: TextStyle(color: Colors.grey[600], fontSize: 14),
   suffixIcon: suffixIcon,

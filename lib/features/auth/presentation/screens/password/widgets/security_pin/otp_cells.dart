@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import '../../../../../../../core/constants/colors.dart';
+import '../../../../../../../core/constants/global.dart';
 
 
 class OtpCells extends StatelessWidget {
@@ -12,21 +13,21 @@ class OtpCells extends StatelessWidget {
   Widget build(BuildContext context) {
     return OtpTextField(
 
+      contentPadding: EdgeInsets.all(0),
       numberOfFields: 6, // 👈 change based on your OTP length
       borderRadius: BorderRadius.circular(90),
-      fieldWidth: 50,
-      fieldHeight: 50,
-      margin: EdgeInsets.only(left: 4),
-      alignment: Alignment.topLeft,
-      textStyle: const TextStyle(
-        fontSize: 18,
+      fieldWidth: width * .096,
+      fieldHeight: width * .096,
+      margin: EdgeInsets.only(left: width * .04),
+      textStyle: TextStyle(
+        fontSize: 15,
         fontWeight: FontWeight.bold,
-        color: mainRedColor,
+        color: Theme.of(context).colorScheme.onSurface,
       ),
       keyboardType: TextInputType.number,
       showFieldAsBox: true,
-
-      focusedBorderColor: mainRedColor,
+      focusedBorderColor: Theme.of(context).colorScheme.primary,
+      borderWidth: width * .0081,
       enabledBorderColor: Colors.grey,
 
 

@@ -1,9 +1,9 @@
 import 'package:black_box/core/ui/widgets/search_items.dart';
 import 'package:black_box/features/drivers/presentation/widgets/driver_page/driver_items_grid.dart';
-import 'package:black_box/features/drivers/presentation/widgets/driver_page/state_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/constants/colors.dart';
+import '../../../home/presentation/widgets/stat_item.dart';
 import '../cubit/driver/driver_cubit.dart';
 import '../cubit/driver/driver_state.dart';
 
@@ -52,7 +52,7 @@ class _DriversListScreenState extends State<DriversListScreen> {
         actions: [
           GestureDetector(
             onTap: widget.onNotificationTap,
-            child: const CircleAvatar(backgroundColor: Colors.white,radius: 18, child: Icon(Icons.notifications_none, color: mainRedColor)),
+            child: const CircleAvatar(backgroundColor: Colors.white,radius: 18, child: Icon(Icons.notifications_none, color: AppColor.mainRedColor)),
           ),
           SizedBox(width: 20,)
         ],
@@ -66,7 +66,7 @@ class _DriversListScreenState extends State<DriversListScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(width: 15,),
-                StateItem(
+                StatItem(
                     label: "Total  drivers",
                     value: "8",
                     valueColor: Colors.green,
@@ -78,7 +78,7 @@ class _DriversListScreenState extends State<DriversListScreen> {
                     if(state is DriverSuccess) numberOfDrivers = 5;//state.driversList.length;
                     setState(() {});
                   },
-                  child: StateItem(
+                  child: StatItem(
                       label: "Total active drivers",
                       value: numberOfDrivers.toString(),
                       valueColor: Colors.white,

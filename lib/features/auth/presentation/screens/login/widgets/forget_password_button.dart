@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../password/forget_password_screen.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ForgetPasswordButton extends StatelessWidget {
   const ForgetPasswordButton({super.key});
 
@@ -15,9 +14,9 @@ class ForgetPasswordButton extends StatelessWidget {
             MaterialPageRoute(builder: (context) => ForgotPasswordScreen()),
           );
         },
-        child: const Text(
-          "Forgot Password?",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        child: Text(
+          AppLocalizations.of(context)!.auth_forgot_password,
+          style: TextStyle(color: Theme.of(context).colorScheme.onSurface, fontWeight: FontWeight.bold),
         ),
       ),
     );

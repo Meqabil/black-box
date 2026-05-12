@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key,required this.backgroundColor,required this.onPressed});
   final Color backgroundColor;
@@ -17,8 +18,8 @@ class LoginButton extends StatelessWidget {
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
             elevation: 2,
           ),
-          child: const Text(
-            "Log In",
+          child: Text(
+            AppLocalizations.of(context)!.auth_space_login,
             style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
           ),
         ),

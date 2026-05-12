@@ -1,0 +1,242 @@
+{
+  "@@locale": "pl",
+
+  "app_title": "BlackBox App",
+
+  "common_yes": "Tak",
+  "common_no": "Nie",
+  "common_cancel": "Anuluj",
+  "common_save": "Zapisz",
+  "common_save_changes": "Zapisz Zmiany",
+  "common_continue": "Kontynuuj",
+  "common_next": "Dalej",
+
+  "auth_login": "Zaloguj się",
+  "auth_space_login": "Zaloguj się",
+  "auth_logout": "Wyloguj się",
+  "auth_confirm_logout": "Czy na pewno chcesz się wylogować?",
+  "auth_signup": "Zarejestruj się",
+  "auth_create_account": "Utwórz Konto",
+  "auth_already_have_account": "Masz już konto? ",
+  "auth_no_account": "Nie masz konta?",
+  "auth_forgot_password": "Zapomniałeś Hasła?",
+  "auth_reset_password": "Zresetować Hasło?",
+  "auth_change_password": "Zmień Hasło",
+  "auth_continue": "Kontynuując, akceptujesz\n",
+  "auth_terms": "Warunki Użytkowania i Politykę Prywatności",
+  "auth_email": "E-mail",
+  "auth_password": "Hasło",
+  "auth_confirm_password": "Potwierdź Hasło",
+  "auth_new_password": "Nowe Hasło",
+  "auth_confirm_new_password": "Potwierdź Nowe Hasło",
+  "auth_enter_email": "Wprowadź adres e-mail",
+  "auth_password_hint": "Wprowadź hasło",
+  "full_name": "Imię i Nazwisko",
+  "email_hint": "przyklad@gmail.com",
+  "name_hint": "Jan Kowalski",
+
+  "required_name": "Imię i nazwisko jest wymagane",
+  "required_email": "E-mail jest wymagany",
+  "email_end": "E-mail musi kończyć się na @gmail.com",
+  "required_password": "Hasło jest wymagane",
+  "required_confirm_password": "Potwierdzenie hasła jest wymagane",
+  "password_do_not_match": "Hasła nie są zgodne",
+  "min_password": "Hasło musi mieć co najmniej 8 znaków i zawierać cyfry",
+  "send_verification_code": "Wyślij Kod Weryfikacyjny",
+  "password_changed_successfully": "Hasło Zostało\nPomyślnie Zmienione",
+  "forget_password_title": "Wprowadź e-mail powiązany z kontem, a wyślemy Ci PIN bezpieczeństwa do zresetowania hasła.",
+
+  "auth_security_pin": "PIN Bezpieczeństwa",
+  "auth_enter_pin": "Wprowadź PIN bezpieczeństwa",
+  "verify": "Weryfikuj",
+  "auth_resend_pin": "Wyślij ponownie za {seconds}s",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Strona Główna",
+  "home_welcome": "Cześć, Witaj Ponownie",
+  "home_good_morning": "Dzień Dobry",
+  "home_looks_good": "Wygląda\nDobrze",
+  "home_safety_score": "Przegląd Oceny Bezpieczeństwa",
+  "home_total_accidents": "Łączna Liczba Wypadków",
+  "total_active_cars": "Łącznie Aktywnych Samochodów",
+  "total_cars": "Łącznie Samochodów",
+
+  "home_active_cars": "{percentage}% Twoich samochodów jest aktywnych",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Samochody",
+  "car_view_all": "Zobacz Samochody",
+  "car_add": "Dodaj Samochód",
+  "car_edit": "Edytuj Samochód",
+
+  "car_name": "Nazwa Samochodu",
+  "car_plate": "Tablica Rejestracyjna",
+  "car_type": "Typ Samochodu",
+  "car_driver_name": "Imię Kierowcy",
+
+  "car_item_title": "Samochód #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Śledzenie na Żywo",
+  "tracking_last_updates": "Ostatnie Aktualizacje",
+
+  "event_title": "Zdarzenia Podczas Jazdy",
+  "event_speeding": "Przekroczenie Prędkości",
+  "event_hard_braking": "Gwałtowne Hamowanie",
+  "event_aggressive_turns": "Agresywne Zakręty",
+  "event_crash": "Wypadek",
+
+  "event_location": "W {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/h",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Nasilenie",
+  "event_severity_low": "Niskie",
+  "event_severity_medium": "Średnie",
+  "event_severity_high": "Wysokie",
+  "event_severity_critical": "Krytyczne",
+
+  "event_reason": "Przyczyna",
+  "event_last_speed": "Ostatnia Zarejestrowana Prędkość",
+
+  "notification_title": "Powiadomienia",
+  "notification_today": "Dzisiaj",
+  "notification_yesterday": "Wczoraj",
+  "notification_earlier": "Wcześniej W Tym Tygodniu",
+
+  "notification_fuel_alert": "Alarm Wycieku Paliwa!",
+  "notification_fuel_desc": "Pojazd {car} prowadzony przez {driver} zgłosił gwałtowny spadek poziomu paliwa.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Wykryto krytyczne zderzenie!",
+  "notification_crash_desc": "Pojazd {car} prowadzony przez {driver} zgłosił poważną kolizję.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Profil",
+  "profile_edit": "Edytuj Mój Profil",
+  "update_profile": "Zaktualizuj Profil",
+  "user_name": "Nazwa Użytkownika",
+
+  "security_title": "Bezpieczeństwo",
+  "change_password": "Zmień Hasło",
+
+  "settings_title": "Ustawienia",
+  "settings_notifications": "Ustawienia Powiadomień",
+  "settings_general_notifications": "Ogólne Powiadomienia",
+  "account_settings": "Ustawienia Konta",
+  "push_notification": "Powiadomienia Push",
+  "dark_mode": "Tryb Ciemny Włączony",
+
+  "help_title": "Centrum Pomocy",
+  "help_and_faq": "Pomoc & Często Zadawane Pytania",
+  "help_contact": "Skontaktuj Się z Nami",
+  "help_faq": "Często Zadawane Pytania",
+  "how_help": "Jak Możemy Ci Pomóc?",
+  "on_wh_num": "Na Numer WhatsApp",
+
+  "question1": "Jak używać BlackBox?",
+  "answer1": "Zainstaluj urządzenie BlackBox w samochodzie, zaloguj się do aplikacji i zacznij jeździć. Aplikacja automatycznie będzie rejestrować i wyświetlać dane dotyczące jazdy.",
+  "question2": "Ile kosztuje korzystanie z BlackBox?",
+  "answer2": "Koszt zależy od wybranego planu i usług. Skontaktuj się z firmą w celu uzyskania szczegółów cenowych.",
+  "question3": "Jak skontaktować się z pomocą techniczną?",
+  "answer3": "Możesz skontaktować się z pomocą techniczną przez WhatsApp, używając oficjalnego numeru firmy, lub odwiedzając biuro firmy w godzinach pracy.",
+  "question4": "Jak zresetować hasło, jeśli je zapomnę?",
+  "answer4": "Użyj opcji 'Zapomniałem hasła' na ekranie logowania i postępuj zgodnie z instrukcjami, aby zresetować hasło.",
+  "question5": "Czy istnieją środki ochrony prywatności lub bezpieczeństwa danych?",
+  "answer5": "Tak. Twoje dane są bezpiecznie przechowywane i chronione, a nie są udostępniane bez Twojej zgody, z wyjątkiem przypadków wymaganych przez prawo.",
+  "question6": "Czy mogę dostosować ustawienia w aplikacji?",
+  "answer6": "Tak. Możesz dostosować dostępne ustawienia, takie jak powiadomienia i preferencje, w aplikacji.",
+  "question7": "Jak mogę usunąć swoje konto?",
+  "answer7": "Aby usunąć konto, skontaktuj się z firmą przez WhatsApp lub odwiedź biuro firmy.",
+  "question8": "Jak uzyskać dostęp do historii analiz?",
+  "answer8": "Możesz przeglądać poprzednie trasy i analizy jazdy w sekcji Historia lub Analizy w aplikacji.",
+  "question9": "Czy mogę korzystać z aplikacji offline?",
+  "answer9": "Aplikacja ma ograniczoną funkcjonalność offline. Połączenie z internetem jest wymagane do synchronizacji danych i dostępu do wszystkich funkcji.",
+
+  "terms_title": "Regulamin",
+  "terms_accept": "Akceptuj regulamin",
+  "terms_full": "1. Akceptacja Warunków\nInstalując lub korzystając z tej aplikacji, zgadzasz się na niniejszy Regulamin. Jeśli nie zgadzasz się, zaprzestań korzystania z aplikacji.\n\n2. Cel Aplikacji\nAplikacja jest pojazdem czarnej skrzynki i systemem telematycznym służącym do monitorowania wydajności pojazdu i zachowania kierowcy wyłącznie w celach informacyjnych, bezpieczeństwa i analitycznych.\n\n3. Zbierane Parametry Danych\nAplikacja może zbierać i przetwarzać dane dotyczące pojazdu i jazdy, w tym między innymi:\n\n• Prędkość pojazdu\n• Zużycie paliwa i poziom paliwa\n• Przyspieszenie i hamowanie\n• Zdarzenia gwałtownego hamowania i gwałtownego przyspieszania\n• Ostre zakręty\n• Dane lokalizacji GPS (szerokość i długość geograficzna)\n• Odległość, czas trwania i czas podróży\n• Dane identyfikacyjne kierowcy i pojazdu\n\nKorzystając z aplikacji, wyraźnie zgadzasz się na gromadzenie tych parametrów.\n\n4. Dostępność Usług\nNieprzerwana, działająca w czasie rzeczywistym lub bezawaryjnie praca aplikacji nie jest gwarantowana ze względu na ograniczenia techniczne.",
+
+  "validation_password_mismatch": "Hasła nie są zgodne",
+  "validation_invalid_phone": "Nieprawidłowy numer telefonu",
+  "validation_incorrect_pin": "Nieprawidłowy PIN",
+  "validation_empty_fields": "Proszę wypełnić wszystkie pola",
+
+  "empty_no_cars": "Nie znaleziono samochodów",
+  "empty_no_notifications": "Brak powiadomień",
+  "empty_no_events": "Brak dostępnych zdarzeń",
+
+  "status_loading": "Ładowanie...",
+  "status_success": "Operacja zakończona sukcesem",
+  "status_error": "Coś poszło nie tak",
+
+  "confirm_delete_car": "Czy na pewno chcesz usunąć ten samochód?",
+  "confirm_reset_password": "Czy na pewno chcesz zresetować hasło?",
+
+  "search_hint": "Szukaj...",
+  "search_no_results": "Nie znaleziono wyników",
+  "filter": "Filtruj",
+  "sort": "Sortuj",
+
+  "onboarding_title_1": "Witamy",
+  "onboarding_desc_1": "W Black Box Manager",
+
+  "onboarding_title_2": "Poznaj Historię Swojej Jazdy,",
+  "onboarding_desc_2": "Rejestrując każdą podróż, analizując każdy kilometr.",
+
+  "error_email_exists": "Ten adres e-mail już istnieje",
+  "error_wrong_password": "Nieprawidłowe hasło",
+  "error_phone_exists": "Ten numer telefonu jest już używany",
+  "error_sp_ch": "Hasło musi zawierać co najmniej jeden znak specjalny",
+  "error_up": "Hasło musi zawierać co najmniej jedną wielką literę",
+  "error_low": "Hasło musi zawierać co najmniej jedną małą literę",
+  "error_num": "Hasło musi zawierać co najmniej jedną cyfrę",
+  "error_required": "To pole jest wymagane",
+  "error_invalid_email": "Nieprawidłowy adres e-mail",
+  "error_password_short": "Hasło musi mieć co najmniej {length} znaków",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

@@ -27,7 +27,7 @@ class PasswordField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        InputLabel(text: label, textColor: labelColor,),
+        InputLabel(text: label, textColor: Theme.of(context).colorScheme.onSurface,),
         const SizedBox(height: 8),
         TextFormField(
           controller: controller,
@@ -35,7 +35,6 @@ class PasswordField extends StatelessWidget {
           validator: validator,
           decoration: inputDecoration(
             hint: "● ● ● ● ● ● ●",
-            fillColor: fillColor,
             suffixIcon: IconButton(
               icon: Icon(
                 isVisible ? Icons.visibility : Icons.visibility_off,

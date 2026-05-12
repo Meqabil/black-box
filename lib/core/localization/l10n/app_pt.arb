@@ -1,0 +1,242 @@
+{
+  "@@locale": "pt",
+
+  "app_title": "BlackBox App",
+
+  "common_yes": "Sim",
+  "common_no": "Não",
+  "common_cancel": "Cancelar",
+  "common_save": "Salvar",
+  "common_save_changes": "Salvar Alterações",
+  "common_continue": "Continuar",
+  "common_next": "Próximo",
+
+  "auth_login": "Entrar",
+  "auth_space_login": "Entrar",
+  "auth_logout": "Sair",
+  "auth_confirm_logout": "Tem certeza que deseja sair?",
+  "auth_signup": "Cadastrar",
+  "auth_create_account": "Criar Conta",
+  "auth_already_have_account": "Já tem uma conta? ",
+  "auth_no_account": "Não tem uma conta?",
+  "auth_forgot_password": "Esqueceu a Senha?",
+  "auth_reset_password": "Redefinir Senha?",
+  "auth_change_password": "Alterar Senha",
+  "auth_continue": "Ao continuar, você concorda com\n",
+  "auth_terms": "Termos de Uso e Política de Privacidade",
+  "auth_email": "E-mail",
+  "auth_password": "Senha",
+  "auth_confirm_password": "Confirmar Senha",
+  "auth_new_password": "Nova Senha",
+  "auth_confirm_new_password": "Confirmar Nova Senha",
+  "auth_enter_email": "Digite o endereço de e-mail",
+  "auth_password_hint": "Digite sua senha",
+  "full_name": "Nome Completo",
+  "email_hint": "exemplo@gmail.com",
+  "name_hint": "João Silva",
+
+  "required_name": "Nome Completo é obrigatório",
+  "required_email": "E-mail é obrigatório",
+  "email_end": "O e-mail deve terminar com @gmail.com",
+  "required_password": "Senha é obrigatória",
+  "required_confirm_password": "Confirmação de Senha é obrigatória",
+  "password_do_not_match": "As senhas não coincidem",
+  "min_password": "A senha deve ter pelo menos 8 caracteres e conter números",
+  "send_verification_code": "Enviar Código de Verificação",
+  "password_changed_successfully": "Senha Alterada\nCom Sucesso",
+  "forget_password_title": "Digite o e-mail associado à sua conta e enviaremos um PIN de segurança para redefinição de senha.",
+
+  "auth_security_pin": "PIN de Segurança",
+  "auth_enter_pin": "Digite o PIN de segurança",
+  "verify": "Verificar",
+  "auth_resend_pin": "Reenviar em {seconds}s",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Início",
+  "home_welcome": "Olá, Bem-vindo de Volta",
+  "home_good_morning": "Bom Dia",
+  "home_looks_good": "Está\nÓtimo",
+  "home_safety_score": "Visão Geral da Pontuação de Segurança",
+  "home_total_accidents": "Total de Acidentes",
+  "total_active_cars": "Total de Carros Ativos",
+  "total_cars": "Total de Carros",
+
+  "home_active_cars": "{percentage}% dos seus carros estão ativos",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Carros",
+  "car_view_all": "Ver Carros",
+  "car_add": "Adicionar Carro",
+  "car_edit": "Editar Carro",
+
+  "car_name": "Nome do Carro",
+  "car_plate": "Placa do Carro",
+  "car_type": "Tipo de Carro",
+  "car_driver_name": "Nome do Motorista",
+
+  "car_item_title": "Carro #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Rastreamento ao Vivo",
+  "tracking_last_updates": "Últimas Atualizações",
+
+  "event_title": "Eventos de Condução",
+  "event_speeding": "Excesso de Velocidade",
+  "event_hard_braking": "Frenagem Brusca",
+  "event_aggressive_turns": "Curvas Agressivas",
+  "event_crash": "Colisão",
+
+  "event_location": "Em {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/h",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Gravidade",
+  "event_severity_low": "Baixa",
+  "event_severity_medium": "Média",
+  "event_severity_high": "Alta",
+  "event_severity_critical": "Crítica",
+
+  "event_reason": "Motivo",
+  "event_last_speed": "Última Velocidade Registrada",
+
+  "notification_title": "Notificações",
+  "notification_today": "Hoje",
+  "notification_yesterday": "Ontem",
+  "notification_earlier": "Início da Semana",
+
+  "notification_fuel_alert": "Alerta de Vazamento de Combustível!",
+  "notification_fuel_desc": "O veículo {car} conduzido por {driver} relatou uma queda rápida no nível de combustível.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Colisão crítica detectada!",
+  "notification_crash_desc": "O veículo {car} conduzido por {driver} relatou uma colisão grave.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Perfil",
+  "profile_edit": "Editar Meu Perfil",
+  "update_profile": "Atualizar Perfil",
+  "user_name": "Nome de Usuário",
+
+  "security_title": "Segurança",
+  "change_password": "Alterar Senha",
+
+  "settings_title": "Configurações",
+  "settings_notifications": "Configurações de Notificação",
+  "settings_general_notifications": "Notificação Geral",
+  "account_settings": "Configurações da Conta",
+  "push_notification": "Notificações Push",
+  "dark_mode": "Modo Escuro Ativado",
+
+  "help_title": "Central de Ajuda",
+  "help_and_faq": "Ajuda & Perguntas Frequentes",
+  "help_contact": "Fale Conosco",
+  "help_faq": "Perguntas Frequentes",
+  "how_help": "Como Podemos Ajudá-lo?",
+  "on_wh_num": "No Número do WhatsApp",
+
+  "question1": "Como usar o BlackBox?",
+  "answer1": "Instale o dispositivo BlackBox no seu carro, faça login no aplicativo e comece a dirigir. O aplicativo registrará e exibirá automaticamente seus dados de condução.",
+  "question2": "Quanto custa usar o BlackBox?",
+  "answer2": "O custo depende do plano e dos serviços selecionados. Entre em contato com a empresa para detalhes de preços.",
+  "question3": "Como entrar em contato com o suporte?",
+  "answer3": "Você pode entrar em contato com o suporte via WhatsApp pelo número oficial da empresa ou visitando o escritório durante o horário de funcionamento.",
+  "question4": "Como redefinir minha senha se eu a esquecer?",
+  "answer4": "Use a opção 'Esqueceu a Senha' na tela de login e siga as instruções para redefinir sua senha.",
+  "question5": "Existem medidas de privacidade ou segurança de dados?",
+  "answer5": "Sim. Seus dados são armazenados e protegidos com segurança, e não são compartilhados sem sua permissão, exceto quando exigido por lei.",
+  "question6": "Posso personalizar as configurações do aplicativo?",
+  "answer6": "Sim. Você pode personalizar as configurações disponíveis, como notificações e preferências, dentro do aplicativo.",
+  "question7": "Como posso excluir minha conta?",
+  "answer7": "Para excluir sua conta, entre em contato com a empresa via WhatsApp ou visite o escritório da empresa.",
+  "question8": "Como acesso meu histórico de análises?",
+  "answer8": "Você pode visualizar suas viagens passadas e análises de condução na seção Histórico ou Análises do aplicativo.",
+  "question9": "Posso usar o aplicativo offline?",
+  "answer9": "O aplicativo tem funcionalidade offline limitada. É necessária uma conexão com a internet para sincronizar dados e acessar todos os recursos.",
+
+  "terms_title": "Termos e Condições",
+  "terms_accept": "Aceitar termos e condições",
+  "terms_full": "1. Aceitação dos Termos\nAo instalar ou usar este aplicativo, você concorda com estes Termos e Condições. Se não concordar, por favor, pare de usar o aplicativo.\n\n2. Finalidade do Aplicativo\nEste aplicativo é um sistema de caixa preta veicular e telemática usado para monitorar o desempenho do veículo e o comportamento de condução apenas para fins informativos, de segurança e analíticos.\n\n3. Parâmetros de Dados Coletados\nO aplicativo pode coletar e processar dados do veículo e de condução, incluindo, mas não se limitando a:\n\n• Velocidade do veículo\n• Consumo e nível de combustível\n• Aceleração e desaceleração\n• Eventos de frenagem brusca e aceleração rápida\n• Curvas fechadas\n• Dados de localização GPS (latitude e longitude)\n• Distância, duração e horário da viagem\n• Dados de identificação do motorista e do veículo\n\nAo usar o aplicativo, você consente expressamente com a coleta desses parâmetros.\n\n4. Disponibilidade do Serviço\nA operação contínua, em tempo real ou sem erros do aplicativo não é garantida devido a limitações técnicas.",
+
+  "validation_password_mismatch": "As senhas não coincidem",
+  "validation_invalid_phone": "Número de telefone inválido",
+  "validation_incorrect_pin": "PIN incorreto",
+  "validation_empty_fields": "Por favor, preencha todos os campos",
+
+  "empty_no_cars": "Nenhum carro encontrado",
+  "empty_no_notifications": "Nenhuma notificação ainda",
+  "empty_no_events": "Nenhum evento disponível",
+
+  "status_loading": "Carregando...",
+  "status_success": "Operação realizada com sucesso",
+  "status_error": "Algo deu errado",
+
+  "confirm_delete_car": "Tem certeza que deseja excluir este carro?",
+  "confirm_reset_password": "Tem certeza que deseja redefinir sua senha?",
+
+  "search_hint": "Pesquisar...",
+  "search_no_results": "Nenhum resultado encontrado",
+  "filter": "Filtrar",
+  "sort": "Ordenar",
+
+  "onboarding_title_1": "Bem-vindo",
+  "onboarding_desc_1": "Ao Black Box Manager",
+
+  "onboarding_title_2": "Veja a História Por Trás da Sua Direção,",
+  "onboarding_desc_2": "Registrando cada viagem, analisando cada quilômetro.",
+
+  "error_email_exists": "Este e-mail já existe",
+  "error_wrong_password": "Senha incorreta",
+  "error_phone_exists": "Este número de telefone já está em uso",
+  "error_sp_ch": "A senha deve conter pelo menos um caractere especial",
+  "error_up": "A senha deve conter pelo menos uma letra maiúscula",
+  "error_low": "A senha deve conter pelo menos uma letra minúscula",
+  "error_num": "A senha deve conter pelo menos um número",
+  "error_required": "Este campo é obrigatório",
+  "error_invalid_email": "Endereço de e-mail inválido",
+  "error_password_short": "A senha deve ter pelo menos {length} caracteres",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

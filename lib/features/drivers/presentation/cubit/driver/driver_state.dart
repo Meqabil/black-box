@@ -13,6 +13,11 @@ class DriverFailure extends DriverState{
   String message;
   DriverFailure(this.message);
 }
+
+class OneDriverSuccess extends DriverState{
+  DriverEntity driver;
+  OneDriverSuccess(this.driver);
+}
 class DriverSuccess extends DriverState{
   DriverEntity driver;
   DriverSuccess(this.driver);

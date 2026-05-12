@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/constants/colors.dart';
-
-class EditDriverInput extends StatelessWidget {
-  const EditDriverInput({super.key,required this.label,required this.controller,this.readOnly});
+class EditOwnerInput extends StatelessWidget {
+  const EditOwnerInput({super.key,required this.label,required this.controller,this.readOnly});
   final String label;
   final bool? readOnly;
   final TextEditingController controller;
@@ -13,14 +11,13 @@ class EditDriverInput extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
+        Text(label, style: TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onSurface)),
         const SizedBox(height: 8),
         TextFormField(
           controller: controller,
           readOnly: readOnly ?? false,
           decoration: InputDecoration(
               filled: true,
-              fillColor: textFieldColor,
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide.none)
           ),
         ),

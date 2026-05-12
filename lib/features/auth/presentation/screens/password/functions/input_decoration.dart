@@ -5,7 +5,6 @@ import '../../../../../../core/constants/colors.dart';
 InputDecoration inputDecoration({required String hint, Widget? suffixIcon}) {
   return InputDecoration(
     filled: true,
-    fillColor: textFieldColor,
     hintText: hint,
     hintStyle: TextStyle(color: Colors.grey[600], fontSize: 14),
     suffixIcon: suffixIcon,

@@ -1,0 +1,242 @@
+{
+  "@@locale": "zgh",
+
+  "app_title": "ⴰⵙⵏⵙ ⴱⵍⴰⴽⴱⵓⴽⵙ",
+
+  "common_yes": "ⵢⴰⵀ",
+  "common_no": "ⵓⵀⵓ",
+  "common_cancel": "ⴰⵙⵔ",
+  "common_save": "ⵃⴱⵙ",
+  "common_save_changes": "ⵃⴱⵙ ⵜⵉⵙⵓⵔⴰ",
+  "common_continue": "ⴽⵎⵎⵍ",
+  "common_next": "ⵓⴹⴼⵉⵕ",
+
+  "auth_login": "ⴽⵛⵎ",
+  "auth_space_login": "Log In",
+  "auth_logout": "ⴼⴼⵖ",
+  "auth_confirm_logout": "ⵉⵙ ⵜⵅⵙⴷ ⴰⴷ ⵜⴼⴼⵖⴷ?",
+  "auth_signup": "ⵇⵏⵓ",
+  "auth_create_account": "ⵙⵏⴼ ⴰⵎⴰⵏⵙ",
+  "auth_already_have_account": "ⵉⵍⴰ ⵢⴰⵏ ⴰⵎⴰⵏⵙ? ",
+  "auth_no_account": "ⵓⵔ ⵜⵓⵔⵉⴷ ⴰⵎⴰⵏⵙ?",
+  "auth_forgot_password": "ⵜⵜⵓⵜ ⵜⴰⵙⵓⵔⵜ?",
+  "auth_reset_password": "ⴰⵍⵙ ⴰⵙⵓⵔ ⵏ ⵜⴰⵙⵓⵔⵜ?",
+  "auth_change_password": "ⴱⴷⴷⵍ ⵜⴰⵙⵓⵔⵜ",
+  "auth_continue": "ⴽⵎⵎⵍⵏ ⵖⵓⵔⵓ ⵜⵙⵎⵙⵙⴰⵔⴰ ⴷ\n",
+  "auth_terms": "ⵜⵉⵡⵔⵉⵇⵉⵏ ⵏ ⵜⵓⵙⵙⴰ ⴷ ⵜⴰⵙⵔⵓⵜ ⵏ ⵜⵉⵏⵓⵎⵉ",
+  "auth_email": "ⵉⵎⴰⵢⵍ",
+  "auth_password": "ⵜⴰⵙⵓⵔⵜ",
+  "auth_confirm_password": "ⵙⵙⴷⵀ ⵜⴰⵙⵓⵔⵜ",
+  "auth_new_password": "ⵜⴰⵙⵓⵔⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ",
+  "auth_confirm_new_password": "ⵙⵙⴷⵀ ⵜⴰⵙⵓⵔⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ",
+  "auth_enter_email": "ⴰⵔⵙ ⵜⴰⵏⵙⴰ ⵏ ⵉⵎⴰⵢⵍ",
+  "auth_password_hint": "ⴰⵔⵙ ⵜⴰⵙⵓⵔⵜ ⵏⵏⴽ",
+  "full_name": "ⵉⵙⵎ ⵓⵎⵍⵉⵍ",
+  "email_hint": "example@gmail.com",
+  "name_hint": "John Doe",
+
+  "required_name": "ⵉⵙⵎ ⵓⵎⵍⵉⵍ ⴰⵔⵉⵏ",
+  "required_email": "ⵉⵎⴰⵢⵍ ⴰⵔⵉⵏ",
+  "email_end": "ⵉⵎⴰⵢⵍ ⵉⵍⴰ ⴰⴷ ⵉⴼⴼⵄ ⵙ ⴰⵜ @gmail.com",
+  "required_password": "ⵜⴰⵙⵓⵔⵜ ⴰⵔⵉⵏ",
+  "required_confirm_password": "ⴰⵙⵙⴷⵀ ⵏ ⵜⴰⵙⵓⵔⵜ ⴰⵔⵉⵏ",
+  "password_do_not_match": "ⵜⵉⵙⵓⵔⴰ ⵓⵔ ⵙⵎⵙⴰⵔⴰⵏⵜ",
+  "min_password": "ⵜⴰⵙⵓⵔⵜ ⵉⵍⴰ ⴰⴷ ⵜⵉⵍⵉ ⵙ ⵓⵎⵓⵣ ⵏ 8 ⵉⵙⴽⴰ ⵓⴷ ⵜⵙⵙⴰⵔ ⵓⵜⵜⵓⵏ",
+  "send_verification_code": "ⴰⵣⵏ ⵜⴰⵏⵙⴰ ⵏ ⵓⵙⵙⴷⵀ",
+  "password_changed_successfully": "ⵜⴰⵙⵓⵔⵜ ⵜⴱⴷⴷⵍ ⵙ ⵓⵏⵖⵉ\n",
+  "forget_password_title": "ⴰⵔⵙ ⵉⵎⴰⵢⵍ ⵏⵏⴽ ⵉⵎⵙⵙⴰⵔ ⴷ ⵓⵎⴰⵏⵙ ⵏⵏⴽ, ⵓⵔⴰ ⴰⴷ ⴰⵏⴽ ⴰⵣⵏ ⴰⵏⴰⵡ ⵏ ⵜⵉⵏⵓⵎⵉ ⵃⵎⴰ ⴰⴷ ⵜⴰⵍⵙⴷ ⵜⴰⵙⵓⵔⵜ.",
+
+  "auth_security_pin": "ⴰⵏⴰⵡ ⵏ ⵜⵉⵏⵓⵎⵉ",
+  "auth_enter_pin": "ⴰⵔⵙ ⴰⵏⴰⵡ ⵏ ⵜⵉⵏⵓⵎⵉ",
+  "verify": "ⵙⵙⴷⵀ",
+  "auth_resend_pin": "ⴰⵣⵏ ⴷⴰⵖ ⴳ {seconds} ⵜⵙⵉⵏⵜ",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "ⴰⵙⵏⵙ",
+  "home_welcome": "ⵙⵍⴰⵎ, ⴱⵉⵏⵓⵔ ⵜⵓⵔⵉⴷ ⴷⴰⵖ",
+  "home_good_morning": "ⵙⴱⴰⵀ ⵓⵣⴳⵏ",
+  "home_looks_good": "ⵢⵓⵙⴰ\nⵢⵓⵙⴰ",
+  "home_safety_score": "ⴰⵙⴽⴰⵔ ⵏ ⵓⵙⵍⴰⵎ ⵏ ⵜⴰⵎⴰⵏⵜ",
+  "home_total_accidents": "ⴰⵎⵓⵜⵜⵍ ⵏ ⵉⵎⴰⵏⴰ",
+  "total_active_cars": "ⴰⵎⵓⵜⵜⵍ ⵏ ⵉⵎⵓⵟⵟⵓⵔⵏ ⵉⵕⵥⵎⵏ",
+  "total_cars": "ⴰⵎⵓⵜⵜⵍ ⵏ ⵉⵎⵓⵟⵟⵓⵔⵏ",
+
+  "home_active_cars": "{percentage}% ⵏ ⵉⵎⵓⵟⵟⵓⵔⵏ ⵏⵏⴽ ⵉⵕⵥⵎⵏ",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "ⵉⵎⵓⵟⵟⵓⵔⵏ",
+  "car_view_all": "ⵥⵕ ⵉⵎⵓⵟⵟⵓⵔⵏ ⵓⵎⵍⵉⵍⵏ",
+  "car_add": "ⵔⵏⵓ ⴰⵎⵓⵟⵟⵓⵔ",
+  "car_edit": "ⵙⵏⴼⵍ ⴰⵎⵓⵟⵟⵓⵔ",
+
+  "car_name": "ⵉⵙⵎ ⵏ ⵓⵎⵓⵟⵟⵓⵔ",
+  "car_plate": "ⵜⴰⵔⴳⴰ ⵏ ⵓⵎⵓⵟⵟⵓⵔ",
+  "car_type": "ⴰⵏⴰⵡ ⵏ ⵓⵎⵓⵟⵟⵓⵔ",
+  "car_driver_name": "ⵉⵙⵎ ⵏ ⵓⵎⵏⴷⴰⵡ",
+
+  "car_item_title": "ⴰⵎⵓⵟⵟⵓⵔ #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "ⴰⵙⵓⵍ ⵓⵙⵉⵍⴰⵏ",
+  "tracking_last_updates": "ⵉⵙⴽⴰⵔⵏ ⵉⵎⵉⵍⵉⵜⵏ",
+
+  "event_title": "ⵜⵉⵎⵓⵟⵟⵓⵔⵉⵏ ⵏ ⵓⵎⵏⴷⴰⵡ",
+  "event_speeding": "ⴰⵔⵣⵣⵓ ⵏ ⵓⵔⵣⵣⵓ",
+  "event_hard_braking": "ⴰⴱⵔⵉⴽ ⴰⵇⵇⴰⵕ",
+  "event_aggressive_turns": "ⴰⵙⴽⴰⵔ ⴰⵖⵔⵉⴱ",
+  "event_crash": "ⴰⵎⴰⵏⴰ",
+
+  "event_location": "ⵖ {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} ⴽⵉⵍⵓ/ⵙⴰⵄⴰ",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "ⵜⴰⵇⵇⴰⵕⵜ",
+  "event_severity_low": "ⴰⵎⵣⵢⴰⵏ",
+  "event_severity_medium": "ⴰⵍⵎⴰⵙ",
+  "event_severity_high": "ⴰⵎⵇⵇⴰⵕ",
+  "event_severity_critical": "ⴰⵎⵓⵇⵇⵔⴰ",
+
+  "event_reason": "ⵙⴱⴰⴱ",
+  "event_last_speed": "ⴰⵔⵣⵣⵓ ⵉⵎⵉⵍⵉⵜ ⵉⵎⵙⵙⴰⵔ",
+
+  "notification_title": "ⵉⵍⵎⵙⴰⵡⵏ",
+  "notification_today": "ⴰⵙⵙⴰ",
+  "notification_yesterday": "ⵉⴹⵉ",
+  "notification_earlier": "ⵓⵔ ⴷ ⵉⵎⵉⴽ",
+
+  "notification_fuel_alert": "ⴰⵍⴰⵔⵎ ⵏ ⵓⵙⵉⴼⴼ ⵏ ⵓⵣⴷⵓⵎ!",
+  "notification_fuel_desc": "ⴰⵎⵓⵟⵟⵓⵔ {car} ⵉⵜⵜⵓⴽⴰⵍ ⵙ {driver} ⵉⵙⵙⴰⵔ ⴰⵙⵉⴼⴼ ⴰⵔⵣⵣⵓ ⵏ ⵓⵣⴷⵓⵎ.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "ⴰⵎⴰⵏⴰ ⴰⵇⵇⴰⵕ ⵉⵜⵜⵓⴼⴰ!",
+  "notification_crash_desc": "ⴰⵎⵓⵟⵟⵓⵔ {car} ⵉⵜⵜⵓⴽⴰⵍ ⵙ {driver} ⵉⵙⵙⴰⵔ ⴰⵎⴰⵏⴰ ⴰⵇⵇⴰⵕ.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "ⴰⵎⴰⵏⵙ",
+  "profile_edit": "ⵙⵏⴼⵍ ⴰⵎⴰⵏⵙ ⵉⵏⵓ",
+  "update_profile": "ⴰⵍⵙ ⴰⵎⴰⵏⵙ",
+  "user_name": "ⵉⵙⵎ ⵏ ⵓⵙⵙⴰⵔ",
+
+  "security_title": "ⵜⴰⵏⵓⵎⵉ",
+  "change_password": "ⴱⴷⴷⵍ ⵜⴰⵙⵓⵔⵜ",
+
+  "settings_title": "ⵉⵙⵖⵏ",
+  "settings_notifications": "ⵉⵙⵖⵏ ⵏ ⵉⵍⵎⵙⴰⵡⵏ",
+  "settings_general_notifications": "ⵉⵍⵎⵙⴰⵡⵏ ⵓⵎⵍⵉⵍⵏ",
+  "account_settings": "ⵉⵙⵖⵏ ⵏ ⵓⵎⴰⵏⵙ",
+  "push_notification": "ⵉⵍⵎⵙⴰⵡⵏ ⵏ Push",
+  "dark_mode": "ⴰⵙⴽⴰⵔ ⴰⴱⵔⴽⴰⵏ ⵉⵕⵥⵎ",
+
+  "help_title": "ⴰⵎⴰⵏ ⵏ ⵜⵉⵍⵉ",
+  "help_and_faq": "ⵜⵉⵍⵉ ⴷ ⵉⵙⵜⵉⵚⴰⵍⵏ ⵉⵜⵜⵓⵙⵜⴰⵢⵏ",
+  "help_contact": "ⵙⵙⵓⵍ ⵖⵓⵔⵏⵖ",
+  "help_faq": "FAQ",
+  "how_help": "ⵎⴰⵏⵉⴽ ⵏⵖⵉ ⴰⴷ ⴽⵉⵏ ⵏⵓⵏⴼⴰ?",
+  "on_wh_num": "ⵙ ⵓⵏⵓⵎⵔ ⵏ WhatsApp",
+
+  "question1": "ⵎⴰⵏⵉⴽ ⴰⴷ ⵏⵜⵜⵓⵙ ⴱⵍⴰⴽⴱⵓⴽⵙ?",
+  "answer1": "ⵙⴱⴷⴷ ⴰⵎⴰⵙⵏ ⵏ BlackBox ⵙ ⵓⵎⵓⵟⵟⵓⵔ ⵏⵏⴽ, ⴽⵛⵎ ⵖ ⵓⵙⵏⵙ, ⵓⴷⴼ ⴰⴷ ⵜⵎⵏⴷⴰⵡⴷ. ⵓⵙⵏⵙ ⴰⴷ ⵉⵙⵔⵙ ⵓⴷⵉⴳ ⵉⵎⴰⵏⵉⵙ ⵏ ⵓⵎⵏⴷⴰⵡ ⵏⵏⴽ.",
+  "question2": "ⵎⵉⵏⵛ ⴰⵙ ⵉⵇⵇⵉⵏ ⴰⴷ ⵏⵜⵜⵓⵙ ⴱⵍⴰⴽⴱⵓⴽⵙ?",
+  "answer2": "ⴰⵙⵓⵔ ⵉⵜⵜⵓⵙⵙⴰ ⵙ ⵓⵎⵓⴳⴳⴰⵢ ⵏ ⵓⵙⵓⵔ ⴷ ⵉⵎⵉⴷⴷⵓⴽⴽⵓⵍⵏ. ⵎⵉⵛ ⵉⵇⵇⵉⵏ, ⵙⵙⵓⵍ ⵖⵓⵔ ⵜⴰⴳⵔⴰⴼⵜ.",
+  "question3": "ⵎⴰⵏⵉⴽ ⴰⴷ ⵏⵙⵙⵓⵍ ⵖⵓⵔ ⵜⴰⵏⵎⵉⵔⵜ?",
+  "answer3": "ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⵙⵙⵓⵍⴷ ⵙ ⵓⵏⵓⵎⵔ ⵓⵔⵎⴰⵏ ⵏ ⵜⴰⴳⵔⴰⴼⵜ ⵙ WhatsApp, ⵏⵖ ⵜⵔⵓⵀ ⵖ ⵓⵎⵙⵔ ⵏ ⵜⴰⴳⵔⴰⴼⵜ ⴳ ⵡⴰⴽⵓⴷ ⵏ ⵓⵙⵓⵍ.",
+  "question4": "ⵎⴰⵏⵉⴽ ⴰⴷ ⴰⵍⵙⵖ ⵜⴰⵙⵓⵔⵜ ⵎⵉⴽ ⵜⵜⵓⵜⵖ?",
+  "answer4": "ⵙⵙⵓⵍ ⵙ ⵓⵙⵓⵍ 'ⵜⵜⵓⵜ ⵜⴰⵙⵓⵔⵜ' ⵙ ⵓⵎⴰⵏ ⵏ ⵓⴽⵛⵎ ⵓⴷⴼ ⵉⵍⵎⴰⵏ.",
+  "question5": "ⵉⵍⴰ ⵉⵙⵖⵏ ⵏ ⵜⵉⵏⵓⵎⵉ ⴷ ⵓⵙⵍⴰⵎ ⵏ ⵉⵙⴼⴽⴰ?",
+  "answer5": "ⵢⴰⵀ. ⵉⵙⴼⴽⴰ ⵏⵏⴽ ⵜⵜⵓⵃⴱⵙⵏ ⵙ ⵓⵏⵖⵉ ⵓⴷ ⵓⵔ ⵜⵜⵓⴱⴷⴷⵍⵏⵜ ⵙ ⵡⴰⵍⴰ ⵙ ⵓⵔ ⵜⵓⵔⵉⴷ, ⵎⵉⵛ ⵙ ⵓⵔⵉⵔ ⵏ ⵓⵙⵏⴼⵓ.",
+  "question6": "ⵉⵙ ⵓⵔⵉⵖ ⴰⴷ ⵙⵏⴼⵍⵖ ⵉⵙⵖⵏ ⵙ ⵓⵙⵏⵙ?",
+  "answer6": "ⵢⴰⵀ. ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⵙⵏⴼⵍⴷ ⵉⵙⵖⵏ ⵏ ⵉⵍⵎⵙⴰⵡⵏ ⴷ ⵉⵙⵎⵏⵉⵙ ⵙ ⵓⵙⵏⵙ.",
+  "question7": "ⵎⴰⵏⵉⴽ ⴰⴷ ⵙⵔⵙⵖ ⴰⵎⴰⵏⵙ ⵉⵏⵓ?",
+  "answer7": "ⵃⵎⴰ ⴰⴷ ⵜⵙⵔⵙⴷ ⴰⵎⴰⵏⵙ ⵏⵏⴽ, ⵙⵙⵓⵍ ⵖⵓⵔ ⵜⴰⴳⵔⴰⴼⵜ ⵙ WhatsApp ⵏⵖ ⵔⵓⵀ ⵖ ⵓⵎⵙⵔ.",
+  "question8": "ⵎⴰⵏⵉⴽ ⴰⴷ ⴰⵍⵙⵖ ⴰⵙⴽⴰⵔ ⵏ ⵓⵎⵙⴰⵔ?",
+  "answer8": "ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⵥⵕⴷ ⵉⵎⵉⴽⴰ ⵉⵎⵢⵓⵔⴰ ⴷ ⵓⵙⴽⴰⵔ ⵏ ⵓⵎⵏⴷⴰⵡ ⵙ ⵜⴰⵖⴰⵔⵜ History ⵏⵖ Analytics ⵙ ⵓⵙⵏⵙ.",
+  "question9": "ⵉⵙ ⵓⵔⵉⵖ ⴰⴷ ⵏⵜⵜⵓⵙ ⵓⵙⵏⵙ ⵓⵔ ⵉⵍⵉⵏ ⵉⵏⵜⵔⵏⵉⵜ?",
+  "answer9": "ⵓⵙⵏⵙ ⵉⵍⴰ ⵉⵎⵉⴽ ⵏ ⵓⵙⵙⵓⵍ ⵓⵔ ⵉⵍⵉⵏ ⵉⵏⵜⵔⵏⵉⵜ. ⵉⵏⵜⵔⵏⵉⵜ ⵉⵍⴰ ⴰⴷ ⵉⵍⵉ ⵃⵎⴰ ⴰⴷ ⵜⵙⵎⵙⴰⵔⴷ ⵉⵙⴼⴽⴰ ⴷ ⵉⵎⵉⴽⴰ ⵓⵎⵍⵉⵍⵏ.",
+
+  "terms_title": "ⵜⵉⵡⵔⵉⵇⵉⵏ ⴷ ⵜⵉⵙⵓⵔⴰ",
+  "terms_accept": "ⵇⴱⵍ ⵜⵉⵡⵔⵉⵇⵉⵏ ⴷ ⵜⵉⵙⵓⵔⴰ",
+  "terms_full": "1. ⴰⵙⵙⴷⵀ ⵏ ⵜⵉⵡⵔⵉⵇⵉⵏ\nⴱⴷⴷ ⵏⵖ ⵜⵏⵜⵜⵓⵙ ⴰⵙⵏⵙ ⴰ, ⵜⵙⵎⵙⴰⵔⴰ ⴷ ⵜⵉⵡⵔⵉⵇⵉⵏ ⴷ ⵜⵉⵙⵓⵔⴰ. ⵎⵉⴽ ⵓⵔ ⵜⵙⵎⵙⴰⵔⴰⴷ, ⵙⵔⵙ ⴰⵙⵏⵙ.\n\n2. ⴰⵙⵓⵔ ⵏ ⵓⵙⵏⵙ\nⴰⵙⵏⵙ ⴰ ⴷ ⴰⵙⵔⵙⵎ ⵏ BlackBox ⴷ ⵜⵉⵍⵉⵎⴰⵜⵉⴽⵙ ⵏ ⵓⵎⵓⵟⵟⵓⵔ. ⵉⵜⵜⵓⵙⵙⴰ ⵃⵎⴰ ⴰⴷ ⵉⵙⵔⵙ ⴰⵙⴽⴰⵔ ⵏ ⵓⵎⵓⵟⵟⵓⵔ ⴷ ⵓⵎⵏⴷⴰⵡ ⵃⵎⴰ ⴰⴷ ⵉⴼⴼⴰⵔ ⵉⵙⴼⴽⴰ, ⴰⵙⵍⴰⵎ ⴷ ⵓⵙⴽⴰⵔ.\n\n3. ⵉⵙⴼⴽⴰ ⵏⵏⴰ ⵉⵜⵜⵓⵙⵔⵙⵏ\nⵓⵙⵏⵙ ⵉⵣⵎⵔ ⴰⴷ ⵉⵙⵔⵙ ⵉⵙⴼⴽⴰ ⵏ ⵓⵎⵓⵟⵟⵓⵔ ⴷ ⵓⵎⵏⴷⴰⵡ, ⴷ ⵓⵎⵓⴳⴳⴰⵢ:\n\n• ⴰⵔⵣⵣⵓ ⵏ ⵓⵎⵓⵟⵟⵓⵔ\n• ⴰⵙⵓⵔ ⴷ ⵓⵣⴷⵓⵎ ⵏ ⵓⵣⴷⵓⵎ\n• ⴰⵙⵔⵙ ⴷ ⴰⵙⵔⵙⵓⵔ\n• ⴰⴱⵔⵉⴽ ⴰⵇⵇⴰⵕ ⴷ ⴰⵔⵣⵣⵓ ⴰⵔⵣⵣⵓ\n• ⴰⵙⴽⴰⵔ ⴰⵖⵔⵉⴱ\n• ⴰⴷⵖⴰⵔ ⵏ GPS\n• ⴰⵥⴰⵔ, ⴰⴽⵓⴷ ⴷ ⵡⴰⴽⵓⴷ ⵏ ⵓⵎⵢⵓⵔ\n• ⴰⵙⵙⴰⵏ ⵏ ⵓⵎⵏⴷⴰⵡ ⴷ ⵓⵎⵓⵟⵟⵓⵔ\n\nⴱⴷⴷ ⵏⵖ ⵜⵏⵜⵜⵓⵙ ⵓⵙⵏⵙ, ⵜⵙⵎⵙⴰⵔⴰ ⵙ ⵓⵔⵉⵔ ⴰⴷ ⵉⵜⵜⵓⵙⵔⵙ ⵉⵙⴼⴽⴰ ⴰ.\n\n4. ⵜⴰⵡⵍⴰⴼⵜ ⵏ ⵓⵎⴷⵉⴷ\nⵙ ⵓⵎⵓⴳⴳⴰⵢ ⵏ ⵜⵉⴽⵏⵓⵍⵓⵊⵉⵜ, ⵓⵔ ⵉⵣⵎⵔ ⴰⴷ ⵢⵓⴼⴰ ⴰⵙⵏⵙ ⴰⴷ ⵉⴽⵎⵎⵍ, ⵉⵙⵙⴰⵔ ⵙ ⵓⵙⵉⵍⴰⵏ ⵏⵖ ⵓⵔ ⵉⵍⵉⵏ ⵓⵙⵔⵉⵙ.",
+
+  "validation_password_mismatch": "ⵜⵉⵙⵓⵔⴰ ⵓⵔ ⵙⵎⵙⴰⵔⴰⵏⵜ",
+  "validation_invalid_phone": "ⵓⵏⵓⵎⵔ ⵏ ⵜⵉⵍⵉⴼⵓⵏ ⵓⵔ ⵉⵣⴳⴰ",
+  "validation_incorrect_pin": "ⴰⵏⴰⵡ ⵏ ⵜⵉⵏⵓⵎⵉ ⵓⵔ ⵉⵣⴳⴰ",
+  "validation_empty_fields": "ⵉⵙⴽⴰⵔ ⴰⴷ ⵜⴰⵛⵛⴰⵔⴷ ⵉⵎⵉⴽⴰ ⵓⵎⵍⵉⵍⵏ",
+
+  "empty_no_cars": "ⵓⵔ ⵜⵜⵓⴼⴰ ⵢⴰⵏ ⵓⵎⵓⵟⵟⵓⵔ",
+  "empty_no_notifications": "ⵓⵔ ⵉⵍⵉ ⵢⴰⵏ ⵉⵍⵎⵙⴰⵡ ⵃⴰⴷⴰ",
+  "empty_no_events": "ⵓⵔ ⵉⵍⵉ ⵢⴰⵏ ⵓⵎⵓⵟⵟⵓⵔ",
+
+  "status_loading": "ⴰⵙⵙⵓⵍ...",
+  "status_success": "ⵜⵉⵙⵓⵔⴰ ⵜⵎⵙⴰⵔ",
+  "status_error": "ⵢⵉⵍⴰ ⵢⴰⵏ ⵓⵙⵔⵉⵙ",
+
+  "confirm_delete_car": "ⵉⵙ ⵜⵅⵙⴷ ⴰⴷ ⵜⵙⵔⵙⴷ ⴰⵎⵓⵟⵟⵓⵔ ⴰ?",
+  "confirm_reset_password": "ⵉⵙ ⵜⵅⵙⴷ ⴰⴷ ⵜⴰⵍⵙⴷ ⵜⴰⵙⵓⵔⵜ ⵏⵏⴽ?",
+
+  "search_hint": "ⵔⵣⵣⵓ...",
+  "search_no_results": "ⵓⵔ ⵜⵜⵓⴼⴰ ⵢⴰⵏ ⵓⵙⵓⵔ",
+  "filter": "ⵙⵜⵉ",
+  "sort": "ⵙⵎⵙⴰⵔ",
+
+  "onboarding_title_1": "ⴱⵉⵏⵓⵔ",
+  "onboarding_desc_1": "ⵖ ⵓⵎⴰⵏⴰⵔ ⵏ Black Box",
+
+  "onboarding_title_2": "ⵥⵕ ⵜⴰⵎⵓⵟⵟⵓⵔⵜ ⵏ ⵓⵎⵏⴷⴰⵡ ⵏⵏⴽ,",
+  "onboarding_desc_2": "ⵙⵔⵙ ⴽⵓⵍⵍⵉ ⵓⵎⵢⵓⵔ, ⵙⴽⴰⵔ ⴽⵓⵍⵍⵉ ⴽⵉⵍⵓⵎⵉⵜⵔ.",
+
+  "error_email_exists": "ⵉⵎⴰⵢⵍ ⴰ ⵉⵍⴰ ⵢⴰⴷ",
+  "error_wrong_password": "ⵜⴰⵙⵓⵔⵜ ⵓⵔ ⵜⵣⴳⴰ",
+  "error_phone_exists": "ⵓⵏⵓⵎⵔ ⴰ ⵉⵜⵜⵓⵙⵙⴰ ⵢⴰⴷ",
+  "error_sp_ch": "ⵜⴰⵙⵓⵔⵜ ⵉⵍⴰ ⴰⴷ ⵜⵙⵙⴰⵔ ⵢⴰⵏ ⵉⵙⴽⴰ ⵉⵎⵢⴰⵣⵏ",
+  "error_up": "ⵜⴰⵙⵓⵔⵜ ⵉⵍⴰ ⴰⴷ ⵜⵙⵙⴰⵔ ⵢⴰⵏ ⵉⵙⴽⴰ ⴰⵎⵇⵇⵔⴰⵏ",
+  "error_low": "ⵜⴰⵙⵓⵔⵜ ⵉⵍⴰ ⴰⴷ ⵜⵙⵙⴰⵔ ⵢⴰⵏ ⵉⵙⴽⴰ ⴰⵎⵣⵢⴰⵏ",
+  "error_num": "ⵜⴰⵙⵓⵔⵜ ⵉⵍⴰ ⴰⴷ ⵜⵙⵙⴰⵔ ⵢⴰⵏ ⵓⵜⵜⵓⵏ",
+  "error_required": "ⵓⵔⴰⴼ ⴰ ⴰⵔⵉⵏ",
+  "error_invalid_email": "ⵜⴰⵏⵙⴰ ⵏ ⵉⵎⴰⵢⵍ ⵓⵔ ⵜⵣⴳⴰ",
+  "error_password_short": "ⵜⴰⵙⵓⵔⵜ ⵉⵍⴰ ⴰⴷ ⵜⵉⵍⵉ ⵙ ⵓⵎⵓⵣ ⵏ {length} ⵉⵙⴽⴰ",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

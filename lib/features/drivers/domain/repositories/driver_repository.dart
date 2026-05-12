@@ -10,5 +10,6 @@ abstract class DriverRepository{
     required String name,
   });
   Future<void> deleteDriver(int id);
+  Future<DriverEntity> showOneDriver(int id);
   Future<List> getAllDrivers();
 }

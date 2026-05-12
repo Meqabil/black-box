@@ -1,0 +1,242 @@
+{
+  "@@locale": "sv",
+
+  "app_title": "BlackBox App",
+
+  "common_yes": "Ja",
+  "common_no": "Nej",
+  "common_cancel": "Avbryt",
+  "common_save": "Spara",
+  "common_save_changes": "Spara Ändringar",
+  "common_continue": "Fortsätt",
+  "common_next": "Nästa",
+
+  "auth_login": "Logga in",
+  "auth_space_login": "Logga in",
+  "auth_logout": "Logga ut",
+  "auth_confirm_logout": "Är du säker på att du vill logga ut?",
+  "auth_signup": "Registrera dig",
+  "auth_create_account": "Skapa Konto",
+  "auth_already_have_account": "Har du redan ett konto? ",
+  "auth_no_account": "Har du inget konto?",
+  "auth_forgot_password": "Glömt Lösenord?",
+  "auth_reset_password": "Återställa Lösenord?",
+  "auth_change_password": "Byt Lösenord",
+  "auth_continue": "Genom att fortsätta godkänner du\n",
+  "auth_terms": "Användarvillkor och Integritetspolicy",
+  "auth_email": "E-post",
+  "auth_password": "Lösenord",
+  "auth_confirm_password": "Bekräfta Lösenord",
+  "auth_new_password": "Nytt Lösenord",
+  "auth_confirm_new_password": "Bekräfta Nytt Lösenord",
+  "auth_enter_email": "Ange e-postadress",
+  "auth_password_hint": "Ange ditt lösenord",
+  "full_name": "Fullständigt Namn",
+  "email_hint": "exempel@gmail.com",
+  "name_hint": "Erik Svensson",
+
+  "required_name": "Fullständigt namn krävs",
+  "required_email": "E-post krävs",
+  "email_end": "E-post måste sluta med @gmail.com",
+  "required_password": "Lösenord krävs",
+  "required_confirm_password": "Bekräftelse av lösenord krävs",
+  "password_do_not_match": "Lösenorden stämmer inte överens",
+  "min_password": "Lösenordet måste ha minst 8 tecken och innehålla siffror",
+  "send_verification_code": "Skicka Verifieringskod",
+  "password_changed_successfully": "Lösenordet Har\nÄndrats",
+  "forget_password_title": "Ange e-postadressen som är kopplad till ditt konto så skickar vi en säkerhets-PIN för återställning av lösenord.",
+
+  "auth_security_pin": "Säkerhets-PIN",
+  "auth_enter_pin": "Ange säkerhets-PIN",
+  "verify": "Verifiera",
+  "auth_resend_pin": "Skicka igen om {seconds}s",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Hem",
+  "home_welcome": "Hej, Välkommen Tillbaka",
+  "home_good_morning": "God Morgon",
+  "home_looks_good": "Ser\nBra Ut",
+  "home_safety_score": "Översikt Säkerhetspoäng",
+  "home_total_accidents": "Totalt Antal Olyckor",
+  "total_active_cars": "Totalt Aktiva Bilar",
+  "total_cars": "Totalt Bilar",
+
+  "home_active_cars": "{percentage}% av dina bilar är aktiva",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Bilar",
+  "car_view_all": "Visa Bilar",
+  "car_add": "Lägg till Bil",
+  "car_edit": "Redigera Bil",
+
+  "car_name": "Bilnamn",
+  "car_plate": "Registreringsnummer",
+  "car_type": "Biltyp",
+  "car_driver_name": "Förarens Namn",
+
+  "car_item_title": "Bil #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Live-spårning",
+  "tracking_last_updates": "Senaste Uppdateringar",
+
+  "event_title": "Körningshändelser",
+  "event_speeding": "Fortkörning",
+  "event_hard_braking": "Hård Bromsning",
+  "event_aggressive_turns": "Aggressiva Svängar",
+  "event_crash": "Krock",
+
+  "event_location": "I {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/h",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Allvarlighetsgrad",
+  "event_severity_low": "Låg",
+  "event_severity_medium": "Medel",
+  "event_severity_high": "Hög",
+  "event_severity_critical": "Kritisk",
+
+  "event_reason": "Anledning",
+  "event_last_speed": "Senast Registrerad Hastighet",
+
+  "notification_title": "Aviseringar",
+  "notification_today": "Idag",
+  "notification_yesterday": "Igår",
+  "notification_earlier": "Tidigare Denna Vecka",
+
+  "notification_fuel_alert": "Bränslel Läcka Varning!",
+  "notification_fuel_desc": "Fordon {car} kört av {driver} rapporterade ett snabbt fall i bränslenivå.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Kritisk krock detekterad!",
+  "notification_crash_desc": "Fordon {car} kört av {driver} rapporterade en allvarlig kollision.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Profil",
+  "profile_edit": "Redigera Min Profil",
+  "update_profile": "Uppdatera Profil",
+  "user_name": "Användarnamn",
+
+  "security_title": "Säkerhet",
+  "change_password": "Byt Lösenord",
+
+  "settings_title": "Inställningar",
+  "settings_notifications": "Aviseringsinställningar",
+  "settings_general_notifications": "Allmän Avisering",
+  "account_settings": "Kontoinställningar",
+  "push_notification": "Push-aviseringar",
+  "dark_mode": "Mörkt Läge På",
+
+  "help_title": "Hjälpcenter",
+  "help_and_faq": "Hjälp & Vanliga Frågor",
+  "help_contact": "Kontakta Oss",
+  "help_faq": "Vanliga Frågor",
+  "how_help": "Hur Kan Vi Hjälpa Dig?",
+  "on_wh_num": "På WhatsApp-nummer",
+
+  "question1": "Hur använder jag BlackBox?",
+  "answer1": "Installera BlackBox-enheten i din bil, logga in på appen och börja köra. Appen registrerar och visar automatiskt dina kördata.",
+  "question2": "Hur mycket kostar det att använda BlackBox?",
+  "answer2": "Kostnaden beror på valt abonnemang och tjänster. Kontakta företaget för prisinformation.",
+  "question3": "Hur kontaktar jag supporten?",
+  "answer3": "Du kan kontakta supporten via WhatsApp med företagets officiella nummer eller besöka företagets kontor under öppettiderna.",
+  "question4": "Hur kan jag återställa mitt lösenord om jag glömmer det?",
+  "answer4": "Använd alternativet 'Glömt lösenord' på inloggningsskärmen och följ instruktionerna för att återställa ditt lösenord.",
+  "question5": "Finns det sekretess- eller datasäkerhetsåtgärder?",
+  "answer5": "Ja. Dina uppgifter lagras och skyddas säkert och delas inte utan ditt tillstånd förutom när det krävs enligt lag.",
+  "question6": "Kan jag anpassa inställningar i appen?",
+  "answer6": "Ja. Du kan anpassa tillgängliga inställningar som aviseringar och preferenser inom appen.",
+  "question7": "Hur kan jag ta bort mitt konto?",
+  "answer7": "För att ta bort ditt konto, kontakta företaget via WhatsApp eller besök företagets kontor.",
+  "question8": "Hur kommer jag åt min analyshistorik?",
+  "answer8": "Du kan se dina tidigare resor och körningsanalyser i avsnittet Historik eller Analyser i appen.",
+  "question9": "Kan jag använda appen offline?",
+  "answer9": "Appen har begränsad offline-funktionalitet. En internetanslutning krävs för att synkronisera data och komma åt alla funktioner.",
+
+  "terms_title": "Användarvillkor",
+  "terms_accept": "Acceptera användarvillkor",
+  "terms_full": "1. Godkännande av Villkor\nGenom att installera eller använda den här appen godkänner du dessa Användarvillkor. Om du inte godkänner, sluta använda appen.\n\n2. Appens Syfte\nDen här appen är ett fordons-blackbox och telematikssystem som används för att övervaka fordonets prestanda och körbeteende enbart för informations-, säkerhets- och analytiska syften.\n\n3. Insamlade Dataparametrar\nAppen kan samla in och bearbeta fordons- och kördata, inklusive men inte begränsat till:\n\n• Fordonshastighet\n• Bränsleförbrukning och bränslenivå\n• Acceleration och deceleration\n• Hård bromsning och snabb acceleration\n• Skarpa kurvor\n• GPS-platsdata (latitud och longitud)\n• Reseavstånd, varaktighet och tid\n• Förar- och fordonsidentifieringsdata\n\nGenom att använda appen samtycker du uttryckligen till insamlingen av dessa parametrar.\n\n4. Tjänstetillgänglighet\nKontinuerlig, realtids- eller felfri drift av appen garanteras inte på grund av tekniska begränsningar.",
+
+  "validation_password_mismatch": "Lösenorden stämmer inte överens",
+  "validation_invalid_phone": "Ogiltigt telefonnummer",
+  "validation_incorrect_pin": "Felaktig PIN",
+  "validation_empty_fields": "Fyll i alla fält",
+
+  "empty_no_cars": "Inga bilar hittades",
+  "empty_no_notifications": "Inga aviseringar ännu",
+  "empty_no_events": "Inga händelser tillgängliga",
+
+  "status_loading": "Laddar...",
+  "status_success": "Åtgärd slutförd",
+  "status_error": "Något gick fel",
+
+  "confirm_delete_car": "Är du säker på att du vill ta bort den här bilen?",
+  "confirm_reset_password": "Är du säker på att du vill återställa ditt lösenord?",
+
+  "search_hint": "Sök...",
+  "search_no_results": "Inga resultat hittades",
+  "filter": "Filtrera",
+  "sort": "Sortera",
+
+  "onboarding_title_1": "Välkommen",
+  "onboarding_desc_1": "Till Black Box Manager",
+
+  "onboarding_title_2": "Se Historien Bakom Din Körning,",
+  "onboarding_desc_2": "Registrerar varje resa, analyserar varje kilometer.",
+
+  "error_email_exists": "Den här e-postadressen finns redan",
+  "error_wrong_password": "Felaktigt lösenord",
+  "error_phone_exists": "Det här telefonnumret används redan",
+  "error_sp_ch": "Lösenordet måste innehålla minst ett specialtecken",
+  "error_up": "Lösenordet måste innehålla minst en stor bokstav",
+  "error_low": "Lösenordet måste innehålla minst en liten bokstav",
+  "error_num": "Lösenordet måste innehålla minst en siffra",
+  "error_required": "Det här fältet är obligatoriskt",
+  "error_invalid_email": "Ogiltig e-postadress",
+  "error_password_short": "Lösenordet måste ha minst {length} tecken",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

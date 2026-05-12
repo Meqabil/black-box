@@ -13,12 +13,12 @@ class _SafetyState extends State<Safety> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mainRedColor,
+      backgroundColor: AppColor.mainRedColor,
       appBar: AppBar(
         toolbarHeight: 120,
         title: Text("Driving Events ",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
         centerTitle: true,
-        backgroundColor: mainRedColor,
+        backgroundColor: AppColor.mainRedColor,
         iconTheme: IconThemeData(color: Colors.white),
         actions: [
           IconButton(
@@ -28,7 +28,7 @@ class _SafetyState extends State<Safety> {
               ),
               onPressed: (){
 
-              }, icon: Icon(Icons.notifications_none,color:mainRedColor,size: 35,)),
+              }, icon: Icon(Icons.notifications_none,color: AppColor.mainRedColor,size: 35,)),
           SizedBox(width: 20,)
         ],
       ),

@@ -3,6 +3,7 @@
 import 'package:black_box/features/start_app/widgets/onboarding_basic_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 class Onboarding extends StatefulWidget {
@@ -24,8 +25,8 @@ class _OnboardingState extends State<Onboarding> {
 
           children: [
             OnboardingBasicScreen(
-                title: "Welcome",
-                subtitle: "To Black Box Manager",
+                title: AppLocalizations.of(context)!.onboarding_title_1,
+                subtitle: AppLocalizations.of(context)!.onboarding_desc_1,
                 image: "assets/start_screen/car1.png",
                 currentPage: 0,
                 controller: controller,
@@ -33,8 +34,8 @@ class _OnboardingState extends State<Onboarding> {
                 subtitleSize: 27,
             ),
             OnboardingBasicScreen(
-                title: "See The Story Behind Your Drive,",
-                subtitle: "Recording Every Journey, Analyzing Every Mile.",
+                title: AppLocalizations.of(context)!.onboarding_title_2,
+                subtitle: AppLocalizations.of(context)!.onboarding_desc_2,
                 image: "assets/start_screen/car2.png",
                 currentPage: 1,
                 controller: controller,

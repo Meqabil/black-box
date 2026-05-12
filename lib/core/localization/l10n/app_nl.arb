@@ -1,0 +1,242 @@
+{
+  "@@locale": "nl",
+
+  "app_title": "BlackBox App",
+
+  "common_yes": "Ja",
+  "common_no": "Nee",
+  "common_cancel": "Annuleren",
+  "common_save": "Opslaan",
+  "common_save_changes": "Wijzigingen Opslaan",
+  "common_continue": "Doorgaan",
+  "common_next": "Volgende",
+
+  "auth_login": "Inloggen",
+  "auth_space_login": "Inloggen",
+  "auth_logout": "Uitloggen",
+  "auth_confirm_logout": "Weet u zeker dat u wilt uitloggen?",
+  "auth_signup": "Aanmelden",
+  "auth_create_account": "Account Aanmaken",
+  "auth_already_have_account": "Heeft u al een account? ",
+  "auth_no_account": "Heeft u geen account?",
+  "auth_forgot_password": "Wachtwoord Vergeten?",
+  "auth_reset_password": "Wachtwoord Opnieuw Instellen?",
+  "auth_change_password": "Wachtwoord Wijzigen",
+  "auth_continue": "Door verder te gaan, gaat u akkoord met de\n",
+  "auth_terms": "Gebruiksvoorwaarden en Privacybeleid",
+  "auth_email": "E-mail",
+  "auth_password": "Wachtwoord",
+  "auth_confirm_password": "Wachtwoord Bevestigen",
+  "auth_new_password": "Nieuw Wachtwoord",
+  "auth_confirm_new_password": "Nieuw Wachtwoord Bevestigen",
+  "auth_enter_email": "Voer e-mailadres in",
+  "auth_password_hint": "Voer uw wachtwoord in",
+  "full_name": "Volledige Naam",
+  "email_hint": "voorbeeld@gmail.com",
+  "name_hint": "Jan de Vries",
+
+  "required_name": "Volledige naam is verplicht",
+  "required_email": "E-mail is verplicht",
+  "email_end": "E-mail moet eindigen op @gmail.com",
+  "required_password": "Wachtwoord is verplicht",
+  "required_confirm_password": "Wachtwoordbevestiging is verplicht",
+  "password_do_not_match": "Wachtwoorden komen niet overeen",
+  "min_password": "Wachtwoord moet minimaal 8 tekens bevatten en cijfers",
+  "send_verification_code": "Verificatiecode Versturen",
+  "password_changed_successfully": "Wachtwoord Succesvol\nGewijzigd",
+  "forget_password_title": "Voer het e-mailadres van uw account in en we sturen u een beveiligings-PIN voor het opnieuw instellen van uw wachtwoord.",
+
+  "auth_security_pin": "Beveiligings-PIN",
+  "auth_enter_pin": "Voer beveiligings-PIN in",
+  "verify": "Verifiëren",
+  "auth_resend_pin": "Opnieuw versturen over {seconds}s",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Home",
+  "home_welcome": "Hoi, Welkom Terug",
+  "home_good_morning": "Goedemorgen",
+  "home_looks_good": "Ziet er\nGoed Uit",
+  "home_safety_score": "Overzicht Veiligheidsscore",
+  "home_total_accidents": "Totaal Ongelukken",
+  "total_active_cars": "Totaal Actieve Auto's",
+  "total_cars": "Totaal Auto's",
+
+  "home_active_cars": "{percentage}% van uw auto's is actief",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Auto's",
+  "car_view_all": "Auto's Bekijken",
+  "car_add": "Auto Toevoegen",
+  "car_edit": "Auto Bewerken",
+
+  "car_name": "Autonaam",
+  "car_plate": "Kenteken",
+  "car_type": "Autotype",
+  "car_driver_name": "Naam Bestuurder",
+
+  "car_item_title": "Auto #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Live Tracking",
+  "tracking_last_updates": "Laatste Updates",
+
+  "event_title": "Rijgebeurtenissen",
+  "event_speeding": "Snelheidsovertredingen",
+  "event_hard_braking": "Hard Remmen",
+  "event_aggressive_turns": "Agressieve Bochten",
+  "event_crash": "Botsing",
+
+  "event_location": "In {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/u",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Ernst",
+  "event_severity_low": "Laag",
+  "event_severity_medium": "Gemiddeld",
+  "event_severity_high": "Hoog",
+  "event_severity_critical": "Kritisch",
+
+  "event_reason": "Reden",
+  "event_last_speed": "Laatste Geregistreerde Snelheid",
+
+  "notification_title": "Meldingen",
+  "notification_today": "Vandaag",
+  "notification_yesterday": "Gisteren",
+  "notification_earlier": "Eerder Deze Week",
+
+  "notification_fuel_alert": "Brandstoflek Waarschuwing!",
+  "notification_fuel_desc": "Voertuig {car} bestuurd door {driver} meldde een snelle daling van het brandstofniveau.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Kritieke botsing gedetecteerd!",
+  "notification_crash_desc": "Voertuig {car} bestuurd door {driver} meldde een ernstige botsing.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Profiel",
+  "profile_edit": "Mijn Profiel Bewerken",
+  "update_profile": "Profiel Bijwerken",
+  "user_name": "Gebruikersnaam",
+
+  "security_title": "Beveiliging",
+  "change_password": "Wachtwoord Wijzigen",
+
+  "settings_title": "Instellingen",
+  "settings_notifications": "Meldingsinstellingen",
+  "settings_general_notifications": "Algemene Melding",
+  "account_settings": "Accountinstellingen",
+  "push_notification": "Pushmeldingen",
+  "dark_mode": "Donkere Modus Aan",
+
+  "help_title": "Helpcentrum",
+  "help_and_faq": "Hulp & Veelgestelde Vragen",
+  "help_contact": "Neem Contact Op",
+  "help_faq": "Veelgestelde Vragen",
+  "how_help": "Hoe Kunnen Wij U Helpen?",
+  "on_wh_num": "Op WhatsApp Nummer",
+
+  "question1": "Hoe gebruik ik BlackBox?",
+  "answer1": "Installeer het BlackBox-apparaat in uw auto, log in op de app en begin met rijden. De app registreert en toont uw rijgegevens automatisch.",
+  "question2": "Hoeveel kost het gebruik van BlackBox?",
+  "answer2": "De kosten zijn afhankelijk van het geselecteerde plan en de diensten. Neem contact op met het bedrijf voor prijsdetails.",
+  "question3": "Hoe neem ik contact op met de ondersteuning?",
+  "answer3": "U kunt contact opnemen met de ondersteuning via WhatsApp via het officiële bedrijfsnummer of door het bedrijfskantoor te bezoeken tijdens kantooruren.",
+  "question4": "Hoe kan ik mijn wachtwoord opnieuw instellen als ik het vergeet?",
+  "answer4": "Gebruik de optie 'Wachtwoord Vergeten' op het inlogscherm en volg de instructies om uw wachtwoord opnieuw in te stellen.",
+  "question5": "Zijn er privacy- of gegevensbeveiligingsmaatregelen aanwezig?",
+  "answer5": "Ja. Uw gegevens worden veilig opgeslagen en beschermd en worden niet gedeeld zonder uw toestemming, behalve wanneer wettelijk vereist.",
+  "question6": "Kan ik instellingen in de applicatie aanpassen?",
+  "answer6": "Ja. U kunt beschikbare instellingen zoals meldingen en voorkeuren aanpassen binnen de app.",
+  "question7": "Hoe kan ik mijn account verwijderen?",
+  "answer7": "Om uw account te verwijderen, neemt u contact op met het bedrijf via WhatsApp of bezoekt u het bedrijfskantoor.",
+  "question8": "Hoe krijg ik toegang tot mijn analysegeschiedenis?",
+  "answer8": "U kunt uw vroegere ritten en rijanalyses bekijken in de sectie Geschiedenis of Analyses van de app.",
+  "question9": "Kan ik de app offline gebruiken?",
+  "answer9": "De app heeft beperkte offline functionaliteit. Een internetverbinding is vereist om gegevens te synchroniseren en toegang te krijgen tot alle functies.",
+
+  "terms_title": "Algemene Voorwaarden",
+  "terms_accept": "Accepteer de algemene voorwaarden",
+  "terms_full": "1. Acceptatie van Voorwaarden\nDoor het installeren of gebruiken van deze applicatie gaat u akkoord met deze Algemene Voorwaarden. Als u niet akkoord gaat, stop dan met het gebruik van de app.\n\n2. Doel van de Applicatie\nDeze applicatie is een voertuig-blackbox en telematisch systeem dat wordt gebruikt om voertuigprestaties en rijgedrag te monitoren, uitsluitend voor informatieve, veiligheids- en analytische doeleinden.\n\n3. Verzamelde Gegevensparameters\nDe applicatie kan voertuig- en rijgegevens verzamelen en verwerken, inclusief maar niet beperkt tot:\n\n• Voertuigsnelheid\n• Brandstofverbruik en brandstofniveau\n• Versnelling en vertraging\n• Harde rem- en snelle versnellingsgebeurtenissen\n• Scherpe bochten\n• GPS-locatiegegevens (breedte- en lengtegraad)\n• Reisafstand, duur en tijd\n• Bestuurder- en voertuigidentificatiegegevens\n\nDoor de app te gebruiken, stemt u expliciet in met de verzameling van deze parameters.\n\n4. Beschikbaarheid van de Dienst\nContinue, realtime of foutloze werking van de app is niet gegarandeerd vanwege technische beperkingen.",
+
+  "validation_password_mismatch": "Wachtwoorden komen niet overeen",
+  "validation_invalid_phone": "Ongeldig telefoonnummer",
+  "validation_incorrect_pin": "Onjuiste PIN",
+  "validation_empty_fields": "Vul alle velden in",
+
+  "empty_no_cars": "Geen auto's gevonden",
+  "empty_no_notifications": "Nog geen meldingen",
+  "empty_no_events": "Geen evenementen beschikbaar",
+
+  "status_loading": "Laden...",
+  "status_success": "Bewerking geslaagd",
+  "status_error": "Er is iets misgegaan",
+
+  "confirm_delete_car": "Weet u zeker dat u deze auto wilt verwijderen?",
+  "confirm_reset_password": "Weet u zeker dat u uw wachtwoord opnieuw wilt instellen?",
+
+  "search_hint": "Zoeken...",
+  "search_no_results": "Geen resultaten gevonden",
+  "filter": "Filteren",
+  "sort": "Sorteren",
+
+  "onboarding_title_1": "Welkom",
+  "onboarding_desc_1": "Bij Black Box Manager",
+
+  "onboarding_title_2": "Zie het Verhaal Achter Uw Rit,",
+  "onboarding_desc_2": "Elke reis opnemen, elke kilometer analyseren.",
+
+  "error_email_exists": "Dit e-mailadres bestaat al",
+  "error_wrong_password": "Onjuist wachtwoord",
+  "error_phone_exists": "Dit telefoonnummer is al in gebruik",
+  "error_sp_ch": "Wachtwoord moet minimaal één speciaal teken bevatten",
+  "error_up": "Wachtwoord moet minimaal één hoofdletter bevatten",
+  "error_low": "Wachtwoord moet minimaal één kleine letter bevatten",
+  "error_num": "Wachtwoord moet minimaal één cijfer bevatten",
+  "error_required": "Dit veld is verplicht",
+  "error_invalid_email": "Ongeldig e-mailadres",
+  "error_password_short": "Wachtwoord moet minimaal {length} tekens bevatten",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

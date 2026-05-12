@@ -13,7 +13,7 @@ class NewPasswordField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: const TextStyle(fontWeight: FontWeight.w600)),
+        Text(label, style: TextStyle(fontWeight: FontWeight.w600,color: Theme.of(context).colorScheme.onSurface)),
         const SizedBox(height: 8),
         TextFormField(
           controller: controller,
@@ -24,7 +24,7 @@ class NewPasswordField extends StatelessWidget {
             hintText: "● ● ● ● ● ● ●",
             hintStyle: TextStyle(color: Colors.grey),
             filled: true,
-            fillColor: textFieldColor,
+
             suffixIcon: IconButton(
               icon: Icon(obscure ? Icons.visibility_off : Icons.visibility),
               onPressed: onToggle,

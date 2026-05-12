@@ -16,7 +16,12 @@ class FormTextField extends StatelessWidget {
       keyboardType: TextInputType.emailAddress,
       validator: validator,
       autovalidateMode: autoValidateMode,
-      decoration: inputDecoration(hintText: hint, errorMaxLines: 2, textFieldColor: textFieldColor),
+      decoration: inputDecoration(
+
+        hintText: hint,
+        errorMaxLines: 2,
+        textFieldColor: AppColor.textFieldColor
+      ),
     );
   }
 }

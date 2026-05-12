@@ -3,10 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../../core/ui/snackbar/exception_snackbar.dart';
 import '../../../../../../../core/ui/snackbar/success_snackbar.dart';
-import '../../../../bloc/auth/new_password/password_cubit.dart';
-import '../../../../bloc/auth/new_password/password_state.dart';
+import '../../../../cubit/auth/new_password/password_cubit.dart';
+import '../../../../cubit/auth/new_password/password_state.dart';
 import '../../new_password_success.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ChangePasswordButton extends StatelessWidget {
   const ChangePasswordButton({super.key,required this.onPressed});
   final void Function()? onPressed;
@@ -32,14 +33,14 @@ class ChangePasswordButton extends StatelessWidget {
         },
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFFB00000),
+            backgroundColor: Theme.of(context).colorScheme.primary,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30),
             ),
           ),
           onPressed: onPressed,
-          child: const Text(
-            "Change Password",
+          child: Text(
+            AppLocalizations.of(context)!.change_password,
             style: TextStyle(
               fontSize: 16,
               color: Colors.white,

@@ -1,0 +1,245 @@
+{
+  "@@locale": "ar",
+
+  "app_title": "تطبيق الصندوق الأسود",
+
+  "common_yes": "نعم",
+  "common_no": "لا",
+  "common_cancel": "إلغاء",
+  "common_save": "حفظ",
+  "common_save_changes": "حفظ التغييرات",
+  "common_continue": "متابعة",
+  "common_next": "التالي",
+
+  "auth_login": "تسجيل الدخول",
+  "auth_space_login": "تسجيل الدخول",
+  "auth_logout": "تسجيل الخروج",
+  "auth_confirm_logout": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+  "auth_signup": "إنشاء حساب",
+  "auth_create_account": "إنشاء حساب",
+  "auth_already_have_account": "هل لديك حساب بالفعل؟",
+  "auth_no_account": "ليس لديك حساب؟",
+  "auth_forgot_password": "هل نسيت كلمة المرور؟",
+  "auth_reset_password": "إعادة تعيين كلمة المرور",
+  "auth_change_password": "تغيير كلمة المرور",
+  "auth_continue": "بالمتابعة، فإنك توافق على\n",
+  "auth_terms": "شروط الاستخدام وسياسة الخصوصية",
+  "auth_email": "البريد الإلكتروني",
+  "auth_password": "كلمة المرور",
+  "auth_confirm_password": "تأكيد كلمة المرور",
+  "auth_new_password": "كلمة المرور الجديدة",
+  "auth_confirm_new_password": "تأكيد كلمة المرور الجديدة",
+  "auth_enter_email": "أدخل البريد الإلكتروني",
+  "auth_password_hint": "أدخل كلمة المرور",
+  "full_name": "الاسم الكامل",
+  "email_hint": "example@gmail.com",
+  "name_hint": "عمر الدالـي",
+  "required_name": "الاسم الكامل مطلوب",
+  "required_email": "البريد الإلكتروني مطلوب",
+  "email_end": "يجب أن ينتهي البريد الإلكتروني بـ @gmail.com",
+  "required_password": "كلمة المرور مطلوبة",
+  "required_confirm_password": "تأكيد كلمة المرور مطلوب",
+  "password_do_not_match": "كلمتا المرور غير متطابقتين",
+  "min_password": "يجب أن تكون كلمة المرور 8 أحرف على الأقل وتحتوي على أرقام",
+  "send_verification_code": "إرسال رمز التحقق",
+  "password_changed_successfully": "تم تغيير كلمة المرور بنجاح",
+  "forget_password_title": "أدخل البريد الإلكتروني المرتبط بحسابك وسنرسل لك رمز تحقق لإعادة تعيين كلمة المرور",
+
+
+  "auth_security_pin": "رمز الأمان",
+  "auth_enter_pin": "أدخل رمز الأمان",
+  "verify": "تـأكيد",
+  "auth_resend_pin": "إعادة الإرسال خلال {seconds} ثانية",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "الرئيسية",
+  "home_welcome": "مرحبًا، أهلاً بعودتك",
+  "home_good_morning": "صباح الخير",
+  "home_looks_good": "يبدو\nجيدًا",
+  "home_safety_score": "نظرة عامة على درجة الأمان",
+  "home_total_accidents": "إجمالي الحوادث",
+  "total_active_cars": "إجمالي السيارات النشطة",
+  "total_cars": "إجمالي السيارات",
+
+  "home_active_cars": "{percentage}% من سياراتك نشطة",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "السيارات",
+  "car_view_all": "عرض السيارات",
+  "car_add": "إضافة سيارة",
+  "car_edit": "تعديل السيارة",
+
+  "car_name": "اسم السيارة",
+  "car_plate": "لوحة السيارة",
+  "car_type": "نوع السيارة",
+  "car_driver_name": "اسم السائق",
+
+  "car_item_title": "سيارة رقم {id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "تتبع مباشر",
+  "tracking_last_updates": "آخر التحديثات",
+
+  "event_title": "أحداث القيادة",
+  "event_speeding": "تجاوز السرعة",
+  "event_hard_braking": "فرملة قوية",
+  "event_aggressive_turns": "منعطفات حادة",
+  "event_crash": "حادث",
+
+  "event_location": "في {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} كم/س",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "الخطورة",
+  "event_severity_low": "منخفض",
+  "event_severity_medium": "متوسط",
+  "event_severity_high": "مرتفع",
+  "event_severity_critical": "حرج",
+
+  "event_reason": "السبب",
+  "event_last_speed": "آخر سرعة مسجلة",
+
+  "notification_title": "الإشعارات",
+  "notification_today": "اليوم",
+  "notification_yesterday": "أمس",
+  "notification_earlier": "في وقت سابق هذا الأسبوع",
+
+  "notification_fuel_alert": "تنبيه تسرب الوقود!",
+  "notification_fuel_desc": "المركبة {car} التي يقودها {driver} سجلت انخفاضًا سريعًا في مستوى الوقود.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "تم اكتشاف حادث خطير!",
+  "notification_crash_desc": "المركبة {car} التي يقودها {driver} سجلت تصادمًا شديدًا.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "الملف الشخصي",
+  "profile_edit": "تعديل الملف الشخصي",
+  "update_profile": "Update Profile",
+  "user_name": "إسـم المسـتخدم",
+
+  "security_title": "الأمان",
+  "change_password": "تغيير كلمة المرور",
+
+  "settings_title": "الإعدادات",
+  "settings_notifications": "إعدادات الإشعارات",
+  "settings_general_notifications": "الإشعارات العامة",
+  "account_settings": "إعـدادت الحساب",
+  "push_notification": "تفعيل الإشـعارات",
+  "dark_mode": "تفعيـل الوضـع المظلم",
+
+  "help_title": "مركز المساعدة",
+  "help_and_faq": "المسـاعدة والإسـتعلام",
+  "help_contact": "تواصل معنا",
+  "help_faq": "الأسئلة الشائعة",
+  "how_help": "كيف يمكننا مسـاعدتك ؟",
+  "on_wh_num": "على رقم الوتسـاب",
+  "language": "اللــغة",
+
+
+
+  "question1": "كيف أستخدم تطبيق BlackBox؟",
+  "answer1": "قم بتركيب جهاز BlackBox في سيارتك، ثم سجّل الدخول إلى التطبيق وابدأ القيادة. سيقوم التطبيق تلقائيًا بتسجيل وعرض بيانات القيادة الخاصة بك.",
+  "question2": "كم تبلغ تكلفة استخدام BlackBox؟",
+  "answer2": "تعتمد التكلفة على الباقة والخدمات المختارة. يُرجى التواصل مع الشركة لمعرفة تفاصيل الأسعار.",
+  "question3": "كيف يمكنني التواصل مع الدعم؟",
+  "answer3": "يمكنك التواصل مع الدعم عبر واتساب باستخدام الرقم الرسمي للشركة أو من خلال زيارة مقر الشركة خلال ساعات العمل.",
+  "question4": "كيف يمكنني إعادة تعيين كلمة المرور إذا نسيتها؟",
+  "answer4": "استخدم خيار 'نسيت كلمة المرور' في شاشة تسجيل الدخول واتبع التعليمات لإعادة تعيين كلمة المرور.",
+  "question5": "هل توجد إجراءات لحماية الخصوصية وأمان البيانات؟",
+  "answer5": "نعم، يتم تخزين بياناتك بشكل آمن وحمايتها، ولا يتم مشاركتها دون إذنك إلا في الحالات التي يفرضها القانون.",
+  "question6": "هل يمكنني تخصيص الإعدادات داخل التطبيق؟",
+  "answer6": "نعم، يمكنك تخصيص الإعدادات المتاحة مثل الإشعارات والتفضيلات من داخل التطبيق.",
+  "question7": "كيف يمكنني حذف حسابي؟",
+  "answer7": "لحذف حسابك، يُرجى التواصل مع الشركة عبر واتساب أو زيارة مقر الشركة.",
+  "question8": "كيف يمكنني الوصول إلى سجل التحليلات الخاصة بي؟",
+  "answer8": "يمكنك عرض رحلاتك السابقة وتحليلات القيادة من خلال قسم السجل أو التحليلات داخل التطبيق.",
+  "question9": "هل يمكنني استخدام التطبيق بدون اتصال بالإنترنت؟",
+  "answer8": "يحتوي التطبيق على وظائف محدودة بدون اتصال. يلزم توفر اتصال بالإنترنت لمزامنة البيانات والوصول إلى جميع الميزات.",
+
+  "terms_title": "الشروط والأحكام",
+  "terms_accept": "أوافق على الشروط والأحكام",
+
+  "terms_full": "1. قبول الشروط\nمن خلال تثبيت هذا التطبيق أو استخدامه، فإنك توافق على هذه الشروط والأحكام. إذا كنت لا توافق، يرجى التوقف عن استخدام التطبيق.\n\n2. الغرض من التطبيق\nهذا التطبيق هو نظام صندوق أسود للمركبات ونظام تتبع (Telematics) يُستخدم لمراقبة أداء المركبة وسلوك القيادة لأغراض معلوماتية وسلامة وتحليل فقط.\n\n3. البيانات التي يتم جمعها\nقد يقوم التطبيق بجمع ومعالجة بيانات المركبة والقيادة، بما في ذلك على سبيل المثال لا الحصر:\n\n• سرعة المركبة\n• استهلاك الوقود ومستوى الوقود\n• التسارع والتباطؤ\n• الفرملة القوية وحالات التسارع المفاجئ\n• الانعطافات الحادة\n• بيانات الموقع عبر GPS (خط الطول وخط العرض)\n• مسافة الرحلة ومدتها ووقتها\n• بيانات تعريف السائق والمركبة\n\nمن خلال استخدام التطبيق، فإنك توافق صراحةً على جمع هذه البيانات.\n\n4. توفر الخدمة\nلا يمكن ضمان التشغيل المستمر أو في الوقت الفعلي أو الخالي من الأخطاء للتطبيق بسبب القيود التقنية.",
+  "validation_password_mismatch": "كلمتا المرور غير متطابقتين",
+  "validation_invalid_phone": "رقم هاتف غير صالح",
+  "validation_incorrect_pin": "رمز PIN غير صحيح",
+  "validation_empty_fields": "يرجى ملء جميع الحقول",
+
+  "empty_no_cars": "لا توجد سيارات",
+  "empty_no_notifications": "لا توجد إشعارات بعد",
+  "empty_no_events": "لا توجد أحداث متاحة",
+
+  "status_loading": "جارٍ التحميل...",
+  "status_success": "تمت العملية بنجاح",
+  "status_error": "حدث خطأ ما",
+
+  "confirm_delete_car": "هل أنت متأكد أنك تريد حذف هذه السيارة؟ صاحبة الرقم ",
+  "confirm_reset_password": "هل أنت متأكد أنك تريد إعادة تعيين كلمة المرور؟",
+
+  "search_hint": "بحث...",
+  "search_no_results": "لا توجد نتائج",
+  "filter": "تصفية",
+  "sort": "ترتيب",
+
+  "onboarding_title_1": "مرحبًا",
+  "onboarding_desc_1": "في مدير الصندوق الأسود",
+
+  "onboarding_title_2": "شاهد قصة قيادتك،",
+  "onboarding_desc_2": "تسجيل كل رحلة وتحليل كل ميل.",
+
+  "error_email_exists": "هذا البريد الإلكتروني مستخدم بالفعل",
+  "error_wrong_password": "كلمة المرور غير صحيحة",
+  "error_phone_exists": "رقم الهاتف مستخدم بالفعل",
+  "error_sp_ch": "يجب أن تحتوي كلمة المرور على حرف خاص واحد على الأقل",
+  "error_up": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+  "error_low": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+  "error_num": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+  "error_required": "هذا الحقل مطلوب",
+  "error_invalid_email": "بريد إلكتروني غير صالح",
+  "error_password_short": "يجب أن تكون كلمة المرور على الأقل {length} أحرف",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

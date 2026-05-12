@@ -26,7 +26,7 @@ class DeleteDriverDialogue extends StatelessWidget {
             alignment: Alignment.topLeft,
             child: Column(
               children: [
-                Text("Delete driver",style: TextStyle(color: mainRedColor,fontSize: 22,fontWeight: FontWeight.bold),),
+                Text("Delete driver",style: TextStyle(color: AppColor.mainRedColor,fontSize: 22,fontWeight: FontWeight.bold),),
                 SizedBox(height: 12,),
                 Text("Do you really want to delete this driver with plate number (${driver.name})",style: TextStyle(fontSize: 16,),textAlign: TextAlign.center,),
                 Spacer(),
@@ -40,7 +40,7 @@ class DeleteDriverDialogue extends StatelessWidget {
                           context.read<DriverCubit>().deleteDriver(driver.id);
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: mainRedColor,
+                          backgroundColor: AppColor.mainRedColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(90),
                           ),
@@ -61,7 +61,7 @@ class DeleteDriverDialogue extends StatelessWidget {
                           Navigator.pop(context);
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: mainRedColor,
+                          backgroundColor: AppColor.mainRedColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(90),
                           ),

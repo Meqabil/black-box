@@ -1,0 +1,242 @@
+{
+  "@@locale": "it",
+
+  "app_title": "BlackBox App",
+
+  "common_yes": "Sì",
+  "common_no": "No",
+  "common_cancel": "Annulla",
+  "common_save": "Salva",
+  "common_save_changes": "Salva Modifiche",
+  "common_continue": "Continua",
+  "common_next": "Avanti",
+
+  "auth_login": "Accedi",
+  "auth_space_login": "Accedi",
+  "auth_logout": "Esci",
+  "auth_confirm_logout": "Sei sicuro di voler uscire?",
+  "auth_signup": "Registrati",
+  "auth_create_account": "Crea Account",
+  "auth_already_have_account": "Hai già un account? ",
+  "auth_no_account": "Non hai un account?",
+  "auth_forgot_password": "Password Dimenticata?",
+  "auth_reset_password": "Reimposta Password?",
+  "auth_change_password": "Cambia Password",
+  "auth_continue": "Continuando, accetti i\n",
+  "auth_terms": "Termini di Utilizzo e Informativa sulla Privacy",
+  "auth_email": "Email",
+  "auth_password": "Password",
+  "auth_confirm_password": "Conferma Password",
+  "auth_new_password": "Nuova Password",
+  "auth_confirm_new_password": "Conferma Nuova Password",
+  "auth_enter_email": "Inserisci l'indirizzo email",
+  "auth_password_hint": "Inserisci la tua password",
+  "full_name": "Nome Completo",
+  "email_hint": "esempio@gmail.com",
+  "name_hint": "Mario Rossi",
+
+  "required_name": "Il Nome Completo è obbligatorio",
+  "required_email": "L'Email è obbligatoria",
+  "email_end": "L'email deve terminare con @gmail.com",
+  "required_password": "La Password è obbligatoria",
+  "required_confirm_password": "La Conferma Password è obbligatoria",
+  "password_do_not_match": "Le password non coincidono",
+  "min_password": "La password deve contenere almeno 8 caratteri e numeri",
+  "send_verification_code": "Invia Codice di Verifica",
+  "password_changed_successfully": "Password Modificata\nCon Successo",
+  "forget_password_title": "Inserisci l'email associata al tuo account e ti invieremo un PIN di sicurezza per reimpostare la password.",
+
+  "auth_security_pin": "PIN di Sicurezza",
+  "auth_enter_pin": "Inserisci il PIN di sicurezza",
+  "verify": "Verifica",
+  "auth_resend_pin": "Invia di nuovo tra {seconds}s",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Home",
+  "home_welcome": "Ciao, Bentornato",
+  "home_good_morning": "Buongiorno",
+  "home_looks_good": "Tutto\nBene",
+  "home_safety_score": "Panoramica Punteggio Sicurezza",
+  "home_total_accidents": "Totale Incidenti",
+  "total_active_cars": "Totale Auto Attive",
+  "total_cars": "Totale Auto",
+
+  "home_active_cars": "{percentage}% delle tue auto sono attive",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Auto",
+  "car_view_all": "Vedi Auto",
+  "car_add": "Aggiungi Auto",
+  "car_edit": "Modifica Auto",
+
+  "car_name": "Nome Auto",
+  "car_plate": "Targa Auto",
+  "car_type": "Tipo di Auto",
+  "car_driver_name": "Nome del Conducente",
+
+  "car_item_title": "Auto #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Tracciamento in Tempo Reale",
+  "tracking_last_updates": "Ultimi Aggiornamenti",
+
+  "event_title": "Eventi di Guida",
+  "event_speeding": "Eccesso di Velocità",
+  "event_hard_braking": "Frenata Brusca",
+  "event_aggressive_turns": "Curve Aggressive",
+  "event_crash": "Incidente",
+
+  "event_location": "In {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/h",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Gravità",
+  "event_severity_low": "Bassa",
+  "event_severity_medium": "Media",
+  "event_severity_high": "Alta",
+  "event_severity_critical": "Critica",
+
+  "event_reason": "Motivo",
+  "event_last_speed": "Ultima Velocità Registrata",
+
+  "notification_title": "Notifiche",
+  "notification_today": "Oggi",
+  "notification_yesterday": "Ieri",
+  "notification_earlier": "Questa Settimana",
+
+  "notification_fuel_alert": "Avviso Perdita Carburante!",
+  "notification_fuel_desc": "Il veicolo {car} guidato da {driver} ha segnalato un rapido calo del livello di carburante.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Incidente critico rilevato!",
+  "notification_crash_desc": "Il veicolo {car} guidato da {driver} ha segnalato una grave collisione.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Profilo",
+  "profile_edit": "Modifica il Mio Profilo",
+  "update_profile": "Aggiorna Profilo",
+  "user_name": "Nome Utente",
+
+  "security_title": "Sicurezza",
+  "change_password": "Cambia Password",
+
+  "settings_title": "Impostazioni",
+  "settings_notifications": "Impostazioni Notifiche",
+  "settings_general_notifications": "Notifica Generale",
+  "account_settings": "Impostazioni Account",
+  "push_notification": "Notifiche Push",
+  "dark_mode": "Modalità Scura Attiva",
+
+  "help_title": "Centro Assistenza",
+  "help_and_faq": "Aiuto & FAQ",
+  "help_contact": "Contattaci",
+  "help_faq": "FAQ",
+  "how_help": "Come Possiamo Aiutarti?",
+  "on_wh_num": "Sul Numero WhatsApp",
+
+  "question1": "Come si usa BlackBox?",
+  "answer1": "Installa il dispositivo BlackBox nella tua auto, accedi all'app e inizia a guidare. L'app registrerà e visualizzerà automaticamente i tuoi dati di guida.",
+  "question2": "Quanto costa usare BlackBox?",
+  "answer2": "Il costo dipende dal piano e dai servizi selezionati. Contatta l'azienda per i dettagli sui prezzi.",
+  "question3": "Come contattare il supporto?",
+  "answer3": "Puoi contattare il supporto tramite WhatsApp usando il numero ufficiale dell'azienda o visitando gli uffici durante l'orario lavorativo.",
+  "question4": "Come posso reimpostare la password se la dimentico?",
+  "answer4": "Usa l'opzione 'Password Dimenticata' nella schermata di accesso e segui le istruzioni per reimpostare la password.",
+  "question5": "Esistono misure di privacy o sicurezza dei dati?",
+  "answer5": "Sì. I tuoi dati sono archiviati e protetti in modo sicuro e non vengono condivisi senza il tuo consenso, salvo quando richiesto dalla legge.",
+  "question6": "Posso personalizzare le impostazioni nell'applicazione?",
+  "answer6": "Sì. Puoi personalizzare le impostazioni disponibili come notifiche e preferenze all'interno dell'app.",
+  "question7": "Come posso eliminare il mio account?",
+  "answer7": "Per eliminare il tuo account, contatta l'azienda tramite WhatsApp o visita gli uffici dell'azienda.",
+  "question8": "Come accedo alla cronologia delle analisi?",
+  "answer8": "Puoi visualizzare i tuoi viaggi passati e le analisi di guida nella sezione Cronologia o Analisi dell'app.",
+  "question9": "Posso usare l'app offline?",
+  "answer9": "L'app ha funzionalità offline limitate. È necessaria una connessione internet per sincronizzare i dati e accedere a tutte le funzionalità.",
+
+  "terms_title": "Termini e Condizioni",
+  "terms_accept": "Accetta i termini e condizioni",
+  "terms_full": "1. Accettazione dei Termini\nInstallando o utilizzando questa applicazione, accetti questi Termini e Condizioni. Se non sei d'accordo, interrompi l'uso dell'app.\n\n2. Scopo dell'Applicazione\nQuesta applicazione è un sistema di scatola nera veicolare e telematica utilizzato per monitorare le prestazioni del veicolo e il comportamento di guida solo a scopi informativi, di sicurezza e analitici.\n\n3. Parametri dei Dati Raccolti\nL'applicazione può raccogliere ed elaborare dati sul veicolo e sulla guida, inclusi ma non limitati a:\n\n• Velocità del veicolo\n• Consumo e livello del carburante\n• Accelerazione e decelerazione\n• Eventi di frenata brusca e accelerazione rapida\n• Curve strette\n• Dati di posizione GPS (latitudine e longitudine)\n• Distanza, durata e orario del viaggio\n• Dati di identificazione del conducente e del veicolo\n\nUsando l'app, acconsenti esplicitamente alla raccolta di questi parametri.\n\n4. Disponibilità del Servizio\nIl funzionamento continuo, in tempo reale o privo di errori dell'app non è garantito a causa di limitazioni tecniche.",
+
+  "validation_password_mismatch": "Le password non coincidono",
+  "validation_invalid_phone": "Numero di telefono non valido",
+  "validation_incorrect_pin": "PIN errato",
+  "validation_empty_fields": "Compila tutti i campi",
+
+  "empty_no_cars": "Nessuna auto trovata",
+  "empty_no_notifications": "Nessuna notifica ancora",
+  "empty_no_events": "Nessun evento disponibile",
+
+  "status_loading": "Caricamento...",
+  "status_success": "Operazione riuscita",
+  "status_error": "Qualcosa è andato storto",
+
+  "confirm_delete_car": "Sei sicuro di voler eliminare questa auto?",
+  "confirm_reset_password": "Sei sicuro di voler reimpostare la password?",
+
+  "search_hint": "Cerca...",
+  "search_no_results": "Nessun risultato trovato",
+  "filter": "Filtra",
+  "sort": "Ordina",
+
+  "onboarding_title_1": "Benvenuto",
+  "onboarding_desc_1": "In Black Box Manager",
+
+  "onboarding_title_2": "Scopri la Storia dietro la Tua Guida,",
+  "onboarding_desc_2": "Registrando ogni viaggio, analizzando ogni chilometro.",
+
+  "error_email_exists": "Questa email esiste già",
+  "error_wrong_password": "Password errata",
+  "error_phone_exists": "Questo numero di telefono è già in uso",
+  "error_sp_ch": "La password deve contenere almeno un carattere speciale",
+  "error_up": "La password deve contenere almeno una lettera maiuscola",
+  "error_low": "La password deve contenere almeno una lettera minuscola",
+  "error_num": "La password deve contenere almeno un numero",
+  "error_required": "Questo campo è obbligatorio",
+  "error_invalid_email": "Indirizzo email non valido",
+  "error_password_short": "La password deve contenere almeno {length} caratteri",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

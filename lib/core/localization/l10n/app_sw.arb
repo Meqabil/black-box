@@ -1,0 +1,242 @@
+{
+  "@@locale": "sw",
+
+  "app_title": "BlackBox App",
+
+  "common_yes": "Ndio",
+  "common_no": "Hapana",
+  "common_cancel": "Ghairi",
+  "common_save": "Hifadhi",
+  "common_save_changes": "Hifadhi Mabadiliko",
+  "common_continue": "Endelea",
+  "common_next": "Ifuatayo",
+
+  "auth_login": "Ingia",
+  "auth_space_login": "Ingia",
+  "auth_logout": "Toka",
+  "auth_confirm_logout": "Una hakika unataka kutoka?",
+  "auth_signup": "Jisajili",
+  "auth_create_account": "Unda Akaunti",
+  "auth_already_have_account": "Tayari una akaunti? ",
+  "auth_no_account": "Huna akaunti?",
+  "auth_forgot_password": "Umesahau Nenosiri?",
+  "auth_reset_password": "Weka upya Nenosiri?",
+  "auth_change_password": "Badilisha Nenosiri",
+  "auth_continue": "Kwa kuendelea, unakubali\n",
+  "auth_terms": "Masharti ya Matumizi na Sera ya Faragha",
+  "auth_email": "Barua pepe",
+  "auth_password": "Nenosiri",
+  "auth_confirm_password": "Thibitisha Nenosiri",
+  "auth_new_password": "Nenosiri Jipya",
+  "auth_confirm_new_password": "Thibitisha Nenosiri Jipya",
+  "auth_enter_email": "Weka anwani ya barua pepe",
+  "auth_password_hint": "Weka nenosiri lako",
+  "full_name": "Jina Kamili",
+  "email_hint": "mfano@gmail.com",
+  "name_hint": "John Doe",
+
+  "required_name": "Jina Kamili linahitajika",
+  "required_email": "Barua pepe inahitajika",
+  "email_end": "Barua pepe lazima iishe kwa @gmail.com",
+  "required_password": "Nenosiri linahitajika",
+  "required_confirm_password": "Thibitisha Nenosiri linahitajika",
+  "password_do_not_match": "Manenosiri hayalingani",
+  "min_password": "Nenosiri lazima liwe na angalau herufi 8 na iwe na namba",
+  "send_verification_code": "Tuma Msimbo wa Uthibitishaji",
+  "password_changed_successfully": "Nenosiri Limebadilishwa Kwa Mafanikio",
+  "forget_password_title": "Weka barua pepe inayohusishwa na akaunti yako na tutakutumia PIN ya Usalama ya kuweka upya nenosiri lako.",
+
+  "auth_security_pin": "PIN ya Usalama",
+  "auth_enter_pin": "Weka PIN ya usalama",
+  "verify": "Thibitisha",
+  "auth_resend_pin": "Tuma tena baada ya {seconds} sekunde",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Nyumbani",
+  "home_welcome": "Hujambo, Karibu Tena",
+  "home_good_morning": "Habari za Asubuhi",
+  "home_looks_good": "Inaonekana\nNzuri",
+  "home_safety_score": "Muhtasari wa Alama za Usalama",
+  "home_total_accidents": "Jumla ya ajali",
+  "total_active_cars": "Jumla ya Magari Yanayotumika",
+  "total_cars": "Jumla ya Magari",
+
+  "home_active_cars": "{percentage}% ya magari yako yanatumika",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Magari",
+  "car_view_all": "Tazama Magari",
+  "car_add": "Ongeza Gari",
+  "car_edit": "Hariri Gari",
+
+  "car_name": "Jina la Gari",
+  "car_plate": "Sahani ya Gari",
+  "car_type": "Aina ya Gari",
+  "car_driver_name": "Jina la Dereva",
+
+  "car_item_title": "Gari #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Ufuatiliaji wa Moja kwa Moja",
+  "tracking_last_updates": "Sasisho za Mwisho",
+
+  "event_title": "Matukio ya Kuendesha",
+  "event_speeding": "Kasi Kupita Kiasi",
+  "event_hard_braking": "Kusimama Ghafla",
+  "event_aggressive_turns": "Mageuko Makali",
+  "event_crash": "Ajali",
+
+  "event_location": "Katika {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/h",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Ukali",
+  "event_severity_low": "Chini",
+  "event_severity_medium": "Kati",
+  "event_severity_high": "Juu",
+  "event_severity_critical": "Muhimu",
+
+  "event_reason": "Sababu",
+  "event_last_speed": "Kasi ya Mwisho Iliyorekodiwa",
+
+  "notification_title": "Arifa",
+  "notification_today": "Leo",
+  "notification_yesterday": "Jana",
+  "notification_earlier": "Mapema Wiki Hii",
+
+  "notification_fuel_alert": "Tahadhari ya Kuvuja kwa Mafuta!",
+  "notification_fuel_desc": "Gari {car} linaloendeshwa na {driver} limeripoti kushuka kwa kasi kwa kiwango cha mafuta.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Ajali muhimu imegunduliwa!",
+  "notification_crash_desc": "Gari {car} linaloendeshwa na {driver} limeripoti mgongano mkali.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Wasifu",
+  "profile_edit": "Hariri Wasifu Wangu",
+  "update_profile": "Sasisha Wasifu",
+  "user_name": "Jina la Mtumiaji",
+
+  "security_title": "Usalama",
+  "change_password": "Badilisha Nenosiri",
+
+  "settings_title": "Mipangilio",
+  "settings_notifications": "Mipangilio ya Arifa",
+  "settings_general_notifications": "Arifa za Jumla",
+  "account_settings": "Mipangilio ya Akaunti",
+  "push_notification": "Arifa za Kushinikiza",
+  "dark_mode": "Hali ya Giza Imewashwa",
+
+  "help_title": "Kituo cha Msaada",
+  "help_and_faq": "Msaada na Maswali Yanayoulizwa Sana",
+  "help_contact": "Wasiliana Nasi",
+  "help_faq": "Maswali Yanayoulizwa Sana",
+  "how_help": "Tunaweza Kukusaidiaje?",
+  "on_wh_num": "Kwenye Nambari ya WhatsApp",
+
+  "question1": "Jinsi ya kutumia BlackBox?",
+  "answer1": "Sakinisha kifaa cha BlackBox kwenye gari lako, ingia kwenye programu, na anza kuendesha. Programu itarekodi na kuonyesha data yako ya kuendesha kiotomatiki.",
+  "question2": "Inagharimu kiasi gani kutumia BlackBox?",
+  "answer2": "Gharama inategemea mpango na huduma zilizochaguliwa. Tafadhali wasiliana na kampuni kwa maelezo ya bei.",
+  "question3": "Jinsi ya kuwasiliana na msaada?",
+  "answer3": "Unaweza kuwasiliana na msaada kupitia WhatsApp kwa kutumia nambari rasmi ya kampuni au kwa kutembelea ofisi ya kampuni wakati wa saa za kazi.",
+  "question4": "Je, ninawezaje kuweka upya nenosiri langu nikilisahau?",
+  "answer4": "Tumia chaguo la 'Umesahau Nenosiri' kwenye skrini ya kuingia na ufuate maagizo ya kuweka upya nenosiri lako.",
+  "question5": "Je, kuna hatua za faragha au usalama wa data?",
+  "answer5": "Ndio. Data yako imehifadhiwa na kulindwa kwa usalama, na haishirikiwi bila ruhusa yako isipokuwa inapotakiwa na sheria.",
+  "question6": "Je, ninaweza kubinafsisha mipangilio ndani ya programu?",
+  "answer6": "Ndio. Unaweza kubinafsisha mipangilio inayopatikana kama vile arifa na mapendeleo ndani ya programu.",
+  "question7": "Je, ninawezaje kufuta akaunti yangu?",
+  "answer7": "Ili kufuta akaunti yako, tafadhali wasiliana na kampuni kupitia WhatsApp au tembelea ofisi ya kampuni.",
+  "question8": "Je, ninawezaje kupata historia yangu ya uchambuzi?",
+  "answer8": "Unaweza kuona safari zako zilizopita na uchambuzi wa kuendesha katika sehemu ya Historia au Uchambuzi wa programu.",
+  "question9": "Je, ninaweza kutumia programu nikiwa nje ya mtandao?",
+  "answer9": "Programu ina utendakazi mdogo wa nje ya mtandao. Muunganisho wa mtandao unahitajika kusawazisha data na kupata huduma kamili.",
+
+  "terms_title": "Masharti na Kanuni",
+  "terms_accept": "Kubali masharti na kanuni",
+  "terms_full": "1. Kukubali Masharti\nKwa kusakinisha au kutumia programu hii, unakubali Masharti na Kanuni hizi. Ikiwa hukubali, tafadhali acha kutumia programu.\n\n2. Madhumuni ya Programu\nProgramu hii ni mfumo wa black box na telematics wa gari unaotumiwa kufuatilia utendaji wa gari na tabia ya kuendesha kwa madhumuni ya habari, usalama, na uchambuzi tu.\n\n3. Vigezo vya Data Vinavyokusanywa\nProgramu inaweza kukusanya na kuchakata data ya gari na kuendesha, ikijumuisha lakini sio tu:\n\n• Kasi ya gari\n• Matumizi ya mafuta na kiwango cha mafuta\n• Kuongeza na kupunguza kasi\n• Kusimama ghafla na matukio ya kuongeza kasi haraka\n• Kugeuka kwa kasi\n• Data ya eneo la GPS (latitudo na longitudo)\n• Umbali, muda, na wakati wa safari\n• Data ya kitambulisho cha dereva na gari\n\nKwa kutumia programu, unakubali kwa uwazi ukusanyaji wa vigezo hivi.\n\n4. Upatikanaji wa Huduma\nUendeshaji endelevu, wa wakati halisi, au usio na makosa wa programu hauhakikishiwi kutokana na mapungufu ya kiufundi.",
+
+  "validation_password_mismatch": "Manenosiri hayalingani",
+  "validation_invalid_phone": "Nambari ya simu si sahihi",
+  "validation_incorrect_pin": "PIN si sahihi",
+  "validation_empty_fields": "Tafadhali jaza sehemu zote",
+
+  "empty_no_cars": "Hakuna magari yaliyopatikana",
+  "empty_no_notifications": "Hakuna arifa bado",
+  "empty_no_events": "Hakuna matukio yanayopatikana",
+
+  "status_loading": "Inapakia...",
+  "status_success": "Operesheni imefaulu",
+  "status_error": "Kitu kilienda vibaya",
+
+  "confirm_delete_car": "Una hakika unataka kufuta gari hili?",
+  "confirm_reset_password": "Una hakika unataka kuweka upya nenosiri lako?",
+
+  "search_hint": "Tafuta...",
+  "search_no_results": "Hakuna matokeo yaliyopatikana",
+  "filter": "Chuja",
+  "sort": "Panga",
+
+  "onboarding_title_1": "Karibu",
+  "onboarding_desc_1": "kwa Black Box Manager",
+
+  "onboarding_title_2": "Angalia Hadithi Nyuma ya Uendeshaji Wako,",
+  "onboarding_desc_2": "Tunarekodi kila safari, kuchambua kila kilometa.",
+
+  "error_email_exists": "Barua pepe hii tayari ipo",
+  "error_wrong_password": "Nenosiri si sahihi",
+  "error_phone_exists": "Nambari hii ya simu tayari inatumika",
+  "error_sp_ch": "Nenosiri lazima liwe na angalau herufi moja maalum",
+  "error_up": "Nenosiri lazima liwe na angalau herufi moja kubwa",
+  "error_low": "Nenosiri lazima liwe na angalau herufi moja ndogo",
+  "error_num": "Nenosiri lazima liwe na angalau nambari moja",
+  "error_required": "Sehemu hii inahitajika",
+  "error_invalid_email": "Anwani ya barua pepe si sahihi",
+  "error_password_short": "Nenosiri lazima liwe na angalau herufi {length}",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

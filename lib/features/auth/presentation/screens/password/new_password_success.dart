@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:black_box/core/constants/colors.dart';
+import 'package:black_box/core/theme/app_theme.dart';
 import 'package:black_box/features/auth/presentation/screens/login/login_screen.dart';
 import 'package:black_box/features/auth/presentation/screens/password/widgets/new_password_success/dot.dart';
 
@@ -6,6 +8,9 @@ import 'package:flutter/material.dart';
 
 import '';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../../../core/constants/global.dart';
 class NewPasswordSuccessScreen extends StatefulWidget {
   const NewPasswordSuccessScreen({super.key});
 
@@ -46,7 +51,7 @@ class _NewPasswordSuccessScreenState extends State<NewPasswordSuccessScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFB00000),
+      backgroundColor: pref!.getString("theme") == 'dark' ? AppColor.primaryBlackColor : AppColor.mainRedColor,
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -119,8 +124,8 @@ class _NewPasswordSuccessScreenState extends State<NewPasswordSuccessScreen> {
             AnimatedOpacity(
               opacity: _showCheck ? 1 : 0,
               duration: const Duration(milliseconds: 500),
-              child: const Text(
-                "Password Has Been\nChanged Successfully",
+              child: Text(
+                AppLocalizations.of(context)!.password_changed_successfully,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,

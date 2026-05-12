@@ -3,10 +3,12 @@ import 'package:black_box/features/auth/presentation/screens/password/widgets/fo
 import 'package:black_box/features/auth/presentation/screens/password/widgets/forget_password/send_verification_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../bloc/auth/new_password/password_cubit.dart';
+import '../../../../../core/constants/global.dart';
+import '../../cubit/auth/new_password/password_cubit.dart';
 import '../../widgets/input_label.dart';
 import '../functions/is_valid_gmail.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
 
@@ -22,7 +24,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   void validateAndNext() {
     if (!isValidGmail(_emailController.text)) {
       setState(() {
-        _emailError = "Email must end with @gmail.com";
+        _emailError = AppLocalizations.of(context)!.email_end;
         _isEmailValid.value = false;
       });
     } else {
@@ -35,58 +37,56 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mainRedColor,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: SafeArea(
         child: Column(
           children: [
-            const SizedBox(height: 60),
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.only(left: 30.0),
-                child: Text(
-                  "Forgot Password",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
-                  ),
+            Container(
+              height: height * 0.21,
+              alignment: Alignment.center,
+              child: Text(
+                AppLocalizations.of(context)!.auth_forgot_password.replaceFirst('?', ''),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.0,
                 ),
               ),
             ),
-            const SizedBox(height: 80),
             Expanded(
               child: Container(
                 width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: backgroundGreen,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(70),
                     topRight: Radius.circular(70),
                   ),
                 ),
                 child: SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 30,
-                    vertical: 60,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: width * .063,
+                    vertical: width * .13,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        "Reset Password?",
+                      Text(
+                        AppLocalizations.of(context)!.auth_reset_password,
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.onSurface
                         ),
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        "Enter the email associated with your account and we'll send you password reset Security Pin.",
+                        AppLocalizations.of(context)!.forget_password_title,
                         style: TextStyle(color: Colors.grey[600], fontSize: 14),
                       ),
-                      const SizedBox(height: 80),
-                      InputLabel(text:"Enter Email Address", textColor: Colors.black,),
+                      SizedBox(height: width * .18),
+                      InputLabel(text: AppLocalizations.of(context)!.auth_enter_email, textColor: Theme.of(context).colorScheme.onSurface,),
                       const SizedBox(height: 8),
                       CheckEmail(
                         emailController: _emailController,
@@ -99,20 +99,20 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             });
                           } else {
                             setState(() {
-                              _emailError = "Email must end with @gmail.com";
+                              _emailError = AppLocalizations.of(context)!.email_end;
                               _isEmailValid.value = false;
                             });
                           }
                         },
                       ),
-                      const SizedBox(height: 40),
+                      SizedBox(height: width * .09),
                       ValueListenableBuilder(
                           valueListenable: _isEmailValid,
                           builder: (context, value, child) {
                             return SendVerificationButton(
                               email: _emailController.text,
                               backgroundColor: _isEmailValid.value
-                                  ? mainRedColor
+                                  ? Theme.of(context).colorScheme.primary
                                   : Colors.grey,
                               onPressed: _isEmailValid.value
                                   ? () {

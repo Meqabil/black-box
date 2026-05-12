@@ -1,0 +1,242 @@
+{
+  "@@locale": "id",
+
+  "app_title": "BlackBox App",
+
+  "common_yes": "Ya",
+  "common_no": "Tidak",
+  "common_cancel": "Batal",
+  "common_save": "Simpan",
+  "common_save_changes": "Simpan Perubahan",
+  "common_continue": "Lanjutkan",
+  "common_next": "Berikutnya",
+
+  "auth_login": "Masuk",
+  "auth_space_login": "Masuk",
+  "auth_logout": "Keluar",
+  "auth_confirm_logout": "Apakah Anda yakin ingin keluar?",
+  "auth_signup": "Daftar",
+  "auth_create_account": "Buat Akun",
+  "auth_already_have_account": "Sudah punya akun? ",
+  "auth_no_account": "Tidak punya akun?",
+  "auth_forgot_password": "Lupa Kata Sandi?",
+  "auth_reset_password": "Atur Ulang Kata Sandi?",
+  "auth_change_password": "Ubah Kata Sandi",
+  "auth_continue": "Dengan melanjutkan, Anda menyetujui\n",
+  "auth_terms": "Ketentuan Penggunaan dan Kebijakan Privasi",
+  "auth_email": "Email",
+  "auth_password": "Kata Sandi",
+  "auth_confirm_password": "Konfirmasi Kata Sandi",
+  "auth_new_password": "Kata Sandi Baru",
+  "auth_confirm_new_password": "Konfirmasi Kata Sandi Baru",
+  "auth_enter_email": "Masukkan alamat email",
+  "auth_password_hint": "Masukkan kata sandi Anda",
+  "full_name": "Nama Lengkap",
+  "email_hint": "contoh@gmail.com",
+  "name_hint": "John Doe",
+
+  "required_name": "Nama Lengkap wajib diisi",
+  "required_email": "Email wajib diisi",
+  "email_end": "Email harus diakhiri dengan @gmail.com",
+  "required_password": "Kata Sandi wajib diisi",
+  "required_confirm_password": "Konfirmasi Kata Sandi wajib diisi",
+  "password_do_not_match": "Kata Sandi tidak cocok",
+  "min_password": "Kata Sandi harus minimal 8 karakter dan mengandung angka",
+  "send_verification_code": "Kirim Kode Verifikasi",
+  "password_changed_successfully": "Kata Sandi Berhasil Diubah",
+  "forget_password_title": "Masukkan email yang terkait dengan akun Anda dan kami akan mengirimkan PIN Keamanan untuk mengatur ulang kata sandi Anda.",
+
+  "auth_security_pin": "PIN Keamanan",
+  "auth_enter_pin": "Masukkan PIN keamanan",
+  "verify": "Verifikasi",
+  "auth_resend_pin": "Kirim lagi dalam {seconds} dtk",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Beranda",
+  "home_welcome": "Hai, Selamat Datang Kembali",
+  "home_good_morning": "Selamat Pagi",
+  "home_looks_good": "Terlihat\nBaik",
+  "home_safety_score": "Ikhtisar Skor Keselamatan",
+  "home_total_accidents": "Total kecelakaan",
+  "total_active_cars": "Total Mobil Aktif",
+  "total_cars": "Total Mobil",
+
+  "home_active_cars": "{percentage}% dari mobil Anda aktif",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Mobil",
+  "car_view_all": "Lihat Mobil",
+  "car_add": "Tambah Mobil",
+  "car_edit": "Edit Mobil",
+
+  "car_name": "Nama Mobil",
+  "car_plate": "Plat Mobil",
+  "car_type": "Tipe Mobil",
+  "car_driver_name": "Nama Pengemudi",
+
+  "car_item_title": "Mobil #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Pelacakan Langsung",
+  "tracking_last_updates": "Pembaruan Terakhir",
+
+  "event_title": "Peristiwa Mengemudi",
+  "event_speeding": "Melebihi Batas Kecepatan",
+  "event_hard_braking": "Pengereman Keras",
+  "event_aggressive_turns": "Belokan Agresif",
+  "event_crash": "Kecelakaan",
+
+  "event_location": "Di {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/jam",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Tingkat Keparahan",
+  "event_severity_low": "Rendah",
+  "event_severity_medium": "Sedang",
+  "event_severity_high": "Tinggi",
+  "event_severity_critical": "Kritis",
+
+  "event_reason": "Alasan",
+  "event_last_speed": "Kecepatan Terakhir Terekam",
+
+  "notification_title": "Notifikasi",
+  "notification_today": "Hari Ini",
+  "notification_yesterday": "Kemarin",
+  "notification_earlier": "Awal Pekan Ini",
+
+  "notification_fuel_alert": "Peringatan Kebocoran Bahan Bakar!",
+  "notification_fuel_desc": "Kendaraan {car} yang dikendarai oleh {driver} melaporkan penurunan cepat level bahan bakar.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Deteksi kecelakaan kritis!",
+  "notification_crash_desc": "Kendaraan {car} yang dikendarai oleh {driver} melaporkan tabrakan parah.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Profil",
+  "profile_edit": "Edit Profil Saya",
+  "update_profile": "Perbarui Profil",
+  "user_name": "Nama Pengguna",
+
+  "security_title": "Keamanan",
+  "change_password": "Ubah Kata Sandi",
+
+  "settings_title": "Pengaturan",
+  "settings_notifications": "Pengaturan Notifikasi",
+  "settings_general_notifications": "Notifikasi Umum",
+  "account_settings": "Pengaturan Akun",
+  "push_notification": "Notifikasi Push",
+  "dark_mode": "Mode Gelap Aktif",
+
+  "help_title": "Pusat Bantuan",
+  "help_and_faq": "Bantuan & FAQ",
+  "help_contact": "Hubungi Kami",
+  "help_faq": "FAQ",
+  "how_help": "Bagaimana Kami Dapat Membantu Anda?",
+  "on_wh_num": "Di Nomor WhatsApp",
+
+  "question1": "Bagaimana cara menggunakan BlackBox?",
+  "answer1": "Pasang perangkat BlackBox di mobil Anda, masuk ke aplikasi, dan mulailah mengemudi. Aplikasi akan secara otomatis merekam dan menampilkan data mengemudi Anda.",
+  "question2": "Berapa biaya menggunakan BlackBox?",
+  "answer2": "Biaya tergantung pada paket dan layanan yang dipilih. Silakan hubungi perusahaan untuk detail harga.",
+  "question3": "Bagaimana cara menghubungi dukungan?",
+  "answer3": "Anda dapat menghubungi dukungan melalui WhatsApp menggunakan nomor resmi perusahaan atau dengan mengunjungi kantor perusahaan selama jam kerja.",
+  "question4": "Bagaimana cara mengatur ulang kata sandi jika saya lupa?",
+  "answer4": "Gunakan opsi 'Lupa Kata Sandi' di layar masuk dan ikuti petunjuk untuk mengatur ulang kata sandi Anda.",
+  "question5": "Apakah ada langkah-langkah privasi atau keamanan data?",
+  "answer5": "Ya. Data Anda disimpan dan dilindungi dengan aman, dan tidak dibagikan tanpa izin Anda kecuali jika diwajibkan oleh hukum.",
+  "question6": "Dapatkah saya menyesuaikan pengaturan dalam aplikasi?",
+  "answer6": "Ya. Anda dapat menyesuaikan pengaturan yang tersedia seperti notifikasi dan preferensi di dalam aplikasi.",
+  "question7": "Bagaimana cara menghapus akun saya?",
+  "answer7": "Untuk menghapus akun Anda, silakan hubungi perusahaan melalui WhatsApp atau kunjungi kantor perusahaan.",
+  "question8": "Bagaimana cara mengakses riwayat analisis saya?",
+  "answer8": "Anda dapat melihat perjalanan masa lalu dan analisis mengemudi Anda di bagian Riwayat atau Analisis aplikasi.",
+  "question9": "Dapatkah saya menggunakan aplikasi secara offline?",
+  "answer9": "Aplikasi memiliki fungsionalitas offline yang terbatas. Koneksi internet diperlukan untuk menyinkronkan data dan mengakses fitur lengkap.",
+
+  "terms_title": "Syarat dan Ketentuan",
+  "terms_accept": "Terima syarat dan ketentuan",
+  "terms_full": "1. Penerimaan Syarat\nDengan menginstal atau menggunakan aplikasi ini, Anda menyetujui Syarat dan Ketentuan ini. Jika Anda tidak setuju, harap hentikan penggunaan aplikasi.\n\n2. Tujuan Aplikasi\nAplikasi ini adalah sistem black box dan telematika kendaraan yang digunakan untuk memantau kinerja kendaraan dan perilaku mengemudi hanya untuk tujuan informasi, keselamatan, dan analitis.\n\n3. Parameter Data yang Dikumpulkan\nAplikasi dapat mengumpulkan dan memproses data kendaraan dan mengemudi, termasuk namun tidak terbatas pada:\n\n• Kecepatan kendaraan\n• Konsumsi bahan bakar dan level bahan bakar\n• Akselerasi dan deselerasi\n• Pengereman keras dan akselerasi cepat\n• Belokan tajam\n• Data lokasi GPS (lintang dan bujur)\n• Jarak, durasi, dan waktu perjalanan\n• Data identifikasi pengemudi dan kendaraan\n\nDengan menggunakan aplikasi, Anda secara tegas menyetujui pengumpulan parameter ini.\n\n4. Ketersediaan Layanan\nOperasi aplikasi yang berkelanjutan, real-time, atau bebas kesalahan tidak dijamin karena keterbatasan teknis.",
+
+  "validation_password_mismatch": "Kata Sandi tidak cocok",
+  "validation_invalid_phone": "Nomor telepon tidak valid",
+  "validation_incorrect_pin": "PIN salah",
+  "validation_empty_fields": "Silakan isi semua bidang",
+
+  "empty_no_cars": "Tidak ada mobil ditemukan",
+  "empty_no_notifications": "Belum ada notifikasi",
+  "empty_no_events": "Tidak ada peristiwa tersedia",
+
+  "status_loading": "Memuat...",
+  "status_success": "Operasi berhasil",
+  "status_error": "Terjadi kesalahan",
+
+  "confirm_delete_car": "Apakah Anda yakin ingin menghapus mobil ini?",
+  "confirm_reset_password": "Apakah Anda yakin ingin mengatur ulang kata sandi Anda?",
+
+  "search_hint": "Cari...",
+  "search_no_results": "Tidak ada hasil ditemukan",
+  "filter": "Filter",
+  "sort": "Urutkan",
+
+  "onboarding_title_1": "Selamat Datang",
+  "onboarding_desc_1": "di Black Box Manager",
+
+  "onboarding_title_2": "Lihat Cerita di Balik Perjalanan Anda,",
+  "onboarding_desc_2": "Merekam setiap perjalanan, menganalisis setiap kilometer.",
+
+  "error_email_exists": "Email ini sudah ada",
+  "error_wrong_password": "Kata Sandi salah",
+  "error_phone_exists": "Nomor telepon ini sudah digunakan",
+  "error_sp_ch": "Kata Sandi harus mengandung setidaknya satu karakter khusus",
+  "error_up": "Kata Sandi harus mengandung setidaknya satu huruf besar",
+  "error_low": "Kata Sandi harus mengandung setidaknya satu huruf kecil",
+  "error_num": "Kata Sandi harus mengandung setidaknya satu angka",
+  "error_required": "Bidang ini wajib diisi",
+  "error_invalid_email": "Alamat email tidak valid",
+  "error_password_short": "Kata Sandi harus minimal {length} karakter",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

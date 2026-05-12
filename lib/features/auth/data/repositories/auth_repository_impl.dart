@@ -1,10 +1,10 @@
 
 import 'dart:io';
-
-import 'package:black_box/features/auth/data/datasources/auth_datasource.dart';
 import 'package:black_box/features/auth/data/datasources/owner_datasource.dart';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
 import 'package:black_box/features/auth/domain/repositories/auth_repository.dart';
+
+import '../datasources/auth_datasource.dart';
 
 
 class AuthRepositoryImpl extends AuthRepository{
@@ -35,6 +35,10 @@ class AuthRepositoryImpl extends AuthRepository{
   }
 
   @override
+  Future<void> changePassword({required String currentPassword, required String newPassword}) {
+    return authDatasource.changePassword(currentPassword: currentPassword, newPassword: newPassword);
+  }
+  @override
   Future<String> verifyPin({required String email,required String otp}) {
     return authDatasource.verifyPin(email, otp);
   }
@@ -54,4 +58,5 @@ class AuthRepositoryImpl extends AuthRepository{
   Future<void> deleteOwner({required int id})  {
     return ownerDataSource.deleteOwner(id);
   }
+
 }

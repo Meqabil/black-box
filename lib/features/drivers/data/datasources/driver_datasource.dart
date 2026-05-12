@@ -21,7 +21,7 @@ class DriverDataSource{
     if(status == "success"){
       return DriverModel.fromJson(response.data['data']['driver']);
     }
-    return DriverModel(id: 0, ownerId: 0, name: 'Unknown',createdAt: 'Unknown', updatedAt: 'Unknown');
+    return DriverModel(id: 0, ownerId: '0', name: 'Unknown',createdAt: 'Unknown', updatedAt: 'Unknown');
   }
 
   updateDriver({
@@ -45,6 +45,15 @@ class DriverDataSource{
     );
   }
 
+
+  Future<DriverEntity> showOneDriver(int id) async{
+    final response = await DioHelper.dio.get("${AppLink.showOneDriver}$id");
+    final status = response.data['status'];
+    if(status == 'success'){
+      return DriverModel.fromJson(response.data['data']['driver']);
+    }
+    return DriverModel(id: 0, name: 'Unknown', ownerId: '0', createdAt: "Unknown", updatedAt: "Unknown");
+  }
 
   Future<List> getAllDrivers() async{
     List drivers = [];

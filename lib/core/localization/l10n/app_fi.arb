@@ -1,0 +1,242 @@
+{
+  "@@locale": "fi",
+
+  "app_title": "BlackBox-sovellus",
+
+  "common_yes": "Kyllä",
+  "common_no": "Ei",
+  "common_cancel": "Peruuta",
+  "common_save": "Tallenna",
+  "common_save_changes": "Tallenna Muutokset",
+  "common_continue": "Jatka",
+  "common_next": "Seuraava",
+
+  "auth_login": "Kirjaudu sisään",
+  "auth_space_login": "Kirjaudu sisään",
+  "auth_logout": "Kirjaudu ulos",
+  "auth_confirm_logout": "Haluatko varmasti kirjautua ulos?",
+  "auth_signup": "Rekisteröidy",
+  "auth_create_account": "Luo Tili",
+  "auth_already_have_account": "Onko sinulla jo tili? ",
+  "auth_no_account": "Eikö sinulla ole tiliä?",
+  "auth_forgot_password": "Unohditko Salasanan?",
+  "auth_reset_password": "Nollaa Salasana?",
+  "auth_change_password": "Vaihda Salasana",
+  "auth_continue": "Jatkamalla hyväksyt\n",
+  "auth_terms": "Käyttöehdot ja Tietosuojakäytäntö",
+  "auth_email": "Sähköposti",
+  "auth_password": "Salasana",
+  "auth_confirm_password": "Vahvista Salasana",
+  "auth_new_password": "Uusi Salasana",
+  "auth_confirm_new_password": "Vahvista Uusi Salasana",
+  "auth_enter_email": "Syötä sähköpostiosoite",
+  "auth_password_hint": "Syötä salasanasi",
+  "full_name": "Koko Nimi",
+  "email_hint": "esimerkki@gmail.com",
+  "name_hint": "Matti Virtanen",
+
+  "required_name": "Koko nimi vaaditaan",
+  "required_email": "Sähköposti vaaditaan",
+  "email_end": "Sähköpostin on päätyttävä @gmail.com",
+  "required_password": "Salasana vaaditaan",
+  "required_confirm_password": "Salasanan vahvistus vaaditaan",
+  "password_do_not_match": "Salasanat eivät täsmää",
+  "min_password": "Salasanassa on oltava vähintään 8 merkkiä ja numeroita",
+  "send_verification_code": "Lähetä Vahvistuskoodi",
+  "password_changed_successfully": "Salasana on\nVaihdettu Onnistuneesti",
+  "forget_password_title": "Syötä tilisi sähköpostiosoite, niin lähetämme sinulle salasanan nollaus -turvakoodin.",
+
+  "auth_security_pin": "Turvakoodi",
+  "auth_enter_pin": "Syötä turvakoodi",
+  "verify": "Vahvista",
+  "auth_resend_pin": "Lähetä uudelleen {seconds}s kuluttua",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Etusivu",
+  "home_welcome": "Hei, Tervetuloa Takaisin",
+  "home_good_morning": "Hyvää Huomenta",
+  "home_looks_good": "Näyttää\nHyvältä",
+  "home_safety_score": "Turvallisuuspisteiden Yleiskatsaus",
+  "home_total_accidents": "Onnettomuuksia Yhteensä",
+  "total_active_cars": "Aktiivisia Autoja Yhteensä",
+  "total_cars": "Autoja Yhteensä",
+
+  "home_active_cars": "{percentage}% autoistasi on aktiivisia",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Autot",
+  "car_view_all": "Näytä Autot",
+  "car_add": "Lisää Auto",
+  "car_edit": "Muokkaa Autoa",
+
+  "car_name": "Auton Nimi",
+  "car_plate": "Rekisterikilpi",
+  "car_type": "Autotyyppi",
+  "car_driver_name": "Kuljettajan Nimi",
+
+  "car_item_title": "Auto #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Live-seuranta",
+  "tracking_last_updates": "Viimeisimmät Päivitykset",
+
+  "event_title": "Ajotapahtumat",
+  "event_speeding": "Ylinopeus",
+  "event_hard_braking": "Kova Jarrutus",
+  "event_aggressive_turns": "Aggressiiviset Käännökset",
+  "event_crash": "Törmäys",
+
+  "event_location": "{location}ssa",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/h",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Vakavuus",
+  "event_severity_low": "Matala",
+  "event_severity_medium": "Keskitaso",
+  "event_severity_high": "Korkea",
+  "event_severity_critical": "Kriittinen",
+
+  "event_reason": "Syy",
+  "event_last_speed": "Viimeksi Tallennettu Nopeus",
+
+  "notification_title": "Ilmoitukset",
+  "notification_today": "Tänään",
+  "notification_yesterday": "Eilen",
+  "notification_earlier": "Aiemmin Tällä Viikolla",
+
+  "notification_fuel_alert": "Polttoaineen Vuotovaroitus!",
+  "notification_fuel_desc": "Ajoneuvo {car}, jota ajaa {driver}, ilmoitti nopeasta polttoainetason laskusta.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Vakava törmäys havaittu!",
+  "notification_crash_desc": "Ajoneuvo {car}, jota ajaa {driver}, ilmoitti vakavasta törmäyksestä.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Profiili",
+  "profile_edit": "Muokkaa Profiiliani",
+  "update_profile": "Päivitä Profiili",
+  "user_name": "Käyttäjänimi",
+
+  "security_title": "Turvallisuus",
+  "change_password": "Vaihda Salasana",
+
+  "settings_title": "Asetukset",
+  "settings_notifications": "Ilmoitusasetukset",
+  "settings_general_notifications": "Yleiset Ilmoitukset",
+  "account_settings": "Tiliasetukset",
+  "push_notification": "Push-ilmoitukset",
+  "dark_mode": "Tumma Tila Päällä",
+
+  "help_title": "Tukikeskus",
+  "help_and_faq": "Ohje & UKK",
+  "help_contact": "Ota Meihin Yhteyttä",
+  "help_faq": "Usein Kysytyt Kysymykset",
+  "how_help": "Kuinka Voimme Auttaa Sinua?",
+  "on_wh_num": "WhatsApp-numeroon",
+
+  "question1": "Kuinka käyttää BlackBoxia?",
+  "answer1": "Asenna BlackBox-laite autoosi, kirjaudu sovellukseen ja ala ajaa. Sovellus tallentaa ja näyttää ajotietosi automaattisesti.",
+  "question2": "Paljonko BlackBoxin käyttö maksaa?",
+  "answer2": "Hinta riippuu valitusta suunnitelmasta ja palveluista. Ota yhteyttä yritykseen hintatietojen saamiseksi.",
+  "question3": "Kuinka ottaa yhteyttä tukeen?",
+  "answer3": "Voit ottaa yhteyttä tukeen WhatsAppin kautta yrityksen virallisella numerolla tai vierailemalla yrityksen toimistolla aukioloaikoina.",
+  "question4": "Kuinka voin nollata salasanani, jos unohdan sen?",
+  "answer4": "Käytä kirjautumisnäytön 'Unohditko salasanan' -vaihtoehtoa ja seuraa ohjeita salasanan nollaamiseksi.",
+  "question5": "Onko olemassa tietosuoja- tai tietoturvatoimenpiteitä?",
+  "answer5": "Kyllä. Tietosi tallennetaan ja suojataan turvallisesti, eikä niitä jaeta ilman lupaasi, paitsi lain vaatiessa.",
+  "question6": "Voinko mukauttaa asetuksia sovelluksessa?",
+  "answer6": "Kyllä. Voit mukauttaa käytettävissä olevia asetuksia, kuten ilmoituksia ja asetuksia, sovelluksessa.",
+  "question7": "Kuinka voin poistaa tilini?",
+  "answer7": "Poistaaksesi tilisi, ota yhteyttä yritykseen WhatsAppin kautta tai vieraile yrityksen toimistolla.",
+  "question8": "Kuinka pääsen analyysikäsikirjoitukseeni?",
+  "answer8": "Voit tarkastella aiempia matkoja ja ajoanalyysejä sovelluksen Historia- tai Analyysit-osiossa.",
+  "question9": "Voinko käyttää sovellusta offline-tilassa?",
+  "answer9": "Sovelluksessa on rajoitettu offline-toiminnallisuus. Internetyhteys vaaditaan tietojen synkronointiin ja kaikkien ominaisuuksien käyttöön.",
+
+  "terms_title": "Käyttöehdot",
+  "terms_accept": "Hyväksy käyttöehdot",
+  "terms_full": "1. Ehtojen Hyväksyminen\nAsentamalla tai käyttämällä tätä sovellusta hyväksyt nämä Käyttöehdot. Jos et hyväksy, lopeta sovelluksen käyttö.\n\n2. Sovelluksen Tarkoitus\nTämä sovellus on ajoneuvon mustalaatikko- ja telematikkajärjestelmä, jota käytetään ajoneuvon suorituskyvyn ja ajokäyttäytymisen seurantaan ainoastaan tiedotus-, turvallisuus- ja analyyttisiin tarkoituksiin.\n\n3. Kerätyt Dataparametrit\nSovellus voi kerätä ja käsitellä ajoneuvo- ja ajotietoja, mukaan lukien mutta ei rajoittuen:\n\n• Ajoneuvon nopeus\n• Polttoaineen kulutus ja polttoainetaso\n• Kiihtyvyys ja hidastuvuus\n• Kovat jarrutukset ja nopeat kiihdytykset\n• Jyrkät käännökset\n• GPS-sijaintidata (leveys- ja pituusaste)\n• Matkan etäisyys, kesto ja aika\n• Kuljettajan ja ajoneuvon tunnistetiedot\n\nKäyttämällä sovellusta suostut nimenomaisesti näiden parametrien keräämiseen.\n\n4. Palvelun Saatavuus\nSovelluksen jatkuvaa, reaaliaikaista tai virheitä vapaata toimintaa ei taata teknisten rajoitusten vuoksi.",
+
+  "validation_password_mismatch": "Salasanat eivät täsmää",
+  "validation_invalid_phone": "Virheellinen puhelinnumero",
+  "validation_incorrect_pin": "Virheellinen PIN",
+  "validation_empty_fields": "Täytä kaikki kentät",
+
+  "empty_no_cars": "Autoja ei löydy",
+  "empty_no_notifications": "Ei vielä ilmoituksia",
+  "empty_no_events": "Ei tapahtumia saatavilla",
+
+  "status_loading": "Ladataan...",
+  "status_success": "Toiminto onnistui",
+  "status_error": "Jotain meni pieleen",
+
+  "confirm_delete_car": "Haluatko varmasti poistaa tämän auton?",
+  "confirm_reset_password": "Haluatko varmasti nollata salasanasi?",
+
+  "search_hint": "Hae...",
+  "search_no_results": "Hakutuloksia ei löydy",
+  "filter": "Suodata",
+  "sort": "Lajittele",
+
+  "onboarding_title_1": "Tervetuloa",
+  "onboarding_desc_1": "Black Box Manageriin",
+
+  "onboarding_title_2": "Katso Ajosi Tarina,",
+  "onboarding_desc_2": "Tallentaa jokaisen matkan, analysoi jokaisen kilometrin.",
+
+  "error_email_exists": "Tämä sähköpostiosoite on jo olemassa",
+  "error_wrong_password": "Väärä salasana",
+  "error_phone_exists": "Tämä puhelinnumero on jo käytössä",
+  "error_sp_ch": "Salasanassa on oltava vähintään yksi erikoismerkki",
+  "error_up": "Salasanassa on oltava vähintään yksi iso kirjain",
+  "error_low": "Salasanassa on oltava vähintään yksi pieni kirjain",
+  "error_num": "Salasanassa on oltava vähintään yksi numero",
+  "error_required": "Tämä kenttä on pakollinen",
+  "error_invalid_email": "Virheellinen sähköpostiosoite",
+  "error_password_short": "Salasanassa on oltava vähintään {length} merkkiä",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

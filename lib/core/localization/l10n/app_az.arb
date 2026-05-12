@@ -1,0 +1,242 @@
+{
+  "@@locale": "az",
+
+  "app_title": "BlackBox Tətbiqi",
+
+  "common_yes": "Bəli",
+  "common_no": "Xeyr",
+  "common_cancel": "Ləğv et",
+  "common_save": "Yadda saxla",
+  "common_save_changes": "Dəyişiklikləri yadda saxla",
+  "common_continue": "Davam et",
+  "common_next": "Növbəti",
+
+  "auth_login": "Daxil ol",
+  "auth_space_login": "Daxil ol",
+  "auth_logout": "Çıxış",
+  "auth_confirm_logout": "Çıxış etmək istədiyinizdən əminsiniz?",
+  "auth_signup": "Qeydiyyat",
+  "auth_create_account": "Hesab yarat",
+  "auth_already_have_account": "Artıq hesabınız var? ",
+  "auth_no_account": "Hesabınız yoxdur?",
+  "auth_forgot_password": "Şifrənizi unutmusunuz?",
+  "auth_reset_password": "Şifrəni sıfırla?",
+  "auth_change_password": "Şifrəni dəyiş",
+  "auth_continue": "Davam etməklə, siz\n",
+  "auth_terms": "İstifadə Şərtləri və Gizlilik Siyasətini qəbul edirsiniz",
+  "auth_email": "E-poçt",
+  "auth_password": "Şifrə",
+  "auth_confirm_password": "Şifrəni təsdiq et",
+  "auth_new_password": "Yeni şifrə",
+  "auth_confirm_new_password": "Yeni şifrəni təsdiq et",
+  "auth_enter_email": "E-poçt ünvanını daxil edin",
+  "auth_password_hint": "Şifrənizi daxil edin",
+  "full_name": "Tam ad",
+  "email_hint": "nümunə@gmail.com",
+  "name_hint": "Asif Rzayev",
+
+  "required_name": "Tam ad tələb olunur",
+  "required_email": "E-poçt tələb olunur",
+  "email_end": "E-poçt @gmail.com ilə bitməlidir",
+  "required_password": "Şifrə tələb olunur",
+  "required_confirm_password": "Şifrənin təsdiqi tələb olunur",
+  "password_do_not_match": "Şifrələr uyğun gəlmir",
+  "min_password": "Şifrə ən azı 8 simvol olmalı və rəqəmlər ehtiva etməlidir",
+  "send_verification_code": "Təsdiq kodunu göndər",
+  "password_changed_successfully": "Şifrə uğurla dəyişdirildi",
+  "forget_password_title": "Hesabınızla əlaqəli e-poçtu daxil edin və şifrənizi sıfırlamaq üçün sizə təhlükəsizlik PIN-i göndərəcəyik.",
+
+  "auth_security_pin": "Təhlükəsizlik PIN-i",
+  "auth_enter_pin": "Təhlükəsizlik PIN-ni daxil edin",
+  "verify": "Təsdiq et",
+  "auth_resend_pin": "{seconds} saniyə sonra yenidən göndər",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Əsas səhifə",
+  "home_welcome": "Salam, xoş gəlmisiniz",
+  "home_good_morning": "Sabahınız xeyir",
+  "home_looks_good": "Yaxşı\ngörünür",
+  "home_safety_score": "Təhlükəsizlik balı icmalı",
+  "home_total_accidents": "Ümumi qəzalar",
+  "total_active_cars": "Ümumi aktiv avtomobillər",
+  "total_cars": "Ümumi avtomobillər",
+
+  "home_active_cars": "Avtomobillərinizin {percentage}%-i aktivdir",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Avtomobillər",
+  "car_view_all": "Avtomobillərə bax",
+  "car_add": "Avtomobil əlavə et",
+  "car_edit": "Avtomobili redaktə et",
+
+  "car_name": "Avtomobilin adı",
+  "car_plate": "Avtomobilin nömrə nişanı",
+  "car_type": "Avtomobilin tipi",
+  "car_driver_name": "Sürücünün adı",
+
+  "car_item_title": "Avtomobil #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Canlı izləmə",
+  "tracking_last_updates": "Son yeniləmələr",
+
+  "event_title": "Sürücülük hadisələri",
+  "event_speeding": "Sürət həddini aşma",
+  "event_hard_braking": "Kəskin əyləc",
+  "event_aggressive_turns": "Aqressiv dönüşlər",
+  "event_crash": "Qəza",
+
+  "event_location": "{location} daxilində",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/saat",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Şiddət dərəcəsi",
+  "event_severity_low": "Aşağı",
+  "event_severity_medium": "Orta",
+  "event_severity_high": "Yüksək",
+  "event_severity_critical": "Kritik",
+
+  "event_reason": "Səbəb",
+  "event_last_speed": "Son qeydə alınan sürət",
+
+  "notification_title": "Bildirişlər",
+  "notification_today": "Bu gün",
+  "notification_yesterday": "Dünən",
+  "notification_earlier": "Bu həftə əvvəl",
+
+  "notification_fuel_alert": "Yanacaq sızması xəbərdarlığı!",
+  "notification_fuel_desc": "{driver} tərəfindən idarə olunan {car} avtomobili yanacaq səviyyəsində sürətli bir düşüş barədə məlumat verdi.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Kritik qəza aşkar edildi!",
+  "notification_crash_desc": "{driver} tərəfindən idarə olunan {car} avtomobili ciddi toqquşma barədə məlumat verdi.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Profil",
+  "profile_edit": "Profilimi redaktə et",
+  "update_profile": "Profili yenilə",
+  "user_name": "İstifadəçi adı",
+
+  "security_title": "Təhlükəsizlik",
+  "change_password": "Şifrəni dəyiş",
+
+  "settings_title": "Parametrlər",
+  "settings_notifications": "Bildiriş parametrləri",
+  "settings_general_notifications": "Ümumi bildiriş",
+  "account_settings": "Hesab parametrləri",
+  "push_notification": "Push bildirişlər",
+  "dark_mode": "Qaranlıq rejim aktivdir",
+
+  "help_title": "Yardım mərkəzi",
+  "help_and_faq": "Yardım və FAQ",
+  "help_contact": "Bizimlə əlaqə",
+  "help_faq": "FAQ",
+  "how_help": "Sizə necə kömək edə bilərik?",
+  "on_wh_num": "WhatsApp nömrəsində",
+
+  "question1": "BlackBox-dan necə istifadə etməli?",
+  "answer1": "BlackBox cihazını avtomobilinizdə quraşdırın, tətbiqə daxil olun və sürməyə başlayın. Tətbiq avtomatik olaraq sürücülük məlumatlarınızı qeyd edəcək və göstərəcək.",
+  "question2": "BlackBox-dan istifadə nə qədər başa gəlir?",
+  "answer2": "Qiymət seçilmiş plan və xidmətlərdən asılıdır. Qiymət məlumatı üçün şirkətlə əlaqə saxlayın.",
+  "question3": "Dəstək ilə necə əlaqə saxlamalı?",
+  "answer3": "WhatsApp vasitəsilə şirkətin rəsmi nömrəsini istifadə edərək və ya iş saatlarında şirkətin ofisinə baş çəkərək dəstək ilə əlaqə saxlaya bilərsiniz.",
+  "question4": "Şifrəmi unutsam, onu necə sıfırlaya bilərəm?",
+  "answer4": "Giriş ekranındakı 'Şifrənizi unutmusunuz?' seçimindən istifadə edin və şifrənizi sıfırlamaq üçün təlimatlara əməl edin.",
+  "question5": "Məxfilik və ya məlumat təhlükəsizliyi tədbirləri varmı?",
+  "answer5": "Bəli. Məlumatlarınız təhlükəsiz şəkildə saxlanılır və qorunur və qanun tələb etmədikcə icazəniz olmadan paylaşılmır.",
+  "question6": "Tətbiq daxilində parametrləri fərdiləşdirə bilərəmmi?",
+  "answer6": "Bəli. Bildirişlər və üstünlüklər kimi mövcud parametrləri tətbiq daxilində fərdiləşdirə bilərsiniz.",
+  "question7": "Hesabımı necə silə bilərəm?",
+  "answer7": "Hesabınızı silmək üçün WhatsApp vasitəsilə şirkətlə əlaqə saxlayın və ya şirkətin ofisinə müraciət edin.",
+  "question8": "Analiz tarixçəmə necə daxil ola bilərəm?",
+  "answer8": "Keçmiş səfərlərinizi və sürücülük analizlərinizi tətbiqin 'Tarixçə' və ya 'Analiz' bölməsində görə bilərsiniz.",
+  "question9": "Tətbiqi oflayn istifadə edə bilərəmmi?",
+  "answer9": "Tətbiq məhdud oflayn funksionallığa malikdir. Məlumatları sinxronizasiya etmək və tam funksiyalara daxil olmaq üçün internet bağlantısı tələb olunur.",
+
+  "terms_title": "Şərtlər və qaydalar",
+  "terms_accept": "Şərtlər və qaydaları qəbul edirəm",
+  "terms_full": "1. Şərtlərin qəbulu\nBu tətbiqi quraşdırmaqla və ya istifadə etməklə, siz bu Şərtlər və Qaydaları qəbul edirsiniz. Əgər razı deyilsinizsə, tətbiqdən istifadəni dayandırın.\n\n2. Tətbiqin məqsədi\nBu tətbiq yalnız məlumat, təhlükəsizlik və analitik məqsədlər üçün avtomobilin performansını və sürücülük davranışını izləmək üçün istifadə edilən avtomobil qara qutusu və telematika sistemidir.\n\n3. Toplanan məlumat parametrləri\nTətbiq aşağıdakılar daxil olmaqla lakin bununla məhdudlaşmamaqla avtomobil və sürücülük məlumatlarını toplaya və emal edə bilər:\n\n• Avtomobilin sürəti\n• Yanacaq sərfiyyatı və yanacaq səviyyəsi\n• Sürətlənmə və yavaşlama\n• Kəskin əyləc və sürətli sürətlənmə hadisələri\n• Kəskin dönüşlər\n• GPS mövqe məlumatları (en və uzunluq)\n• Səfər məsafəsi, müddəti və vaxtı\n• Sürücü və avtomobil identifikasiya məlumatları\n\nTətbiqdən istifadə etməklə, siz bu parametrlərin toplanmasına açıq şəkildə razılıq verirsiniz.\n\n4. Xidmətin mövcudluğu\nTexniki məhdudiyyətlər səbəbindən tətbiqin fasiləsiz, real vaxt rejimində və ya səhvsiz işləməsi təmin edilmir.",
+
+  "validation_password_mismatch": "Şifrələr uyğun gəlmir",
+  "validation_invalid_phone": "Yanlış telefon nömrəsi",
+  "validation_incorrect_pin": "Yanlış PIN",
+  "validation_empty_fields": "Xahiş edirik bütün sahələri doldurun",
+
+  "empty_no_cars": "Heç bir avtomobil tapılmadı",
+  "empty_no_notifications": "Hələ bildiriş yoxdur",
+  "empty_no_events": "Heç bir hadisə mövcud deyil",
+
+  "status_loading": "Yüklənir...",
+  "status_success": "Əməliyyat uğurlu oldu",
+  "status_error": "Nəsə səhv oldu",
+
+  "confirm_delete_car": "Bu avtomobili silmək istədiyinizdən əminsiniz?",
+  "confirm_reset_password": "Şifrənizi sıfırlamaq istədiyinizdən əminsiniz?",
+
+  "search_hint": "Axtar...",
+  "search_no_results": "Heç bir nəticə tapılmadı",
+  "filter": "Filter",
+  "sort": "Sırala",
+
+  "onboarding_title_1": "Xoş gəlmisiniz",
+  "onboarding_desc_1": "Black Box Manager tətbiqinə",
+
+  "onboarding_title_2": "Sürüşünüzün arxasındakı hekayəni görün,",
+  "onboarding_desc_2": "Hər səfəri qeyd edirik, hər kilometri analiz edirik.",
+
+  "error_email_exists": "Bu e-poçt artıq mövcuddur",
+  "error_wrong_password": "Yanlış şifrə",
+  "error_phone_exists": "Bu telefon nömrəsi artıq istifadə olunur",
+  "error_sp_ch": "Şifrə ən azı bir xüsusi simvol ehtiva etməlidir",
+  "error_up": "Şifrə ən azı bir böyük hərf ehtiva etməlidir",
+  "error_low": "Şifrə ən azı bir kiçik hərf ehtiva etməlidir",
+  "error_num": "Şifrə ən azı bir rəqəm ehtiva etməlidir",
+  "error_required": "Bu sahə tələb olunur",
+  "error_invalid_email": "Yanlış e-poçt ünvanı",
+  "error_password_short": "Şifrə ən azı {length} simvol olmalıdır",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

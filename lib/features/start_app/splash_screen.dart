@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/constants/colors.dart';
 import '../../core/constants/global.dart';
-import '../home/screens/bnv.dart';
+import '../../bnv.dart';
 import 'onboaring.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -41,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       body: Container(
         width: MediaQuery.sizeOf(context).width,
         height: MediaQuery.sizeOf(context).height,
-        color: mainRedColor,
+        color: AppColor.mainRedColor,
         alignment: Alignment.center,
         child: FadeTransition(
           opacity: controller,

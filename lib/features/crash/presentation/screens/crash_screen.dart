@@ -1,0 +1,20 @@
+import 'package:black_box/core/ui/widgets/driving_events/driving_events_form.dart';
+import 'package:flutter/material.dart';
+
+import 'sub_screens/crash_content.dart';
+
+class CrashScreen extends StatelessWidget {
+  const CrashScreen({super.key,required this.driverId,required this.driverName,required this.carId});
+  final String driverId;
+  final String driverName;
+  final String carId;
+  @override
+  Widget build(BuildContext context) {
+    return DrivingEventsForm(
+      driverId: driverId,
+      driverName: driverName,
+      carId: carId,
+      pageContent: CrashContent()
+    );
+  }
+}

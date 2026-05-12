@@ -9,14 +9,14 @@ This application is a vehicle black box and telematics system used to monitor ve
 3. Data Parameters Collected
 The application may collect and process vehicle and driving data, including but not limited to:
 
-Vehicle speed
-Fuel consumption and fuel level
-Acceleration and deceleration
-Harsh braking and rapid acceleration events
-Sharp cornering
-GPS location data (latitude and longitude)
-Trip distance, duration, and time
-Driver and vehicle identification data
+  ● Vehicle speed
+  ● Fuel consumption and fuel level
+  ● Acceleration and deceleration
+  ● Harsh braking and rapid acceleration events
+  ● Sharp cornering
+  ● GPS location data (latitude and longitude)
+  ● Trip distance, duration, and time
+  ● Driver and vehicle identification data
 
 By using the app, you explicitly consent to the collection of these parameters.
 

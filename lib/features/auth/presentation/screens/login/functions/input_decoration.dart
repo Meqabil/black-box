@@ -1,10 +1,11 @@
 
+import 'package:black_box/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 InputDecoration inputDecoration({String? hintText, Widget? suffixIcon, int errorMaxLines = 2,required Color textFieldColor}) =>
     InputDecoration(
       filled: true,
-      fillColor: textFieldColor,
+
       hintText: hintText,
       hintStyle: TextStyle(color: Colors.grey[600], fontSize: 14),
       suffixIcon: suffixIcon,

@@ -1,0 +1,242 @@
+{
+  "@@locale": "sl",
+
+  "app_title": "BlackBox App",
+
+  "common_yes": "Da",
+  "common_no": "Ne",
+  "common_cancel": "Prekliči",
+  "common_save": "Shrani",
+  "common_save_changes": "Shrani spremembe",
+  "common_continue": "Nadaljuj",
+  "common_next": "Naprej",
+
+  "auth_login": "Prijava",
+  "auth_space_login": "Prijavi se",
+  "auth_logout": "Odjava",
+  "auth_confirm_logout": "Ste prepričani, da se želite odjaviti?",
+  "auth_signup": "Registracija",
+  "auth_create_account": "Ustvari račun",
+  "auth_already_have_account": "Že imate račun? ",
+  "auth_no_account": "Nimate računa?",
+  "auth_forgot_password": "Pozabljeno geslo?",
+  "auth_reset_password": "Ponastavi geslo?",
+  "auth_change_password": "Spremeni geslo",
+  "auth_continue": "Z nadaljevanjem se strinjate z\n",
+  "auth_terms": "Pogoji uporabe in Politiko zasebnosti",
+  "auth_email": "E-pošta",
+  "auth_password": "Geslo",
+  "auth_confirm_password": "Potrdi geslo",
+  "auth_new_password": "Novo geslo",
+  "auth_confirm_new_password": "Potrdi novo geslo",
+  "auth_enter_email": "Vnesite e-poštni naslov",
+  "auth_password_hint": "Vnesite svoje geslo",
+  "full_name": "Polno ime",
+  "email_hint": "primer@gmail.com",
+  "name_hint": "Janez Novak",
+
+  "required_name": "Polno ime je obvezno",
+  "required_email": "E-pošta je obvezna",
+  "email_end": "E-pošta se mora končati z @gmail.com",
+  "required_password": "Geslo je obvezno",
+  "required_confirm_password": "Potrditev gesla je obvezna",
+  "password_do_not_match": "Gesli se ne ujemata",
+  "min_password": "Geslo mora imeti vsaj 8 znakov in vsebovati številke",
+  "send_verification_code": "Pošlji potrditveno kodo",
+  "password_changed_successfully": "Geslo je bilo uspešno spremenjeno",
+  "forget_password_title": "Vnesite e-pošto, povezano z vašim računom, in poslali vam bomo varnostno PIN kodo za ponastavitev gesla.",
+
+  "auth_security_pin": "Varnostna PIN koda",
+  "auth_enter_pin": "Vnesite varnostno PIN kodo",
+  "verify": "Preveri",
+  "auth_resend_pin": "Pošlji ponovno čez {seconds} s",
+  "@auth_resend_pin": {
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+
+  "home_title": "Domov",
+  "home_welcome": "Zdravo, dobrodošel nazaj",
+  "home_good_morning": "Dobro jutro",
+  "home_looks_good": "Izgleda\ndobro",
+  "home_safety_score": "Pregled varnostne ocene",
+  "home_total_accidents": "Skupno število nesreč",
+  "total_active_cars": "Skupaj aktivnih avtomobilov",
+  "total_cars": "Skupaj avtomobilov",
+
+  "home_active_cars": "{percentage}% vaših avtomobilov je aktivnih",
+  "@home_active_cars": {
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+
+  "car_section_title": "Avtomobili",
+  "car_view_all": "Poglej avtomobile",
+  "car_add": "Dodaj avtomobil",
+  "car_edit": "Uredi avtomobil",
+
+  "car_name": "Ime avtomobila",
+  "car_plate": "Registrska tablica",
+  "car_type": "Tip avtomobila",
+  "car_driver_name": "Ime voznika",
+
+  "car_item_title": "Avtomobil #{id}",
+  "@car_item_title": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "tracking_live": "Sledenje v živo",
+  "tracking_last_updates": "Zadnje posodobitve",
+
+  "event_title": "Dogodki med vožnjo",
+  "event_speeding": "Prekoračitev hitrosti",
+  "event_hard_braking": "Močno zaviranje",
+  "event_aggressive_turns": "Agresivni zavoji",
+  "event_crash": "Trčenje",
+
+  "event_location": "V {location}",
+  "@event_location": {
+    "placeholders": {
+      "location": {}
+    }
+  },
+
+  "event_time": "{time} - {date}",
+  "@event_time": {
+    "placeholders": {
+      "time": {},
+      "date": {}
+    }
+  },
+
+  "event_speed": "{speed} km/h",
+  "@event_speed": {
+    "placeholders": {
+      "speed": {}
+    }
+  },
+
+  "event_severity": "Resnost",
+  "event_severity_low": "Nizka",
+  "event_severity_medium": "Srednja",
+  "event_severity_high": "Visoka",
+  "event_severity_critical": "Kritična",
+
+  "event_reason": "Razlog",
+  "event_last_speed": "Zadnja zabeležena hitrost",
+
+  "notification_title": "Obvestila",
+  "notification_today": "Danes",
+  "notification_yesterday": "Včeraj",
+  "notification_earlier": "Prejšnji teden",
+
+  "notification_fuel_alert": "Opozorilo o puščanju goriva!",
+  "notification_fuel_desc": "Vozilo {car}, ki ga vozi {driver}, je prijavilo hiter padec ravni goriva.",
+  "@notification_fuel_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "notification_crash_alert": "Zaznano kritično trčenje!",
+  "notification_crash_desc": "Vozilo {car}, ki ga vozi {driver}, je prijavilo hudo trčenje.",
+  "@notification_crash_desc": {
+    "placeholders": {
+      "car": {},
+      "driver": {}
+    }
+  },
+
+  "profile_title": "Profil",
+  "profile_edit": "Uredi moj profil",
+  "update_profile": "Posodobi profil",
+  "user_name": "Uporabniško ime",
+
+  "security_title": "Varnost",
+  "change_password": "Spremeni geslo",
+
+  "settings_title": "Nastavitve",
+  "settings_notifications": "Nastavitve obvestil",
+  "settings_general_notifications": "Splošna obvestila",
+  "account_settings": "Nastavitve računa",
+  "push_notification": "Potisna obvestila",
+  "dark_mode": "Temni način vklopljen",
+
+  "help_title": "Center za pomoč",
+  "help_and_faq": "Pomoč in Pogosta vprašanja",
+  "help_contact": "Kontaktirajte nas",
+  "help_faq": "Pogosta vprašanja",
+  "how_help": "Kako vam lahko pomagamo?",
+  "on_wh_num": "Na WhatsApp številki",
+
+  "question1": "Kako uporabljati BlackBox?",
+  "answer1": "Namestite napravo BlackBox v svoj avtomobil, se prijavite v aplikacijo in začnite voziti. Aplikacija bo samodejno beležila in prikazovala vaše podatke o vožnji.",
+  "question2": "Koliko stane uporaba BlackBox-a?",
+  "answer2": "Strošek je odvisen od izbranega paketa in storitev. Za podrobnosti o cenah kontaktirajte podjetje.",
+  "question3": "Kako stopiti v stik s podporo?",
+  "answer3": "Podporo lahko kontaktirate preko WhatsApp-a z uradno številko podjetja ali z obiskom pisarne podjetja med delovnim časom.",
+  "question4": "Kako lahko ponastavim geslo, če ga pozabim?",
+  "answer4": "Uporabite možnost 'Pozabljeno geslo' na zaslonu za prijavo in sledite navodilom za ponastavitev gesla.",
+  "question5": "Ali obstajajo ukrepi za zasebnost ali varnost podatkov?",
+  "answer5": "Da. Vaši podatki so varno shranjeni in zaščiteni ter se ne delijo brez vašega dovoljenja, razen če to zahteva zakon.",
+  "question6": "Ali lahko prilagodim nastavitve znotraj aplikacije?",
+  "answer6": "Da. Znotraj aplikacije lahko prilagodite razpoložljive nastavitve, kot so obvestila in preference.",
+  "question7": "Kako lahko izbrišem svoj račun?",
+  "answer7": "Če želite izbrisati svoj račun, kontaktirajte podjetje preko WhatsApp-a ali obiščite pisarno podjetja.",
+  "question8": "Kako dostopam do svoje zgodovine analiz?",
+  "answer8": "Svoje pretekle vožnje in analize vožnje si lahko ogledate v razdelku Zgodovina ali Analize v aplikaciji.",
+  "question9": "Ali lahko uporabljam aplikacijo brez povezave?",
+  "answer9": "Aplikacija ima omejeno funkcionalnost brez povezave. Za sinhronizacijo podatkov in dostop do vseh funkcij je potrebna internetna povezava.",
+
+  "terms_title": "Pogoji in določila",
+  "terms_accept": "Sprejmem pogoje in določila",
+  "terms_full": "1. Sprejem pogojev\nZ namestitvijo ali uporabo te aplikacije se strinjate s temi pogoji in določili. Če se ne strinjate, prenehajte uporabljati aplikacijo.\n\n2. Namen aplikacije\nTa aplikacija je črna skrinjica in telematični sistem vozila, ki se uporablja za spremljanje zmogljivosti vozila in voznikovega obnašanja izključno v informativne, varnostne in analitične namene.\n\n3. Parametri podatkov, ki se zbirajo\nAplikacija lahko zbira in obdeluje podatke o vozilu in vožnji, vključno z:\n\n• Hitrostjo vozila\n• Porabo goriva in nivojem goriva\n• Pospeševanjem in zaviranjem\n• Močnim zaviranjem in nenadnim pospeševanjem\n• Ostrimi zavoji\n• Podatki o lokaciji GPS (geografska širina in dolžina)\n• Razdaljo, trajanjem in časom potovanja\n• Identifikacijskimi podatki voznika in vozila\n\nZ uporabo aplikacije izrecno soglašate z zbiranjem teh parametrov.\n\n4. Razpoložljivost storitve\nNeprekinjeno, delovanje v realnem času ali brezhibno delovanje aplikacije zaradi tehničnih omejitev ni zagotovljeno.",
+
+  "validation_password_mismatch": "Gesli se ne ujemata",
+  "validation_invalid_phone": "Neveljavna telefonska številka",
+  "validation_incorrect_pin": "Napačna PIN koda",
+  "validation_empty_fields": "Prosimo, izpolnite vsa polja",
+
+  "empty_no_cars": "Ni najdenih avtomobilov",
+  "empty_no_notifications": "Še ni obvestil",
+  "empty_no_events": "Ni na voljo nobenih dogodkov",
+
+  "status_loading": "Nalaganje...",
+  "status_success": "Operacija uspešna",
+  "status_error": "Nekaj je šlo narobe",
+
+  "confirm_delete_car": "Ste prepričani, da želite izbrisati ta avtomobil?",
+  "confirm_reset_password": "Ste prepričani, da želite ponastaviti svoje geslo?",
+
+  "search_hint": "Išči...",
+  "search_no_results": "Ni najdenih rezultatov",
+  "filter": "Filter",
+  "sort": "Razvrsti",
+
+  "onboarding_title_1": "Dobrodošli",
+  "onboarding_desc_1": "v Black Box Manager",
+
+  "onboarding_title_2": "Oglejte si zgodbo za vašo vožnjo,",
+  "onboarding_desc_2": "Beležimo vsako pot, analiziramo vsak kilometer.",
+
+  "error_email_exists": "Ta e-pošta že obstaja",
+  "error_wrong_password": "Napačno geslo",
+  "error_phone_exists": "Ta telefonska številka je že v uporabi",
+  "error_sp_ch": "Geslo mora vsebovati vsaj en poseben znak",
+  "error_up": "Geslo mora vsebovati vsaj eno veliko črko",
+  "error_low": "Geslo mora vsebovati vsaj eno malo črko",
+  "error_num": "Geslo mora vsebovati vsaj eno številko",
+  "error_required": "To polje je obvezno",
+  "error_invalid_email": "Neveljaven e-poštni naslov",
+  "error_password_short": "Geslo mora imeti vsaj {length} znakov",
+  "@error_password_short": {
+    "placeholders": {
+      "length": {}
+    }
+  }
+}

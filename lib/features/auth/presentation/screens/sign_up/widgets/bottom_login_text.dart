@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/constants/colors.dart';
 import '../../login/login_screen.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class BottomLoginText extends StatelessWidget {
   const BottomLoginText({super.key});
 
@@ -11,7 +12,7 @@ class BottomLoginText extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Already have an account? ", style: TextStyle(color: Colors.grey[600],fontSize: 15)),
+        Text(AppLocalizations.of(context)!.auth_already_have_account, style: TextStyle(color: Colors.grey[600],fontSize: 15)),
         GestureDetector(
           onTap: () {
             Navigator.pushReplacement(
@@ -19,9 +20,9 @@ class BottomLoginText extends StatelessWidget {
               MaterialPageRoute(builder: (context) => const LoginScreen()),
             );
           },
-          child: const Text(
-            "Log In",
-            style: TextStyle(color: mainRedColor, fontWeight: FontWeight.bold,fontSize: 17),
+          child: Text(
+            AppLocalizations.of(context)!.auth_space_login,
+            style: TextStyle(color: AppColor.mainRedColor, fontWeight: FontWeight.bold,fontSize: 17),
           ),
         ),
       ],
