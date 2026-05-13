@@ -70,6 +70,30 @@ class DriverDataSource{
     }
     return [];
   }
+  Future<int> getDriverScore(int id) async{
+    final response = await DioHelper.dio.get(
+     "${AppLink.driverScore}$id/score"
+    );
+    final status = response.data['status'];
+    if(status == "success"){
+      final int? score = response.data['data']['overall_score'];
+      if(score == null){
+        return 100;
+      }
+      return score;
+    }
+    return 0;
+  }
+
+  Future<double> getAllDriversScore() async{
+    final drivers = await getAllDrivers();
+    double total = 0;
+    for(int i = 0;i < drivers.length;i++){
+      int temp = await getDriverScore(drivers[i].id) ;
+      total += temp;
+    }
+    return total / drivers.length;
+  }
 }
 
 

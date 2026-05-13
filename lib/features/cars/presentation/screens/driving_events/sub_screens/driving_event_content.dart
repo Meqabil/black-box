@@ -2,9 +2,11 @@ import 'package:black_box/core/constants/images.dart';
 import 'package:black_box/features/crash/presentation/screens/crash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../../core/constants/global.dart';
 import '../../../../../../core/ui/widgets/driving_events/sub_widgets/event_item.dart';
 import '../../../../../crash/presentation/cubit/crash_cubit.dart';
 import '../../../../../../bnv.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class DrivingEventContent extends StatelessWidget {
   const DrivingEventContent({super.key,required this.driverId,required this.driverName,required this.carId});
   final String driverId;
@@ -16,11 +18,11 @@ class DrivingEventContent extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            margin: const EdgeInsets.only(top: 20),
+            margin: EdgeInsets.only(top: width * 0.045),
             width: double.infinity,
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all( width * 0.038),
             decoration: BoxDecoration(
-              color: Colors.white,
+
               borderRadius: const BorderRadius.vertical(
                 top: Radius.circular(60),
               ),
@@ -29,7 +31,7 @@ class DrivingEventContent extends StatelessWidget {
               children: [
                 EventItem(
                   AppImages.majorCrash,
-                  "Major Crashes",
+                  AppLocalizations.of(context)!.event_major_crashes,
                   Color(0xFfD96B6B),
                   onTap: () {
                     context.read<CrashCubit>().showAllCrashes();
@@ -47,7 +49,7 @@ class DrivingEventContent extends StatelessWidget {
                 ),
                 EventItem(
                   AppImages.handBreak,
-                  "Hard Braking",
+                  AppLocalizations.of(context)!.event_hard_braking,
                   Colors.red,
                   onTap: () {
                     // Navigator.push(
@@ -60,7 +62,7 @@ class DrivingEventContent extends StatelessWidget {
                 ),
                 EventItem(
                   AppImages.speed,
-                  "Speeding Incidents",
+                  AppLocalizations.of(context)!.event_speeding_incident,
                   Color(0xFF8B0000),
                   onTap: () {
                     Navigator.push(
@@ -73,7 +75,7 @@ class DrivingEventContent extends StatelessWidget {
                 ),
                 EventItem(
                   AppImages.turns,
-                  "Aggressive Turns",
+                  AppLocalizations.of(context)!.event_aggressive_turns,
                   Colors.red,
                   onTap: () {
                     // Navigator.push(

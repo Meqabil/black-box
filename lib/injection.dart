@@ -31,6 +31,7 @@ import 'package:black_box/features/crash/presentation/cubit/crash_cubit.dart';
 import 'package:black_box/features/drivers/domain/usecases/add_driver_usecase.dart';
 import 'package:black_box/features/drivers/domain/usecases/delete_driver_usecase.dart';
 import 'package:black_box/features/drivers/domain/usecases/get_all_dirvers_usecase.dart';
+import 'package:black_box/features/drivers/domain/usecases/get_all_drivers_score_usecase.dart';
 import 'package:black_box/features/drivers/domain/usecases/show_one_driver.dart';
 import 'package:black_box/features/drivers/domain/usecases/update_driver_usecase.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
@@ -55,6 +56,7 @@ import 'features/crash/domain/repositories/crash_repository.dart';
 import 'features/drivers/data/datasources/driver_datasource.dart';
 import 'features/drivers/data/repositories/driver_repository_impl.dart';
 import 'features/drivers/domain/repositories/driver_repository.dart';
+import 'features/drivers/domain/usecases/get_driver_score_usecase.dart';
 
 final s1 = GetIt.instance;
 
@@ -78,7 +80,7 @@ Future<void> initAuthFeature() async{
   );
 
   s1.registerFactory(
-      () => DriverCubit(s1(), s1(),s1(),s1(),s1())
+      () => DriverCubit(s1(), s1(),s1(),s1(),s1(),s1(),s1())
   );
 
   s1.registerFactory(
@@ -114,6 +116,8 @@ Future<void> initAuthFeature() async{
   s1.registerLazySingleton(() => DeleteDriverUseCase(s1()));
   s1.registerLazySingleton(() => ShowOneDriverUseCase(s1()));
   s1.registerLazySingleton(() => GetAllDriversUseCase(s1()));
+  s1.registerLazySingleton(() => GetAllDriversScoreUseCase(s1()));
+  s1.registerLazySingleton(() => GetDriverScoreUseCase(s1()));
 
   s1.registerLazySingleton(() => GetNotificationsUseCase(s1()));
 

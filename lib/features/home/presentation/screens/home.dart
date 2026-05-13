@@ -1,9 +1,19 @@
 
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/ui/widgets/notification_button.dart';
+import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
+import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
+import 'package:black_box/features/crash/presentation/cubit/crash_cubit.dart';
+import 'package:black_box/features/crash/presentation/cubit/crash_state.dart';
+import 'package:black_box/features/drivers/data/datasources/driver_datasource.dart';
+import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
+import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
+import 'package:black_box/features/notifications/data/datasources/notification_datasource.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import '../widgets/circular_indicator.dart';
 import '../widgets/small_stat.dart';
@@ -16,6 +26,8 @@ class HomeContent extends StatefulWidget {
 }
 
 class _HomeContentState extends State<HomeContent> {
+
+  NotificationDataSource dat = NotificationDataSource();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,107 +41,127 @@ class _HomeContentState extends State<HomeContent> {
               flex: 1,
               child: Container(
                 width: width,
+                height: height,
                 padding: EdgeInsets.all(width * .045),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              AppLocalizations.of(context)!.home_welcome,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: width * .045,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              AppLocalizations.of(context)!.home_good_morning,
-                              style: TextStyle(
-                                color: Colors.white70,
-                                fontSize: width * .03,
-                              ),
-                            ),
-                          ],
-                        ),
-                        NotificationButton()
-                      ],
-                    ),
-                    SizedBox(height: width * .045),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: width * .02,horizontal: width * .045),
-                      child: Column(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              StatItem(
-                                label: AppLocalizations.of(context)!.total_active_cars,
-                                value:  "1",
-                                valueColor:  Colors.white,
-                                arrowAngle: 135,
+                              IconButton(onPressed: (){
+                                dat.checkNotifications();
+                              }, icon: Icon(Icons.ac_unit)),
+                              Text(
+                                AppLocalizations.of(context)!.home_welcome,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: width * .045,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                              Container(
-                                width: width * .0045,
-                                height: width * .09,
-                                color: const Color(0xFFDFF7E2),
-                                margin: EdgeInsets.symmetric(horizontal: width * .045),
-                              ),
-                              StatItem(
-                                label:  AppLocalizations.of(context)!.total_cars,
-                                value: "8",
-                                valueColor:  const Color(0xFF0068FF),
-                                arrowAngle: -135,
+                              Text(DateTime.now().hour < 12 ?
+                                AppLocalizations.of(context)!.home_good_morning
+                                : DateTime.now().hour < 17 ? AppLocalizations.of(context)!.home_good_afternoon
+                                : AppLocalizations.of(context)!.home_good_evening,
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: width * .03,
+                                ),
                               ),
                             ],
                           ),
-                          SizedBox(height: width * .025),
-                          Container(
-                            height: width * .07,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(width * .045),
-                            ),
-                            child: Row(
+                          NotificationButton()
+                        ],
+                      ),
+                      SizedBox(height: width * .045),
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: width * .02,horizontal: width * .045),
+                        child: Column(
+                          children: [
+                            Row(
                               children: [
+                                StatItem(
+                                  label: AppLocalizations.of(context)!.total_active_cars,
+                                  value:  "1",
+                                  valueColor:  Colors.white,
+                                  arrowAngle: 135,
+                                ),
                                 Container(
-                                  width: width * .15,
+                                  width: width * .0045,
                                   height: width * .09,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF052224),
-                                    borderRadius: BorderRadius.circular(width * .045),
-                                  ),
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    "12.5%",
-                                    style: TextStyle(color: Colors.white, fontSize: width * .027),
-                                  ),
+                                  color: const Color(0xFFDFF7E2),
+                                  margin: EdgeInsets.symmetric(horizontal: width * .045),
+                                ),
+                                BlocBuilder<CarCubit,CarState>(
+                                  builder: (context,state) {
+                                    if(state is CarSuccess){
+                                      return StatItem(
+                                        label:  AppLocalizations.of(context)!.total_cars,
+                                        value: state.carsList.length.toString(),
+                                        valueColor:  const Color(0xFF0068FF),
+                                        arrowAngle: -135,
+                                      );
+                                    }
+                                    return StatItem(
+                                      label:  AppLocalizations.of(context)!.total_cars,
+                                      value: "0",
+                                      valueColor:  const Color(0xFF0068FF),
+                                      arrowAngle: -135,
+                                    );
+                                  }
                                 ),
                               ],
                             ),
-                          ),
-                          SizedBox(height: width * .0225),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.check_box_outlined,
+                            SizedBox(height: width * .025),
+                            Container(
+                              height: width * .07,
+                              decoration: BoxDecoration(
                                 color: Colors.white,
-                                size: width * .041,
+                                borderRadius: BorderRadius.circular(width * .045),
                               ),
-                              SizedBox(width: width * .02),
-                              Text(
-                                AppLocalizations.of(context)!.home_active_cars('12'),
-                                style: TextStyle(color: Colors.white, fontSize: width * .029),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: width * .15,
+                                    height: width * .09,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFF052224),
+                                      borderRadius: BorderRadius.circular(width * .045),
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "12.5%",
+                                      style: TextStyle(color: Colors.white, fontSize: width * .027),
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
-                        ],
+                            ),
+                            SizedBox(height: width * .0225),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.check_box_outlined,
+                                  color: Colors.white,
+                                  size: width * .041,
+                                ),
+                                SizedBox(width: width * .02),
+                                Text(
+                                  AppLocalizations.of(context)!.home_active_cars('12'),
+                                  style: TextStyle(color: Colors.white, fontSize: width * .029),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -159,7 +191,7 @@ class _HomeContentState extends State<HomeContent> {
                           children: [
                             CircularIndicator(),
                             SizedBox(
-                              width: 57,
+                              width: width * 0.1325,
                               height:   width * .21,
                               child: VerticalDivider(
                                 thickness: 1.5,
@@ -172,27 +204,60 @@ class _HomeContentState extends State<HomeContent> {
                             Expanded(
                               child: Column(
                                 children: [
-                                  SmallStat(
-                                    iconWidget: Image.asset(
-                                      'assets/crashed_car.png',
-                                      width: width * .11,
-                                      height: width * .094,
-                                    ),
-                                    title: AppLocalizations.of(context)!.home_total_accidents,
-                                    value: "1",
-                                    valColor: Colors.black,
+                                  BlocBuilder<CrashCubit,CrashState>(
+                                    builder: (context,state) {
+                                      if(state is CrashSuccess){
+                                        return SmallStat(
+                                          iconWidget: Image.asset(
+                                            'assets/crashed_car.png',
+                                            width: width * .11,
+                                            height: width * .094,
+                                          ),
+                                          title: AppLocalizations.of(context)!.home_total_accidents,
+                                          value: state.crashes.length.toString(),
+                                          valColor: Colors.black,
+                                        );
+                                      }
+                                      return SmallStat(
+                                        iconWidget: Image.asset(
+                                          'assets/crashed_car.png',
+                                          width: width * .11,
+                                          height: width * .094,
+                                        ),
+                                        title: AppLocalizations.of(context)!.home_total_accidents,
+                                        value: "0",
+                                        valColor: Colors.black,
+                                      );
+                                    }
                                   ),
                                   const Divider(color: Colors.white),
-                                  SmallStat(
-                                    iconWidget: Image.asset(
-                                      'assets/security_time.png',
-                                      width: width * .115,
-                                      height: width * .097,
-                                      color: Colors.black,
-                                    ),
-                                    title: AppLocalizations.of(context)!.home_safety_score,
-                                    value: "90%",
-                                    valColor: Colors.black,
+                                  BlocBuilder<DriverCubit,DriverState>(
+                                    builder: (context,state) {
+                                      if(state is DriversScoreSuccess){
+                                        return SmallStat(
+                                          iconWidget: Image.asset(
+                                            'assets/security_time.png',
+                                            width: width * .115,
+                                            height: width * .097,
+                                            color: Colors.black,
+                                          ),
+                                          title: AppLocalizations.of(context)!.home_safety_score,
+                                          value: "${state.score.toStringAsFixed(0)}%",
+                                          valColor: Colors.black,
+                                        );
+                                      }
+                                      return SmallStat(
+                                        iconWidget: Image.asset(
+                                          'assets/security_time.png',
+                                          width: width * .115,
+                                          height: width * .097,
+                                          color: Colors.black,
+                                        ),
+                                        title: AppLocalizations.of(context)!.home_safety_score,
+                                        value: "0%",
+                                        valColor: Colors.black,
+                                      );
+                                    }
                                   ),
                                 ],
                               ),

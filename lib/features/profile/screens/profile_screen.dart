@@ -41,6 +41,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       backgroundColor: Theme.of(context).colorScheme.primary,
       extendBody: true,
       appBar: AppBar(
+        leading: null,
         backgroundColor: Theme.of(context).colorScheme.primary,
         centerTitle: true,
         toolbarHeight: width * .2025,

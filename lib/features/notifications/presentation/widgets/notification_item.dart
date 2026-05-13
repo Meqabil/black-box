@@ -24,7 +24,7 @@ class NotificationItem extends StatelessWidget {
               ),
               child: Icon(icon, color: Colors.white, size: 24),
             ),
-            SizedBox(width: width * 0.015),
+            SizedBox(width: width * 0.035),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,7 +36,7 @@ class NotificationItem extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
-                  const SizedBox(height: 4),
+                  SizedBox(height: width * .045 /5.4),
                   Text(
                     subtitle,
                     style: TextStyle(
@@ -53,6 +53,7 @@ class NotificationItem extends StatelessWidget {
                       style: const TextStyle(color: Colors.blue, fontSize: 12),
                     ),
                   ),
+                  SizedBox(height: width * 0.009),
                 ],
               ),
             ),

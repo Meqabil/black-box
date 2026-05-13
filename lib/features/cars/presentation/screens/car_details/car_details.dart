@@ -2,6 +2,8 @@
 import 'package:black_box/core/constants/images.dart';
 import 'package:black_box/core/ui/widgets/notification_button.dart';
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';
+import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
+import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
 import 'package:black_box/features/cars/presentation/screens/car_details/analysis/live_tracking.dart';
 import 'package:black_box/features/cars/presentation/widgets/car_page/car_detials/car_parameter.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
@@ -10,9 +12,11 @@ import 'package:black_box/features/notifications/presentation/screens/notificati
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/constants/colors.dart';
+import '../../../../../core/constants/global.dart';
 import '../../../../home/presentation/widgets/stat_item.dart';
 import '../edit_car_screen.dart';
 import '../driving_events/driving_event.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CarDetailsScreen extends StatefulWidget {
   const CarDetailsScreen({
@@ -27,22 +31,11 @@ class CarDetailsScreen extends StatefulWidget {
 class _CarDetailsScreenState extends State<CarDetailsScreen> {
   final TextEditingController searchController = TextEditingController();
 
-  final List<String> allParameters = [
-    "Live Tracking",
-    "Coolant Temp",
-    "DTC Codes",
-    "Road Bump",
-    "Fuel Level",
-  ];
-
-
-  List<String> filteredParameters = [];
 
 
 
   @override
   void initState() {
-    filteredParameters = allParameters;
     context.read<DriverCubit>().showOneDriver(int.tryParse(widget.car.driverId) ?? 0);
     super.initState();
   }
@@ -53,7 +46,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
       backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
         elevation: 0,
-        toolbarHeight: 80,
+        toolbarHeight: width * 0.186,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -81,13 +74,13 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
       ),
       body: Column(
         children: [
-          const SizedBox(height: 5), // Statistics Row
+          SizedBox(height: width * 0.045 / 5),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             child: Row(
               children: [
                 StatItem(
-                  label: "Total Active Cars",
+                  label: AppLocalizations.of(context)!.total_active_cars,
                   value:"1",
                   valueColor:Colors.white,
                   arrowAngle: 135,
@@ -98,59 +91,27 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                   color: const Color(0xFFDFF7E2),
                   margin: const EdgeInsets.symmetric(horizontal: 20),
                 ),
-                StatItem(
-                  label: "Total Cars",
-                  value: "8",
-                  valueColor:  Color(0xFF0068FF),
-                  arrowAngle: -135,
+                BlocBuilder<CarCubit,CarState>(
+                  builder: (context,state) {
+                    if(state is CarSuccess){
+                      return StatItem(
+                        label: AppLocalizations.of(context)!.total_cars,
+                        value: state.carsList.length.toString(),
+                        valueColor:  Color(0xFF0068FF),
+                        arrowAngle: -135,
+                      );
+                    }
+                    return StatItem(
+                      label: AppLocalizations.of(context)!.total_cars,
+                      value: "0",
+                      valueColor:  Color(0xFF0068FF),
+                      arrowAngle: -135,
+                    );
+                  }
                 ),
               ],
             ),
           ),
-          // Search Bar
-          /*Container(
-            height: 30,
-            width: 330,
-            decoration: BoxDecoration(
-              color: const Color(0xFF052224),
-              borderRadius: BorderRadius.circular(25),
-            ),
-            child: Row(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Text(
-                    "Search",
-                    style: TextStyle(color: Colors.white, fontSize: 13),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.all(2),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFF0FFF0),
-                      borderRadius: BorderRadius.circular(23),
-                    ),
-                    alignment: Alignment.centerRight,
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    child: TextField(
-                      controller: searchController,
-                      onChanged: filterParameters,
-                      textAlign: TextAlign.right,
-                      decoration: const InputDecoration(
-                        hintText: "Parameter",
-                        hintStyle: TextStyle(
-                          color: Colors.grey,
-                          fontStyle: FontStyle.italic,
-                        ),
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),*/
           const SizedBox(height: 65),
           Expanded(
             child: Container(
@@ -178,10 +139,9 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                     onPressed: () {
                                       String driverName = '';
                                       driverName = state.driver.name;
-                                      if(driverName == '') driverName = "Unknown";
-
-                                      Navigator.push(
-                                        context,
+                                      if(driverName == '') driverName = AppLocalizations.of(context)!.unknown_driver;
+                                      context.read<DriverCubit>().getDriverScore(int.parse(widget.car.driverId));
+                                      Navigator.of(context).push(
                                         MaterialPageRoute(
                                           builder: (context) => DrivingScreen(
                                             driverId: widget.car.driverId,
@@ -191,10 +151,10 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                         ),
                                       );
                                     },
-                                    child: const Row(
+                                    child: Row(
                                       children: [
                                         Text(
-                                          "View Driving Events",
+                                          AppLocalizations.of(context)!.view_driving_events,
                                           style: TextStyle(
                                             color: Color(0xFF0068FF),
                                             fontSize: 13,
@@ -219,37 +179,37 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                           ],
                         ),
                         CarParameter(
-                          context:context,
+                          context: context,
                           imagePath: AppImages.liveTracking,
-                          title:"Live Tracking",
+                          title: AppLocalizations.of(context)!.tracking_live,
                           iconBgColor: Colors.blue.shade300,
                           destinationPage: LiveTracking(),
                         ),
                         CarParameter(
-                          context:context,
+                          context: context,
                           imagePath: AppImages.coolant,
-                          title:"Coolant Temp",
+                          title: AppLocalizations.of(context)!.coolant_temp,
                           iconBgColor: Colors.blue.shade300,
                           destinationPage: NotificationScreen(),
                         ),
                         CarParameter(
                           context:context,
                           imagePath: AppImages.dtc,
-                          title:"DTC Codes",
+                          title: AppLocalizations.of(context)!.dtc_codes,
                           iconBgColor: AppColor.mainRedColor,
                           destinationPage: NotificationScreen(),
                         ),
                         CarParameter(
                           context:context,
                           imagePath: AppImages.roadBump,
-                          title:"Road Bump",
+                          title: AppLocalizations.of(context)!.road_bump,
                           iconBgColor: Colors.blue.shade300,
                           destinationPage: NotificationScreen(),
                         ),
                         CarParameter(
                           context:context,
                           imagePath: AppImages.fuelLevel,
-                          title:"Fuel Level",
+                          title: AppLocalizations.of(context)!.fuel_level,
                           iconBgColor: AppColor.mainRedColor,
                           destinationPage: NotificationScreen(),
                         ),
@@ -262,53 +222,6 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildStatItem(
-      String label,
-      String value,
-      Color valueColor, {
-        double arrowAngle = 0,
-      }) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Container(
-              width: 18,
-              height: 18,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white70, width: 1),
-                borderRadius: BorderRadius.circular(4),
-              ),
-              child: Transform.rotate(
-                angle: arrowAngle * 3.1416 / 180,
-                child: const Icon(
-                  Icons.arrow_back_outlined,
-                  size: 12,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            const SizedBox(width: 8),
-            Text(
-              label,
-              style: const TextStyle(color: Colors.white, fontSize: 12),
-            ),
-          ],
-        ),
-        Text(
-          value,
-          style: TextStyle(
-            color: valueColor,
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ],
     );
   }
 }

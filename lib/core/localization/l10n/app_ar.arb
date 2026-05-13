@@ -58,7 +58,9 @@
 
   "home_title": "الرئيسية",
   "home_welcome": "مرحبًا، أهلاً بعودتك",
-  "home_good_morning": "صباح الخير",
+  "home_good_morning": "صبـاح الخيـر",
+  "home_good_afternoon": "مسـاء الخيـر",
+   "home_good_evening": "مسـاء الخيـر",
   "home_looks_good": "يبدو\nجيدًا",
   "home_safety_score": "نظرة عامة على درجة الأمان",
   "home_total_accidents": "إجمالي الحوادث",
@@ -82,15 +84,15 @@
   "car_type": "نوع السيارة",
   "car_driver_name": "اسم السائق",
 
-  "car_item_title": "سيارة رقم {id}",
+  "car_item_title": "سيارة : {id}",
   "@car_item_title": {
     "placeholders": {
       "id": {}
     }
   },
 
-  "tracking_live": "تتبع مباشر",
-  "tracking_last_updates": "آخر التحديثات",
+  "tracking_live": "تتبــع مباشــر",
+  "tracking_last_updates": "آخـر التحــديـثــات",
 
   "event_title": "أحداث القيادة",
   "event_speeding": "تجاوز السرعة",
@@ -216,6 +218,7 @@
   "confirm_delete_car": "هل أنت متأكد أنك تريد حذف هذه السيارة؟ صاحبة الرقم ",
   "confirm_reset_password": "هل أنت متأكد أنك تريد إعادة تعيين كلمة المرور؟",
 
+  "search": "بحث",
   "search_hint": "بحث...",
   "search_no_results": "لا توجد نتائج",
   "filter": "تصفية",
@@ -227,6 +230,76 @@
   "onboarding_title_2": "شاهد قصة قيادتك،",
   "onboarding_desc_2": "تسجيل كل رحلة وتحليل كل ميل.",
 
+
+
+  "delete_car": "حـذف السيارة",
+  "sedan": "سـيدان",
+  "heavy_duty": "نـقل ثقيــل",
+  "current_password": "كلمة المرور الحالية",
+  "password_requirement": "يجب أن تتكون من 8 أحرف على الأقل وتحتوي على حروف وأرقام.",
+  "current_password_is_not_correct": "كلمة المرور الحالية غير صحيحة",
+  "vehicle": "السيارة",
+  "driven_by": "يقــودها ",
+  "report_fuel_level": "سجلت انخفـاض سرــع في مستوى الوقــود.",
+  "report_collision_or_rollover": "تصادمـت او أنـقلبت.",
+  "report_overheating_or_dtc": "سجلت إرتـفاع في درجـة إرتفاع درجـة حـرارة المحرك او إكتـشاف رموز أعطـال.",
+  "unknown_driver": "سـائق غيـر معـروف",
+  "mechanical_failure":" تحـذير بحـدوث عطل ميكانيكي",
+  "critical_crash":"تحذير بحـدوث تصـادم !",
+  "fuel_leak":"تحذير مخـزون الوقــود على وشك النفـاذ !",
+
+
+
+  "today": "اليوم",
+  "yesterday": "أمس",
+  "day": "يوم",
+  "days": "أيام",
+  "week": "أسبوع",
+  "weeks": "أسابيع",
+  "month": "شهر",
+  "months": "شهور",
+  "year": "سنة",
+  "years": "سنوات",
+  "january": "يناير",
+  "february": "فبراير",
+  "march": "مارس",
+  "april": "أبريل",
+  "may": "مايو",
+  "june": "يونيو",
+  "july": "يوليو",
+  "august": "أغسطس",
+  "september": "سبتمبر",
+  "october": "أكتوبر",
+  "november": "نوفمبر",
+  "december": "ديسمبر",
+
+  "more_than_years" : "مـنذ #{num} أعـوام",
+  "since_two_years" : "منـذ عاميـن",
+  "since_year" : "منـذ عـام",
+  "since_months": "منـذ #{num} شـهور",
+  "since_two_months": "منـذ شهــرين",
+  "since_month": "منـذ شـهر",
+  "since_weeks": "منـذ #{num} أسـابيع",
+  "since_two_weeks": "منـذ إسـبوعين",
+  "since_week": "منـذ إسبـوع",
+  "since_days": "منـذ #{num} أيام",
+  "since_two_days": "منـذ يـومين",
+  "since_day": "منـذ يـوم",
+
+
+
+  "view_driving_events": "عرض أحداث القيادة",
+  "coolant_temp": "درجة حرارة سائل التبريد",
+  "dtc_codes": "رموز الأعـطـــال",
+  "road_bump": "مـطـب الطـريــق",
+  "fuel_level": "مستــوى الوقــود",
+  "driving_behavior_score": "تقييم مســتوى السـائـق",
+  "event_major_crashes": "الحـــوادث الكبيــرة",
+  "event_speeding_incident": "مــؤشــرات الســرعة",
+  "driver_id": "مـعــرف الســائـق",
+  "more_details": "تـفــاصيــل أكــثـر",
+  "events": "الأحــداث",
+
   "error_email_exists": "هذا البريد الإلكتروني مستخدم بالفعل",
   "error_wrong_password": "كلمة المرور غير صحيحة",
   "error_phone_exists": "رقم الهاتف مستخدم بالفعل",
@@ -237,6 +310,7 @@
   "error_required": "هذا الحقل مطلوب",
   "error_invalid_email": "بريد إلكتروني غير صالح",
   "error_password_short": "يجب أن تكون كلمة المرور على الأقل {length} أحرف",
+
   "@error_password_short": {
     "placeholders": {
       "length": {}

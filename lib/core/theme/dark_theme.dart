@@ -1,11 +1,12 @@
 import 'package:black_box/core/constants/colors.dart';
+import 'package:black_box/core/constants/global.dart';
 import 'package:flutter/material.dart';
 import '../constants/fonts.dart';
 
 class DarkTheme {
   static ThemeData get theme {
     return ThemeData(
-      fontFamily: AppFonts.poppins,
+      fontFamily: pref!.getString('lang') == 'ar' ? AppFonts.cairo : AppFonts.poppins,
       useMaterial3: true,
       brightness: Brightness.dark,
       colorScheme: const ColorScheme(

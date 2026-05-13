@@ -14,9 +14,9 @@ class NotificationButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: Container(
-        width: width * 0.07,
-        height: width * 0.07,
-        padding: const EdgeInsets.all(5),
+        width: width * 0.09,
+        height: width * 0.09,
+        padding: EdgeInsets.all(width * 0.045/4),
         decoration: BoxDecoration(
           color: pref!.getString("theme") == 'dark' ? AppColor.lightRed : AppColor.lightPink,
           shape: BoxShape.circle,

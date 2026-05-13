@@ -8,6 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../../core/constants/global.dart';
+import '../../widgets/password_field.dart';
+import '../sign_up/functions/is_vaild_password.dart';
 class NewPasswordScreen extends StatefulWidget {
   const NewPasswordScreen({super.key,required this.email,required this.otp});
   final String email;
@@ -74,42 +76,30 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(height: width * .099,),
-                        NewPasswordField(
+                        PasswordField(
                           label: AppLocalizations.of(context)!.auth_new_password,
+                          fillColor: Colors.transparent,
+                          labelColor: Colors.transparent,
                           controller: _newPasswordController,
-                          obscure: obscureNew,
+                          isVisible: !obscureNew,
                           onToggle: () {
                             setState(() => obscureNew = !obscureNew);
                           },
                           validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return AppLocalizations.of(context)!.required_password;
-                            }
-                            if (value.length < 8) {
+                            if (value == null || value.isEmpty) return AppLocalizations.of(context)!.required_password;
+                            if (!isValidPassword(value)) {
                               return AppLocalizations.of(context)!.min_password;
-                            }
-                            if (!RegExp(r'[A-Z]').hasMatch(value)) {
-                              return AppLocalizations.of(context)!.error_up;
-                            }
-                            if (!RegExp(r'[a-z]').hasMatch(value)) {
-                              return AppLocalizations.of(context)!.error_low;
-                            }
-                            if (!RegExp(r'\d').hasMatch(value)) {
-                              return AppLocalizations.of(context)!.error_num;
-                            }
-                            if (!RegExp(
-                              r'[!@#$%^&*(),.?":{}|<>]',
-                            ).hasMatch(value)) {
-                              return AppLocalizations.of(context)!.error_sp_ch;
                             }
                             return null;
                           },
                         ),
                         SizedBox(height: width * .095),
-                        NewPasswordField(
+                        PasswordField(
                           label: AppLocalizations.of(context)!.auth_confirm_new_password,
+                          fillColor: Colors.transparent,
+                          labelColor: Colors.transparent,
+                          isVisible: !obscureConfirm,
                           controller: _confirmPasswordController,
-                          obscure: obscureConfirm,
                           onToggle: () {
                             setState(() => obscureConfirm = !obscureConfirm);
                           },

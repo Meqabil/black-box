@@ -22,7 +22,8 @@ class AppColor{
   static const Color dialogLightBackground = Color(0xFFFFFFFF);
   static const Color dialogDarkBackground = Color(0xFF555555);
   static const Color dialogTitle = Color(0xFF3D0E0E);
-  static const Color dialogDarkContent= Color(0xFF2A0A0A);
+  static const Color dialogDarkContent = Color(0xFF2A0A0A);
+  static const Color darkBlock = Color(0xFF323232);
 
 }
 

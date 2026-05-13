@@ -23,9 +23,13 @@ class DriverSuccess extends DriverState{
   DriverSuccess(this.driver);
 }
 
-/*
-class DriverSuccess extends DriverState{
-  List driversList;
-  DriverSuccess(this.driversList);
+class DriverScoreSuccess extends DriverState{
+  int score;
+  DriverScoreSuccess(this.score);
 }
-*/
+
+class DriversScoreSuccess extends DriverState{
+  double score;
+  DriversScoreSuccess(this.score);
+}
+

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../../../core/constants/global.dart';
 import '../../../functions/is_valid_gmail.dart';
 import '../../../password/functions/input_decoration.dart';
 
@@ -21,8 +22,15 @@ class _CheckEmailState extends State<CheckEmail> {
       keyboardType: TextInputType.emailAddress,
       controller: widget.emailController,
       onChanged: widget.onChanged,
-      decoration: inputDecoration(
-        hint: AppLocalizations.of(context)!.email_hint,
+      decoration: InputDecoration(
+        hintText: AppLocalizations.of(context)!.email_hint,
+        hintStyle: TextStyle(color: Colors.grey),
+        filled: true,
+        contentPadding: EdgeInsets.symmetric(vertical: 1,horizontal: width * .052),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(width * .045),
+          borderSide: BorderSide.none,
+        ),
       ).copyWith(
         errorText: widget.emailError,
       ),

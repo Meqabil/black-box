@@ -12,4 +12,6 @@ abstract class DriverRepository{
   Future<void> deleteDriver(int id);
   Future<DriverEntity> showOneDriver(int id);
   Future<List> getAllDrivers();
+  Future<double> getAllDriversScore();
+  Future<int> getDriverScore(int id);
 }

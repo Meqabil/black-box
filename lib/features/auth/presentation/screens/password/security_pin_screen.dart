@@ -1,4 +1,6 @@
 
+import 'dart:async';
+
 import 'package:black_box/core/errors/auth_exception.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/new_password/password_cubit.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/new_password/password_state.dart';
@@ -6,7 +8,6 @@ import 'package:black_box/features/auth/presentation/screens/password/widgets/se
 import 'package:black_box/features/auth/presentation/screens/password/widgets/security_pin/verify_otp_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../core/constants/colors.dart';
 import '../../../../../core/constants/global.dart';
 import '../../../../../core/ui/snackbar/exception_snackbar.dart';
 import '../../../../../core/ui/snackbar/success_snackbar.dart';
@@ -25,21 +26,24 @@ class SecurityPinScreen extends StatefulWidget {
 class _SecurityPinScreenState extends State<SecurityPinScreen> {
   final int pinLength = 6;
   String fullOtp = '';
-  final List<TextEditingController> _controllers =
-  List.generate(6, (_) => TextEditingController());
-  final List<FocusNode> _focusNodes = List.generate(6, (_) => FocusNode());
+  ValueNotifier<int> count = ValueNotifier(59);
+
 
 
   @override
-  void dispose() {
-    for (var controller in _controllers) {
-      controller.dispose();
-    }
-    for (var node in _focusNodes) {
-      node.dispose();
-    }
-    super.dispose();
+  void initState() {
+    resendCodeTimer();
+    super.initState();
   }
+  void resendCodeTimer(){
+    Timer.periodic(Duration(seconds: 1), (timer){
+      count.value -= 1;
+      if(count.value == 0){
+        timer.cancel();
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +60,7 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                 AppLocalizations.of(context)!.auth_security_pin,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 28,
+                  fontSize: width * 0.055,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.0,
                 ),
@@ -83,7 +87,7 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                       Text(
                         AppLocalizations.of(context)!.auth_enter_pin,
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: width * 0.042,
                           fontWeight: FontWeight.bold,
                           color: Theme.of(context).colorScheme.onSurface,
                         ),
@@ -131,14 +135,47 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                         ),
                       ),
                       SizedBox(height: width * .038),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          AppLocalizations.of(context)!.auth_resend_pin(60),
-                          style: TextStyle(
-                            color: AppColor.lightRed,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      SizedBox(
+                        width: width * .57,
+                        height: width * .112,
+                        child: BlocListener<PasswordCubit,PasswordState>(
+                          listener: (context,state){
+                            if(state is SuccessPassword){
+                              SuccessSnackBar snack = SuccessSnackBar();
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  snack.show(state.message)
+                              );
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewPasswordScreen(email: widget.email, otp: fullOtp)));
+                            } else if(state is FailurePassword){
+                              ExceptionSnackBar snack = ExceptionSnackBar();
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  snack.show(state.message)
+                              );
+                            }
+                          },
+                          child: ValueListenableBuilder(
+                            valueListenable: count,
+                            builder: (context,val,_) {
+                              return ElevatedButton(
+                                onPressed: val == 0 ? (){
+                                  context.read<PasswordCubit>().sendResetPassword(email: widget.email);
+                                } : null,
+                                style: ElevatedButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25),
+                                  ),
+                                ),
+                                child: Text(
+                                  AppLocalizations.of(context)!.auth_resend_pin(val),
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: width * 0.042,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                )
+                              );
+                            }
+                          )
                         ),
                       ),
                     ],

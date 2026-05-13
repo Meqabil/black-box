@@ -33,7 +33,7 @@ class _CarListScreenState extends State<Settings> {
         centerTitle: true,
         actions: [
           NotificationButton(),
-          SizedBox(width: 20,)
+          SizedBox(width: width * 0.045,)
         ],
       ),
 
@@ -81,10 +81,9 @@ class _CarListScreenState extends State<Settings> {
                         setState(() {});
                     },
                   ),
-                  SizedBox(
-                    width: width,
+                  Expanded(
                     child: DropdownButton(
-
+                      isExpanded: true,
                       hint: Text(AppLocalizations.of(context)!.language),
                       items: [
                         DropdownMenuItem(
@@ -92,6 +91,7 @@ class _CarListScreenState extends State<Settings> {
                           child: Text("العربية (Arabic)"),
                         ),
                         DropdownMenuItem(
+
                           value: "en",
                           child: Text("English "),
                         ),

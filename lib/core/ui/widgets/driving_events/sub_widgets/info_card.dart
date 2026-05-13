@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/colors.dart';
+import '../../../../constants/global.dart';
+
 class InfoCard extends StatelessWidget {
   final String title;
   final String value;
@@ -17,7 +20,7 @@ class InfoCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: pref!.getString("theme") == 'dark' ? AppColor.darkBlock : Colors.white,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
@@ -34,9 +37,9 @@ class InfoCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 5),
-          Text(title, style: const TextStyle(fontSize: 12)),
+          Text(title, style: TextStyle(fontSize: 12,color: Theme.of(context).colorScheme.onSecondaryFixed)),
           const SizedBox(height: 5),
-          Text(value, style: const TextStyle(fontWeight: FontWeight.bold)),
+          Text(value, style: TextStyle(fontWeight: FontWeight.bold,color: Theme.of(context).colorScheme.onSecondaryFixed)),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:black_box/features/cars/domain/usecases/add_car_usecase.dart';
 import 'package:black_box/features/cars/domain/usecases/add_car_with_driver_usecase.dart';
@@ -21,12 +22,14 @@ class CarCubit extends Cubit<CarState>{
   DeleteCarWithDriverUseCase deleteCarWithDriverUseCase;
   UpdateCarUseCase updateCarUseCase;
   NetworkInfo network = NetworkInfoImpl();
+  List allCars = [];
   CarCubit(this.getAllCarsUseCase,this.addCarUseCase,this.addCarWithDriverUseCase,this.deleteCarUseCase,this.deleteCarWithDriverUseCase,this.updateCarUseCase) : super(CarInitial());
 
   getAllCars() async {
     emit(CarLoading());
     try {
       final cars = await getAllCarsUseCase();
+      allCars = cars;
       emit(CarSuccess(cars));
     } on DioException catch (e) {
       if (await network.isConnected) {
@@ -163,5 +166,18 @@ class CarCubit extends Cubit<CarState>{
         emit(CarFailure("No Internet connection",));
       }
     }
+  }
+
+
+
+  void searchCars(String query){
+    if(query.trim().isEmpty){
+      emit(CarSuccess(allCars));
+      return;
+    }
+    final filtered = allCars.where((car){
+      return car.plateNumber.toString().toLowerCase().contains(query.toLowerCase());
+    }).toList();
+    emit(CarSuccess(filtered));
   }
 }

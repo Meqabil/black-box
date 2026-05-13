@@ -1,3 +1,4 @@
+
 import 'package:black_box/bnv.dart';
 import 'package:black_box/core/api/dio_helper.dart';
 import 'package:black_box/core/constants/colors.dart';
@@ -6,27 +7,40 @@ import 'package:black_box/core/theme/app_theme.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/new_password/password_cubit.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/signup/signup_cubit.dart';
 import 'package:black_box/features/auth/presentation/cubit/owner/owner_cubit.dart';
+import 'package:black_box/features/auth/presentation/screens/password/new_password_screen.dart';
+import 'package:black_box/features/auth/presentation/screens/password/new_password_success.dart';
+import 'package:black_box/features/auth/presentation/screens/password/security_pin_screen.dart';
+
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/crash/presentation/cubit/crash_cubit.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
 import 'package:black_box/features/notifications/presentation/cubits/notification_cubit.dart';
-import 'package:black_box/features/auth/presentation/screens/password/new_password_success.dart';
+import 'package:black_box/features/notifications/presentation/screens/notification_screen.dart';
+
 import 'package:black_box/features/settings/presentation/cubit/language_cubit.dart';
 import 'package:black_box/features/settings/presentation/cubit/language_state.dart';
+import 'package:black_box/features/start_app/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_map/flutter_map.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:latlong2/latlong.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:workmanager/workmanager.dart';
 import 'features/auth/presentation/cubit/auth/login/login_cubit.dart';
 import 'injection_container.dart' as di;
-import 'package:http/http.dart' as http;
+
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'dart:convert';
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  Workmanager().initialize(callbackDispatcher);
+  initNotifications();
+  await Workmanager().registerPeriodicTask(
+    "black_box",
+    "check_notifications",
+    frequency: const Duration(seconds: 25),
+  );
+
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       statusBarColor: AppColor.mainRedColor
@@ -83,16 +97,20 @@ class MyApp extends StatelessWidget {
         return ValueListenableBuilder(
           valueListenable: darkMode,
           builder: (context,val,_){
-
             return MaterialApp(
+              navigatorKey: navigatorKey,
               debugShowCheckedModeBanner: false,
               theme: AppTheme.lightTheme,
               darkTheme: AppTheme.darkTheme,
               themeMode: pref!.getString("theme") == 'dark' ? ThemeMode.dark : ThemeMode.light,
-              home: BNVScreen(),
-              locale: state.locale,
+              //home: SplashScreen(),
+              locale: pref!.getString('lang') == null ? state.locale : Locale(pref!.getString('lang') ?? 'en'),
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,
+              routes: {
+                "/" : (context) => SplashScreen(),
+                "/notification" : (context) => NotificationScreen()
+              },
             );
           },
         );

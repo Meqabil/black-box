@@ -10,11 +10,14 @@ class CrashScreen extends StatelessWidget {
   final String carId;
   @override
   Widget build(BuildContext context) {
-    return DrivingEventsForm(
-      driverId: driverId,
-      driverName: driverName,
-      carId: carId,
-      pageContent: CrashContent()
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
+      body: DrivingEventsForm(
+        driverId: driverId,
+        driverName: driverName,
+        carId: carId,
+        pageContent: CrashContent()
+      ),
     );
   }
 }

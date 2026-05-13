@@ -2,6 +2,8 @@
 import 'package:black_box/features/drivers/domain/entities/driver_entity.dart';
 import 'package:black_box/features/drivers/domain/usecases/delete_driver_usecase.dart';
 import 'package:black_box/features/drivers/domain/usecases/get_all_dirvers_usecase.dart';
+import 'package:black_box/features/drivers/domain/usecases/get_all_drivers_score_usecase.dart';
+import 'package:black_box/features/drivers/domain/usecases/get_driver_score_usecase.dart';
 import 'package:black_box/features/drivers/domain/usecases/show_one_driver.dart';
 import 'package:black_box/features/drivers/domain/usecases/update_driver_usecase.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
@@ -17,9 +19,10 @@ class DriverCubit extends Cubit<DriverState>{
   AddDriverUseCase addDriverUseCase;
   UpdateDriverUseCase updateDriverUseCase;
   DeleteDriverUseCase deleteDriverUseCase;
+  GetAllDriversScoreUseCase getAllDriversScoreUseCase;
+  GetDriverScoreUseCase getDriverScoreUseCase;
   NetworkInfo network = NetworkInfoImpl();
-  DriverCubit(this.getAllDriversUseCase,this.addDriverUseCase,this.updateDriverUseCase,this.deleteDriverUseCase,this.showOneDriverUseCase) : super(DriverInitial());
-
+  DriverCubit(this.getAllDriversUseCase,this.addDriverUseCase,this.updateDriverUseCase,this.deleteDriverUseCase,this.showOneDriverUseCase,this.getAllDriversScoreUseCase,this.getDriverScoreUseCase) : super(DriverInitial());
 
 
   addDriver({
@@ -114,6 +117,39 @@ class DriverCubit extends Cubit<DriverState>{
         }
       } else {
         emit(DriverFailure("No Internet connection"));
+      }
+    }
+  }
+
+
+  Future<void> getAllDriversScore() async{
+    emit(DriverLoading());
+    try{
+      final double score = await getAllDriversScoreUseCase();
+      emit(DriversScoreSuccess(score));
+    } on DioException catch (e) {
+      if (await network.isConnected) {
+        if (e.response != null) {
+          emit(DriverFailure("${e.response}"));
+        }
+      } else {
+        emit(DriverFailure("No Internet connection"));
+      }
+    }
+  }
+
+  Future<void> getDriverScore(int id) async{
+    emit(DriverLoading());
+    try{
+      final int score = await getDriverScoreUseCase(id);
+      emit(DriverScoreSuccess(score));
+    } on DioException catch (e) {
+      if (await network.isConnected) {
+        if (e.response != null) {
+          emit(DriverFailure("${e.response}"));
+        }
+      } else {
+        emit(DriverFailure("No Internet Connection"));
       }
     }
   }

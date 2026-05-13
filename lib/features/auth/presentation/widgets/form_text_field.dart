@@ -1,9 +1,7 @@
 
 import 'package:flutter/material.dart';
-
-import '../../../widgets/input_label.dart';
-import '../../sign_up/functions/input_decoration.dart';
-
+import '../../../../core/constants/global.dart';
+import 'input_label.dart';
 class FormTextField extends StatelessWidget {
   const FormTextField({
     super.key,
@@ -26,14 +24,24 @@ class FormTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         InputLabel(text: label,textColor: Theme.of(context).colorScheme.onSurface,),
-        const SizedBox(height: 8),
+        SizedBox(height: width * 0.021),
         TextFormField(
           controller: controller,
           readOnly: readOnly,
           validator: validator,
-          decoration: inputDecoration(hint: hint,),
+          decoration: InputDecoration(
+            hintText: hint,
+            hintStyle: TextStyle(color: Colors.grey),
+            filled: true,
+            contentPadding: EdgeInsets.symmetric(vertical: 1,horizontal: width * .052),
+
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(width * .045),
+              borderSide: BorderSide.none,
+            ),
+          ),
         ),
-        const SizedBox(height: 15),
+        SizedBox(height: width * 0.038),
       ],
     );
   }

@@ -31,4 +31,13 @@ class DriverRepositoryImpl implements DriverRepository{
   Future<DriverEntity> showOneDriver(id) {
     return driverDataSource.showOneDriver(id);
   }
+
+  @override
+  Future<double> getAllDriversScore(){
+    return driverDataSource.getAllDriversScore();
+  }
+  @override
+  Future<int> getDriverScore(id){
+    return driverDataSource.getDriverScore(id);
+  }
 }

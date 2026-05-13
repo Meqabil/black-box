@@ -6,27 +6,27 @@ import 'package:black_box/features/crash/presentation/widgets/crash_button.dart'
 import 'package:black_box/features/crash/presentation/widgets/crash_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../../../../core/constants/global.dart';
 class CrashContent extends StatelessWidget {
   const CrashContent({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12,vertical: 8),
+      padding: EdgeInsets.symmetric(horizontal: width * 0.025,vertical: 8),
       child: Column(
         children: [
-          IconButton(onPressed: () async{
-            context.read<CrashCubit>().showAllCrashes();
-          }, icon: Icon(Icons.refresh)),
+
           SizedBox(height: 10,),
           SizedBox(
-            height: 50,
+            height: width * 0.116,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Events"),
-                CrashButton(size: 35, imageName: AppImages.calender)
+                Text(AppLocalizations.of(context)!.events),
+                CrashButton(size: width * 0.0813, imageName: AppImages.calender)
               ],
             ),
           ),

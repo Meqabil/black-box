@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/constants/global.dart';
 import '../../../home/presentation/widgets/stat_item.dart';
 import '../cubit/car/car_state.dart';
-
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CarsListScreen extends StatefulWidget {
@@ -27,13 +26,7 @@ class _CarListScreenState extends State<CarsListScreen> {
     super.initState();
     context.read<CarCubit>().getAllCars();
   }
-  // void filterCars(String value) {
-  //   setState(() {
-  //     filteredCars = allCars
-  //         .where((driver) => driver.toLowerCase().contains(value.toLowerCase()))
-  //         .toList();
-  //   });
-  // }
+
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +34,10 @@ class _CarListScreenState extends State<CarsListScreen> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
+        leading: null,
         elevation: 0,
         toolbarHeight: width * .18,
-        title: Text(AppLocalizations.of(context)!.car_view_all, style: TextStyle(color: Colors.white)),
+        title: Text(AppLocalizations.of(context)!.car_view_all, style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
         centerTitle: true,
         actions: [
           NotificationButton(),
@@ -87,7 +81,13 @@ class _CarListScreenState extends State<CarsListScreen> {
                   ),
                 ),
                 SizedBox(height: width * .045/4),
-                SearchItems(searchController: searchController,hint: AppLocalizations.of(context)!.car_plate,),
+                SearchItems(
+                  searchController: searchController,
+                  hint: AppLocalizations.of(context)!.car_plate,
+                  onChanged: (val){
+                    context.read<CarCubit>().searchCars(val);
+                  },
+                ),
                 SizedBox(height: width * .022),
               ],
             ),
@@ -100,7 +100,7 @@ class _CarListScreenState extends State<CarsListScreen> {
               },
               child: Container(
                 width: width,
-                padding: const EdgeInsets.all(25),
+                padding: EdgeInsets.all(width * .052),
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.secondary,
                   borderRadius: BorderRadius.only(
@@ -133,7 +133,7 @@ class _CarListScreenState extends State<CarsListScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(state.message,style: TextStyle(fontSize: 16,),),
+                            Text(state.message,style: TextStyle(fontSize: width * 0.04,),),
                             IconButton(
                               icon: Icon(Icons.refresh,color: Colors.red,size: width * .065,),
                               onPressed: (){

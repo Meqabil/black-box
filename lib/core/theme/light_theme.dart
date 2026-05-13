@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
 import '../constants/fonts.dart';
+import '../constants/global.dart';
 
 class LightTheme {
   static ThemeData get theme {
     return ThemeData(
-      fontFamily: AppFonts.poppins,
+      fontFamily: pref!.getString('lang') == 'ar' ? AppFonts.cairo : AppFonts.poppins,
       useMaterial3: true,
       brightness: Brightness.light,
       colorScheme: const ColorScheme(
@@ -63,7 +64,8 @@ class LightTheme {
         backgroundColor: AppColor.dialogLightBackground,
           titleTextStyle: TextStyle(color: AppColor.dialogTitle),
           contentTextStyle: TextStyle(color: Colors.black),
-      )
+      ),
+
     );
   }
 }

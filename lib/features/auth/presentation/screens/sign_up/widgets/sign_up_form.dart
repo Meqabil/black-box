@@ -10,8 +10,8 @@ import '../../../cubit/auth/signup/signup_cubit.dart';
 import '../../../cubit/auth/signup/signup_state.dart';
 import '../../functions/is_valid_gmail.dart';
 import '../../functions/terms_dialog.dart';
-import '../../sign_up/widgets/password_field.dart';
-import '../../sign_up/widgets/form_text_field.dart';
+import '../../../widgets/password_field.dart';
+import '../../../widgets/form_text_field.dart';
 import '../functions/is_vaild_password.dart';
 import 'bottom_login_text.dart';
 
@@ -39,6 +39,7 @@ class _SignUpFormState extends State<SignUpForm> {
     return Form(
       key: _formKey,
       child: Column(
+        spacing: width * 0.015,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           FormTextField(

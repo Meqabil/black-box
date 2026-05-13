@@ -1,4 +1,3 @@
-import 'package:black_box/core/constants/colors.dart';
 import 'package:black_box/features/auth/presentation/screens/password/widgets/forget_password/check_email.dart';
 import 'package:black_box/features/auth/presentation/screens/password/widgets/forget_password/send_verification_button.dart';
 import 'package:flutter/material.dart';
@@ -75,19 +74,19 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       Text(
                         AppLocalizations.of(context)!.auth_reset_password,
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: width * 0.042,
                           fontWeight: FontWeight.bold,
                           color: Theme.of(context).colorScheme.onSurface
                         ),
                       ),
-                      const SizedBox(height: 5),
+                      SizedBox(height: width * 0.45 /5 ),
                       Text(
                         AppLocalizations.of(context)!.forget_password_title,
-                        style: TextStyle(color: Colors.grey[600], fontSize: 14),
+                        style: TextStyle(color: Colors.grey[600], fontSize: width * 0.035),
                       ),
                       SizedBox(height: width * .18),
                       InputLabel(text: AppLocalizations.of(context)!.auth_enter_email, textColor: Theme.of(context).colorScheme.onSurface,),
-                      const SizedBox(height: 8),
+                      SizedBox(height: width * .022),
                       CheckEmail(
                         emailController: _emailController,
                         emailError: _emailError,

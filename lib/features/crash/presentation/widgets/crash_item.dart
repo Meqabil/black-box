@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/colors.dart';
+import '../../../../core/constants/global.dart';
 import '../../../../core/constants/images.dart';
 import 'crash_button.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class CrashItem extends StatelessWidget {
   const CrashItem({super.key,required this.lrs,required this.severity,required this.location,required this.reason,required this.date});
   final String lrs;
@@ -17,24 +18,24 @@ class CrashItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Row(
-          spacing: 5,
+          spacing: width * 0.045 / 5,
           children: [
-            CrashButton(size: 55, imageName: AppImages.majorCrash),
-            SizedBox(width: 7,),
+            CrashButton(size: width * 0.117, imageName: AppImages.majorCrash),
+            SizedBox(width: width * 0.045 / 6,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Major Crash',style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.w400),),
-                Text(date,style: TextStyle(color: Colors.blue,fontSize: 12,fontWeight: FontWeight.w500),),
-                Text(location,style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w500),),
+                Text(AppLocalizations.of(context)!.event_major_crashes,style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryFixed,fontSize: width * 0.028,fontWeight: FontWeight.w400),),
+                Text(date,style: TextStyle(color: Colors.blue,fontSize: width * 0.028,fontWeight: FontWeight.w500),),
+                Text(location,style: TextStyle(color: Theme.of(context).colorScheme.onSurface ,fontSize: width * 0.035,fontWeight: FontWeight.w500),),
               ],
             ),
-            SizedBox(height: 45,child: VerticalDivider(width: 25,thickness: 1,color: AppColor.mainRedColor,)),
+            SizedBox(height: width * 0.095,child: VerticalDivider(width: width * 0.032,thickness: 1,color: AppColor.mainRedColor,)),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('severity',style: TextStyle(color: AppColor.mainRedColor,fontSize: 17,fontWeight: FontWeight.w400),),
-                Text(severity,style: TextStyle(color: Colors.black,fontSize: 12,fontWeight: FontWeight.w500),),
+                Text(AppLocalizations.of(context)!.event_severity,style: TextStyle(color: AppColor.mainRedColor,fontSize: width * 0.035,fontWeight: FontWeight.w400),),
+                Text(severity,style: TextStyle(color: Theme.of(context).colorScheme.onSurface,fontSize: width * 0.028,fontWeight: FontWeight.w500),),
               ],
             ),
           ],
@@ -48,15 +49,15 @@ class CrashItem extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Reason',style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.w500),),
-                  Text(reason,style: TextStyle(color: Colors.black,fontSize: 15,),),
+                  Text(AppLocalizations.of(context)!.event_reason,style: TextStyle(color: Theme.of(context).colorScheme.onSurface,fontSize: 17,fontWeight: FontWeight.w500),),
+                  Text(reason,style: TextStyle(color: Theme.of(context).colorScheme.onSurface,fontSize: 15,),),
                 ],
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Last Recorded Speed',style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.w500),),
-                  Text("$lrs Km/H",style: TextStyle(color: Colors.black,fontSize: 15,),),
+                  Text(AppLocalizations.of(context)!.event_last_speed,style: TextStyle(color: Theme.of(context).colorScheme.onSurface,fontSize: 17,fontWeight: FontWeight.w500),),
+                  Text("$lrs Km/H",style: TextStyle(color: Theme.of(context).colorScheme.onSurface,fontSize: 15,),),
                 ],
               ),
             ],

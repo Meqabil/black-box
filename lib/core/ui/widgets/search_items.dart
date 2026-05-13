@@ -3,9 +3,10 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../constants/global.dart';
 
 class SearchItems extends StatelessWidget {
-  const SearchItems({super.key,required this.searchController,required this.hint});
+  const SearchItems({super.key,required this.searchController,required this.hint,this.onChanged});
   final TextEditingController searchController;
   final String hint;
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,6 +41,8 @@ class SearchItems extends StatelessWidget {
               child: TextField(
                 controller: searchController,
                 textAlign: TextAlign.right,
+                onChanged: onChanged,
+                style: TextStyle(color: Colors.black),
                 decoration: InputDecoration(
                   fillColor: Colors.transparent,
                   hintText: hint,
