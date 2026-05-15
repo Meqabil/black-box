@@ -1,8 +1,8 @@
-import 'package:black_box/core/constants/global.dart';
+
 import 'package:black_box/features/drivers/domain/entities/driver_entity.dart';
 import 'package:black_box/features/drivers/presentation/widgets/driver_page/dialogues/delete_driver_dialogue.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/constants/colors.dart';
+import '../../../../../core/theme/app_color.dart';
 
 import '../../screens/edit_driver_screen.dart';
 
@@ -14,9 +14,7 @@ class DriverItem extends StatefulWidget {
 }
 
 class _DriverItemState extends State<DriverItem> {
-  checkConnectingState() async{
-    return await isDriverConnectedToCar(widget.driver.id);
-  }
+
   @override
   void initState() {
     super.initState();
@@ -65,19 +63,6 @@ class _DriverItemState extends State<DriverItem> {
                         width: 90,
                         height: 90,)
                   ),
-                ),
-                Positioned(
-                  bottom: 0,
-                  right: 8,
-                  child: FutureBuilder(
-                      future: checkConnectingState(),
-                      builder: (context,snap){
-                        if(snap.data != null && snap.data != false){
-                          return Icon(Icons.directions_car_filled,color: Colors.white,size: 25,);
-                        }
-                        return SizedBox();
-                      }
-                  )
                 ),
               ],
             ),

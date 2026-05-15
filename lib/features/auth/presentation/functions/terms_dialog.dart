@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/constants/colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../../../core/constants/global.dart';
+import '../../../../../core/theme/app_color.dart';
 AlertDialog termsDialog({required BuildContext context,required bool checked, void Function()? onTap,required void Function(bool?)? onChanged}){
   return AlertDialog(
     titlePadding: EdgeInsets.only(top: width * .025,left: width * .025,right: width * .014),

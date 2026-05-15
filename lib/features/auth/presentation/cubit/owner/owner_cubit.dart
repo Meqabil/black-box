@@ -7,7 +7,6 @@ import 'package:black_box/features/auth/domain/usecases/update_owner.dart';
 import 'package:black_box/features/auth/presentation/cubit/owner/owner_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import '../../../../../core/network/network_info.dart';
 import '../../../../../core/network/network_info_imp.dart';
 
 class OwnerCubit extends Cubit<OwnerState>{
@@ -17,7 +16,7 @@ class OwnerCubit extends Cubit<OwnerState>{
   OwnerCubit(this.showOwnerUseCase, this.updateOwnerUseCase, this.deleteOwnerUseCase) : super(OwnerInitial());
 
   Future<void> showOneOwner(int id) async{
-    NetworkInfo network = NetworkInfoImpl();
+    NetworkInfo network = NetworkInfo();
     emit(OwnerLoading());
     try{
       final OwnerEntity owner = await showOwnerUseCase(id);
@@ -34,7 +33,7 @@ class OwnerCubit extends Cubit<OwnerState>{
   }
 
   Future<void> updateOwner({required int id,required String name,File? image}) async{
-    NetworkInfo network = NetworkInfoImpl();
+    NetworkInfo network = NetworkInfo();
     emit(OwnerLoading());
     try{
       await updateOwnerUseCase(id: id,name: name,image: image);
@@ -51,7 +50,7 @@ class OwnerCubit extends Cubit<OwnerState>{
   }
 
   Future<void> deleteOwner(int id) async{
-    NetworkInfo network = NetworkInfoImpl();
+    NetworkInfo network = NetworkInfo();
     emit(OwnerLoading());
     try{
       await deleteOwnerUseCase(id);

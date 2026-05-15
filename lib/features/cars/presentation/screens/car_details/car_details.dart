@@ -1,6 +1,5 @@
 
 import 'package:black_box/core/constants/images.dart';
-import 'package:black_box/core/ui/widgets/notification_button.dart';
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
@@ -11,8 +10,9 @@ import 'package:black_box/features/drivers/presentation/cubit/driver/driver_stat
 import 'package:black_box/features/notifications/presentation/screens/notification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../core/constants/colors.dart';
 import '../../../../../core/constants/global.dart';
+import '../../../../../core/theme/app_color.dart';
+import '../../../../../shared/widgets/notification_button.dart';
 import '../../../../home/presentation/widgets/stat_item.dart';
 import '../edit_car_screen.dart';
 import '../driving_events/driving_event.dart';

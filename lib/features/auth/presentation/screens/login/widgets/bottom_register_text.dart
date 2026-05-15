@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/constants/colors.dart';
+import '../../../../../../core/theme/app_color.dart';
 import '../../sign_up/signup_screen.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

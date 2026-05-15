@@ -1,15 +1,16 @@
 import 'package:black_box/features/auth/presentation/screens/login/widgets/forget_password_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../../core/constants/colors.dart';
 import '../../../../../../core/constants/global.dart';
-import '../../../../../../core/ui/snackbar/exception_snackbar.dart';
 import '../../../../../../bnv.dart';
+import '../../../../../../core/theme/app_color.dart';
+import '../../../../../../core/utils/snackbar_helper.dart';
+import '../../../../../../core/utils/user_data_helper.dart';
 import '../../../cubit/auth/login/login_cubit.dart';
 import '../../../cubit/auth/login/login_state.dart';
+import '../../../functions/is_valid_gmail.dart';
 import '../../../widgets/form_text_field.dart';
 import '../../../widgets/password_field.dart';
-import '../../functions/is_valid_gmail.dart';
 import 'bottom_register_text.dart';
 import 'login_button.dart';
 
@@ -75,9 +76,9 @@ class _LoginFormState extends State<LoginForm> {
             BlocConsumer<LoginCubit,LoginState>(
               listener: (context,state){
                 if(state is LoginFailure){
-                  ExceptionSnackBar snack = ExceptionSnackBar();
+
                   ScaffoldMessenger.of(context).showSnackBar(
-                      snack.show(state.message)
+                      exceptionSnackBar(state.message)
                   );
                 }
                 else if(state is LoginSuccess){

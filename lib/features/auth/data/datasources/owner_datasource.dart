@@ -1,10 +1,10 @@
 import 'dart:io';
-
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/constants/links.dart';
+import 'package:black_box/core/network/dio_helper.dart';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
 import 'package:dio/dio.dart';
-
+import '../../../../core/utils/user_data_helper.dart';
 import '../models/owner_model.dart';
 
 
@@ -12,7 +12,7 @@ import '../models/owner_model.dart';
 class OwnerDataSource{
 
   Future<OwnerEntity> showOneOwner(int id) async{
-    final res = await dio.get(
+    final res = await DioHelper.dio.get(
         "${AppLink.showOwner}$id",
       options: Options(
         contentType: "application/json",
@@ -40,7 +40,7 @@ class OwnerDataSource{
           filename: image.path.split('/').last,
         )
     });
-    await dio.post(
+    await DioHelper.dio.post(
       "${AppLink.updateOwner}$id",
       data: formData,
       options: Options(
@@ -53,13 +53,12 @@ class OwnerDataSource{
     );
 
     final OwnerEntity owner = await showOneOwner(id);
-    print(owner);
     saveUserData(owner);
   }
 
 
   deleteOwner(int id) async{
-    final res = await dio.delete(
+    await DioHelper.dio.delete(
       "${AppLink.deleteOwner}$id",
       options: Options(
         contentType: "application/json",

@@ -1,5 +1,5 @@
 
-import 'package:black_box/core/constants/colors.dart';
+import 'package:black_box/core/theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 class Dot extends StatelessWidget {

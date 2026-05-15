@@ -1,8 +1,10 @@
 import 'dart:io';
 import 'package:black_box/core/constants/global.dart';
-import 'package:black_box/core/ui/widgets/main_image.dart';
 import 'package:black_box/features/auth/presentation/screens/sign_up/widgets/sign_up_form.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/utils/image_picker_helper.dart';
+import '../../../../../shared/widgets/main_image.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});

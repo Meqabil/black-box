@@ -1,13 +1,15 @@
-import 'package:black_box/core/constants/colors.dart';
+
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/constants/images.dart';
-import 'package:black_box/core/ui/widgets/driving_events/sub_widgets/info_card.dart';
-import 'package:black_box/core/ui/widgets/notification_button.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
+import 'package:black_box/shared/widgets/driving_events/sub_widgets/info_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../core/theme/app_color.dart';
+import '../notification_button.dart';
 class DrivingEventsForm extends StatelessWidget {
   const DrivingEventsForm({super.key,required this.driverId,required this.driverName,required this.carId,required this.pageContent});
   final String driverName;

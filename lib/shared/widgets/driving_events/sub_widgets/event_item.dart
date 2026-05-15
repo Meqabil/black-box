@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../../../constants/global.dart';
+import '../../../../core/constants/global.dart';
+
 class EventItem extends StatelessWidget {
   final String imagePath;
   final String title;

@@ -1,8 +1,8 @@
-import 'package:black_box/core/ui/widgets/search_items.dart';
-import 'package:black_box/features/drivers/presentation/widgets/driver_page/driver_items_grid.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/constants/colors.dart';
+import '../../../../core/theme/app_color.dart';
+import '../../../../shared/widgets/search_items.dart';
 import '../../../home/presentation/widgets/stat_item.dart';
 import '../cubit/driver/driver_cubit.dart';
 import '../cubit/driver/driver_state.dart';
@@ -29,14 +29,6 @@ class _DriversListScreenState extends State<DriversListScreen> {
     context.read<DriverCubit>().getAllDrivers();
     super.initState();
   }
-
-  // void filterDrivers(String value) {
-  //   setState(() {
-  //     filteredDrivers = allDrivers
-  //         .where((Driver) => Driver.toLowerCase().contains(value.toLowerCase()))
-  //         .toList();
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {

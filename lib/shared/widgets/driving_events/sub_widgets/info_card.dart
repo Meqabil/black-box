@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../constants/colors.dart';
-import '../../../../constants/global.dart';
+import '../../../../core/constants/global.dart';
+import '../../../../core/theme/app_color.dart';
+
 
 class InfoCard extends StatelessWidget {
   final String title;

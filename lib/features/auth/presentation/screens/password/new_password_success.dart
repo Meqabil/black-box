@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:black_box/core/constants/colors.dart';
 import 'package:black_box/core/theme/app_theme.dart';
 import 'package:black_box/features/auth/presentation/screens/login/login_screen.dart';
 import 'package:black_box/features/auth/presentation/screens/password/widgets/new_password_success/dot.dart';
@@ -11,6 +10,7 @@ import '';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../../core/constants/global.dart';
+import '../../../../../core/theme/app_color.dart';
 class NewPasswordSuccessScreen extends StatefulWidget {
   const NewPasswordSuccessScreen({super.key});
 

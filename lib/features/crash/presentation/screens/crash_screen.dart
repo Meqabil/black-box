@@ -1,6 +1,6 @@
-import 'package:black_box/core/ui/widgets/driving_events/driving_events_form.dart';
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
+import '../../../../shared/widgets/driving_events/driving_events_form.dart';
 import 'sub_screens/crash_content.dart';
 
 class CrashScreen extends StatelessWidget {

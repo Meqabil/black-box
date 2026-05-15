@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../../core/constants/global.dart';
-import '../../../functions/is_valid_gmail.dart';
-import '../../../password/functions/input_decoration.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class CheckEmail extends StatefulWidget {

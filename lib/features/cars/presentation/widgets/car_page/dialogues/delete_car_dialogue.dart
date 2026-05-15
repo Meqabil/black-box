@@ -1,8 +1,8 @@
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../../core/constants/colors.dart';
 import '../../../../../../core/constants/global.dart';
+import '../../../../../../core/theme/app_color.dart';
 import '../../../cubit/car/car_cubit.dart';
 import '../../../cubit/car/car_state.dart';
 

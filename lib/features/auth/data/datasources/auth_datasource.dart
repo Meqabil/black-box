@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:black_box/core/api/dio_helper.dart';
+import 'package:black_box/core/network/dio_helper.dart';
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/features/auth/data/models/owner_model.dart';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
@@ -12,7 +12,7 @@ class AuthDatasource{
 
   Future<OwnerEntity> login(String email,String password) async{
       FormData formData = FormData.fromMap({"email": email,"password":password});
-      final response = await dio.post(AppLink.login,data: formData);
+      final response = await DioHelper.dio.post(AppLink.login,data: formData);
       final status = response.data['status'];
       final token = response.data['data']["token"];
       if(status == "success"){
@@ -44,10 +44,9 @@ class AuthDatasource{
         "profile_image" : multipartFile
       }
     );
-    final response = await dio.post(AppLink.register,data: formData);
+    final response = await DioHelper.dio.post(AppLink.register,data: formData);
     final status = response.data['status'];
     final token = response.data['data']['token'];
-    print(token);
     if(status== 'success'){
       pref!.setString("token", token);
       final owner = OwnerModel.fromJson(response.data['data']['user']);
@@ -60,7 +59,7 @@ class AuthDatasource{
     FormData formData = FormData.fromMap({
       "email": email
     });
-    final response = await dio.post(AppLink.forgetPassword,data: formData);
+    final response = await DioHelper.dio.post(AppLink.forgetPassword,data: formData);
     final status = response.data['status'];
     if(status == "success"){
       return "Verification code has been sent ✔";
@@ -73,7 +72,7 @@ class AuthDatasource{
       "email": email,
       "otp": otp
     });
-    final response = await dio.post(AppLink.verifyOtp,data: formData);
+    final response = await DioHelper.dio.post(AppLink.verifyOtp,data: formData);
     final status = response.data['status'];
     if(status == "success"){
       return "Verification code has been sent ✔";
@@ -88,7 +87,7 @@ class AuthDatasource{
       "password": password,
       "password_confirmation": password
     });
-    final response = await dio.post(AppLink.resetPassword,data: formData);
+    final response = await DioHelper.dio.post(AppLink.resetPassword,data: formData);
     final status = response.data['status'];
     if(status == "success"){
       return "Password has been changed ✔";
@@ -103,12 +102,7 @@ class AuthDatasource{
       "new_password": newPassword,
       "new_password_confirmation": newPassword
     });
-    final response = await DioHelper.dio.post(AppLink.changePassword,data: formData);
-    final status = response.data['status'];
-    if(status == "success"){
-      print("password changed successfully");
-    }
-    print("response ::::::::: $response");
+    await DioHelper.dio.post(AppLink.changePassword,data: formData);
   }
 }
 

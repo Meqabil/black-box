@@ -1,7 +1,7 @@
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/constants/links.dart';
 import 'package:dio/dio.dart';
-import '../../../../core/api/dio_helper.dart';
+import '../../../../core/network/dio_helper.dart';
 import '../../domain/entities/driver_entity.dart';
 import '../models/driver_model.dart';
 

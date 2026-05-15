@@ -1,6 +1,4 @@
 
-
-import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/core/network/network_info_imp.dart';
 import 'package:black_box/features/crash/domain/usecases/delete_crash_usecase.dart';
 import 'package:black_box/features/crash/domain/usecases/show_all_crashs_usecase.dart';
@@ -12,7 +10,7 @@ class CrashCubit extends Cubit<CrashState>{
   ShowAllCrashesUseCase showAllCrashesUseCase;
   DeleteCrashUseCase deleteCrashUseCase;
   CrashCubit(this.showAllCrashesUseCase,this.deleteCrashUseCase) : super(CrashInitial());
-  NetworkInfo network = NetworkInfoImpl();
+  NetworkInfo network = NetworkInfo();
   showAllCrashes() async{
     emit(CrashLoading());
     try{

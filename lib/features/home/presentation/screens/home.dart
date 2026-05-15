@@ -1,11 +1,9 @@
 
 import 'package:black_box/core/constants/global.dart';
-import 'package:black_box/core/ui/widgets/notification_button.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
 import 'package:black_box/features/crash/presentation/cubit/crash_cubit.dart';
 import 'package:black_box/features/crash/presentation/cubit/crash_state.dart';
-import 'package:black_box/features/drivers/data/datasources/driver_datasource.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
 import 'package:black_box/features/notifications/data/datasources/notification_datasource.dart';
@@ -13,8 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
+import '../../../../shared/widgets/notification_button.dart';
 import '../widgets/circular_indicator.dart';
 import '../widgets/small_stat.dart';
 import '../widgets/stat_item.dart';
@@ -53,9 +51,6 @@ class _HomeContentState extends State<HomeContent> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              IconButton(onPressed: (){
-                                dat.checkNotifications();
-                              }, icon: Icon(Icons.ac_unit)),
                               Text(
                                 AppLocalizations.of(context)!.home_welcome,
                                 style: TextStyle(
@@ -215,7 +210,7 @@ class _HomeContentState extends State<HomeContent> {
                                           ),
                                           title: AppLocalizations.of(context)!.home_total_accidents,
                                           value: state.crashes.length.toString(),
-                                          valColor: Colors.black,
+                                          valColor: Theme.of(context).colorScheme.onSecondaryFixed,
                                         );
                                       }
                                       return SmallStat(
@@ -226,7 +221,7 @@ class _HomeContentState extends State<HomeContent> {
                                         ),
                                         title: AppLocalizations.of(context)!.home_total_accidents,
                                         value: "0",
-                                        valColor: Colors.black,
+                                        valColor: Theme.of(context).colorScheme.onSecondaryFixed,
                                       );
                                     }
                                   ),
@@ -243,7 +238,7 @@ class _HomeContentState extends State<HomeContent> {
                                           ),
                                           title: AppLocalizations.of(context)!.home_safety_score,
                                           value: "${state.score.toStringAsFixed(0)}%",
-                                          valColor: Colors.black,
+                                          valColor: Theme.of(context).colorScheme.onSecondaryFixed,
                                         );
                                       }
                                       return SmallStat(
@@ -255,7 +250,7 @@ class _HomeContentState extends State<HomeContent> {
                                         ),
                                         title: AppLocalizations.of(context)!.home_safety_score,
                                         value: "0%",
-                                        valColor: Colors.black,
+                                        valColor: Theme.of(context).colorScheme.onSecondaryFixed,
                                       );
                                     }
                                   ),

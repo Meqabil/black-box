@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constants/colors.dart';
+import '../../../../core/theme/app_color.dart';
 import '../../../../core/constants/global.dart';
 import '../../../../core/constants/images.dart';
 import 'crash_button.dart';

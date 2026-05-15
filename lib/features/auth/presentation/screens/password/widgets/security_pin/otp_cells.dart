@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import '../../../../../../../core/constants/colors.dart';
+import '../../../../../../../core/theme/app_color.dart';
 import '../../../../../../../core/constants/global.dart';
 
 

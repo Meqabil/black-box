@@ -1,13 +1,14 @@
 import 'dart:io';
 
-import 'package:black_box/core/constants/colors.dart';
-import 'package:black_box/core/constants/global.dart';
+import 'package:black_box/core/theme/app_color.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
 import 'package:black_box/features/drivers/presentation/widgets/edit_driver/edit_info_input.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../core/utils/image_picker_helper.dart';
 
 class EditCarScreen extends StatefulWidget {
   final String carId;

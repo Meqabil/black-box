@@ -9,5 +9,13 @@ class NotificationRepositoryImpl extends NotificationRepository{
   getNotification() {
     return notificationDataSource.getNotifications();
   }
+  @override
+  checkNotification() {
+    return notificationDataSource.checkNotifications();
+  }
 
+  @override
+  makeNotificationRead() {
+    return notificationDataSource.makeNotificationRead();
+  }
 }

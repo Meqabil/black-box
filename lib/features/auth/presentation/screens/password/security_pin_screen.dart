@@ -9,8 +9,7 @@ import 'package:black_box/features/auth/presentation/screens/password/widgets/se
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/constants/global.dart';
-import '../../../../../core/ui/snackbar/exception_snackbar.dart';
-import '../../../../../core/ui/snackbar/success_snackbar.dart';
+import '../../../../../core/utils/snackbar_helper.dart';
 import 'new_password_screen.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -108,24 +107,21 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                         child: BlocListener<PasswordCubit,PasswordState>(
                           listener: (context,state){
                             if(state is SuccessPassword){
-                              SuccessSnackBar snack = SuccessSnackBar();
                               ScaffoldMessenger.of(context).showSnackBar(
-                                  snack.show(state.message)
+                                  successSnackBar(state.message)
                               );
                               Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewPasswordScreen(email: widget.email, otp: fullOtp)));
                             } else if(state is FailurePassword){
-                              ExceptionSnackBar snack = ExceptionSnackBar();
                               ScaffoldMessenger.of(context).showSnackBar(
-                                  snack.show(state.message)
+                                  exceptionSnackBar(state.message)
                               );
                             }
                           },
                           child: VerifyOtpButton(
                             onPressed: () async{
                               if(fullOtp.length < 6){
-                                ExceptionSnackBar snack = ExceptionSnackBar();
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                    snack.show(InCompleteOtpException().message)
+                                    exceptionSnackBar(InCompleteOtpException().message)
                                 );
                               }else{
                                 context.read<PasswordCubit>().verifyPin(email: widget.email, otp: fullOtp);
@@ -141,15 +137,13 @@ class _SecurityPinScreenState extends State<SecurityPinScreen> {
                         child: BlocListener<PasswordCubit,PasswordState>(
                           listener: (context,state){
                             if(state is SuccessPassword){
-                              SuccessSnackBar snack = SuccessSnackBar();
                               ScaffoldMessenger.of(context).showSnackBar(
-                                  snack.show(state.message)
+                                  successSnackBar(state.message)
                               );
                               Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewPasswordScreen(email: widget.email, otp: fullOtp)));
                             } else if(state is FailurePassword){
-                              ExceptionSnackBar snack = ExceptionSnackBar();
                               ScaffoldMessenger.of(context).showSnackBar(
-                                  snack.show(state.message)
+                                  exceptionSnackBar(state.message)
                               );
                             }
                           },

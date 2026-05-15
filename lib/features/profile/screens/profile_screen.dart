@@ -1,6 +1,5 @@
-import 'package:black_box/core/constants/colors.dart';
+import 'package:black_box/core/theme/app_color.dart';
 import 'package:black_box/core/constants/global.dart';
-import 'package:black_box/core/ui/widgets/notification_button.dart';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
 import 'package:black_box/features/auth/presentation/cubit/owner/owner_cubit.dart';
 import 'package:black_box/features/auth/presentation/cubit/owner/owner_state.dart';
@@ -14,6 +13,8 @@ import 'package:black_box/features/profile/widgets/profile_screen/loading_user_d
 import 'package:black_box/features/profile/widgets/profile_screen/option_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../core/utils/user_data_helper.dart';
+import '../../../shared/widgets/notification_button.dart';
 import '../widgets/profile_screen/user_image.dart';
 import 'edit_profile_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

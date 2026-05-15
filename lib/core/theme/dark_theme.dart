@@ -1,7 +1,7 @@
-import 'package:black_box/core/constants/colors.dart';
 import 'package:black_box/core/constants/global.dart';
 import 'package:flutter/material.dart';
 import '../constants/fonts.dart';
+import 'app_color.dart';
 
 class DarkTheme {
   static ThemeData get theme {
@@ -28,7 +28,7 @@ class DarkTheme {
         elevation: 2,
       ),
       scaffoldBackgroundColor: const Color(0xFF121212),
-      cardColor: AppColor.lightNavy,
+      cardColor:  AppColor.lightNavy,
       splashColor: Colors.white,
       canvasColor: AppColor.backgroundBlue,
       appBarTheme: AppBarTheme(

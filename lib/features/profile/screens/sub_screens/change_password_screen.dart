@@ -1,15 +1,14 @@
 
-import 'package:black_box/core/ui/snackbar/exception_snackbar.dart';
-import 'package:black_box/core/ui/snackbar/success_snackbar.dart';
-import 'package:black_box/core/ui/widgets/auth_input.dart';
-import 'package:black_box/core/ui/widgets/notification_button.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/new_password/password_cubit.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/new_password/password_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/constants/global.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import '../../../auth/presentation/screens/sign_up/functions/is_vaild_password.dart';
+import '../../../../core/utils/snackbar_helper.dart';
+import '../../../../shared/widgets/auth_input.dart';
+import '../../../../shared/widgets/notification_button.dart';
+import '../../../auth/presentation/functions/is_vaild_password.dart';
 class ChangePasswordScreen extends StatefulWidget {
   const ChangePasswordScreen({super.key});
 
@@ -25,8 +24,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   bool obscureCurrent = true;
   bool obscureNew = true;
   bool obscureConfirm = true;
-  ExceptionSnackBar exceptionSnackBar = ExceptionSnackBar();
-  SuccessSnackBar successSnackBar = SuccessSnackBar();
   @override
   Widget build(BuildContext context) {
 
@@ -121,16 +118,16 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                             listener: (context,state){
                               if(state is SuccessToChangePassword){
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  successSnackBar.show(AppLocalizations.of(context)!.password_changed_successfully)
+                                  successSnackBar(AppLocalizations.of(context)!.password_changed_successfully)
                                 );
                               }else if (state is FailedToChangePassword){
                                 if(state.message == "failed"){
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                      exceptionSnackBar.show(AppLocalizations.of(context)!.current_password_is_not_correct)
+                                      exceptionSnackBar(AppLocalizations.of(context)!.current_password_is_not_correct)
                                   );
                                 }else{
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                      exceptionSnackBar.show(state.message)
+                                      exceptionSnackBar(state.message)
                                   );
                                 }
                               }

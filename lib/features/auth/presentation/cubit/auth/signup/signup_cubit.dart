@@ -1,7 +1,5 @@
 import 'dart:io';
-
 import 'package:black_box/core/errors/auth_exception.dart';
-import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/core/network/network_info_imp.dart';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
 import 'package:black_box/features/auth/domain/usecases/signup_usecase.dart';
@@ -11,7 +9,7 @@ import 'package:dio/dio.dart';
 
 class SignUpCubit extends Cubit<SignUpState>{
   SignUpUseCase signUpUseCase;
-  NetworkInfo network = NetworkInfoImpl();
+  NetworkInfo network = NetworkInfo();
   SignUpCubit(this.signUpUseCase) : super(InitialSignUp());
 
   Future<void> signUp({
@@ -29,7 +27,6 @@ class SignUpCubit extends Cubit<SignUpState>{
           if(e.response!.data['data']['email'] != null){
             emit(FailureSignUp(EmailHasAlreadyTakenException().message));
           }else{
-            print("ee ${e.response?.data}");
             emit(FailureSignUp("Something wrong happened !"));
           }
         }

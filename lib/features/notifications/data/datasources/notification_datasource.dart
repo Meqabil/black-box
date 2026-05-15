@@ -1,7 +1,8 @@
-import 'package:black_box/core/api/dio_helper.dart';
+import 'package:black_box/core/network/dio_helper.dart';
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/constants/links.dart';
 import 'package:black_box/features/notifications/data/models/sub_models/notification_data_model.dart';
+import '../../../../core/utils/notification_helper.dart';
 
 class NotificationDataSource{
 
@@ -26,5 +27,9 @@ class NotificationDataSource{
       await showNotification(data[newCount - 1]['data']['title'], data[newCount - 1]['data']['message']);
       await pref!.setInt('notification_count', newCount);
     }
+  }
+
+  Future<void> makeNotificationRead() async{
+    await DioHelper.dio.get(AppLink.makeNotificationRead);
   }
 }

@@ -1,6 +1,6 @@
 import 'package:black_box/features/cars/presentation/widgets/car_page/dialogues/delete_car_dialogue.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/constants/colors.dart';
+import '../../../../../core/theme/app_color.dart';
 import '../../../../../core/constants/global.dart';
 import '../../../domain/entities/car_entity.dart';
 import '../../screens/car_details/car_details.dart';

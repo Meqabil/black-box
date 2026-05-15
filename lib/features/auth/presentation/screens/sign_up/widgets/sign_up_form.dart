@@ -2,17 +2,18 @@ import 'dart:io';
 import 'package:black_box/features/auth/presentation/screens/sign_up/widgets/terms_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../../core/constants/colors.dart';
 import '../../../../../../core/constants/global.dart';
-import '../../../../../../core/ui/snackbar/exception_snackbar.dart';
 import '../../../../../../bnv.dart';
+import '../../../../../../core/theme/app_color.dart';
+import '../../../../../../core/utils/snackbar_helper.dart';
+import '../../../../../../core/utils/user_data_helper.dart';
 import '../../../cubit/auth/signup/signup_cubit.dart';
 import '../../../cubit/auth/signup/signup_state.dart';
-import '../../functions/is_valid_gmail.dart';
-import '../../functions/terms_dialog.dart';
+import '../../../functions/is_valid_gmail.dart';
+import '../../../functions/terms_dialog.dart';
 import '../../../widgets/password_field.dart';
 import '../../../widgets/form_text_field.dart';
-import '../functions/is_vaild_password.dart';
+import '../../../functions/is_vaild_password.dart';
 import 'bottom_login_text.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -131,9 +132,8 @@ class _SignUpFormState extends State<SignUpForm> {
                     saveUserData(state.owner);
                     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => BNVScreen()));
                   } else if(state is FailureSignUp){
-                    ExceptionSnackBar snack = ExceptionSnackBar();
                     ScaffoldMessenger.of(context).showSnackBar(
-                        snack.show(state.message)
+                        exceptionSnackBar(state.message)
                     );
                   } else if (state is LoadingSignUp){
 

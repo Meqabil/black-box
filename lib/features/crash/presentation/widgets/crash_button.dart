@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constants/colors.dart';
-
+import '../../../../core/theme/app_color.dart';
 class CrashButton extends StatelessWidget {
   const CrashButton({super.key,required this.size,required this.imageName,this.onTap});
   final void Function()? onTap;

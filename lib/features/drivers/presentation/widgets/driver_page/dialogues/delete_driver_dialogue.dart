@@ -2,7 +2,7 @@ import 'package:black_box/features/drivers/domain/entities/driver_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../../core/constants/colors.dart';
+import '../../../../../../core/theme/app_color.dart';
 import '../../../cubit/driver/driver_cubit.dart';
 import '../../../cubit/driver/driver_state.dart';
 

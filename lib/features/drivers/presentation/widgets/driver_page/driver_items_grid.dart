@@ -2,7 +2,7 @@
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constants/colors.dart';
+import '../../../../../core/theme/app_color.dart';
 import '../../../../../core/constants/global.dart';
 import 'add_driver_item.dart';
 import 'driver_item.dart';

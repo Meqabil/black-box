@@ -1,4 +1,4 @@
-import 'package:black_box/core/ui/widgets/notification_button.dart';
+import 'package:black_box/core/utils/date_formatter.dart';
 import 'package:black_box/features/notifications/presentation/cubits/notification_cubit.dart';
 import 'package:black_box/features/notifications/presentation/cubits/notification_state.dart';
 import 'package:black_box/features/notifications/presentation/widgets/functions/notification_reason.dart';
@@ -6,7 +6,7 @@ import 'package:black_box/features/notifications/presentation/widgets/functions/
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import '../../../../core/constants/colors.dart';
+import '../../../../core/theme/app_color.dart';
 import '../../../../core/constants/global.dart';
 import '../../../../core/constants/images.dart';
 import '../widgets/notification_item.dart';
@@ -16,6 +16,7 @@ class NotificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<NotificationCubit>().getNotifications();
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
@@ -74,18 +75,18 @@ class NotificationScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(formatData(context,state.notificationsList[idx].createdAt)),
+                        (idx != 0 && state.notificationsList[idx].createdAt.toString().substring(0,10) == state.notificationsList[idx - 1].createdAt.toString().substring(0,10)) ? Container() : Text(DateFormatter.formatDate(context,state.notificationsList[idx].createdAt)),
                         SizedBox(height: width * 0.025,),
                         NotificationItem(
                           icon: Icons.notifications,
                           title: notificationTitle(context,state.notificationsList[idx].data.title),
                           subtitle: notificationReason(context, state.notificationsList[idx].data.details.reason, state.notificationsList[idx].data.details.vehicleInfo, state.notificationsList[idx].data.details.driverName) ,
-                          time: formatData(context,state.notificationsList[idx].createdAt) == AppLocalizations.of(context)!.today || formatData(context,state.notificationsList[idx].createdAt) == AppLocalizations.of(context)!.yesterday ?
-                            "${formatHour(state.notificationsList[idx].createdAt)}"
-                            : formatData(context,state.notificationsList[idx].createdAt).contains(AppLocalizations.of(context)!.year) ?
-                              "${formatHour(state.notificationsList[idx].createdAt)} - ${formatMonth(context,state.notificationsList[idx].createdAt)}, ${state.notificationsList[idx].createdAt.toString().substring(0,4)}"
+                          time: DateFormatter.formatDate(context,state.notificationsList[idx].createdAt) == AppLocalizations.of(context)!.today || DateFormatter.formatDate(context,state.notificationsList[idx].createdAt) == AppLocalizations.of(context)!.yesterday ?
+                            "${DateFormatter.formatHour(state.notificationsList[idx].createdAt)}"
+                            : DateFormatter.formatDate(context,state.notificationsList[idx].createdAt).contains(AppLocalizations.of(context)!.year) ?
+                              "${DateFormatter.formatHour(state.notificationsList[idx].createdAt)} - ${DateFormatter.formatMonth(context,state.notificationsList[idx].createdAt)}, ${state.notificationsList[idx].createdAt.toString().substring(0,4)}"
                               :
-                              "${formatHour(state.notificationsList[idx].createdAt)} - ${formatMonth(context,state.notificationsList[idx].createdAt)} "
+                              "${DateFormatter.formatHour(state.notificationsList[idx].createdAt)} - ${DateFormatter.formatMonth(context,state.notificationsList[idx].createdAt)} "
                         ),
                       ],
                     ),

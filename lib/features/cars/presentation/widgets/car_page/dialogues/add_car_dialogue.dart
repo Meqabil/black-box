@@ -1,9 +1,9 @@
 
-import 'package:black_box/core/constants/colors.dart';
+import 'package:black_box/core/theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import '../../../../../../core/ui/widgets/dialoge_input.dart';
+import '../../../../../../shared/widgets/dialoge_input.dart';
 import '../../../cubit/car/car_cubit.dart';
 import '../../../cubit/car/car_state.dart';
 

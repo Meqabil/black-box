@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../../../../core/constants/colors.dart';
+import '../../../../../../core/theme/app_color.dart';
 import '../../login/login_screen.dart';
-
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class BottomLoginText extends StatelessWidget {
   const BottomLoginText({super.key});

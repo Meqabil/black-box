@@ -39,6 +39,7 @@ class AppLink{
 
   // Notifications
   static const String getNotifications = "$_rootApi/notifications/";
+  static const String makeNotificationRead = "$_rootApi/notifications/read";
 
 
   // Show All Crashes

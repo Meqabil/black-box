@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import '../../constants/global.dart';
+
+import '../../core/constants/global.dart';
 
 class SearchItems extends StatelessWidget {
   const SearchItems({super.key,required this.searchController,required this.hint,this.onChanged});

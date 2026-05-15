@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../../../core/constants/colors.dart';
+import '../../../../../../../core/theme/app_color.dart';
 
 class NewPasswordField extends StatelessWidget {
   const NewPasswordField({super.key,required this.label,required this.onToggle,required this.obscure,required this.controller,required this.validator});

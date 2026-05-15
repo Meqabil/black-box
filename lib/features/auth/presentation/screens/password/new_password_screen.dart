@@ -9,7 +9,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../../core/constants/global.dart';
 import '../../widgets/password_field.dart';
-import '../sign_up/functions/is_vaild_password.dart';
+import '../../functions/is_vaild_password.dart';
 class NewPasswordScreen extends StatefulWidget {
   const NewPasswordScreen({super.key,required this.email,required this.otp});
   final String email;

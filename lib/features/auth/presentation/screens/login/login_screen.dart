@@ -1,6 +1,5 @@
 
 import 'package:black_box/core/constants/global.dart';
-import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/core/network/network_info_imp.dart';
 import 'package:black_box/features/auth/presentation/screens/login/widgets/login_form.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +12,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  NetworkInfo network = NetworkInfoImpl();
+  NetworkInfo network = NetworkInfo();
   final bool _isPasswordVisible = false;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();

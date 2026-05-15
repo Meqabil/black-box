@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../constants/global.dart';
-import '../../constants/images.dart';
+
+import '../../core/constants/global.dart';
+import '../../core/constants/images.dart';
 
 class AuthInput extends StatelessWidget {
   const AuthInput({super.key,required this.obscure,required this.onTap,required this.controller,this.validator});

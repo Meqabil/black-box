@@ -1,15 +1,10 @@
 
-import 'package:black_box/bnv.dart';
-import 'package:black_box/core/api/dio_helper.dart';
-import 'package:black_box/core/constants/colors.dart';
+import 'package:black_box/core/network/dio_helper.dart';
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/theme/app_theme.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/new_password/password_cubit.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/signup/signup_cubit.dart';
 import 'package:black_box/features/auth/presentation/cubit/owner/owner_cubit.dart';
-import 'package:black_box/features/auth/presentation/screens/password/new_password_screen.dart';
-import 'package:black_box/features/auth/presentation/screens/password/new_password_success.dart';
-import 'package:black_box/features/auth/presentation/screens/password/security_pin_screen.dart';
 
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/crash/presentation/cubit/crash_cubit.dart';
@@ -23,9 +18,10 @@ import 'package:black_box/features/start_app/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:workmanager/workmanager.dart';
+import 'core/theme/app_color.dart';
+import 'core/utils/notification_helper.dart';
 import 'features/auth/presentation/cubit/auth/login/login_cubit.dart';
 import 'injection_container.dart' as di;
 
@@ -33,57 +29,15 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  Workmanager().initialize(callbackDispatcher);
-  initNotifications();
-  await Workmanager().registerPeriodicTask(
-    "black_box",
-    "check_notifications",
-    frequency: const Duration(seconds: 25),
-  );
-
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       statusBarColor: AppColor.mainRedColor
     )
   );
-  pref = await SharedPreferences.getInstance();
-  await di.init();
-  DioHelper.init();
   runApp(
-    MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => di.s1<LoginCubit>(),
-        ),
-        BlocProvider(
-          create: (context) => di.s1<SignUpCubit>(),
-        ),
-        BlocProvider(
-          create: (context) => di.s1<OwnerCubit>(),
-        ),
-        BlocProvider(
-          create: (context) => di.s1<PasswordCubit>(),
-        ),
-        BlocProvider(
-          create: (context) => di.s1<CarCubit>(),
-        ),
-        BlocProvider(
-          create: (context) => di.s1<DriverCubit>(),
-        ),
-        BlocProvider(
-          create: (context) => di.s1<NotificationCubit>(),
-        ),
-        BlocProvider(
-          create: (context) => di.s1<CrashCubit>(),
-        ),
-        BlocProvider(
-          create: (context) => di.s1<LanguageCubit>(),
-        ),
-      ],
-      child: MyApp(),
-    )
+    const AppBootstrap()
   );
-  print(pref!.getString("token"));
+  print(pref?.getString("token"));
 }
 
 class MyApp extends StatelessWidget {
@@ -115,6 +69,88 @@ class MyApp extends StatelessWidget {
           },
         );
       }
+    );
+  }
+}
+
+
+class AppBootstrap extends StatefulWidget {
+  const AppBootstrap({super.key});
+
+  @override
+  State<AppBootstrap> createState() => _AppBootstrapState();
+}
+
+class _AppBootstrapState extends State<AppBootstrap> {
+  bool isReady = false;
+  @override
+  void initState() {
+    _initApp();
+    super.initState();
+  }
+  Future<void> _initApp() async {
+    pref = await SharedPreferences.getInstance();
+
+    await di.init();
+    DioHelper.init();
+
+    // One call sets up WorkManager + registers the periodic task
+    await registerNotificationWorker();
+
+    // Init notifications for the main isolate
+    await initNotifications();
+
+
+
+    setState(() => isReady = true);
+  }
+  @override
+  Widget build(BuildContext context) {
+    if (!isReady) {
+      return const MaterialApp(
+        home: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          debugShowMaterialGrid: false,
+
+          home: Scaffold(
+
+            backgroundColor: AppColor.mainRedColor,
+            body: Center(),
+          ),
+        ),
+      );
+    }
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => di.s1<LoginCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => di.s1<SignUpCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => di.s1<OwnerCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => di.s1<PasswordCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => di.s1<CarCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => di.s1<DriverCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => di.s1<NotificationCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => di.s1<CrashCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => di.s1<LanguageCubit>(),
+        ),
+      ],
+      child: MyApp(),
     );
   }
 }

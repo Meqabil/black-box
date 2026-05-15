@@ -3,7 +3,7 @@ import 'package:black_box/features/crash/presentation/screens/crash_screen.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../core/constants/global.dart';
-import '../../../../../../core/ui/widgets/driving_events/sub_widgets/event_item.dart';
+import '../../../../../../shared/widgets/driving_events/sub_widgets/event_item.dart';
 import '../../../../../crash/presentation/cubit/crash_cubit.dart';
 import '../../../../../../bnv.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

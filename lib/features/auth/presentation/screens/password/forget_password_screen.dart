@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/constants/global.dart';
 import '../../cubit/auth/new_password/password_cubit.dart';
+import '../../functions/is_valid_gmail.dart';
 import '../../widgets/input_label.dart';
-import '../functions/is_valid_gmail.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ForgotPasswordScreen extends StatefulWidget {

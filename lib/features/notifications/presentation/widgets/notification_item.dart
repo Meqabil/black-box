@@ -17,12 +17,12 @@ class NotificationItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: const EdgeInsets.all(10),
+              padding: EdgeInsets.all(width * 0.022),
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.primary,
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Icon(icon, color: Colors.white, size: 24),
+              child: Icon(icon, color: Colors.white, size: width * 0.052),
             ),
             SizedBox(width: width * 0.035),
             Expanded(
@@ -31,12 +31,12 @@ class NotificationItem extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: width * .04,
                     ),
                   ),
-                  SizedBox(height: width * .045 /5.4),
+                  SizedBox(height: width * .045 / 5.4),
                   Text(
                     subtitle,
                     style: TextStyle(
@@ -50,7 +50,7 @@ class NotificationItem extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: Text(
                       time,
-                      style: const TextStyle(color: Colors.blue, fontSize: 12),
+                      style: TextStyle(color: Colors.blue, fontSize: 12),
                     ),
                   ),
                   SizedBox(height: width * 0.009),

@@ -1,11 +1,11 @@
 
-
-import 'package:black_box/core/constants/colors.dart';
 import 'package:black_box/features/analysis/nav_button.dart';
 import 'package:black_box/features/analysis/square_arrow_icon.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+
+import '../../core/theme/app_color.dart';
 
 class Analysis extends StatefulWidget {
   const Analysis({super.key});

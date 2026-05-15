@@ -1,15 +1,14 @@
 import 'dart:io';
-
-import 'package:black_box/core/constants/colors.dart';
-import 'package:black_box/core/ui/widgets/notification_button.dart';
 import 'package:black_box/features/auth/presentation/cubit/owner/owner_cubit.dart';
 import 'package:black_box/features/auth/presentation/cubit/owner/owner_state.dart';
 import 'package:black_box/features/profile/widgets/edit_driver_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../core/constants/global.dart';
 import '../../../core/constants/images.dart';
 import '../../../core/constants/links.dart';
+import '../../../core/theme/app_color.dart';
+import '../../../core/utils/image_picker_helper.dart';
+import '../../../shared/widgets/notification_button.dart';
 import '../widgets/white_layer.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

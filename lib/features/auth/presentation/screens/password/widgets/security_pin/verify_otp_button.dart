@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../../../../core/constants/colors.dart';
-
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class VerifyOtpButton extends StatelessWidget {
   const VerifyOtpButton({super.key,required this.onPressed});

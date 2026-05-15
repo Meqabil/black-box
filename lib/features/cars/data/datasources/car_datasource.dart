@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:black_box/core/api/dio_helper.dart';
+import 'package:black_box/core/network/dio_helper.dart';
 import 'package:black_box/core/constants/links.dart';
 import 'package:black_box/features/cars/data/models/car_model.dart';
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';

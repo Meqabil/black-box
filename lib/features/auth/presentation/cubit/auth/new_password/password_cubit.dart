@@ -1,5 +1,5 @@
 import 'package:black_box/core/errors/auth_exception.dart';
-import 'package:black_box/core/network/network_info.dart';
+
 import 'package:black_box/core/network/network_info_imp.dart';
 import 'package:black_box/features/auth/domain/usecases/change_password_usecase.dart';
 import 'package:black_box/features/auth/domain/usecases/reset_password_usecase.dart';
@@ -10,7 +10,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 
 class PasswordCubit extends Cubit<PasswordState>{
-  final NetworkInfo _network = NetworkInfoImpl();
+  final NetworkInfo _network = NetworkInfo();
   final SendResetPasswordUseCase _sendResetPasswordUseCase;
   final VerifyPinUseCase _verifyPinUseCase;
   final ResetPasswordUseCase _resetPasswordUseCase;

@@ -1,10 +1,11 @@
-import 'package:black_box/core/ui/widgets/notification_button.dart';
+
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/cars/presentation/widgets/car_page/car_items_grid.dart';
-import 'package:black_box/core/ui/widgets/search_items.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/constants/global.dart';
+import '../../../../shared/widgets/notification_button.dart';
+import '../../../../shared/widgets/search_items.dart';
 import '../../../home/presentation/widgets/stat_item.dart';
 import '../cubit/car/car_state.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

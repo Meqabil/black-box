@@ -1,7 +1,5 @@
 
 import 'dart:io';
-import 'dart:ui';
-
 import 'package:black_box/features/cars/domain/usecases/add_car_usecase.dart';
 import 'package:black_box/features/cars/domain/usecases/add_car_with_driver_usecase.dart';
 import 'package:black_box/features/cars/domain/usecases/delete_car_usecase.dart';
@@ -11,7 +9,6 @@ import 'package:black_box/features/cars/domain/usecases/update_car_usecase.dart'
 import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import '../../../../../core/network/network_info.dart';
 import '../../../../../core/network/network_info_imp.dart';
 
 class CarCubit extends Cubit<CarState>{
@@ -21,7 +18,7 @@ class CarCubit extends Cubit<CarState>{
   DeleteCarUseCase deleteCarUseCase;
   DeleteCarWithDriverUseCase deleteCarWithDriverUseCase;
   UpdateCarUseCase updateCarUseCase;
-  NetworkInfo network = NetworkInfoImpl();
+  NetworkInfo network = NetworkInfo();
   List allCars = [];
   CarCubit(this.getAllCarsUseCase,this.addCarUseCase,this.addCarWithDriverUseCase,this.deleteCarUseCase,this.deleteCarWithDriverUseCase,this.updateCarUseCase) : super(CarInitial());
 

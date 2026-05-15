@@ -1,3 +1,4 @@
+import 'package:black_box/core/constants/global.dart';
 import 'package:flutter/material.dart';
 
 class SmallStat extends StatelessWidget {
@@ -11,18 +12,18 @@ class SmallStat extends StatelessWidget {
     return Row(
       children: [
         iconWidget,
-        const SizedBox(width: 10),
+        SizedBox(width: width * .022),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               title,
-              style: const TextStyle(fontSize: 9, color: Colors.black54),
+              style: TextStyle(fontSize: width * 0.025, color: Theme.of(context).colorScheme.onSecondaryFixed),
             ),
             Text(
               value,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: width * 0.038,
                 fontWeight: FontWeight.bold,
                 color: valColor,
               ),

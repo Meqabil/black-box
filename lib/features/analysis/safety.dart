@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constants/colors.dart';
-
+import '../../core/theme/app_color.dart';
 class Safety extends StatefulWidget {
   const Safety({super.key});
 

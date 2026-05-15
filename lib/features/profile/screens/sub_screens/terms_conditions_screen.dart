@@ -1,8 +1,8 @@
 import 'package:black_box/core/constants/global.dart';
-import 'package:black_box/core/ui/widgets/notification_button.dart';
-import 'package:black_box/features/profile/screens/sub_screens/change_password_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../../shared/widgets/notification_button.dart';
 
 class TermsConditionsScreen extends StatefulWidget {
   const TermsConditionsScreen({super.key,});

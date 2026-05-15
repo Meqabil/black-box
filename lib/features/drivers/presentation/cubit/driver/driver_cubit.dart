@@ -9,7 +9,6 @@ import 'package:black_box/features/drivers/domain/usecases/update_driver_usecase
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import '../../../../../core/network/network_info.dart';
 import '../../../../../core/network/network_info_imp.dart';
 import '../../../domain/usecases/add_driver_usecase.dart';
 
@@ -21,7 +20,7 @@ class DriverCubit extends Cubit<DriverState>{
   DeleteDriverUseCase deleteDriverUseCase;
   GetAllDriversScoreUseCase getAllDriversScoreUseCase;
   GetDriverScoreUseCase getDriverScoreUseCase;
-  NetworkInfo network = NetworkInfoImpl();
+  NetworkInfo network = NetworkInfo();
   DriverCubit(this.getAllDriversUseCase,this.addDriverUseCase,this.updateDriverUseCase,this.deleteDriverUseCase,this.showOneDriverUseCase,this.getAllDriversScoreUseCase,this.getDriverScoreUseCase) : super(DriverInitial());
 
 

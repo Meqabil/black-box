@@ -1,10 +1,11 @@
-import 'package:black_box/core/constants/colors.dart';
+import 'package:black_box/core/theme/app_color.dart';
 import 'package:black_box/core/constants/global.dart';
-import 'package:black_box/core/ui/widgets/notification_button.dart';
 import 'package:black_box/features/settings/presentation/cubit/language_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../shared/widgets/notification_button.dart';
 
 
 class Settings extends StatefulWidget {
