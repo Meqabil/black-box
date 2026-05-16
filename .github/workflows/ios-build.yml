@@ -29,14 +29,14 @@ jobs:
           sed -i '' "s/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]*/IPHONEOS_DEPLOYMENT_TARGET = 13.0/g" ios/Runner.xcodeproj/project.pbxproj
 
 
-      - name: Build iOS (no codesign)
-        run: flutter build ios --release --no-codesign
+      - name: Build iOS Simulator
+        run: flutter build ios --simulator --debug
 
-      - name: Create IPA
+      - name: Create Simulator ZIP
         run: |
           mkdir -p Payload
-          cp -r build/ios/iphoneos/Runner.app Payload/
-          zip -r app.ipa Payload
+          cp -r build/ios/iphonesimulator/Runner.app Payload/
+          zip -r app.zip Payload
 
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
