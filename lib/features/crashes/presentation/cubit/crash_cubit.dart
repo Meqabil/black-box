@@ -1,7 +1,7 @@
 
-import 'package:black_box/core/network/network_info_imp.dart';
+import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/features/crash/domain/usecases/delete_crash_usecase.dart';
-import 'package:black_box/features/crash/domain/usecases/show_all_crashs_usecase.dart';
+import 'package:black_box/features/crash/domain/usecases/show_all_crashes_usecase.dart';
 import 'package:black_box/features/crash/presentation/cubit/crash_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
