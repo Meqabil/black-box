@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import '../../../../../core/constants/global.dart';
-import '../../../../../core/theme/app_color.dart';
+import '../../../../../../core/constants/global.dart';
+import '../../../../../../core/theme/app_color.dart';
 
 class LogoutDialogue extends StatelessWidget {
   const LogoutDialogue({super.key});

@@ -1,5 +1,5 @@
 
-import 'package:black_box/features/crash/domain/entities/crash_entity.dart';
+import 'package:black_box/features/crashes/domain/entities/crash_entity.dart';
 
 class CrashModel extends CrashEntity{
 

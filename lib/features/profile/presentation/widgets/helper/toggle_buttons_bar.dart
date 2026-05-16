@@ -1,9 +1,9 @@
-import 'package:black_box/features/profile/widgets/helper/toggle_button.dart';
+import 'package:black_box/features/profile/presentation/widgets/helper/toggle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../../../core/theme/app_color.dart';
-import '../../../../core/constants/global.dart';
+import '../../../../../core/theme/app_color.dart';
+import '../../../../../core/constants/global.dart';
 
 class ToggleButtonsBar extends StatefulWidget {
   const ToggleButtonsBar({super.key,required this.onTapFaq,required this.onTapContact,required this.page});

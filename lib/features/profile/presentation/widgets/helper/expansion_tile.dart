@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constants/global.dart';
+import '../../../../../core/constants/global.dart';
 
 class ExpansionTileApp extends StatelessWidget {
   const ExpansionTileApp({super.key,required this.item});

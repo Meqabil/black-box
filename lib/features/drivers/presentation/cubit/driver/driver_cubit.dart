@@ -1,7 +1,7 @@
 
 import 'package:black_box/features/drivers/domain/entities/driver_entity.dart';
 import 'package:black_box/features/drivers/domain/usecases/delete_driver_usecase.dart';
-import 'package:black_box/features/drivers/domain/usecases/get_all_dirvers_usecase.dart';
+import 'package:black_box/features/drivers/domain/usecases/get_all_drivers_usecase.dart';
 import 'package:black_box/features/drivers/domain/usecases/get_all_drivers_score_usecase.dart';
 import 'package:black_box/features/drivers/domain/usecases/get_driver_score_usecase.dart';
 import 'package:black_box/features/drivers/domain/usecases/show_one_driver.dart';
@@ -9,7 +9,7 @@ import 'package:black_box/features/drivers/domain/usecases/update_driver_usecase
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import '../../../../../core/network/network_info_imp.dart';
+import '../../../../../core/network/network_info.dart';
 import '../../../domain/usecases/add_driver_usecase.dart';
 
 class DriverCubit extends Cubit<DriverState>{

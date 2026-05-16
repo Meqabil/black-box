@@ -1,8 +1,8 @@
 
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
-import 'package:black_box/features/crash/presentation/cubit/crash_cubit.dart';
+import 'package:black_box/features/crashes/presentation/cubit/crash_cubit.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
-import 'package:black_box/features/profile/screens/profile_screen.dart';
+import 'package:black_box/features/profile/presentation/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/constants/global.dart';

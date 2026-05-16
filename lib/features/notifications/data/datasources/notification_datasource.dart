@@ -21,7 +21,6 @@ class NotificationDataSource{
     final oldCount = pref!.getInt("notification_count") ?? 0;
     final response = await DioHelper.dio.get(AppLink.getNotifications);
     final data = response.data['data']['notifications'] as List;
-
     final int newCount = data.length;
     if(newCount > oldCount){
       await showNotification(data[newCount - 1]['data']['title'], data[newCount - 1]['data']['message']);
@@ -30,6 +29,7 @@ class NotificationDataSource{
   }
 
   Future<void> makeNotificationRead() async{
-    await DioHelper.dio.get(AppLink.makeNotificationRead);
+    await DioHelper.dio.post(AppLink.makeNotificationRead);
+
   }
 }

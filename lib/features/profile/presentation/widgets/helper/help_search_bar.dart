@@ -2,7 +2,7 @@ import 'package:black_box/core/constants/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../../../core/theme/app_color.dart';
+import '../../../../../core/theme/app_color.dart';
 
 class HelpSearchBar extends StatelessWidget {
   const HelpSearchBar({super.key,required this.onChanged});

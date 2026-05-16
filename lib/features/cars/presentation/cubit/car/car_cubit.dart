@@ -9,7 +9,7 @@ import 'package:black_box/features/cars/domain/usecases/update_car_usecase.dart'
 import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import '../../../../../core/network/network_info_imp.dart';
+import '../../../../../core/network/network_info.dart';
 
 class CarCubit extends Cubit<CarState>{
   GetAllCarsUseCase getAllCarsUseCase;

@@ -1,11 +1,11 @@
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/constants/help_info.dart';
 import 'package:black_box/core/constants/images.dart';
-import 'package:black_box/features/profile/widgets/helper/help_search_bar.dart';
+import 'package:black_box/features/profile/presentation/widgets/helper/help_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import '../../../core/theme/app_color.dart';
-import '../../../shared/widgets/notification_button.dart';
+import '../../../../core/theme/app_color.dart';
+import '../../../../shared/widgets/notification_button.dart';
 import '../widgets/helper/expansion_tile.dart';
 import '../widgets/helper/toggle_buttons_bar.dart';
 

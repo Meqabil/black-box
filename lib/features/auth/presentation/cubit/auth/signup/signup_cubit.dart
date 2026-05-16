@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:black_box/core/errors/auth_exception.dart';
-import 'package:black_box/core/network/network_info_imp.dart';
+import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
 import 'package:black_box/features/auth/domain/usecases/signup_usecase.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/signup/signup_state.dart';

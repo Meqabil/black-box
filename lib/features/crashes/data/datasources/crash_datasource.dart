@@ -1,5 +1,5 @@
 import 'package:black_box/core/network/dio_helper.dart';
-import 'package:black_box/features/crash/data/models/crash_model.dart';
+import 'package:black_box/features/crashes/data/models/crash_model.dart';
 
 import '../../../../core/constants/links.dart';
 

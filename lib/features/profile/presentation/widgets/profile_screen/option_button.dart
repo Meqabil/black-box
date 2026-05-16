@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constants/global.dart';
+import '../../../../../core/constants/global.dart';
 
 class OptionButton extends StatelessWidget {
   const OptionButton({super.key,required this.title,required this.icon,required this.iconBg,required this.onTap});

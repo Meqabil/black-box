@@ -3,12 +3,13 @@ import 'package:black_box/features/auth/presentation/cubit/auth/new_password/pas
 import 'package:black_box/features/auth/presentation/cubit/auth/new_password/password_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/constants/global.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import '../../../../core/utils/snackbar_helper.dart';
-import '../../../../shared/widgets/auth_input.dart';
-import '../../../../shared/widgets/notification_button.dart';
-import '../../../auth/presentation/functions/is_vaild_password.dart';
+
+import '../../../../../core/constants/global.dart';
+import '../../../../../core/utils/snackbar_helper.dart';
+import '../../../../../shared/widgets/auth_input.dart';
+import '../../../../../shared/widgets/notification_button.dart';
+import '../../../../auth/presentation/functions/is_vaild_password.dart';
 class ChangePasswordScreen extends StatefulWidget {
   const ChangePasswordScreen({super.key});
 

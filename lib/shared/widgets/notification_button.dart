@@ -25,6 +25,7 @@ class NotificationButton extends StatelessWidget {
       ),
       onPressed: () {
         context.read<NotificationCubit>().getNotifications();
+        context.read<NotificationCubit>().makeAsRead();
         Navigator.of(context, rootNavigator: true).push(
           MaterialPageRoute(
             builder: (context) => NotificationScreen(),

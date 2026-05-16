@@ -2,8 +2,8 @@
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
-import 'package:black_box/features/crash/presentation/cubit/crash_cubit.dart';
-import 'package:black_box/features/crash/presentation/cubit/crash_state.dart';
+import 'package:black_box/features/crashes/presentation/cubit/crash_cubit.dart';
+import 'package:black_box/features/crashes/presentation/cubit/crash_state.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
 import 'package:black_box/features/notifications/data/datasources/notification_datasource.dart';

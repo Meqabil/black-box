@@ -14,12 +14,6 @@ class OwnerDataSource{
   Future<OwnerEntity> showOneOwner(int id) async{
     final res = await DioHelper.dio.get(
         "${AppLink.showOwner}$id",
-      options: Options(
-        contentType: "application/json",
-        headers: {
-          "Authorization": "Bearer ${pref!.getString("token")}",
-        }
-      )
     );
     final status = res.data['status'];
     if(status == "success"){
@@ -43,13 +37,6 @@ class OwnerDataSource{
     await DioHelper.dio.post(
       "${AppLink.updateOwner}$id",
       data: formData,
-      options: Options(
-        contentType: "application/json",
-        headers: {
-          "Authorization": "Bearer ${pref!.getString("token")}",
-          "Accept": "application/json"
-        }
-      )
     );
 
     final OwnerEntity owner = await showOneOwner(id);

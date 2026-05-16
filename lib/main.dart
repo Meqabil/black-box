@@ -7,19 +7,19 @@ import 'package:black_box/features/auth/presentation/cubit/auth/signup/signup_cu
 import 'package:black_box/features/auth/presentation/cubit/owner/owner_cubit.dart';
 
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
-import 'package:black_box/features/crash/presentation/cubit/crash_cubit.dart';
+import 'package:black_box/features/crashes/presentation/cubit/crash_cubit.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
 import 'package:black_box/features/notifications/presentation/cubits/notification_cubit.dart';
 import 'package:black_box/features/notifications/presentation/screens/notification_screen.dart';
-
 import 'package:black_box/features/settings/presentation/cubit/language_cubit.dart';
 import 'package:black_box/features/settings/presentation/cubit/language_state.dart';
 import 'package:black_box/features/start_app/splash_screen.dart';
+import 'package:black_box/features/trips/presentation/cubit/trip_cubit.dart';
+import 'package:black_box/features/trips/presentation/screens/tripsscree.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:workmanager/workmanager.dart';
 import 'core/theme/app_color.dart';
 import 'core/utils/notification_helper.dart';
 import 'features/auth/presentation/cubit/auth/login/login_cubit.dart';
@@ -148,6 +148,9 @@ class _AppBootstrapState extends State<AppBootstrap> {
         ),
         BlocProvider(
           create: (context) => di.s1<LanguageCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => di.s1<TripCubit>(),
         ),
       ],
       child: MyApp(),

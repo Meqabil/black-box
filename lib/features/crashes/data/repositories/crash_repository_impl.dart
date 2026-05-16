@@ -1,5 +1,5 @@
-import 'package:black_box/features/crash/data/datasources/crash_datasource.dart';
-import 'package:black_box/features/crash/domain/repositories/crash_repository.dart';
+import 'package:black_box/features/crashes/data/datasources/crash_datasource.dart';
+import 'package:black_box/features/crashes/domain/repositories/crash_repository.dart';
 
 class CrashRepositoryImpl extends CrashRepository{
   CrashDataSource crashDataSource;

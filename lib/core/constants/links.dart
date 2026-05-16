@@ -42,13 +42,13 @@ class AppLink{
   static const String makeNotificationRead = "$_rootApi/notifications/read";
 
 
-  // Show All Crashes
+  // Crashes
   static const String showAllCrashes = "$_rootApi/crashes/show-all";
   static const String deleteCrash = "$_rootApi/crashes/delete/";
 
-
-
-
+  // Trips
+  static const String tripDetail = "$_rootApi/trips/";
+  static const String tripsHistory = "$_rootApi/trips/history";
 
 
 }

@@ -1,5 +1,3 @@
-import 'package:black_box/features/crash/data/models/sub_models/vehicle_model.dart';
-import 'package:black_box/features/crash/domain/entities/sub_entities/vehicle_entity.dart';
 
 class CrashEntity {
   int id;

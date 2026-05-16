@@ -1,6 +1,6 @@
 
 import 'package:black_box/core/constants/global.dart';
-import 'package:black_box/core/network/network_info_imp.dart';
+import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/features/auth/presentation/screens/login/widgets/login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

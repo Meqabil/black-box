@@ -14,7 +14,7 @@ class DioHelper {
       InterceptorsWrapper(
         onRequest: (options, handler) async {
 
-          // ✅ add token automatically
+          // add token automatically
           final token = pref!.getString("token");
           if (token != null) {
             options.headers["Authorization"] = "Bearer $token";
@@ -27,7 +27,7 @@ class DioHelper {
         },
         onError: (DioException error, handler) async {
           print("Error");
-          print("ERROR => ${error.response?.statusCode}");
+          print("ERROR => ${error.response}");
 
           // 🔥 handle 401
           if (error.response?.statusCode == 401) {

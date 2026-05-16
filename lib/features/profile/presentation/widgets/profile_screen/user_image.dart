@@ -2,7 +2,7 @@ import 'package:black_box/core/constants/images.dart';
 import 'package:black_box/core/constants/links.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/constants/global.dart';
+import '../../../../../core/constants/global.dart';
 
 class UserImage extends StatelessWidget {
   const UserImage({super.key,this.link});

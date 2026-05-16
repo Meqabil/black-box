@@ -1,5 +1,5 @@
 
-import 'package:black_box/features/crash/domain/entities/sub_entities/vehicle_entity.dart';
+import 'package:black_box/features/crashes/domain/entities/sub_entities/vehicle_entity.dart';
 
 class VehicleModel extends VehicleEntity{
 

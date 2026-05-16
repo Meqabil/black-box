@@ -7,7 +7,7 @@ import 'package:black_box/features/auth/domain/usecases/update_owner.dart';
 import 'package:black_box/features/auth/presentation/cubit/owner/owner_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import '../../../../../core/network/network_info_imp.dart';
+import '../../../../../core/network/network_info.dart';
 
 class OwnerCubit extends Cubit<OwnerState>{
   final ShowOwnerUseCase showOwnerUseCase;

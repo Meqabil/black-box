@@ -1,6 +1,6 @@
 import 'package:black_box/core/errors/auth_exception.dart';
 
-import 'package:black_box/core/network/network_info_imp.dart';
+import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/features/auth/domain/usecases/login_usecase.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/login/login_state.dart';
 import 'package:bloc/bloc.dart';

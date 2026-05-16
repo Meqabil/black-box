@@ -10,6 +10,5 @@ class NetworkInfo {
       return false;
     }
   }
-  @override
   Future<bool> get isConnected => checkInternet();
 }

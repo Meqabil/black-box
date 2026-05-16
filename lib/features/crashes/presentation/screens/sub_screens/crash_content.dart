@@ -1,14 +1,13 @@
 import 'package:black_box/core/constants/images.dart';
-import 'package:black_box/features/crash/data/datasources/crash_datasource.dart';
-import 'package:black_box/features/crash/presentation/cubit/crash_cubit.dart';
-import 'package:black_box/features/crash/presentation/cubit/crash_state.dart';
-import 'package:black_box/features/crash/presentation/widgets/crash_button.dart';
-import 'package:black_box/features/crash/presentation/widgets/crash_item.dart';
+import 'package:black_box/features/crashes/presentation/cubit/crash_cubit.dart';
+import 'package:black_box/features/crashes/presentation/cubit/crash_state.dart';
+import 'package:black_box/features/crashes/presentation/widgets/crash_button.dart';
+import 'package:black_box/features/crashes/presentation/widgets/crash_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import '../../../../../core/constants/global.dart';
+
 class CrashContent extends StatelessWidget {
   const CrashContent({super.key});
 

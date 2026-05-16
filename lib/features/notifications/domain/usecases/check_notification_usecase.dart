@@ -1,10 +1,10 @@
 
 import 'package:black_box/features/notifications/domain/repositories/notification_repository.dart';
 
-class CheckNotification {
+class CheckNotificationsUseCase {
   final NotificationRepository _notificationRepository;
-  CheckNotification(this._notificationRepository);
-  call(){
+  CheckNotificationsUseCase(this._notificationRepository);
+  call() {
     return _notificationRepository.checkNotification();
   }
 }

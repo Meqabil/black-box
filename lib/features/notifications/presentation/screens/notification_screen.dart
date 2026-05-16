@@ -37,6 +37,7 @@ class NotificationScreen extends StatelessWidget {
             ),
             onPressed: () {
               context.read<NotificationCubit>().getNotifications();
+              context.read<NotificationCubit>().makeAsRead();
             },
           ),
           SizedBox(width: width * 0.035,)
@@ -53,14 +54,18 @@ class NotificationScreen extends StatelessWidget {
           ),
         ),
         child: BlocConsumer<NotificationCubit,NotificationState>(
-          listener: (context,state){
-
-          },
+          listener: (context,state){},
           builder: (context,state){
             if(state is NotificationLoading){
               return Center(child: CircularProgressIndicator(),);
             }
+            if(state is NotificationFailure){
+              return Center(
+                child: Text(state.message),
+              );
+            }
             if(state is NotificationSuccess){
+
               return ListView.builder(
                 itemCount: state.notificationsList.length,
                 itemBuilder: (context,idx){

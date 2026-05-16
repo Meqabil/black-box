@@ -1,6 +1,6 @@
 import 'package:black_box/core/errors/auth_exception.dart';
 
-import 'package:black_box/core/network/network_info_imp.dart';
+import 'package:black_box/core/network/network_info.dart';
 import 'package:black_box/features/auth/domain/usecases/change_password_usecase.dart';
 import 'package:black_box/features/auth/domain/usecases/reset_password_usecase.dart';
 import 'package:black_box/features/auth/domain/usecases/send_reset_password.dart';

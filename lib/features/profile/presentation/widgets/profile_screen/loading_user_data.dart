@@ -1,8 +1,7 @@
 import 'package:black_box/features/auth/domain/entities/owner_entity.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../core/constants/global.dart';
-import '../../../../core/constants/images.dart';
+import '../../../../../core/constants/global.dart';
+import '../../../../../core/constants/images.dart';
 
 class LoadingUserData extends StatelessWidget {
   const LoadingUserData({super.key,required this.owner});
