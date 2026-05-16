@@ -3,7 +3,7 @@ name: Build Black Box For iOS
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # allows manual trigger
+  workflow_dispatch:
 
 jobs:
   build-ios:
@@ -16,30 +16,27 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.27.4'  # change to your Flutter version
+          flutter-version: '3.27.4'
           channel: 'stable'
 
       - name: Install dependencies
         run: flutter pub get
 
-
-      - name: Set IOS Development Target to 13.0
+      - name: Set iOS Deployment Target to 13.0
         run: |
           sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '13.0'/" ios/Podfile
           sed -i '' "s/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]*/IPHONEOS_DEPLOYMENT_TARGET = 13.0/g" ios/Runner.xcodeproj/project.pbxproj
 
-
       - name: Build iOS Simulator
         run: flutter build ios --simulator --debug
 
-      - name: Create Simulator ZIP
+      - name: Create Simulator ZIP          # ✅ Fixed
         run: |
-          mkdir -p Payload
-          cp -r build/ios/iphonesimulator/Runner.app Payload/
-          zip -r app.zip Payload
+          cd build/ios/iphonesimulator
+          zip -r ../../../app.zip Runner.app
 
-      - name: Upload IPA artifact
+      - name: Upload Simulator artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ios-build
+          name: ios-simulator-build
           path: app.zip
