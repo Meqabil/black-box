@@ -19,6 +19,7 @@ import 'package:black_box/features/cars/domain/usecases/add_car_with_driver_usec
 import 'package:black_box/features/cars/domain/usecases/delete_car_usecase.dart';
 import 'package:black_box/features/cars/domain/usecases/delete_car_with_driver_usecase.dart';
 import 'package:black_box/features/cars/domain/usecases/get_all_cars_usecase.dart';
+import 'package:black_box/features/cars/domain/usecases/get_cars_stats_usecase.dart';
 import 'package:black_box/features/cars/domain/usecases/update_car_usecase.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/crashes/data/datasources/crash_datasource.dart';
@@ -81,7 +82,7 @@ Future<void> initAuthFeature() async{
   );
 
   s1.registerFactory(
-      () => CarCubit(s1(),s1(),s1(),s1(),s1(),s1())
+      () => CarCubit(s1(),s1(),s1(),s1(),s1(),s1(),s1())
   );
 
   s1.registerFactory(
@@ -119,6 +120,7 @@ Future<void> initAuthFeature() async{
   s1.registerLazySingleton(() => DeleteCarWithDriverUseCase(s1(),s1()));
   s1.registerLazySingleton(() => UpdateCarUseCase(s1()));
   s1.registerLazySingleton(() => GetAllCarsUseCase(s1()));
+  s1.registerLazySingleton(() => GetCarsStatsUsecase(s1()));
   s1.registerLazySingleton(() => AddDriverUseCase(s1()));
   s1.registerLazySingleton(() => UpdateDriverUseCase(s1()));
   s1.registerLazySingleton(() => DeleteDriverUseCase(s1()));

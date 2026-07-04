@@ -20,9 +20,10 @@ class LightTheme {
         surface: AppColor.oceanRed,
         onSurface: AppColor.textBlackColor,
         onSecondaryFixed: Colors.black,
+        secondaryFixed: AppColor.notifyWhite
       ),
 
-      cardTheme: const CardTheme(
+      cardTheme: const CardThemeData(
         color: AppColor.lightRed,
         elevation: 2,
       ),

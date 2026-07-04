@@ -17,7 +17,7 @@ import '../../../../core/utils/user_data_helper.dart';
 import '../../../../shared/widgets/notification_button.dart';
 import '../widgets/profile_screen/user_image.dart';
 import 'edit_profile_screen.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
   @override

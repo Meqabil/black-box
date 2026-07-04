@@ -5,8 +5,7 @@ import 'package:black_box/features/auth/presentation/screens/password/widgets/ne
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 import '../../../../../core/constants/global.dart';
 import '../../widgets/password_field.dart';
 import '../../functions/is_vaild_password.dart';

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:black_box/core/constants/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:geolocator/geolocator.dart';
@@ -76,7 +77,7 @@ class _MapPageState extends State<MapPage> {
 
     return points;
   }
-  // 🔥 GET REAL ROUTE (ROAD PATH)
+  // GET REAL ROUTE (ROAD PATH)
   Future<List<LatLng>> getRoute(LatLng start, LatLng end) async {
     final url = Uri.parse("https://api.openrouteservice.org/v2/directions/driving-car");
 
@@ -94,35 +95,32 @@ class _MapPageState extends State<MapPage> {
       }),
     );
 
-    print("STATUS CODE: ${response.statusCode}");
-    print("BODY: ${response.body}");
-
     final data = jsonDecode(response.body);
 
-    // 🔥 SAFETY CHECK
+    // SAFETY CHECK
     if (data["routes"] == null || data["routes"].isEmpty) {
       throw Exception("No route found or API error: ${response.body}");
     }
 
-// 🔥 encoded polyline string
+    // encoded polyline string
     final geometry = data["routes"][0]["geometry"];
 
     if (geometry == null) {
       throw Exception("No geometry found in response");
     }
 
-// decode polyline into LatLng list
+  // decode polyline into LatLng list
     return decodePolyline(geometry);
   }
 
-  // 🔥 GET USER LOCATION + ROUTE
+  //  GET USER LOCATION + ROUTE
   Future<void> getLocation() async {
     try {
       bool serviceEnabled =
       await Geolocator.isLocationServiceEnabled();
 
       if (!serviceEnabled) {
-        print("❌ Location service disabled");
+        print("Location service disabled");
         return;
       }
 
@@ -134,12 +132,12 @@ class _MapPageState extends State<MapPage> {
       }
 
       if (permission == LocationPermission.denied) {
-        print("❌ Permission denied");
+        print("Permission denied");
         return;
       }
 
       if (permission == LocationPermission.deniedForever) {
-        print("❌ Permission denied forever");
+        print(" Permission denied forever");
         return;
       }
 
@@ -207,57 +205,106 @@ class _MapPageState extends State<MapPage> {
 
       body: currentLocation == null
           ? const Center(child: CircularProgressIndicator())
-          : FlutterMap(
-        mapController: mapController,
-        options: MapOptions(
-          initialCenter: currentLocation!,
-          initialZoom: zoom,
-        ),
-        children: [
-          TileLayer(
-            urlTemplate:
-            "https://api.maptiler.com/maps/base-v4/{z}/{x}/{y}.png?key=QpG5PqQAuydF4YpwAbkp",
-            userAgentPackageName: 'com.black.box.black_box',
-          ),
-
-          // 🔵 ROUTE LINE
-          PolylineLayer(
-            polylines: [
-              Polyline(
-                points: routePoints,
-                strokeWidth: 5,
-                color: Colors.blue,
+          : Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+              FlutterMap(
+                      mapController: mapController,
+                      options: MapOptions(
+              initialCenter: currentLocation!,
+              initialZoom: zoom,
+                      ),
+                      children: [
+              TileLayer(
+                urlTemplate:
+                "https://api.maptiler.com/maps/base-v4/{z}/{x}/{y}.png?key=QpG5PqQAuydF4YpwAbkp",
+                userAgentPackageName: 'com.black.box.black_box',
               ),
+
+              // 🔵 ROUTE LINE
+              PolylineLayer(
+                polylines: [
+                  Polyline(
+                    points: routePoints,
+                    strokeWidth: 5,
+                    color: Colors.blue,
+                  ),
+                ],
+              ),
+
+              MarkerLayer(
+                markers: [
+                  Marker(
+                    point: currentLocation!,
+                    width: 80,
+                    height: 80,
+                    child: const Icon(
+                      Icons.my_location,
+                      color: Colors.green,
+                      size: 40,
+                    ),
+                  ),
+                  Marker(
+                    point: cairo,
+                    width: 80,
+                    height: 80,
+                    alignment: Alignment.bottomCenter,
+                    child: const Icon(
+                      Icons.location_on,
+                      color: Colors.red,
+                      size: 40,
+                    ),
+                  ),
+                ],
+              ),
+                      ],
+                    ),
+              Container(
+                margin: EdgeInsets.only(bottom: 25),
+                child: Row(
+                  children: [
+                    SizedBox(width: 15,),
+                    InkWell(
+                      onTap: (){
+                        setState(() {
+                          zoom += 2;
+                        });
+                      },
+                      child: Container(
+                        width: width * 0.15,
+                        height: width * 0.15,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.withAlpha(155),
+                          borderRadius: BorderRadius.circular(width * 0.04)
+                        ),
+                        child: Icon(Icons.add,size: width * 0.085,),
+                      ),
+                    ),
+                    Spacer(),
+                    InkWell(
+                      onTap: (){
+                        print('zoom in');
+                        setState(() {
+                          zoom -=1;
+                        });
+                      },
+                      child: Container(
+                        width: width * 0.15,
+                        height: width * 0.15,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.withAlpha(155),
+                          borderRadius: BorderRadius.circular(width * 0.04)
+                        ),
+                        child: Icon(Icons.remove,size: width * 0.085,),
+                      ),
+                    ),
+
+                    SizedBox(width: 15,),
+                  ],
+                ),
+              )
             ],
           ),
-
-          MarkerLayer(
-            markers: [
-              Marker(
-                point: currentLocation!,
-                width: 80,
-                height: 80,
-                child: const Icon(
-                  Icons.my_location,
-                  color: Colors.green,
-                  size: 40,
-                ),
-              ),
-              Marker(
-                point: cairo,
-                width: 80,
-                height: 80,
-                alignment: Alignment.bottomCenter,
-                child: const Icon(
-                  Icons.location_on,
-                  color: Colors.red,
-                  size: 40,
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
     );
   }
 }

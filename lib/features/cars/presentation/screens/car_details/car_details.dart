@@ -3,7 +3,11 @@ import 'package:black_box/core/constants/images.dart';
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
+import 'package:black_box/features/cars/presentation/screens/car_details/analysis/coolant_temp.dart';
+import 'package:black_box/features/cars/presentation/screens/car_details/analysis/dtc_codes.dart';
+import 'package:black_box/features/cars/presentation/screens/car_details/analysis/fuel_level.dart';
 import 'package:black_box/features/cars/presentation/screens/car_details/analysis/live_tracking.dart';
+import 'package:black_box/features/cars/presentation/screens/car_details/analysis/road_bump.dart';
 import 'package:black_box/features/cars/presentation/widgets/car_page/car_detials/car_parameter.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
@@ -16,7 +20,7 @@ import '../../../../../shared/widgets/notification_button.dart';
 import '../../../../home/presentation/widgets/stat_item.dart';
 import '../edit_car_screen.dart';
 import '../driving_events/driving_event.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 
 class CarDetailsScreen extends StatefulWidget {
   const CarDetailsScreen({
@@ -190,28 +194,28 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                           imagePath: AppImages.coolant,
                           title: AppLocalizations.of(context)!.coolant_temp,
                           iconBgColor: Colors.blue.shade300,
-                          destinationPage: NotificationScreen(),
+                          destinationPage: CoolantTemp(),
                         ),
                         CarParameter(
                           context:context,
                           imagePath: AppImages.dtc,
                           title: AppLocalizations.of(context)!.dtc_codes,
                           iconBgColor: AppColor.mainRedColor,
-                          destinationPage: NotificationScreen(),
+                          destinationPage: DtcCodes(),
                         ),
                         CarParameter(
                           context:context,
                           imagePath: AppImages.roadBump,
                           title: AppLocalizations.of(context)!.road_bump,
                           iconBgColor: Colors.blue.shade300,
-                          destinationPage: NotificationScreen(),
+                          destinationPage: RoadBumpScreen(car: widget.car,),
                         ),
                         CarParameter(
                           context:context,
                           imagePath: AppImages.fuelLevel,
                           title: AppLocalizations.of(context)!.fuel_level,
                           iconBgColor: AppColor.mainRedColor,
-                          destinationPage: NotificationScreen(),
+                          destinationPage: FuelLevelScreen(car: widget.car,),
                         ),
                       ],
                     )

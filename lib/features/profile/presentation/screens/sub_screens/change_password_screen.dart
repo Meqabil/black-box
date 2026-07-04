@@ -3,7 +3,7 @@ import 'package:black_box/features/auth/presentation/cubit/auth/new_password/pas
 import 'package:black_box/features/auth/presentation/cubit/auth/new_password/password_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 
 import '../../../../../core/constants/global.dart';
 import '../../../../../core/utils/snackbar_helper.dart';

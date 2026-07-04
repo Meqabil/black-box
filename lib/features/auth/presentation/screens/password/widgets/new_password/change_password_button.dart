@@ -6,7 +6,7 @@ import '../../../../cubit/auth/new_password/password_cubit.dart';
 import '../../../../cubit/auth/new_password/password_state.dart';
 import '../../new_password_success.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 class ChangePasswordButton extends StatelessWidget {
   const ChangePasswordButton({super.key,required this.onPressed});
   final void Function()? onPressed;

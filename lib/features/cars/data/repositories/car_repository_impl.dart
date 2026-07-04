@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:black_box/features/cars/data/datasources/car_datasource.dart';
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';
+import 'package:black_box/features/cars/domain/entities/stats_entity.dart';
 import 'package:black_box/features/cars/domain/repositories/car_repository.dart';
 
 class CarRepositoryImpl implements CarRepository{
@@ -36,5 +37,10 @@ class CarRepositoryImpl implements CarRepository{
     required String plateNumber,
   }) async {
     carDataSource.updateCar(image: image, carId: carId, driverId: driverId,name: name,vClass: vClass, plateNumber: plateNumber);
+  }
+
+  @override
+  Future<StatsEntity> getCarsStats() {
+    return carDataSource.getCarsStatus();
   }
 }

@@ -7,7 +7,8 @@ class NotificationLoading extends NotificationState{}
 class NotificationCheck extends NotificationState{}
 class NotificationSuccess extends NotificationState{
   List notificationsList;
-  NotificationSuccess(this.notificationsList);
+  int unreadCount;
+  NotificationSuccess(this.notificationsList,this.unreadCount);
 }
 class NotificationFailure extends NotificationState{
   String message;

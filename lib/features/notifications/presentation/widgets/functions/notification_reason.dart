@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 String notificationReason(BuildContext context,String reason,String vehicleInfo,String driverName) {
   driverName = driverName == "Unknown Driver" ? AppLocalizations.of(context)!.unknown_driver : driverName;
   if(reason.contains('Engine')){

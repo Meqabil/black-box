@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../password/forget_password_screen.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 class ForgetPasswordButton extends StatelessWidget {
   const ForgetPasswordButton({super.key});
 

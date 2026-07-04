@@ -11,7 +11,7 @@ import '../../../../core/utils/image_picker_helper.dart';
 import '../../../../shared/widgets/notification_button.dart';
 import '../widgets/white_layer.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 
 class EditProfileScreen extends StatefulWidget {
   final String id;

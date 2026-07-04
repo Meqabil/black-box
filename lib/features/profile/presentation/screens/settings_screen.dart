@@ -3,7 +3,7 @@ import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/features/settings/presentation/cubit/language_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 import '../../../../shared/widgets/notification_button.dart';
 
 

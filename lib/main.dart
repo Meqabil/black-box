@@ -1,12 +1,17 @@
 
+import 'package:black_box/bnv.dart';
 import 'package:black_box/core/network/dio_helper.dart';
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/theme/app_theme.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/new_password/password_cubit.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/signup/signup_cubit.dart';
 import 'package:black_box/features/auth/presentation/cubit/owner/owner_cubit.dart';
+import 'package:black_box/features/cars/domain/entities/car_entity.dart';
 
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
+import 'package:black_box/features/cars/presentation/screens/car_details/car_details.dart';
+import 'package:black_box/features/cars/presentation/screens/cars_list_screen.dart';
+import 'package:black_box/features/cars/presentation/screens/driving_events/driving_event.dart';
 import 'package:black_box/features/crashes/presentation/cubit/crash_cubit.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
 import 'package:black_box/features/notifications/presentation/cubits/notification_cubit.dart';
@@ -25,7 +30,7 @@ import 'core/utils/notification_helper.dart';
 import 'features/auth/presentation/cubit/auth/login/login_cubit.dart';
 import 'injection_container.dart' as di;
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -63,7 +68,7 @@ class MyApp extends StatelessWidget {
               supportedLocales: AppLocalizations.supportedLocales,
               routes: {
                 "/" : (context) => SplashScreen(),
-                "/notification" : (context) => NotificationScreen()
+                "/notification" : (context) => NotificationScreen(),
               },
             );
           },
@@ -85,6 +90,7 @@ class _AppBootstrapState extends State<AppBootstrap> {
   bool isReady = false;
   @override
   void initState() {
+
     _initApp();
     super.initState();
   }
@@ -102,6 +108,7 @@ class _AppBootstrapState extends State<AppBootstrap> {
 
 
 
+    print(pref!.getString("token"));
     setState(() => isReady = true);
   }
   @override
@@ -157,6 +164,24 @@ class _AppBootstrapState extends State<AppBootstrap> {
     );
   }
 }
+
+//
+// class MapsApp extends StatelessWidget {
+//   const MapsApp({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Container(
+//         child: GoogleMap(
+//           initialCameraPosition: CameraPosition(
+//             target: LatLng(30.775554, 30.5588554)
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 
 // class MapPage extends StatefulWidget {

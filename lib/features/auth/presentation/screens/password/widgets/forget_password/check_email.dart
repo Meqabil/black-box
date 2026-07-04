@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../../core/constants/global.dart';
-
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 class CheckEmail extends StatefulWidget {
   CheckEmail({super.key,required this.emailController,required this.onChanged,required this.emailError});
   TextEditingController emailController;

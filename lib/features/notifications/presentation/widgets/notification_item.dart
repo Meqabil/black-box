@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/global.dart';
 
 class NotificationItem extends StatelessWidget {
-  const NotificationItem({super.key,required this.title,required this.subtitle,required this.time,required this.icon});
+  const NotificationItem({super.key,required this.title,required this.subtitle,required this.time,required this.icon,required this.last});
   final String title;
+  final bool last;
   final String subtitle;
   final String time;
   final IconData icon;
@@ -59,7 +60,7 @@ class NotificationItem extends StatelessWidget {
             ),
           ],
         ),
-        Divider(height: width * 0.025, thickness: 1),
+        last ? Divider(height: width * 0.025, thickness: 1) : Container(),
       ],
     );
   }

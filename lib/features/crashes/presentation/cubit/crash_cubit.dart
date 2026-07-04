@@ -11,10 +11,10 @@ class CrashCubit extends Cubit<CrashState>{
   DeleteCrashUseCase deleteCrashUseCase;
   CrashCubit(this.showAllCrashesUseCase,this.deleteCrashUseCase) : super(CrashInitial());
   NetworkInfo network = NetworkInfo();
-  showAllCrashes() async{
+  showAllCrashes(String type) async{
     emit(CrashLoading());
     try{
-      final crashes = await showAllCrashesUseCase();
+      final crashes = await showAllCrashesUseCase(type);
       emit(CrashSuccess(crashes));
     } on DioException catch (e){
       if(await network.isConnected){

@@ -8,7 +8,7 @@ import '../../../../shared/widgets/notification_button.dart';
 import '../../../../shared/widgets/search_items.dart';
 import '../../../home/presentation/widgets/stat_item.dart';
 import '../cubit/car/car_state.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 
 class CarsListScreen extends StatefulWidget {
   const CarsListScreen({
@@ -60,11 +60,23 @@ class _CarListScreenState extends State<CarsListScreen> {
                   child: Row(
 
                     children: [
-                      StatItem(
-                        label: AppLocalizations.of(context)!.total_active_cars,
-                        value:"1",
-                        valueColor: Colors.white,
-                        arrowAngle: 135,
+                      BlocBuilder<CarCubit,CarState>(
+                          builder: (context,state) {
+                            if(state is CarSuccess){
+                              return StatItem(
+                                label: AppLocalizations.of(context)!.total_active_cars,
+                                value:  "${state.stats.totalActiveVehicles}",
+                                valueColor:  Colors.white,
+                                arrowAngle: 135,
+                              );
+                            }
+                            return StatItem(
+                              label: AppLocalizations.of(context)!.total_active_cars,
+                              value:  "0",
+                              valueColor:  Colors.white,
+                              arrowAngle: 135,
+                            );
+                          }
                       ),
                       Container(
                         width: 2,
@@ -72,11 +84,23 @@ class _CarListScreenState extends State<CarsListScreen> {
                         color: const Color(0xFFDFF7E2),
                         margin: EdgeInsets.symmetric(horizontal: width * .09),
                       ),
-                      StatItem(
-                        label:AppLocalizations.of(context)!.total_cars,
-                        value:"$totalCars",
-                        valueColor:const Color(0xFF0068FF),
-                        arrowAngle: -135,
+                      BlocBuilder<CarCubit,CarState>(
+                          builder: (context,state) {
+                            if(state is CarSuccess){
+                              return StatItem(
+                                label: AppLocalizations.of(context)!.total_cars,
+                                value:  "${state.stats.totalVehicles}",
+                                valueColor:  Colors.blue,
+                                arrowAngle: -135,
+                              );
+                            }
+                            return StatItem(
+                              label: AppLocalizations.of(context)!.total_cars,
+                              value:  "0",
+                              valueColor:  Colors.blue,
+                              arrowAngle: -135,
+                            );
+                          }
                       ),
                     ],
                   ),

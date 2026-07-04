@@ -1,7 +1,7 @@
 import 'package:black_box/features/auth/presentation/screens/login/login_screen.dart';
 import 'package:black_box/features/start_app/widgets/dots.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 
 import '../../../core/theme/app_color.dart';
 class OnboardingBasicScreen extends StatefulWidget {

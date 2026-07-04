@@ -21,7 +21,7 @@ class CarItemsGrid extends StatelessWidget {
       itemBuilder: (context, index) {
         if (index < state.carsList.length) {
           return CarItem(
-              context:context,
+              context: context,
               color: Theme.of(context).cardTheme.color ?? AppColor.lightRed,
               id:state.carsList[index].id.toString(),
               car:state.carsList[index]

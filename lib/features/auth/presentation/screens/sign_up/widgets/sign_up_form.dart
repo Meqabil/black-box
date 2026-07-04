@@ -16,7 +16,7 @@ import '../../../widgets/form_text_field.dart';
 import '../../../functions/is_vaild_password.dart';
 import 'bottom_login_text.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 class SignUpForm extends StatefulWidget {
   SignUpForm({super.key,required this.image});
   File? image;

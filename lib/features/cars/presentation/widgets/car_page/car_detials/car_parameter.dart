@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 class CarParameter extends StatelessWidget {
   const CarParameter({super.key,required this.context,required this.title,required this.imagePath,required this.iconBgColor,required this.destinationPage});
   final BuildContext context;

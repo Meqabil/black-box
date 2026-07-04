@@ -1,6 +1,8 @@
 
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 
 class AppColor{
   static const Color mainRedColor = Color(0xFFA30015);
@@ -24,6 +26,8 @@ class AppColor{
   static const Color dialogTitle = Color(0xFF3D0E0E);
   static const Color dialogDarkContent = Color(0xFF2A0A0A);
   static const Color darkBlock = Color(0xFF323232);
+  static const Color notifyBlack = Colors.black87;
+  static const Color notifyWhite = Color(0xFFE0E0E0);
 
 }
 

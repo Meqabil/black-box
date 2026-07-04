@@ -32,7 +32,7 @@ class _BNVScreenState extends State<BNVScreen> {
 
   @override
   void initState() {
-    context.read<CrashCubit>().showAllCrashes();
+    context.read<CrashCubit>().showAllCrashes("major_crash");
     context.read<CarCubit>().getAllCars();
     context.read<DriverCubit>().getAllDriversScore();
     super.initState();

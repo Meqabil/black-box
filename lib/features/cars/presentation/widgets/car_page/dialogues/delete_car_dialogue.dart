@@ -6,7 +6,7 @@ import '../../../../../../core/theme/app_color.dart';
 import '../../../cubit/car/car_cubit.dart';
 import '../../../cubit/car/car_state.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 class DeleteCarDialogue extends StatelessWidget {
   const DeleteCarDialogue({super.key,required this.car});
   final CarEntity car;

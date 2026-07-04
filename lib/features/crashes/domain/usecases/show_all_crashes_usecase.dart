@@ -3,7 +3,7 @@ import 'package:black_box/features/crashes/domain/repositories/crash_repository.
 class ShowAllCrashesUseCase{
   final CrashRepository crashRepository;
   ShowAllCrashesUseCase(this.crashRepository);
-  call(){
-    return crashRepository.getAllCrashes();
+  call(String type){
+    return crashRepository.getAllCrashes(type);
   }
 }

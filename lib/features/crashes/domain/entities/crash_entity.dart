@@ -9,13 +9,13 @@ class CrashEntity {
   String location;
   String type;
   String severity;
-  String? ax;
-  String? ay;
-  String? az;
+  double? ax;
+  double? ay;
+  double? az;
   String yaw;
   String pitch;
   String roll;
-  String speedBefore;
+  int speedBefore;
   String rpmBefore;
   String coolantTemp;
   String fuelLevel;
@@ -23,7 +23,8 @@ class CrashEntity {
   String sats;
   String createdAt;
   String updatedAt;
-  String trip;
+  Map trip;
+  Map vehicle;
 
   CrashEntity({
     required this.id,
@@ -50,6 +51,7 @@ class CrashEntity {
     required this.createdAt,
     required this.updatedAt,
     required this.trip,
+    required this.vehicle
   });
 
 }

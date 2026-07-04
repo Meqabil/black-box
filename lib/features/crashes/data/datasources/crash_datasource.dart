@@ -4,16 +4,17 @@ import 'package:black_box/features/crashes/data/models/crash_model.dart';
 import '../../../../core/constants/links.dart';
 
 class CrashDataSource{
-  Future<List> getAllCrashes() async{
+  Future<List> getAllCrashes(String type) async{
     final response = await DioHelper.dio.get(AppLink.showAllCrashes);
     final status = response.data['status'];
     if(status == "success"){
+      print(response.data['data']['crashes']);
       final List crashes = response.data['data']['crashes'].map(
           (crash) => CrashModel.fromJson(crash)
       ).toList();
 
-      print(crashes[0].severity);
-      return crashes;
+      print("crahses : $crashes");
+      return crashes.where((e) => e.type == type).toList();
     }
     return [];
   }

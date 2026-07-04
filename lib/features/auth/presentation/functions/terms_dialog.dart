@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 import '../../../../../core/constants/global.dart';
 import '../../../../../core/theme/app_color.dart';
 AlertDialog termsDialog({required BuildContext context,required bool checked, void Function()? onTap,required void Function(bool?)? onChanged}){

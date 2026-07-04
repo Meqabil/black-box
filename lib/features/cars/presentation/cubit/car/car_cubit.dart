@@ -5,6 +5,7 @@ import 'package:black_box/features/cars/domain/usecases/add_car_with_driver_usec
 import 'package:black_box/features/cars/domain/usecases/delete_car_usecase.dart';
 import 'package:black_box/features/cars/domain/usecases/delete_car_with_driver_usecase.dart';
 import 'package:black_box/features/cars/domain/usecases/get_all_cars_usecase.dart';
+import 'package:black_box/features/cars/domain/usecases/get_cars_stats_usecase.dart';
 import 'package:black_box/features/cars/domain/usecases/update_car_usecase.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
 import 'package:bloc/bloc.dart';
@@ -13,6 +14,7 @@ import '../../../../../core/network/network_info.dart';
 
 class CarCubit extends Cubit<CarState>{
   GetAllCarsUseCase getAllCarsUseCase;
+  GetCarsStatsUsecase carsStatsUsecase;
   AddCarUseCase addCarUseCase;
   AddCarWithDriverUseCase addCarWithDriverUseCase;
   DeleteCarUseCase deleteCarUseCase;
@@ -20,14 +22,15 @@ class CarCubit extends Cubit<CarState>{
   UpdateCarUseCase updateCarUseCase;
   NetworkInfo network = NetworkInfo();
   List allCars = [];
-  CarCubit(this.getAllCarsUseCase,this.addCarUseCase,this.addCarWithDriverUseCase,this.deleteCarUseCase,this.deleteCarWithDriverUseCase,this.updateCarUseCase) : super(CarInitial());
+  CarCubit(this.getAllCarsUseCase,this.carsStatsUsecase,this.addCarUseCase,this.addCarWithDriverUseCase,this.deleteCarUseCase,this.deleteCarWithDriverUseCase,this.updateCarUseCase) : super(CarInitial());
 
   getAllCars() async {
     emit(CarLoading());
     try {
       final cars = await getAllCarsUseCase();
+      final stats = await carsStatsUsecase();
       allCars = cars;
-      emit(CarSuccess(cars));
+      emit(CarSuccess(cars,stats));
     } on DioException catch (e) {
       if (await network.isConnected) {
         if (e.response != null) {
@@ -39,6 +42,14 @@ class CarCubit extends Cubit<CarState>{
     }
   }
 
+  // getCarsStats() async{
+  //   emit(CarLoading());
+  //   try{
+  //     final stats = await carsStatsUsecase();
+  //
+  //   }
+  // }
+
   Future<void> addCar({
     required String token,
     required int id,
@@ -48,6 +59,7 @@ class CarCubit extends Cubit<CarState>{
   }) async{
     emit(CarLoading());
     List cars = await getAllCarsUseCase();
+    final stats = await carsStatsUsecase();
     try{
       await addCarUseCase(
         id: id,
@@ -57,7 +69,7 @@ class CarCubit extends Cubit<CarState>{
       );
       emit(CarAdded());
       cars = await getAllCarsUseCase();
-      emit(CarSuccess(cars));
+      emit(CarSuccess(cars,stats));
     }
     on DioException catch (e) {
       if (await network.isConnected) {
@@ -78,6 +90,7 @@ class CarCubit extends Cubit<CarState>{
   }) async {
     emit(CarLoading());
     List cars = await getAllCarsUseCase();
+    final stats = await carsStatsUsecase();
     try{
       await addCarWithDriverUseCase(
         carName: carName,
@@ -87,7 +100,7 @@ class CarCubit extends Cubit<CarState>{
       );
       emit(CarAdded());
       cars = await getAllCarsUseCase();
-      emit(CarSuccess(cars));
+      emit(CarSuccess(cars,stats));
     }
     on DioException catch (e) {
       if (await network.isConnected) {
@@ -106,11 +119,12 @@ class CarCubit extends Cubit<CarState>{
   deleteCar(int id)async{
     emit(CarLoading());
     final cars = await getAllCarsUseCase();
+    final stats = await carsStatsUsecase();
     try{
       await deleteCar(id);
       final cars = await getAllCarsUseCase();
       emit(CarDeleted());
-      emit(CarSuccess(cars));
+      emit(CarSuccess(cars,stats));
     } on DioException catch (e) {
       if (await network.isConnected) {
         if (e.response != null) {
@@ -125,11 +139,12 @@ class CarCubit extends Cubit<CarState>{
   deleteCarWithDriver({required int carId,required int driverId})async{
     emit(CarLoading());
     final cars = await getAllCarsUseCase();
+    final stats = await carsStatsUsecase();
     try{
       await deleteCarWithDriverUseCase(carId: carId, driverId: driverId);
       final cars = await getAllCarsUseCase();
       emit(CarDeleted());
-      emit(CarSuccess(cars));
+      emit(CarSuccess(cars,stats));
     } on DioException catch (e) {
       if (await network.isConnected) {
         if (e.response != null) {
@@ -167,14 +182,15 @@ class CarCubit extends Cubit<CarState>{
 
 
 
-  void searchCars(String query){
+  void searchCars(String query) async{
+    final stats = await  carsStatsUsecase();
     if(query.trim().isEmpty){
-      emit(CarSuccess(allCars));
+      emit(CarSuccess(allCars,stats));
       return;
     }
     final filtered = allCars.where((car){
       return car.plateNumber.toString().toLowerCase().contains(query.toLowerCase());
     }).toList();
-    emit(CarSuccess(filtered));
+    emit(CarSuccess(filtered,stats));
   }
 }

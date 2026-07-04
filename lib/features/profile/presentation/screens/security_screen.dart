@@ -3,7 +3,7 @@ import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/features/profile/presentation/screens/sub_screens/change_password_screen.dart';
 import 'package:black_box/features/profile/presentation/screens/sub_screens/terms_conditions_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 
 import '../../../../shared/widgets/notification_button.dart';
 class SecurityScreen extends StatefulWidget {

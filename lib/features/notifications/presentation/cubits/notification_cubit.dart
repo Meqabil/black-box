@@ -18,7 +18,7 @@ class NotificationCubit extends Cubit<NotificationState>{
     emit(NotificationLoading());
     try{
       final notifications = await getNotificationsUseCase();
-      emit(NotificationSuccess(notifications.notifications));
+      emit(NotificationSuccess(notifications.notifications,notifications.unreadCount));
     } on DioException catch (e) {
       if(await network.isConnected){
         if (e.response != null) {
@@ -36,7 +36,7 @@ class NotificationCubit extends Cubit<NotificationState>{
     try{
       await makeAsReadUseCase();
       final notifications = await getNotificationsUseCase();
-      emit(NotificationSuccess(notifications.notifications));
+      emit(NotificationSuccess(notifications.notifications,notifications.unreadCount));
     } on DioException catch (e) {
       if(await network.isConnected){
         if (e.response != null) {

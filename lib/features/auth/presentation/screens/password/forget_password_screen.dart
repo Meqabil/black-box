@@ -7,7 +7,7 @@ import '../../cubit/auth/new_password/password_cubit.dart';
 import '../../functions/is_valid_gmail.dart';
 import '../../widgets/input_label.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
 

@@ -55,11 +55,13 @@ dependencies:
   flutter_map: ^8.3.0
   latlong2: ^0.9.1
   geolocator: ^9.0.2
-  intl: ^0.19.0
+  intl: 0.20.2
   http: ^1.6.0
   workmanager: ^0.7.0
   flutter_local_notifications: ^19.5.0
   geocoding: ^4.0.0
+  #google_maps_flutter: ^2.12.3
+
 
 
 dev_dependencies:

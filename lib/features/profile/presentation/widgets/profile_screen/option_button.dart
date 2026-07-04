@@ -11,14 +11,18 @@ class OptionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Container(
-        width: width * .1333, height: width * 0.1232,
-        decoration: BoxDecoration(color: iconBg, borderRadius: BorderRadius.circular(width * .049)),
-        child: Icon(icon, color: Theme.of(context).colorScheme.onSecondary,size: width * .069,),
+    return Material(
+      color: Colors.transparent,
+      child: ListTile(
+
+        leading: Container(
+          width: width * .1333, height: width * 0.1232,
+          decoration: BoxDecoration(color: iconBg, borderRadius: BorderRadius.circular(width * .049)),
+          child: Icon(icon, color: Theme.of(context).colorScheme.onSecondary,size: width * .069,),
+        ),
+        title: Text(title, style: TextStyle(fontSize: width * .035, fontWeight: FontWeight.w600, color: Theme.of(context).colorScheme.onSurface)),
+        onTap: onTap,
       ),
-      title: Text(title, style: TextStyle(fontSize: width * .035, fontWeight: FontWeight.w600, color: Theme.of(context).colorScheme.onSurface)),
-      onTap: onTap,
     );
   }
 }

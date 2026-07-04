@@ -29,6 +29,7 @@ class CrashModel extends CrashEntity{
     required super.createdAt,
     required super.updatedAt,
     required super.trip,
+    required super.vehicle
   });
 
   factory CrashModel.fromJson(Map<String, dynamic> json) => CrashModel(
@@ -41,13 +42,13 @@ class CrashModel extends CrashEntity{
     location: json["location"] ?? '',
     type: json["type"] ?? '',
     severity: json["severity"] ?? '',
-    ax: json["ax"] ?? '',
-    ay: json["ay"] ?? '',
-    az: json["az"] ?? '',
+    ax: json["ax"] ?? 0,
+    ay: json["ay"] ?? 0,
+    az: json["az"] ?? 0,
     yaw: json["yaw"] ?? '',
     pitch: json["pitch"] ?? '',
     roll: json["roll"] ?? '',
-    speedBefore: json["speed_before"] ?? '',
+    speedBefore: json["speed_before"] ?? 0,
     rpmBefore: json["rpm_before"] ?? '',
     coolantTemp: json["coolant_temp"] ?? '',
     fuelLevel: json["fuel_level"] ?? '',
@@ -55,7 +56,8 @@ class CrashModel extends CrashEntity{
     sats: json["sats"] ?? '',
     createdAt: json["created_at"] ?? '',
     updatedAt: json["updated_at"] ?? '',
-    trip: json["trip"] ?? '',
+    trip: json["trip"] ?? {},
+    vehicle: json["vehicle"] ?? {}
   );
 
   Map<String, dynamic> toJson() => {
@@ -83,5 +85,6 @@ class CrashModel extends CrashEntity{
     "created_at": createdAt,
     "updated_at": updatedAt,
     "trip": trip,
+    "vehicle":vehicle
   };
 }

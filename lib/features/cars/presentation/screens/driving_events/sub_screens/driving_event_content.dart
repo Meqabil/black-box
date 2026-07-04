@@ -1,12 +1,16 @@
 import 'package:black_box/core/constants/images.dart';
-import 'package:black_box/features/crashes/presentation/screens/crash_screen.dart';
+import 'package:black_box/features/crashes/presentation/screens/aggressive_turns.dart';
+import 'package:black_box/features/crashes/presentation/screens/crash.dart';
+import 'package:black_box/features/crashes/presentation/screens/hard_braking.dart';
+import 'package:black_box/features/crashes/presentation/screens/speeding_incidents.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../core/constants/global.dart';
 import '../../../../../../shared/widgets/driving_events/sub_widgets/event_item.dart';
 import '../../../../../crashes/presentation/cubit/crash_cubit.dart';
-import '../../../../../../bnv.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
+
+
 class DrivingEventContent extends StatelessWidget {
   const DrivingEventContent({super.key,required this.driverId,required this.driverName,required this.carId});
   final String driverId;
@@ -34,11 +38,11 @@ class DrivingEventContent extends StatelessWidget {
                   AppLocalizations.of(context)!.event_major_crashes,
                   Color(0xFfD96B6B),
                   onTap: () {
-                    context.read<CrashCubit>().showAllCrashes();
+                    context.read<CrashCubit>().showAllCrashes("major_crash");
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => CrashScreen(
+                        builder: (context) => Crash(
                           driverId: driverId,
                           driverName: driverName,
                           carId: carId,
@@ -52,12 +56,13 @@ class DrivingEventContent extends StatelessWidget {
                   AppLocalizations.of(context)!.event_hard_braking,
                   Colors.red,
                   onTap: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => HardBrakingScreen(),
-                    //   ),
-                    // );
+                    context.read<CrashCubit>().showAllCrashes("hard_braking");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HardBraking(driverId: driverId, driverName: driverName, carId: carId),
+                      ),
+                    );
                   },
                 ),
                 EventItem(
@@ -68,7 +73,7 @@ class DrivingEventContent extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => BNVScreen(),
+                        builder: (context) => SpeedIncidents(driverId: driverId, driverName: driverName, carId: carId),
                       ),
                     );
                   },
@@ -78,12 +83,13 @@ class DrivingEventContent extends StatelessWidget {
                   AppLocalizations.of(context)!.event_aggressive_turns,
                   Colors.red,
                   onTap: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => AggressiveTurnsScreen(),
-                    //   ),
-                    // );
+                    context.read<CrashCubit>().showAllCrashes("aggressive_turn");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AgressiveTurns(driverId: driverId, driverName: driverName, carId: carId),
+                      ),
+                    );
                   },
                 ),
               ],

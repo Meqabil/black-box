@@ -1,6 +1,6 @@
 import 'package:black_box/features/profile/presentation/widgets/helper/toggle_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 
 import '../../../../../core/theme/app_color.dart';
 import '../../../../../core/constants/global.dart';

@@ -10,7 +10,7 @@ import 'package:black_box/features/notifications/data/datasources/notification_d
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 
 import '../../../../shared/widgets/notification_button.dart';
 import '../widgets/circular_indicator.dart';
@@ -80,11 +80,23 @@ class _HomeContentState extends State<HomeContent> {
                           children: [
                             Row(
                               children: [
-                                StatItem(
-                                  label: AppLocalizations.of(context)!.total_active_cars,
-                                  value:  "1",
-                                  valueColor:  Colors.white,
-                                  arrowAngle: 135,
+                                BlocBuilder<CarCubit,CarState>(
+                                  builder: (context,state) {
+                                    if(state is CarSuccess){
+                                      return StatItem(
+                                        label: AppLocalizations.of(context)!.total_active_cars,
+                                        value:  "${state.stats.totalActiveVehicles}",
+                                        valueColor:  Colors.white,
+                                        arrowAngle: 135,
+                                      );
+                                    }
+                                    return StatItem(
+                                      label: AppLocalizations.of(context)!.total_active_cars,
+                                      value:  "0",
+                                      valueColor:  Colors.white,
+                                      arrowAngle: 135,
+                                    );
+                                  }
                                 ),
                                 Container(
                                   width: width * .0045,
@@ -97,7 +109,7 @@ class _HomeContentState extends State<HomeContent> {
                                     if(state is CarSuccess){
                                       return StatItem(
                                         label:  AppLocalizations.of(context)!.total_cars,
-                                        value: state.carsList.length.toString(),
+                                        value: state.stats.totalVehicles.toString() ,
                                         valueColor:  const Color(0xFF0068FF),
                                         arrowAngle: -135,
                                       );
@@ -121,18 +133,37 @@ class _HomeContentState extends State<HomeContent> {
                               ),
                               child: Row(
                                 children: [
-                                  Container(
-                                    width: width * .15,
-                                    height: width * .09,
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFF052224),
-                                      borderRadius: BorderRadius.circular(width * .045),
-                                    ),
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      "12.5%",
-                                      style: TextStyle(color: Colors.white, fontSize: width * .027),
-                                    ),
+                                  BlocBuilder<CarCubit,CarState>(
+                                    builder: (context,state) {
+                                      if(state is CarSuccess){
+                                        return Container(
+                                          width: width * .15,
+                                          height: width * .09,
+                                          decoration: BoxDecoration(
+                                            color: const Color(0xFF052224),
+                                            borderRadius: BorderRadius.circular(width * .045),
+                                          ),
+                                          alignment: Alignment.center,
+                                          child: Text(
+                                            "${(state.stats.totalActiveVehicles / state.stats.totalVehicles).toInt()}%",
+                                            style: TextStyle(color: Colors.white, fontSize: width * .027),
+                                          ),
+                                        );
+                                      }
+                                      return Container(
+                                        width: width * .15,
+                                        height: width * .09,
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xFF052224),
+                                          borderRadius: BorderRadius.circular(width * .045),
+                                        ),
+                                        alignment: Alignment.center,
+                                        child: Text(
+                                          "0%",
+                                          style: TextStyle(color: Colors.white, fontSize: width * .027),
+                                        ),
+                                      );
+                                    }
                                   ),
                                 ],
                               ),
@@ -146,9 +177,19 @@ class _HomeContentState extends State<HomeContent> {
                                   size: width * .041,
                                 ),
                                 SizedBox(width: width * .02),
-                                Text(
-                                  AppLocalizations.of(context)!.home_active_cars('12'),
-                                  style: TextStyle(color: Colors.white, fontSize: width * .029),
+                                BlocBuilder<CarCubit,CarState>(
+                                  builder: (context,state){
+                                    if(state is CarSuccess){
+                                      return Text(
+                                        AppLocalizations.of(context)!.home_active_cars('${(state.stats.totalActiveVehicles / state.stats.totalVehicles).toInt()}'),
+                                        style: TextStyle(color: Colors.white, fontSize: width * .029),
+                                      );
+                                    }
+                                    return Text(
+                                      AppLocalizations.of(context)!.home_active_cars('0'),
+                                      style: TextStyle(color: Colors.white, fontSize: width * .029),
+                                    );
+                                  },
                                 ),
                               ],
                             ),

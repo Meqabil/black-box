@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/theme/app_color.dart';
 import '../../sign_up/signup_screen.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 class BottomRegisterText extends StatelessWidget {
   const BottomRegisterText({super.key});
 

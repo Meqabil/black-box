@@ -1,8 +1,8 @@
 
 
 class AppLink{
-  static const String _rootApi = "https://graduation-black-box.azurewebsites.net/api";
-  static const String rootStorage = "https://graduation-black-box.azurewebsites.net/storage";
+  static const String _rootApi = "https://grad-black-box-f5esdca8dahbd5a6.germanywestcentral-01.azurewebsites.net/api";
+  static const String rootStorage = "https://grad-black-box-f5esdca8dahbd5a6.germanywestcentral-01.azurewebsites.net/storage";
 
   // Authentication
   static const String register = "$_rootApi/auth/register";

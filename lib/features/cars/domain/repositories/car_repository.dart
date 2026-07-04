@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';
+import 'package:black_box/features/cars/domain/entities/stats_entity.dart';
 
 abstract class CarRepository{
   Future<CarEntity> addCar({
@@ -19,4 +20,5 @@ abstract class CarRepository{
   });
   Future<void> deleteCar(int id);
   Future<List> getAllCars();
+  Future<StatsEntity> getCarsStats();
 }

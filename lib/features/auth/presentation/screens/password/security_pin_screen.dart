@@ -12,7 +12,7 @@ import '../../../../../core/constants/global.dart';
 import '../../../../../core/utils/snackbar_helper.dart';
 import 'new_password_screen.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 
 
 class SecurityPinScreen extends StatefulWidget {

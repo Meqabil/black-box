@@ -2,7 +2,10 @@ import 'dart:io';
 import 'package:black_box/core/network/dio_helper.dart';
 import 'package:black_box/core/constants/links.dart';
 import 'package:black_box/features/cars/data/models/car_model.dart';
+import 'package:black_box/features/cars/data/models/stats_model.dart';
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';
+import 'package:black_box/features/cars/domain/entities/stats_entity.dart';
+import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
 import 'package:dio/dio.dart';
 
 class CarDataSource{
@@ -50,6 +53,19 @@ class CarDataSource{
       return cars;
     }
     return [];
+  }
+
+
+  Future<StatsEntity> getCarsStatus() async{
+    final response = await DioHelper.dio.get(
+      AppLink.showAllVehicle,
+    );
+    final status = response.data['status'];
+    if(status == "success"){
+      final stats = StatsModel.fromJson(response.data['data']['stats']);
+      return stats;
+    }
+    return StatsModel(totalVehicles: 0, totalActiveVehicles: 0);
   }
 
   updateCar({

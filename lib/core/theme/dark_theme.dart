@@ -19,11 +19,12 @@ class DarkTheme {
         onError: Colors.black,
         surface: AppColor.oceanNavy,
         onSurface: AppColor.textWhiteColor,
-        onSecondaryFixed: Colors.white
+        onSecondaryFixed: Colors.white,
+        secondaryFixed: AppColor.notifyBlack,
       ),
 
 
-      cardTheme: const CardTheme(
+      cardTheme: const CardThemeData(
         color: AppColor.mainRedColor,
         elevation: 2,
       ),

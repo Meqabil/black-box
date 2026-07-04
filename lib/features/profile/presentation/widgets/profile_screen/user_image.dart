@@ -16,3 +16,7 @@ class UserImage extends StatelessWidget {
     );
   }
 }
+
+
+//https://graduation-black-box.azurewebsites.net/storage/profile_images/g75rfhcPWDQ68E9lpGhDKXnDC3hKx6m3h5yMSYKx.jpg
+//https://grad-black-box-f5esdca8dahbd5a6.germanywestcentral-01.azurewebsites.net/storage/profile_images/g75rfhcPWDQ68E9lpGhDKXnDC3hKx6m3h5yMSYKx.jpg
