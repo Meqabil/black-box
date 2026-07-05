@@ -194,14 +194,14 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                           imagePath: AppImages.coolant,
                           title: AppLocalizations.of(context)!.coolant_temp,
                           iconBgColor: Colors.blue.shade300,
-                          destinationPage: CoolantTemp(),
+                          destinationPage: CoolantTemp(car: widget.car,),
                         ),
                         CarParameter(
                           context:context,
                           imagePath: AppImages.dtc,
                           title: AppLocalizations.of(context)!.dtc_codes,
                           iconBgColor: AppColor.mainRedColor,
-                          destinationPage: DtcCodes(),
+                          destinationPage: DtcScreen(car: widget.car),
                         ),
                         CarParameter(
                           context:context,

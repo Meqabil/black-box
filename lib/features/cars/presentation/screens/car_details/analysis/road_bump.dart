@@ -2,7 +2,6 @@
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
-import 'package:black_box/features/cars/presentation/widgets/analysis/fuel_level_content.dart';
 import 'package:black_box/features/crashes/presentation/cubit/crash_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:black_box/core/localization/generated/app_localizations.dart';
@@ -32,7 +31,7 @@ class _RoadBumpScreenState extends State<RoadBumpScreen> {
 
   @override
   void initState() {
-    context.read<CrashCubit>().showAllCrashes("road_bump");
+    context.read<CrashCubit>().showAllCrashes(type: "road_bump",carId: widget.car.id);
     super.initState();
   }
 

@@ -5,9 +5,16 @@ import 'package:black_box/features/trips/domain/entities/trip_entity.dart';
 
 class TripDataSource {
   Future<TripEntity?> showTripDetail(int id) async{
-    final res = await DioHelper.dio.get("${AppLink.tripDetail}$id");
+    final res = await DioHelper.dio.get("${AppLink.tripDetail}/$id");
     final status = res.data['status'];
     final data = res.data['data']['trip'];
+    print("=================================");
+    print(data);
+    print("=================================");
+    print("=================================");
+    print("=================================");
+    print("=================================");
+    print(data['locations']);
     if(status == 'success'){
       final trip =  TripModel.fromJson(data);
       return trip;
@@ -15,14 +22,15 @@ class TripDataSource {
     return null;
   }
 
-  Future<List> showTripsHistory() async{
+  Future<List> showTripsHistory(String carId) async{
     List trips = [];
     final res = await DioHelper.dio.get(AppLink.tripsHistory);
     final status = res.data['status'];
     final data = res.data['data']['trips'];
     if(status == 'success'){
-      print(data[1]);
-      trips = data.map((trip) => TripModel.fromJson(trip)).toList();
+      //print(data);
+
+      trips = data.map((trip) => TripModel.fromJson(trip)).where((e) => e.vehicleId == carId).toList();
       return trips;
     }
     return [];

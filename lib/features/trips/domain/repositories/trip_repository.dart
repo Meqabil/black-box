@@ -1,4 +1,4 @@
 abstract class TripRepository{
   showTripDetail(int id);
-  showTripsHistory();
+  showTripsHistory(String carId);
 }

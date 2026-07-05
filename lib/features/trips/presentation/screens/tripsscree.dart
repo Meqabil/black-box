@@ -59,7 +59,7 @@ class _TripsscreeState extends State<Tripsscree> {
           children: [
             Text('Trips'),
             ElevatedButton(onPressed: (){
-              context.read<TripCubit>().showTripsHistory();
+              context.read<TripCubit>().showTripsHistory('2');
             }, child: Text('load data')),
             ElevatedButton(onPressed: (){
               getPlaceName(30.04444, 31.2357);
@@ -88,7 +88,7 @@ class _TripsscreeState extends State<Tripsscree> {
                                   }
                               ),
                               FutureBuilder(
-                                  future: getPlaceName(double.parse(trips[idx].endLat), double.parse(trips[idx].endLng)),
+                                  future: getPlaceName(double.tryParse(trips[idx].endLat) ?? 33.525555, double.tryParse(trips[idx].endLng) ?? 33.5854),
                                   builder: (context,val){
                                     return Text("End address ${val.data}");
                                   }

@@ -31,7 +31,7 @@ class _FuelLevelScreenState extends State<FuelLevelScreen> {
 
   @override
   void initState() {
-    context.read<CrashCubit>().showAllCrashes("fuel_leak");
+    context.read<CrashCubit>().showAllCrashes(type: "fuel_leak",carId:widget.car.id);
     super.initState();
   }
 

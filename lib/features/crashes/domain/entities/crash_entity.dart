@@ -1,4 +1,6 @@
 
+import 'package:black_box/features/crashes/domain/entities/sub_entities/vehicle_entity.dart';
+
 class CrashEntity {
   int id;
   String tripId;
@@ -17,14 +19,14 @@ class CrashEntity {
   String roll;
   int speedBefore;
   String rpmBefore;
-  String coolantTemp;
-  String fuelLevel;
+  int coolantTemp;
+  int  fuelLevel;
   String dtcCodes;
   String sats;
   String createdAt;
   String updatedAt;
   Map trip;
-  Map vehicle;
+  VehicleEntity vehicle;
 
   CrashEntity({
     required this.id,

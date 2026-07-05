@@ -10,7 +10,7 @@ class TripRepositoryImpl extends TripRepository{
   }
 
   @override
-  showTripsHistory() {
-    return _dataSource.showTripsHistory();
+  showTripsHistory(String carId) {
+    return _dataSource.showTripsHistory(carId);
   }
 }

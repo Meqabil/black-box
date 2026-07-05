@@ -1,4 +1,4 @@
 abstract class CrashRepository {
   deleteCrash(int id);
-  getAllCrashes(String type);
+  getAllCrashes(String? type,int? carId);
 }

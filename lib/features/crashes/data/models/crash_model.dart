@@ -1,4 +1,5 @@
 
+import 'package:black_box/features/crashes/data/models/sub_models/vehicle_model.dart';
 import 'package:black_box/features/crashes/domain/entities/crash_entity.dart';
 
 class CrashModel extends CrashEntity{
@@ -50,14 +51,14 @@ class CrashModel extends CrashEntity{
     roll: json["roll"] ?? '',
     speedBefore: json["speed_before"] ?? 0,
     rpmBefore: json["rpm_before"] ?? '',
-    coolantTemp: json["coolant_temp"] ?? '',
-    fuelLevel: json["fuel_level"] ?? '',
+    coolantTemp: json["coolant_temp"] ?? 0,
+    fuelLevel: json["fuel_level"] ?? 0,
     dtcCodes: json["dtc_codes"] ?? '',
     sats: json["sats"] ?? '',
     createdAt: json["created_at"] ?? '',
     updatedAt: json["updated_at"] ?? '',
     trip: json["trip"] ?? {},
-    vehicle: json["vehicle"] ?? {}
+    vehicle: VehicleModel.fromJson(json["vehicle"] ?? {})
   );
 
   Map<String, dynamic> toJson() => {

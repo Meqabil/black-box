@@ -1,4 +1,5 @@
 import 'package:black_box/features/drivers/domain/entities/driver_entity.dart';
+import 'package:black_box/features/trips/domain/entities/locations_entity.dart';
 
 class TripEntity {
   final int id;
@@ -19,7 +20,7 @@ class TripEntity {
   final String createdAt;
   final String updatedAt;
   final DriverEntity driverEntity;
-  final List locations;
+  final List? locations;
   TripEntity({
     required this.id,
     required this.vehicleId,

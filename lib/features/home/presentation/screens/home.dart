@@ -7,6 +7,7 @@ import 'package:black_box/features/crashes/presentation/cubit/crash_state.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
 import 'package:black_box/features/notifications/data/datasources/notification_datasource.dart';
+import 'package:black_box/features/trips/data/datasources/trip_datasource.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

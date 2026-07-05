@@ -58,22 +58,28 @@ class _CarListScreenState extends State<SecurityScreen> {
                 children: [
                   Text(AppLocalizations.of(context)!.security_title,style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
                   SizedBox(height: width * .11,),
-                  ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: Text(AppLocalizations.of(context)!.change_password,style: TextStyle(fontWeight: FontWeight.bold,),),
-                    trailing: Icon(Icons.arrow_forward_ios_outlined),
-                    onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChangePasswordScreen()));
-                    },
+                  Material(
+                    color: Colors.transparent,
+                    child: ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: Text(AppLocalizations.of(context)!.change_password,style: TextStyle(fontWeight: FontWeight.bold,),),
+                      trailing: Icon(Icons.arrow_forward_ios_outlined),
+                      onTap: (){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChangePasswordScreen()));
+                      },
+                    ),
                   ),
                   SizedBox(height: 10,),
-                  ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: Text(AppLocalizations.of(context)!.terms_title,style: TextStyle(fontWeight: FontWeight.bold),),
-                    trailing: Icon(Icons.arrow_forward_ios_outlined),
-                    onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => TermsConditionsScreen()));
-                    },
+                  Material(
+                    color: Colors.transparent,
+                    child: ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: Text(AppLocalizations.of(context)!.terms_title,style: TextStyle(fontWeight: FontWeight.bold),),
+                      trailing: Icon(Icons.arrow_forward_ios_outlined),
+                      onTap: (){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => TermsConditionsScreen()));
+                      },
+                    ),
                   ),
                 ],
               ),

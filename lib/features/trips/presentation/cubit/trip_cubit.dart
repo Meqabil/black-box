@@ -29,10 +29,10 @@ class TripCubit extends Cubit<TripState>{
     }
   }
 
-  showTripsHistory() async{
+  showTripsHistory(String carId) async{
     emit(TripLoading());
     try{
-      final List trips = await showTripsHistoryUseCase();
+      final List trips = await showTripsHistoryUseCase(carId);
       emit(TripsHistorySuccess(trips));
     } on DioException catch (e) {
       if(await network.isConnected){

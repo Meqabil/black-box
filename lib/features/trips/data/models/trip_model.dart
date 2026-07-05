@@ -1,4 +1,6 @@
 import 'package:black_box/features/drivers/domain/entities/driver_entity.dart';
+import 'package:black_box/features/trips/data/models/locations_model.dart';
+import 'package:black_box/features/trips/domain/entities/locations_entity.dart';
 import 'package:black_box/features/trips/domain/entities/trip_entity.dart';
 
 import '../../../drivers/data/models/driver_model.dart';
@@ -46,7 +48,9 @@ class TripModel extends TripEntity{
         createdAt: json['created_at'] ?? '',
         updatedAt: json['updated_at'] ?? '',
         driverEntity: DriverModel.fromJson(json['driver']) ,
-        locations: json['locations'] ?? [],
+        locations: json['locations'] != null
+            ? LocationModel.fromJsonList(json['locations'] as List<dynamic>)
+            : <LocationModel>[],
     );
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
@@ -20,8 +21,59 @@ logOut(BuildContext context ){
   );
 }
 
+//
+Future<String> getPlaceName(double lat, double lng) async {
+  try {
+    List<Placemark> placeMarks = await placemarkFromCoordinates(lat, lng);
+//
+    Placemark place = placeMarks.first;
+//
+    // print("Country: ${place.country}");
+    // print("City: ${place.locality}");
+    // print("Area: ${place.subLocality}");
+    // print("Street: ${place.street}");
+    return "${place.locality}  ${place.street}";
+    //return "${place.country} ${place.locality} ${place.subLocality}  ${place.street}";
+  } catch (e) {
+    print(e.toString());
+  }
+  return '';
+}
+/*
+Future<String> getPlaceName(double lat, double lng) async {
+  try {
+    List<Placemark> placeMarks = await placemarkFromCoordinates(lat, lng);
 
+    final place = placeMarks.first;
 
+    final territory = place.subLocality?.trim() ?? '';
+    final street = place.street?.trim() ?? '';
+    final country = place.country?.trim() ?? '';
+    final governorate = place.administrativeArea?.trim() ?? '';
+
+    // If street exists, return Territory + Street
+    if (street.isNotEmpty) {
+      if (territory.isNotEmpty) {
+        return '$territory, $street';
+      }
+      return street;
+    }
+
+    // Otherwise return Country + Governorate
+    if (country.isNotEmpty && governorate.isNotEmpty) {
+      return '$country, $governorate';
+    }
+
+    if (country.isNotEmpty) {
+      return country;
+    }
+
+    return governorate;
+  } catch (e) {
+    print(e.toString());
+    return '';
+  }
+}
 // loadingSign(BuildContext context){
 //   showDialog(
 //     context: context,
@@ -37,5 +89,5 @@ logOut(BuildContext context ){
 
 
 
-
+*/
 

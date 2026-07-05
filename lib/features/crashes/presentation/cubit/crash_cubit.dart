@@ -11,15 +11,15 @@ class CrashCubit extends Cubit<CrashState>{
   DeleteCrashUseCase deleteCrashUseCase;
   CrashCubit(this.showAllCrashesUseCase,this.deleteCrashUseCase) : super(CrashInitial());
   NetworkInfo network = NetworkInfo();
-  showAllCrashes(String type) async{
+  showAllCrashes({String? type, int? carId}) async{
     emit(CrashLoading());
     try{
-      final crashes = await showAllCrashesUseCase(type);
+      final crashes = await showAllCrashesUseCase(type,carId);
       emit(CrashSuccess(crashes));
     } on DioException catch (e){
       if(await network.isConnected){
         if (e.response != null) {
-          emit(CrashFailure("Failed to load crashes ."));
+          emit(CrashFailure("Failed to load crashes .") );
         }
       } else {
         emit(CrashFailure("No Internet Connection"));

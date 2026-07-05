@@ -3,6 +3,7 @@ import 'package:black_box/features/crashes/presentation/screens/aggressive_turns
 import 'package:black_box/features/crashes/presentation/screens/crash.dart';
 import 'package:black_box/features/crashes/presentation/screens/hard_braking.dart';
 import 'package:black_box/features/crashes/presentation/screens/speeding_incidents.dart';
+import 'package:black_box/features/trips/presentation/cubit/trip_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../core/constants/global.dart';
@@ -38,7 +39,7 @@ class DrivingEventContent extends StatelessWidget {
                   AppLocalizations.of(context)!.event_major_crashes,
                   Color(0xFfD96B6B),
                   onTap: () {
-                    context.read<CrashCubit>().showAllCrashes("major_crash");
+                    context.read<CrashCubit>().showAllCrashes(type: "major_crash",carId: int.parse(carId));
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -56,7 +57,7 @@ class DrivingEventContent extends StatelessWidget {
                   AppLocalizations.of(context)!.event_hard_braking,
                   Colors.red,
                   onTap: () {
-                    context.read<CrashCubit>().showAllCrashes("hard_braking");
+                    context.read<CrashCubit>().showAllCrashes(type: "hard_braking",carId: int.parse(carId));
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -70,6 +71,7 @@ class DrivingEventContent extends StatelessWidget {
                   AppLocalizations.of(context)!.event_speeding_incident,
                   Color(0xFF8B0000),
                   onTap: () {
+                    context.read<TripCubit>().showTripsHistory(carId);
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -83,7 +85,7 @@ class DrivingEventContent extends StatelessWidget {
                   AppLocalizations.of(context)!.event_aggressive_turns,
                   Colors.red,
                   onTap: () {
-                    context.read<CrashCubit>().showAllCrashes("aggressive_turn");
+                    context.read<CrashCubit>().showAllCrashes(type: "aggressive_turn",carId: int.parse(carId));
                     Navigator.push(
                       context,
                       MaterialPageRoute(

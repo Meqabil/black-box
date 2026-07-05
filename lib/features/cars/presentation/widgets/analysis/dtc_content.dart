@@ -10,8 +10,8 @@ import '../../../../crashes/presentation/cubit/crash_state.dart';
 import '../../../../crashes/presentation/widgets/sub_widgets/crash_button.dart';
 import '../../../../crashes/presentation/widgets/sub_widgets/crash_item.dart';
 
-class RoadBumpContent extends StatelessWidget {
-  const RoadBumpContent({super.key});
+class DtcContent extends StatelessWidget {
+  const DtcContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,12 +41,13 @@ class RoadBumpContent extends StatelessWidget {
                       itemCount: state.crashes.length,
                       itemBuilder: (context,idx){
                         return CrashItem(
-                            lrs: state.crashes[idx].speedBefore.toString(),
-                            severity: state.crashes[idx].severity,
-                            location: state.crashes[idx].location,
-                            reason: state.crashes[idx].type,
-                            date: state.crashes[idx].crashedAt,
-
+                          lrs: state.crashes[idx].speedBefore.toString(),
+                          severity: state.crashes[idx].severity,
+                          location: state.crashes[idx].location,
+                          reason: state.crashes[idx].type,
+                          date: state.crashes[idx].crashedAt,
+                          type: 'dtc',
+                          dtc: state.crashes[idx].dtcCodes,
                         );
                       },
                     );

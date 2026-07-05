@@ -10,8 +10,8 @@ class CrashRepositoryImpl extends CrashRepository{
   }
 
   @override
-  getAllCrashes(String type) {
-    return crashDataSource.getAllCrashes(type);
+  getAllCrashes(String? type,int? carId) {
+    return crashDataSource.getAllCrashes(type,carId);
   }
 
 }

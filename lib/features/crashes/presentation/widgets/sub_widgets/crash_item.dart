@@ -6,12 +6,15 @@ import '../../../../../core/constants/images.dart';
 import 'crash_button.dart';
 import 'package:black_box/core/localization/generated/app_localizations.dart';
 class CrashItem extends StatelessWidget {
-  const CrashItem({super.key,required this.lrs,required this.severity,required this.location,required this.reason,required this.date});
+  CrashItem({super.key,required this.lrs,required this.severity,required this.location,required this.reason,required this.date,this.type = 'major_crash',this.coolant = '125',this.dtc= 'P2505'});
   final String lrs;
   final String severity;
   final String location;
   final String reason;
   final String date;
+  String type;
+  String? coolant;
+  String? dtc;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -56,8 +59,8 @@ class CrashItem extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(AppLocalizations.of(context)!.event_last_speed,style: TextStyle(color: Theme.of(context).colorScheme.onSurface,fontSize: 17,fontWeight: FontWeight.w500),),
-                  Text("$lrs Km/H",style: TextStyle(color: Theme.of(context).colorScheme.onSurface,fontSize: 15,),),
+                  Text((type == 'coolant') ? "Coolant" : (type == 'dtc') ? "DTC codes" :   AppLocalizations.of(context)!.event_last_speed,style: TextStyle(color: Theme.of(context).colorScheme.onSurface,fontSize: 17,fontWeight: FontWeight.w500),),
+                  Text((type == 'coolant') ? ("$coolant C" ?? '') : (type == 'dtc') ? dtc ?? '' : "$lrs Km/H",style: TextStyle(color: Theme.of(context).colorScheme.onSurface,fontSize: 15,),),
                 ],
               ),
             ],

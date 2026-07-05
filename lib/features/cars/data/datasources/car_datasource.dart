@@ -5,7 +5,6 @@ import 'package:black_box/features/cars/data/models/car_model.dart';
 import 'package:black_box/features/cars/data/models/stats_model.dart';
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';
 import 'package:black_box/features/cars/domain/entities/stats_entity.dart';
-import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
 import 'package:dio/dio.dart';
 
 class CarDataSource{
