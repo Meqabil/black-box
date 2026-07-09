@@ -266,7 +266,7 @@ class _LiveTrackingState extends State<LiveTracking> {
                         decoration: BoxDecoration(
                           color: Colors.white.withAlpha(25),
                           borderRadius: BorderRadius.circular(35),
-                          border: BoxBorder.all(width: 1,color: Colors.white)
+                          border: Border.all(width: 1,color: Colors.white)
                         ),
                         child: Container(
                           width: 100,
