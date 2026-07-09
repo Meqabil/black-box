@@ -7,12 +7,9 @@ import 'package:black_box/features/crashes/presentation/cubit/crash_state.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
 import 'package:black_box/features/notifications/data/datasources/notification_datasource.dart';
-import 'package:black_box/features/trips/data/datasources/trip_datasource.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:black_box/core/localization/generated/app_localizations.dart';
-
 import '../../../../shared/widgets/notification_button.dart';
 import '../widgets/circular_indicator.dart';
 import '../widgets/small_stat.dart';
@@ -27,6 +24,12 @@ class HomeContent extends StatefulWidget {
 class _HomeContentState extends State<HomeContent> {
 
   NotificationDataSource dat = NotificationDataSource();
+  @override
+  void initState() {
+    context.read<CarCubit>().getAllCars();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,8 +140,24 @@ class _HomeContentState extends State<HomeContent> {
                                   BlocBuilder<CarCubit,CarState>(
                                     builder: (context,state) {
                                       if(state is CarSuccess){
+                                        if(state.stats.totalVehicles == 0){
+                                          return Container(
+                                            width: width * 0.15,
+                                            height: width * .09,
+                                            decoration: BoxDecoration(
+                                              color: const Color(0xFF052224),
+                                              borderRadius: BorderRadius.circular(width * .045),
+                                            ),
+                                            alignment: Alignment.center,
+                                            child: Text(
+                                              "0%",
+                                              style: TextStyle(color: Colors.white, fontSize: width * .027),
+                                            ),
+                                          );
+
+                                        }
                                         return Container(
-                                          width: width * .15,
+                                          width: width * ((state.stats.totalActiveVehicles * 1.0 / state.stats.totalVehicles * 1.0 )),
                                           height: width * .09,
                                           decoration: BoxDecoration(
                                             color: const Color(0xFF052224),
@@ -146,7 +165,7 @@ class _HomeContentState extends State<HomeContent> {
                                           ),
                                           alignment: Alignment.center,
                                           child: Text(
-                                            "${(state.stats.totalActiveVehicles / state.stats.totalVehicles).toInt()}%",
+                                            "0%",
                                             style: TextStyle(color: Colors.white, fontSize: width * .027),
                                           ),
                                         );
@@ -181,8 +200,15 @@ class _HomeContentState extends State<HomeContent> {
                                 BlocBuilder<CarCubit,CarState>(
                                   builder: (context,state){
                                     if(state is CarSuccess){
+                                      if(state.stats.totalVehicles == 0){
+                                        return Text(
+                                          AppLocalizations.of(context)!.home_active_cars('0'),
+                                          style: TextStyle(color: Colors.white, fontSize: width * .029),
+                                        );
+
+                                      }
                                       return Text(
-                                        AppLocalizations.of(context)!.home_active_cars('${(state.stats.totalActiveVehicles / state.stats.totalVehicles).toInt()}'),
+                                        AppLocalizations.of(context)!.home_active_cars('${((state.stats.totalActiveVehicles * 1.0 / state.stats.totalVehicles * 1.0 ) * 100).toInt()}'),
                                         style: TextStyle(color: Colors.white, fontSize: width * .029),
                                       );
                                     }
@@ -226,7 +252,15 @@ class _HomeContentState extends State<HomeContent> {
                         ),
                         child: Row(
                           children: [
-                            CircularIndicator(),
+                            BlocBuilder<CarCubit,CarState>(
+                              builder: (context,state){
+                                if(state is CarSuccess){
+                                  return  CircularIndicator(percent: ((state.stats.totalActiveVehicles * 1.0 / state.stats.totalVehicles * 1.0 )));
+                                }
+                                return CircularIndicator(percent: 40,);
+
+                              },
+                            ),
                             SizedBox(
                               width: width * 0.1325,
                               height:   width * .21,
@@ -279,7 +313,7 @@ class _HomeContentState extends State<HomeContent> {
                                             color: Colors.black,
                                           ),
                                           title: AppLocalizations.of(context)!.home_safety_score,
-                                          value: "${state.score.toStringAsFixed(0)}%",
+                                          value: "0%",
                                           valColor: Theme.of(context).colorScheme.onSecondaryFixed,
                                         );
                                       }

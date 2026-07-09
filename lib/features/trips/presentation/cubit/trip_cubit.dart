@@ -45,3 +45,4 @@ class TripCubit extends Cubit<TripState>{
     }
   }
 }
+

@@ -7,9 +7,11 @@ import '../../../../../domain/entities/sub_entities/sub_entities/sub_entities/da
 class DataModel extends DataEntity{
   String? title;
   String? message;
+  String? type;
   String? icon;
   DetailsModel? details;
   TelematicsModel? telematics;
+
 
   DataModel({this.title, this.message, this.icon, this.details, this.telematics});
 
@@ -17,6 +19,7 @@ class DataModel extends DataEntity{
     title = json['title'];
     message = json['message'];
     icon = json['icon'];
+    type = json['type'];
     details =
     json['details'] != null ? new DetailsModel.fromJson(json['details']) : null;
     telematics = json['telematics'] != null
@@ -28,6 +31,7 @@ class DataModel extends DataEntity{
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['title'] = this.title;
     data['message'] = this.message;
+    data['type'] = this.type;
     data['icon'] = this.icon;
     if (this.details != null) {
       data['details'] = this.details!.toJson();

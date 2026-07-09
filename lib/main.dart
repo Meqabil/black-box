@@ -3,6 +3,7 @@ import 'package:black_box/bnv.dart';
 import 'package:black_box/core/network/dio_helper.dart';
 import 'package:black_box/core/constants/global.dart';
 import 'package:black_box/core/theme/app_theme.dart';
+import 'package:black_box/features/analysis/calender.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/new_password/password_cubit.dart';
 import 'package:black_box/features/auth/presentation/cubit/auth/signup/signup_cubit.dart';
 import 'package:black_box/features/auth/presentation/cubit/owner/owner_cubit.dart';
@@ -20,6 +21,7 @@ import 'package:black_box/features/settings/presentation/cubit/language_cubit.da
 import 'package:black_box/features/settings/presentation/cubit/language_state.dart';
 import 'package:black_box/features/start_app/splash_screen.dart';
 import 'package:black_box/features/trips/presentation/cubit/trip_cubit.dart';
+import 'package:black_box/features/trips/presentation/screens/trips_screen.dart';
 import 'package:black_box/features/trips/presentation/screens/tripsscree.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -42,6 +44,7 @@ void main() async{
   runApp(
     const AppBootstrap()
   );
+  print("Token : ");
   print(pref?.getString("token"));
 }
 
@@ -62,7 +65,6 @@ class MyApp extends StatelessWidget {
               theme: AppTheme.lightTheme,
               darkTheme: AppTheme.darkTheme,
               themeMode: pref!.getString("theme") == 'dark' ? ThemeMode.dark : ThemeMode.light,
-              //home: SplashScreen(),
               locale: pref!.getString('lang') == null ? state.locale : Locale(pref!.getString('lang') ?? 'en'),
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,

@@ -28,11 +28,21 @@ class TripDataSource {
     final status = res.data['status'];
     final data = res.data['data']['trips'];
     if(status == 'success'){
-      //print(data);
-
       trips = data.map((trip) => TripModel.fromJson(trip)).where((e) => e.vehicleId == carId).toList();
       return trips;
     }
     return [];
+  }
+
+  Future<String> getLastTripCarWithIn(String id) async{
+    final res = await DioHelper.dio.get(AppLink.tripsHistory);
+    final status = res.data['status'];
+    final data = res.data['data']['trips'];
+    String lastTripId = '0';
+    if(status == 'success'){
+      print(data.firstWhere((e) => e['vehicle_id'] == id)['id']);
+      lastTripId = data.firstWhere((e) => e['vehicle_id'] == id)['id'].toString();
+    }
+    return lastTripId;
   }
 }

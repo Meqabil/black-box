@@ -5,19 +5,18 @@ import '../cubit/trip_cubit.dart';
 import '../cubit/trip_state.dart';
 import '../widgets/speed_bar.dart';
 
-class SpeedInfoCard extends StatefulWidget {
-  const SpeedInfoCard({super.key});
+class SpeedInfoScreen extends StatefulWidget {
+  const SpeedInfoScreen({super.key});
 
   @override
-  State<SpeedInfoCard> createState() => _SpeedInfoCardState();
+  State<SpeedInfoScreen> createState() => _SpeedInfoScreenState();
 }
 
-class _SpeedInfoCardState extends State<SpeedInfoCard> {
+class _SpeedInfoScreenState extends State<SpeedInfoScreen> {
   List<double> tempList = [];
   double onGoingTemp = 0;
   double tempCurrentSpeed = 0;
   double tempMax = 0;
-
   @override
   void initState() {
     super.initState();
@@ -47,8 +46,6 @@ class _SpeedInfoCardState extends State<SpeedInfoCard> {
                 onGoingTemp =
                     tempList.reduce((a, b) => a + b) / tempList.length;
               }
-
-              print(tempList);
 
               return Padding(
                 padding: const EdgeInsets.all(16),
@@ -84,9 +81,7 @@ class _SpeedInfoCardState extends State<SpeedInfoCard> {
                     SpeedTile(
                       icon: Icons.thermostat_auto,
                       title: "Average Speed",
-                      value: (state.trip.status == "ongoing")
-                          ? onGoingTemp
-                          : onGoingTemp,
+                      value: (state.trip.status == "ongoing") ? onGoingTemp : onGoingTemp,
                       color: Colors.green,
                     ),
                   ],

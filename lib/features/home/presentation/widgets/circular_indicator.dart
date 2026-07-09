@@ -5,7 +5,8 @@ import 'package:black_box/core/localization/generated/app_localizations.dart';
 import '../../../../core/constants/global.dart';
 
 class CircularIndicator extends StatelessWidget {
-  const CircularIndicator({super.key});
+  const CircularIndicator({super.key,required this.percent});
+  final double percent;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class CircularIndicator extends StatelessWidget {
               width: width * .162,
               height: width * .162,
               child: CircularProgressIndicator(
-                value: 0.5,
+                value: percent,
                 strokeWidth: 3,
                 color: Theme.of(context).colorScheme.primary,
                 backgroundColor: Colors.white,

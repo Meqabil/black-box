@@ -1,4 +1,5 @@
 import 'package:black_box/core/utils/date_formatter.dart';
+import 'package:black_box/features/crashes/presentation/screens/crash.dart';
 import 'package:black_box/features/notifications/presentation/cubits/notification_cubit.dart';
 import 'package:black_box/features/notifications/presentation/cubits/notification_state.dart';
 import 'package:black_box/features/notifications/presentation/widgets/functions/notification_reason.dart';
@@ -9,6 +10,7 @@ import 'package:black_box/core/localization/generated/app_localizations.dart';
 import '../../../../core/theme/app_color.dart';
 import '../../../../core/constants/global.dart';
 import '../../../../core/constants/images.dart';
+import '../../../crashes/presentation/cubit/crash_cubit.dart';
 import '../widgets/notification_item.dart';
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
@@ -36,6 +38,7 @@ class NotificationScreen extends StatelessWidget {
               child: Image.asset(AppImages.bill,width: width * 0.0325,),
             ),
             onPressed: () {
+              context.read<NotificationCubit>().getNotifications();
               //context.read<NotificationCubit>().makeAsRead();
             },
           ),
@@ -91,6 +94,16 @@ class NotificationScreen extends StatelessWidget {
                           (idx != 0 && state.notificationsList[idx].createdAt.toString().substring(0,10)  == state.notificationsList[idx - 1].createdAt.toString().substring(0,10)) ? Container() : Text(DateFormatter.formatDate(context,state.notificationsList[idx].createdAt)),
                           SizedBox(height: width * 0.025,),
                           NotificationItem(
+                            onTap: (){
+                              context.read<CrashCubit>().showAllCrashes(type: state.notificationsList[idx].data.type);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      Crash(driverId: "0", driverName: state.notificationsList[idx].data.details.driverName, carId: '',title: state.notificationsList[idx].data.details.vehicleInfo,notifyDate: state.notificationsList[idx].createdAt,)
+                                ),
+                              );
+                            },
                             icon: Icons.notifications,
                             last: (idx != 0 && state.notificationsList[idx].createdAt.toString().substring(0,10) != state.notificationsList[idx - 1].createdAt.toString().substring(0,10)),
                             title: notificationTitle(context,state.notificationsList[idx].data.title),

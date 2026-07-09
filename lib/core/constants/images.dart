@@ -30,6 +30,7 @@ class AppImages{
   static const speed = "$_root/driving_events/Speed.png";
   static const trafficJam = "$_root/driving_events/TrafficJam.png";
   static const turns = "$_root/driving_events/Turns.png";
+  static const speedCounter = "$_root/driving_events/speed_counter.png";
 
   // Notifications
   static const bill = "$_root/notifications/bill.png";

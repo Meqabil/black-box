@@ -20,7 +20,6 @@ class SpeedIncidents extends StatelessWidget {
           pageContent: RefreshIndicator(
               onRefresh: () async{
                 context.read<TripCubit>().showTripsHistory(carId);
-                print('object');
               },
               child: SpeedingIncidentsContent(carId: carId,)
           )

@@ -2,6 +2,7 @@ import 'package:black_box/features/cars/presentation/widgets/car_page/dialogues/
 import 'package:flutter/material.dart';
 import '../../../../../core/theme/app_color.dart';
 import '../../../../../core/constants/global.dart';
+import '../../../../trips/presentation/screens/trips_screen.dart';
 import '../../../domain/entities/car_entity.dart';
 import '../../screens/car_details/car_details.dart';
 import '../../screens/edit_car_screen.dart';
@@ -16,6 +17,8 @@ class CarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+
+
         Navigator.push(
           context,
           MaterialPageRoute(

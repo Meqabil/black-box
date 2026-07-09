@@ -11,13 +11,15 @@ import 'package:black_box/features/cars/presentation/screens/car_details/analysi
 import 'package:black_box/features/cars/presentation/widgets/car_page/car_detials/car_parameter.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
-import 'package:black_box/features/notifications/presentation/screens/notification_screen.dart';
+import 'package:black_box/features/trips/presentation/screens/trips_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/constants/global.dart';
 import '../../../../../core/theme/app_color.dart';
 import '../../../../../shared/widgets/notification_button.dart';
 import '../../../../home/presentation/widgets/stat_item.dart';
+import '../../../../trips/data/datasources/trip_datasource.dart';
+import '../../../../trips/presentation/cubit/trip_cubit.dart';
 import '../edit_car_screen.dart';
 import '../driving_events/driving_event.dart';
 import 'package:black_box/core/localization/generated/app_localizations.dart';
@@ -34,14 +36,23 @@ class CarDetailsScreen extends StatefulWidget {
 
 class _CarDetailsScreenState extends State<CarDetailsScreen> {
   final TextEditingController searchController = TextEditingController();
-
+  String data = '';
 
 
 
   @override
   void initState() {
     context.read<DriverCubit>().showOneDriver(int.tryParse(widget.car.driverId) ?? 0);
+    //if(data != '' && data != '0')
+      getLastLocationCarWithIn(widget.car.id.toString());
     super.initState();
+  }
+
+  getLastLocationCarWithIn(String carId) async{
+    TripDataSource dataSource = TripDataSource();
+
+    data = await dataSource.getLastTripCarWithIn(carId) ;
+    return data;
   }
 
   @override
@@ -83,11 +94,23 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             child: Row(
               children: [
-                StatItem(
-                  label: AppLocalizations.of(context)!.total_active_cars,
-                  value:"1",
-                  valueColor:Colors.white,
-                  arrowAngle: 135,
+                BlocBuilder<CarCubit,CarState>(
+                    builder: (context,state) {
+                      if(state is CarSuccess){
+                        return StatItem(
+                          label: AppLocalizations.of(context)!.total_active_cars,
+                          value:  "${state.stats.totalActiveVehicles}",
+                          valueColor:  Colors.white,
+                          arrowAngle: 135,
+                        );
+                      }
+                      return StatItem(
+                        label: AppLocalizations.of(context)!.total_active_cars,
+                        value:  "0",
+                        valueColor:  Colors.white,
+                        arrowAngle: 135,
+                      );
+                    }
                 ),
                 Container(
                   width: 2,
@@ -97,21 +120,21 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                 ),
                 BlocBuilder<CarCubit,CarState>(
                   builder: (context,state) {
-                    if(state is CarSuccess){
-                      return StatItem(
-                        label: AppLocalizations.of(context)!.total_cars,
-                        value: state.carsList.length.toString(),
-                        valueColor:  Color(0xFF0068FF),
-                        arrowAngle: -135,
-                      );
-                    }
-                    return StatItem(
-                      label: AppLocalizations.of(context)!.total_cars,
-                      value: "0",
-                      valueColor:  Color(0xFF0068FF),
-                      arrowAngle: -135,
-                    );
-                  }
+                if(state is CarSuccess){
+                  return StatItem(
+                    label: AppLocalizations.of(context)!.total_cars,
+                    value: state.carsList.length.toString(),
+                    valueColor:  Color(0xFF0068FF),
+                    arrowAngle: -135,
+                  );
+              }
+              return StatItem(
+                  label: AppLocalizations.of(context)!.total_cars,
+                  value: "0",
+                  valueColor:  Color(0xFF0068FF),
+                  arrowAngle: -135,
+              );
+              }
                 ),
               ],
             ),
@@ -119,20 +142,20 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
           const SizedBox(height: 65),
           Expanded(
             child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.only(top: 30, left: 25, right: 25),
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.secondary,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                  topRight: Radius.circular(50),
+                width: double.infinity,
+                padding: const EdgeInsets.only(top: 30, left: 25, right: 25),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(50),
+                    topRight: Radius.circular(50),
+                  ),
                 ),
-              ),
-              child: Column(
-                children: [
+                child: Column(
+                  children: [
                   Expanded(
                     child: ListView(
-                      children: [
+                    children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
@@ -140,20 +163,24 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                               builder: (context,state) {
                                 if(state is OneDriverSuccess){
                                   return TextButton(
-                                    onPressed: () {
-                                      String driverName = '';
-                                      driverName = state.driver.name;
-                                      if(driverName == '') driverName = AppLocalizations.of(context)!.unknown_driver;
-                                      context.read<DriverCubit>().getDriverScore(int.parse(widget.car.driverId));
-                                      Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                          builder: (context) => DrivingScreen(
-                                            driverId: widget.car.driverId,
-                                            carId: widget.car.id.toString(),
-                                            driverName: driverName,
+                                  onPressed: () {
+                                      if(data == '' || data == '0'){
+                                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => NoTripsScreen()));
+                                      }else{
+                                        String driverName = '';
+                                        driverName = state.driver.name;
+                                        if(driverName == '') driverName = AppLocalizations.of(context)!.unknown_driver;
+                                        context.read<DriverCubit>().getDriverScore(int.parse(widget.car.driverId));
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            builder: (context) => DrivingScreen(
+                                              driverId: widget.car.driverId,
+                                              carId: widget.car.id.toString(),
+                                              driverName: driverName,
+                                            ),
                                           ),
-                                        ),
-                                      );
+                                        );
+                                      }
                                     },
                                     child: Row(
                                       children: [
@@ -187,7 +214,17 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                           imagePath: AppImages.liveTracking,
                           title: AppLocalizations.of(context)!.tracking_live,
                           iconBgColor: Colors.blue.shade300,
-                          destinationPage: LiveTracking(),
+                          destinationPage: LiveTracking(car: widget.car,),
+                          onTap: (){
+
+                            if(data == '' || data == '0'){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => NoTripsScreen()));
+                            }else{
+                              context.read<TripCubit>().showTripDetail(int.parse(data));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => LiveTracking(car: widget.car)));
+
+                            }
+                          },
                         ),
                         CarParameter(
                           context: context,
@@ -195,6 +232,15 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                           title: AppLocalizations.of(context)!.coolant_temp,
                           iconBgColor: Colors.blue.shade300,
                           destinationPage: CoolantTemp(car: widget.car,),
+                          onTap: (){
+                            if(data == '' || data == '0'){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => NoTripsScreen()));
+                            }else{
+                              context.read<TripCubit>().showTripDetail(int.parse(data));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => CoolantTemp(car: widget.car)));
+
+                            }
+                          },
                         ),
                         CarParameter(
                           context:context,
@@ -202,6 +248,15 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                           title: AppLocalizations.of(context)!.dtc_codes,
                           iconBgColor: AppColor.mainRedColor,
                           destinationPage: DtcScreen(car: widget.car),
+                          onTap: (){
+                            if(data == '' || data == '0'){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => NoTripsScreen()));
+                            }else{
+                              context.read<TripCubit>().showTripDetail(int.parse(data));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => DtcScreen(car: widget.car)));
+
+                            }
+                          },
                         ),
                         CarParameter(
                           context:context,
@@ -209,6 +264,15 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                           title: AppLocalizations.of(context)!.road_bump,
                           iconBgColor: Colors.blue.shade300,
                           destinationPage: RoadBumpScreen(car: widget.car,),
+                          onTap: (){
+                            if(data == '' || data == '0'){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => NoTripsScreen()));
+                            }else{
+                              context.read<TripCubit>().showTripDetail(int.parse(data));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => RoadBumpScreen(car: widget.car)));
+
+                            }
+                          },
                         ),
                         CarParameter(
                           context:context,
@@ -216,6 +280,16 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                           title: AppLocalizations.of(context)!.fuel_level,
                           iconBgColor: AppColor.mainRedColor,
                           destinationPage: FuelLevelScreen(car: widget.car,),
+                          onTap: (){
+
+                            if(data == '' || data == '0'){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => NoTripsScreen()));
+                            }else{
+                              context.read<TripCubit>().showTripDetail(int.parse(data));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => FuelLevelScreen(car: widget.car)));
+
+                            }
+                          },
                         ),
                       ],
                     )

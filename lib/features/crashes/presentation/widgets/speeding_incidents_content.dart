@@ -45,7 +45,6 @@ class _SpeedingIncidentsContentState extends State<SpeedingIncidentsContent> {
           BlocBuilder<TripCubit,TripState>(
             builder: (context,state) {
               if(state is TripsHistorySuccess){
-                print(state.trips);
                 tempList = [24,56,74,85];
                 if(state.trips.isEmpty){
                   return Center(

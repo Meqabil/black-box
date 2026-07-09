@@ -1,33 +1,34 @@
+import 'package:black_box/core/localization/generated/app_localizations.dart';
+import 'package:black_box/features/analysis/presentation/widgets/crash_item_calender.dart';
+import 'package:black_box/shared/widgets/notification_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/theme/app_color.dart';
+import '../crashes/presentation/cubit/crash_cubit.dart';
+import '../crashes/presentation/cubit/crash_state.dart';
 class CalenderScreen extends StatefulWidget {
-  const CalenderScreen({super.key});
-
+  const CalenderScreen({super.key,required this.title,required this.carId});
+  final String title;
+  final int carId;
   @override
   State<CalenderScreen> createState() => _CalenderScreenState();
 }
 
 class _CalenderScreenState extends State<CalenderScreen> {
+  DateTime date = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor:AppColor.mainRedColor,
       appBar: AppBar(
-        toolbarHeight: 120,
-        title: Text("Driving Events ",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+        //toolbarHeight: 80,
+        title: Text("All Crashes",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
         centerTitle: true,
         backgroundColor: AppColor.mainRedColor,
         iconTheme: IconThemeData(color: Colors.white),
         actions: [
-          IconButton(
-              style: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll(Colors.white),
-                  padding: WidgetStatePropertyAll(EdgeInsets.all(2))
-              ),
-              onPressed: (){
-
-              }, icon: Icon(Icons.notifications_none,color: AppColor.mainRedColor,size: 35,)),
+          NotificationButton(),
           SizedBox(width: 20,)
         ],
       ),
@@ -47,52 +48,91 @@ class _CalenderScreenState extends State<CalenderScreen> {
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.secondary,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(60),
                     topRight: Radius.circular(60),
                   ),
                 ),
                 child: SingleChildScrollView(
+
                   padding: const EdgeInsets.all(30),
                   child: Column(
                     children: [
-                      CalendarDatePicker(initialDate: DateTime.now(), firstDate: DateTime(DateTime.april), lastDate: DateTime.now(), onDateChanged: (v){}),
-                      SizedBox(height: 25,),
+                      CalendarDatePicker(
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime(DateTime.january),
+                        lastDate: DateTime.now(),
+                        onDateChanged: (v){
+                          date = v;
+                          print(v);
+                        }
+                      ),
                       MaterialButton(
                         color: AppColor.mainRedColor,
                         padding: EdgeInsets.symmetric(horizontal: 65,vertical: 2),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                         onPressed: (){
-
+                          context.read<CrashCubit>().showAllCrashes(type: widget.title,);
                         },
                         child: Text("Search",style: TextStyle(color: Colors.white,fontSize: 18),),
                       ),
+                      SizedBox(height: 40,),
                       Row(
                         children: [
-                          Container(
-                            width: 57,
-                            height: 53,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFD96B6B),
-                              borderRadius: BorderRadius.circular(22)
-                            ),
-                            child: Icon(Icons.car_crash_outlined),
-                          ),
-                          SizedBox(width: 15,),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Speeding",style: TextStyle(fontSize: 18,color: Color(0xFF052224)),),
-                              Text("18:27-April 30",style: TextStyle(fontSize: 14,color: Color(0xFF0068FF)),),
-                            ],
-                          ),
-                          Container(height:40,child: VerticalDivider(width: 45,thickness: 1,color: AppColor.mainRedColor,)),
-                          Text("142 Km/H")
+                          // Container(
+                          //   width: 57,
+                          //   height: 53,
+                          //   decoration: BoxDecoration(
+                          //     color: Color(0xFFD96B6B),
+                          //     borderRadius: BorderRadius.circular(22)
+                          //   ),
+                          //   child: Icon(Icons.car_crash_outlined),
+                          // ),
+                          // SizedBox(width: 15,),
+                          // Column(
+                          //   mainAxisAlignment: MainAxisAlignment.start,
+                          //   crossAxisAlignment: CrossAxisAlignment.start,
+                          //   children: [
+                          //     Text("Speeding",style: TextStyle(fontSize: 18,color: Color(0xFF052224)),),
+                          //     Text("18:27-April 30",style: TextStyle(fontSize: 14,color: Color(0xFF0068FF)),),
+                          //   ],
+                          // ),
+                          // Container(height:40,child: VerticalDivider(width: 45,thickness: 1,color: AppColor.mainRedColor,)),
+                          // Text("142 Km/H")
                         ],
                       ),
-                      Text("in 100 km/h zone")
+                      //Text("in 100 km/h zone")
+                      BlocBuilder<CrashCubit,CrashState>(
+                        
+                        builder: (context,state){
+                          if(state is CrashSuccess){
+                            print("*****************************0");
+                            print("*****************************0");
+                            print(state.crashes.length);
+                            print("*****************************0");
+                            print("*****************************0");
+                            return ListView.builder(
+                              itemCount: state.crashes.length,
+                              shrinkWrap: true,
+                              itemBuilder: (context,idx){
+                                print(state.crashes[idx].crashedAt + date.toString());
+
+                                return CrashItemCalender(
+                                    title: widget.title,
+                                    lrs: state.crashes[idx].speedBefore.toString(),
+                                    severity: state.crashes[idx].severity,
+                                    location: state.crashes[idx].location,
+                                    reason: state.crashes[idx].type,
+                                    date: state.crashes[idx].crashedAt,
+                                    selectedDate: date.toString(),
+                                );
+                              },
+                            );
+                          }
+                          return Center(child: CircularProgressIndicator(),);
+                        },
+                      )
                     ],
                   ),
                 ),

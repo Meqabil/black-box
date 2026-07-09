@@ -41,6 +41,7 @@ class CoolantTempContent extends StatelessWidget {
                       itemCount: state.crashes.length,
                       itemBuilder: (context,idx){
                         return CrashItem(
+                          title: "Coolant",
                           lrs: state.crashes[idx].speedBefore.toString(),
                           severity: state.crashes[idx].severity,
                           location: state.crashes[idx].location,

@@ -11,11 +11,12 @@ import 'package:black_box/core/localization/generated/app_localizations.dart';
 import '../../../core/theme/app_color.dart';
 import '../notification_button.dart';
 class DrivingEventsForm extends StatelessWidget {
-  const DrivingEventsForm({super.key,required this.driverId,required this.driverName,required this.carId,required this.pageContent});
+  const DrivingEventsForm({super.key,required this.driverId,required this.driverName,required this.carId,required this.pageContent,this.title});
   final String driverName;
   final String driverId;
   final String carId;
   final Widget pageContent;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class DrivingEventsForm extends StatelessWidget {
                 ),
 
                 Text(
-                  "${AppLocalizations.of(context)!.car_item_title(carId)} ",
+                  (carId == '' ) ? title ?? '' : "${AppLocalizations.of(context)!.car_item_title(carId)} ",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,

@@ -141,6 +141,7 @@ flutter:
     - assets/driving_events/Speed.png
     - assets/driving_events/TrafficJam.png
     - assets/driving_events/Turns.png
+    - assets/driving_events/speed_counter.png
     # Car Parameters
     - assets/car_parameters/Location.png
     - assets/car_parameters/Coolant.png

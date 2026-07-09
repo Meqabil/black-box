@@ -13,4 +13,9 @@ class TripRepositoryImpl extends TripRepository{
   showTripsHistory(String carId) {
     return _dataSource.showTripsHistory(carId);
   }
+
+  @override
+  getLastTripId(String carId) {
+    return _dataSource.getLastTripCarWithIn(carId);
+  }
 }

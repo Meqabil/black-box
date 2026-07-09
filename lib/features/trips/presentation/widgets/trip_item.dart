@@ -18,7 +18,7 @@ class TripItem extends StatelessWidget {
     return InkWell(
       onTap: (){
         context.read<TripCubit>().showTripDetail(trip.id);
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => SpeedInfoCard()));
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => SpeedInfoScreen()));
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -136,7 +136,7 @@ class TripItem extends StatelessWidget {
                       child: Text(
                         trip.status,
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.onSurface,
+                          color: (trip.status != "ongoing") ?  Colors.green : Colors.blue,
                           fontSize: 15,
                         ),
                       ),
@@ -156,7 +156,7 @@ class TripItem extends StatelessWidget {
                       ),
                     ) : Container(),
                     (trip.status != "ongoing") ? Text(
-                      "${double.tryParse(trip.avgSpeed)?.toStringAsFixed(2)} Km/H",
+                      "${double.tryParse(trip.distanceKm)?.toStringAsFixed(2)} Km",
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.onSurface,
                         fontSize: 15,

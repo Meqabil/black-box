@@ -47,6 +47,7 @@ class DrivingEventContent extends StatelessWidget {
                           driverId: driverId,
                           driverName: driverName,
                           carId: carId,
+                          title: 'major_crash',
                         ),
                       ),
                     );

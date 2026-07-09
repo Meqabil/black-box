@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:black_box/core/localization/generated/app_localizations.dart';
 class CarParameter extends StatelessWidget {
-  const CarParameter({super.key,required this.context,required this.title,required this.imagePath,required this.iconBgColor,required this.destinationPage});
+  CarParameter({super.key,required this.context,required this.title,required this.imagePath,required this.iconBgColor,required this.destinationPage,this.onTap});
   final BuildContext context;
   final String imagePath;
   final String title;
   final Color iconBgColor;
   final Widget destinationPage;
+  void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -40,7 +41,7 @@ class CarParameter extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () {
+                onTap: onTap ?? () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => destinationPage),
