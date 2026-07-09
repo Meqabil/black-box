@@ -57,7 +57,7 @@ class _CarListScreenState extends State<Settings> {
                     child: SwitchListTile(
                       title: Text(AppLocalizations.of(context)!.push_notification,
                           style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.onSurface)),
-                      activeColor: darkMode.value ? Colors.grey : AppColor.mainRedColor,
+                      activeThumbColor: darkMode.value ? Colors.grey : AppColor.mainRedColor,
                       inactiveTrackColor: darkMode.value ? Theme.of(context).cardColor : Colors.red.withAlpha(50),
                       thumbColor: WidgetStatePropertyAll(Colors.white70),
                       inactiveThumbColor: Colors.blue,
@@ -72,7 +72,7 @@ class _CarListScreenState extends State<Settings> {
                     child: SwitchListTile(
                       title: Text(AppLocalizations.of(context)!.dark_mode,
                           style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.onSurface)),
-                      activeColor: darkMode.value ? Colors.grey : AppColor.mainRedColor,
+                      activeThumbColor: darkMode.value ? Colors.grey : AppColor.mainRedColor,
                       inactiveTrackColor: darkMode.value ? Theme.of(context).cardColor : Colors.red.withAlpha(50),
                       thumbColor: WidgetStatePropertyAll(Colors.white70),
                       value: darkMode.value,
