@@ -4,6 +4,7 @@ import 'package:black_box/core/constants/images.dart';
 import 'package:black_box/features/profile/presentation/widgets/helper/help_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:black_box/core/localization/generated/app_localizations.dart';
+
 import '../../../../core/theme/app_color.dart';
 import '../../../../shared/widgets/notification_button.dart';
 import '../widgets/helper/expansion_tile.dart';
@@ -21,6 +22,9 @@ class _HelpFAQScreenState extends State<HelpFAQScreen> {
   String searchQuery = "";
   PageController pageController = PageController();
   int page = 0;
+
+
+
   @override
   Widget build(BuildContext context) {
     List<Map<String, String>> faqData = getHelpInfo(context);
@@ -107,30 +111,35 @@ class _HelpFAQScreenState extends State<HelpFAQScreen> {
                       ...filteredFaq.map((item) => ExpansionTileApp(item:item)),
                     ],
                   ),
-                  Container(
-                    alignment: Alignment.topCenter,
-                    padding: EdgeInsets.only(top: width * 0.12),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 45,
-                          height: 45,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              color: AppColor.mainRedColor, borderRadius: BorderRadius.circular(14)
+                  InkWell(
+                    onTap: (){
+
+                    },
+                    child: Container(
+                      alignment: Alignment.topCenter,
+                      padding: EdgeInsets.only(top: width * 0.12),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 45,
+                            height: 45,
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: AppColor.mainRedColor, borderRadius: BorderRadius.circular(14)
+                            ),
+                            child: Icon(Icons.call)
                           ),
-                          child: Image.asset(AppImages.whatsAppIcon,)
-                        ),
-                        const SizedBox(width: 15),
-                        Text(
-                          AppLocalizations.of(context)!.on_wh_num,
-                          style: TextStyle(
-                              color: Theme.of(context).colorScheme.onSurface,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ],
+                          const SizedBox(width: 15),
+                          Text(
+                            AppLocalizations.of(context)!.on_wh_num,
+                            style: TextStyle(
+                                color: Theme.of(context).colorScheme.onSurface,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

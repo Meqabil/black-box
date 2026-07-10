@@ -7,7 +7,7 @@ class NoTripsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: Theme.of(context).colorScheme.surface ,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -44,7 +44,7 @@ class NoTripsScreen extends StatelessWidget {
                 "This vehicle hasn't recorded any trips yet.\nOnce a trip starts, it will appear here with its route, speed, and driving statistics.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondaryFixed
+                  color: Colors.grey.shade400
                 )
               ),
 
@@ -70,6 +70,7 @@ class NoTripsScreen extends StatelessWidget {
                     "Go Back",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      color: Colors.grey
                     ),
                   ),
                 ),

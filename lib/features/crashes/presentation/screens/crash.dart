@@ -18,7 +18,7 @@ class Crash extends StatelessWidget {
         driverId: driverId,
         driverName: driverName,
         carId: carId,
-        title: "All Crashes",
+        title: title,
         pageContent: CrashContent(title: title,carId: int.tryParse(carId) ?? 0,notifyDate: notifyDate,)
       ),
     );

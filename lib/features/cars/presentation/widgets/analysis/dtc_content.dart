@@ -27,7 +27,6 @@ class DtcContent extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(AppLocalizations.of(context)!.events),
-                CrashButton(size: width * 0.0813, imageName: AppImages.calender)
               ],
             ),
           ),
@@ -48,7 +47,7 @@ class DtcContent extends StatelessWidget {
                           reason: state.crashes[idx].type,
                           date: state.crashes[idx].crashedAt,
                           type: 'dtc',
-                          dtc: state.crashes[idx].dtcCodes,
+                          dtc: state.crashes[idx].dtcCodes ?? '',
                         );
                       },
                     );

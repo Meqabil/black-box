@@ -66,11 +66,23 @@ class _CoolantTempState extends State<CoolantTemp> {
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             child: Row(
               children: [
-                StatItem(
-                  label: AppLocalizations.of(context)!.total_active_cars,
-                  value:"1",
-                  valueColor:Colors.white,
-                  arrowAngle: 135,
+                BlocBuilder<CarCubit,CarState>(
+                    builder: (context,state) {
+                      if(state is CarSuccess){
+                        return StatItem(
+                          label: AppLocalizations.of(context)!.total_active_cars,
+                          value:  "${state.stats.totalActiveVehicles}",
+                          valueColor:  Colors.white,
+                          arrowAngle: 135,
+                        );
+                      }
+                      return StatItem(
+                        label: AppLocalizations.of(context)!.total_active_cars,
+                        value:  "0",
+                        valueColor:  Colors.white,
+                        arrowAngle: 135,
+                      );
+                    }
                 ),
                 Container(
                   width: 2,

@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../../shared/widgets/driving_events/driving_events_form.dart';
 
 class HardBraking extends StatelessWidget {
-  const HardBraking({super.key,required this.driverId,required this.driverName,required this.carId});
+  const HardBraking({super.key,required this.driverId,required this.driverName,required this.carId,required this.title});
   final String driverId;
   final String driverName;
-  final String carId;
+  final String title;
+  final int carId;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,8 +15,8 @@ class HardBraking extends StatelessWidget {
       body: DrivingEventsForm(
           driverId: driverId,
           driverName: driverName,
-          carId: carId,
-          pageContent: HardBrakingContent()
+          carId: carId.toString(),
+          pageContent: HardBrakingContent(title: title,carId: carId,)
       ),
     );
   }

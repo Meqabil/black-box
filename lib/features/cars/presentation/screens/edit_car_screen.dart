@@ -1,5 +1,8 @@
 import 'dart:io';
 
+import 'package:black_box/core/constants/global.dart';
+import 'package:black_box/core/constants/images.dart';
+import 'package:black_box/core/localization/generated/app_localizations.dart';
 import 'package:black_box/core/theme/app_color.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
@@ -97,7 +100,7 @@ class _EditCarScreenState extends State<EditCarScreen> {
                     file == null ?
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 2,horizontal: 15),
-                  child: Image.asset("assets/edit_car.png",height: 140,),
+                  child: Image.asset(AppImages.editCar,height: 140,),
                 ) :
                     Positioned(
                       bottom: 15,
@@ -184,16 +187,15 @@ class _EditCarScreenState extends State<EditCarScreen> {
                         controller: vClassController,
                         validator: (val) => val!.isEmpty ? "Field can't be empty" : null,
                       ),
-
                       EditInfoInput(
                         hint: '# Plate Number',
                         controller: plateController,
                         validator: (val) => val!.isEmpty ? "Field can't be empty" : null,
                       ),
-                      const SizedBox(height: 25),
+                      SizedBox(height: height * 0.022),
                       SizedBox(
                         width: double.infinity,
-                        height: 55,
+                        height: height * 0.049,
                         child: BlocListener<CarCubit,CarState>(
                           listener: (context,state){
                             if(state is CarUpdated){
@@ -220,21 +222,21 @@ class _EditCarScreenState extends State<EditCarScreen> {
                                 borderRadius: BorderRadius.circular(90),
                               ),
                             ),
-                            child: const Text(
+                            child: Text(
                               "Update ",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 16,
+                                fontSize: width * 0.032,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 12),
+                      SizedBox(height: height * 0.009),
                       SizedBox(
                         width: double.infinity,
-                        height: 55,
+                        height: height * 0.049,
                         child: ElevatedButton(
                           onPressed: () => Navigator.pop(context),
                           style: ElevatedButton.styleFrom(
@@ -243,8 +245,8 @@ class _EditCarScreenState extends State<EditCarScreen> {
                               borderRadius: BorderRadius.circular(90),
                             ),
                           ),
-                          child: const Text(
-                            "Cancel",
+                          child: Text(
+                            AppLocalizations.of(context)!.common_cancel,
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,

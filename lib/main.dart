@@ -19,10 +19,9 @@ import 'package:black_box/features/notifications/presentation/cubits/notificatio
 import 'package:black_box/features/notifications/presentation/screens/notification_screen.dart';
 import 'package:black_box/features/settings/presentation/cubit/language_cubit.dart';
 import 'package:black_box/features/settings/presentation/cubit/language_state.dart';
-import 'package:black_box/features/start_app/onboaring.dart';
 import 'package:black_box/features/start_app/splash_screen.dart';
 import 'package:black_box/features/trips/presentation/cubit/trip_cubit.dart';
-import 'package:black_box/features/trips/presentation/screens/trips_screen.dart';
+import 'package:black_box/features/trips/presentation/screens/no_trips_screen.dart';
 import 'package:black_box/features/trips/presentation/screens/tripsscree.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -60,6 +59,7 @@ class MyApp extends StatelessWidget {
         return ValueListenableBuilder(
           valueListenable: darkMode,
           builder: (context,val,_){
+
             return MaterialApp(
               navigatorKey: navigatorKey,
               debugShowCheckedModeBanner: false,
@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,
               routes: {
-                "/" : (context) => Onboarding(),
+                "/" : (context) => SplashScreen(),
                 "/notification" : (context) => NotificationScreen(),
               },
             );

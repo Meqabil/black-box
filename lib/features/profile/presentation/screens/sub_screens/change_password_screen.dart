@@ -147,7 +147,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                               ),
                               child: Text(
                                 AppLocalizations.of(context)!.change_password,
-                                style: TextStyle(color: Colors.white, fontSize: width * 0.03488, fontWeight: FontWeight.bold),
+                                style: TextStyle(color: Colors.white, fontSize: width * 0.028, fontWeight: FontWeight.bold),
                               ),
                             )
                           ),

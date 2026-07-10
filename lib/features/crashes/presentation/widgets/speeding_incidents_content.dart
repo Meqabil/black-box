@@ -38,7 +38,6 @@ class _SpeedingIncidentsContentState extends State<SpeedingIncidentsContent> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(AppLocalizations.of(context)!.events),
-                CrashButton(size: width * 0.0813, imageName: AppImages.calender)
               ],
             ),
           ),

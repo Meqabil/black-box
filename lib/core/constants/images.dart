@@ -18,6 +18,9 @@ class AppImages{
   static const roadBump = "$_root/car_parameters/Road.png";
   static const fuelLevel = "$_root/car_parameters/Fuel.png";
 
+  // Edit Car
+  static const editCar = "$_root/edit_car.png";
+
   // Driving Events
   static const calender = "$_root/driving_events/calendar.png";
   static const category = "$_root/driving_events/Category.png";

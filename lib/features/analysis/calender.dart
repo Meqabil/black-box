@@ -23,7 +23,7 @@ class _CalenderScreenState extends State<CalenderScreen> {
       backgroundColor:AppColor.mainRedColor,
       appBar: AppBar(
         //toolbarHeight: 80,
-        title: Text("All Crashes",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+        title: Text(widget.title == '' ? "Crashes" : widget.title,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
         centerTitle: true,
         backgroundColor: AppColor.mainRedColor,
         iconTheme: IconThemeData(color: Colors.white),
@@ -80,26 +80,7 @@ class _CalenderScreenState extends State<CalenderScreen> {
                       SizedBox(height: 40,),
                       Row(
                         children: [
-                          // Container(
-                          //   width: 57,
-                          //   height: 53,
-                          //   decoration: BoxDecoration(
-                          //     color: Color(0xFFD96B6B),
-                          //     borderRadius: BorderRadius.circular(22)
-                          //   ),
-                          //   child: Icon(Icons.car_crash_outlined),
-                          // ),
-                          // SizedBox(width: 15,),
-                          // Column(
-                          //   mainAxisAlignment: MainAxisAlignment.start,
-                          //   crossAxisAlignment: CrossAxisAlignment.start,
-                          //   children: [
-                          //     Text("Speeding",style: TextStyle(fontSize: 18,color: Color(0xFF052224)),),
-                          //     Text("18:27-April 30",style: TextStyle(fontSize: 14,color: Color(0xFF0068FF)),),
-                          //   ],
-                          // ),
-                          // Container(height:40,child: VerticalDivider(width: 45,thickness: 1,color: AppColor.mainRedColor,)),
-                          // Text("142 Km/H")
+
                         ],
                       ),
                       //Text("in 100 km/h zone")

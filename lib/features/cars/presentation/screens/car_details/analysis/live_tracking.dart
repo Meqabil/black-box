@@ -84,7 +84,7 @@ class _LiveTrackingState extends State<LiveTracking> {
         return;
       }
 
-      // ✅ GET LOCATION
+      // GET LOCATION
       Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high,
       );

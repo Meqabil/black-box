@@ -11,7 +11,7 @@ import 'package:black_box/features/cars/presentation/screens/car_details/analysi
 import 'package:black_box/features/cars/presentation/widgets/car_page/car_detials/car_parameter.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_cubit.dart';
 import 'package:black_box/features/drivers/presentation/cubit/driver/driver_state.dart';
-import 'package:black_box/features/trips/presentation/screens/trips_screen.dart';
+import 'package:black_box/features/trips/presentation/screens/no_trips_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/constants/global.dart';

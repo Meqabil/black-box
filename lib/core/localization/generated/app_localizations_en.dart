@@ -349,7 +349,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get how_help => 'How Can We Help You?';
 
   @override
-  String get on_wh_num => 'On Whatsapp Number';
+  String get on_wh_num => 'On Phone Number 5851';
 
   @override
   String get language => 'Language';

@@ -27,6 +27,8 @@ class _HomeContentState extends State<HomeContent> {
   @override
   void initState() {
     context.read<CarCubit>().getAllCars();
+    context.read<CrashCubit>().showAllCrashes();
+    context.read<DriverCubit>().getAllDriversScore();
     super.initState();
   }
 
@@ -159,13 +161,14 @@ class _HomeContentState extends State<HomeContent> {
                                         return Container(
                                           width: width * ((state.stats.totalActiveVehicles * 1.0 / state.stats.totalVehicles * 1.0 )),
                                           height: width * .09,
+                                          constraints: BoxConstraints(minWidth: width * 0.16),
                                           decoration: BoxDecoration(
                                             color: const Color(0xFF052224),
                                             borderRadius: BorderRadius.circular(width * .045),
                                           ),
                                           alignment: Alignment.center,
                                           child: Text(
-                                            "0%",
+                                            "${((state.stats.totalActiveVehicles * 1.0 / state.stats.totalVehicles * 100.0 )).toStringAsFixed(0)}%",
                                             style: TextStyle(color: Colors.white, fontSize: width * .027),
                                           ),
                                         );
@@ -252,10 +255,10 @@ class _HomeContentState extends State<HomeContent> {
                         ),
                         child: Row(
                           children: [
-                            BlocBuilder<CarCubit,CarState>(
+                            BlocBuilder<DriverCubit,DriverState>(
                               builder: (context,state){
-                                if(state is CarSuccess){
-                                  return  CircularIndicator(percent: ((state.stats.totalActiveVehicles * 1.0 / state.stats.totalVehicles * 1.0 )));
+                                if(state is DriversScoreSuccess){
+                                  return  CircularIndicator(percent: state.score / 100.0 );
                                 }
                                 return CircularIndicator(percent: 40,);
 
@@ -313,7 +316,7 @@ class _HomeContentState extends State<HomeContent> {
                                             color: Colors.black,
                                           ),
                                           title: AppLocalizations.of(context)!.home_safety_score,
-                                          value: "0%",
+                                          value: "${state.score.toStringAsFixed(2)}%",
                                           valColor: Theme.of(context).colorScheme.onSecondaryFixed,
                                         );
                                       }

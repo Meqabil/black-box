@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 
 import 'package:black_box/core/localization/generated/app_localizations.dart';
 
+import '../../core/constants/global.dart';
+
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -39,8 +41,8 @@ class _OnboardingState extends State<Onboarding> {
                 image: "assets/start_screen/car2.png",
                 currentPage: 1,
                 controller: controller,
-                titleSize: 22,
-                subtitleSize: 18,
+                titleSize: width * 0.045,
+                subtitleSize: width * 0.039,
             ),
           ],
         ),

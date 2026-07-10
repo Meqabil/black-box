@@ -813,7 +813,7 @@ abstract class AppLocalizations {
   /// No description provided for @on_wh_num.
   ///
   /// In en, this message translates to:
-  /// **'On Whatsapp Number'**
+  /// **'On Phone Number 5851'**
   String get on_wh_num;
 
   /// No description provided for @language.

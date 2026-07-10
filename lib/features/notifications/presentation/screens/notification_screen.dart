@@ -60,7 +60,9 @@ class NotificationScreen extends StatelessWidget {
             ),
           ),
           child: BlocConsumer<NotificationCubit,NotificationState>(
-            listener: (context,state){},
+            listener: (context,state){
+
+            },
             builder: (context,state){
               if(state is NotificationLoading){
                 return Center(child: CircularProgressIndicator(),);
@@ -74,7 +76,6 @@ class NotificationScreen extends StatelessWidget {
                 if(state.notificationsList.isEmpty){
                   return Center(child: Text(AppLocalizations.of(context)!.empty_no_notifications));
                 }
-
                 return ListView.builder(
                   itemCount: state.notificationsList.length,
                   itemBuilder: (context,idx){

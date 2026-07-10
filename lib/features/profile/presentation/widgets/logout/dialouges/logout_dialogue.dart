@@ -30,6 +30,8 @@ class LogoutDialogue extends StatelessWidget {
                       width: width * 0.506,
                       child: ElevatedButton(
                         onPressed: () {
+                          imageCache.clear();
+                          imageCache.clearLiveImages();
                           logOut(context);
                         },
                         style: ElevatedButton.styleFrom(

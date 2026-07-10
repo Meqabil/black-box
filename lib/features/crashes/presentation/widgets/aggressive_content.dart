@@ -1,4 +1,5 @@
 import 'package:black_box/core/constants/images.dart';
+import 'package:black_box/core/constants/reasons.dart';
 import 'package:black_box/features/crashes/presentation/cubit/crash_cubit.dart';
 import 'package:black_box/features/crashes/presentation/cubit/crash_state.dart';
 import 'package:black_box/features/crashes/presentation/widgets/sub_widgets/crash_button.dart';
@@ -7,10 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:black_box/core/localization/generated/app_localizations.dart';
 import '../../../../core/constants/global.dart';
+import '../../../analysis/calender.dart';
 
 class AggressiveContent extends StatelessWidget {
-  const AggressiveContent({super.key});
+  const AggressiveContent({super.key,required this.title,required this.carId});
 
+  final int carId;
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,7 +29,20 @@ class AggressiveContent extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(AppLocalizations.of(context)!.events),
-                CrashButton(size: width * 0.0813, imageName: AppImages.calender)
+                CrashButton(
+                  size: width * 0.0813,
+                  imageName: AppImages.calender,
+                  onTap: (){
+                    context.read<CrashCubit>().showAllCrashes(type: 'ma',carId: 105);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                        builder: (context) =>
+                        CalenderScreen(title: AppLocalizations.of(context)!.event_aggressive_turns,carId: carId,),
+                    )
+                    );
+                  },
+                )
               ],
             ),
           ),
@@ -39,7 +56,7 @@ class AggressiveContent extends StatelessWidget {
                     itemCount: state.crashes.length,
                     itemBuilder: (context,idx){
                       return CrashItem(
-                          title: "Aggressive Turn",
+                          title: Reasons.aggressiveTurn,
                           lrs: state.crashes[idx].speedBefore.toString(),
                           severity: state.crashes[idx].severity,
                           location: state.crashes[idx].location,

@@ -1,4 +1,5 @@
 import 'package:black_box/core/constants/images.dart';
+import 'package:black_box/core/constants/reasons.dart';
 import 'package:black_box/features/crashes/presentation/screens/aggressive_turns.dart';
 import 'package:black_box/features/crashes/presentation/screens/crash.dart';
 import 'package:black_box/features/crashes/presentation/screens/hard_braking.dart';
@@ -62,7 +63,7 @@ class DrivingEventContent extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HardBraking(driverId: driverId, driverName: driverName, carId: carId),
+                        builder: (context) => HardBraking(driverId: driverId, driverName: driverName, carId: int.parse(carId), title: '',),
                       ),
                     );
                   },
@@ -90,7 +91,7 @@ class DrivingEventContent extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => AgressiveTurns(driverId: driverId, driverName: driverName, carId: carId),
+                        builder: (context) => AgressiveTurns(driverId: driverId, driverName: driverName, carId: int.parse(carId), title: Reasons.aggressiveTurn,),
                       ),
                     );
                   },

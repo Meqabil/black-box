@@ -34,7 +34,7 @@ class CrashContent extends StatelessWidget {
                   size: width * 0.0813,
                   imageName: AppImages.calender,
                   onTap: (){
-                    context.read<CrashCubit>().showAllCrashes(type: 'ma',carId: 105);
+                    context.read<CrashCubit>().showAllCrashes(type: 'major_crash',carId: 105);
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -64,6 +64,7 @@ class CrashContent extends StatelessWidget {
                         reason: state.crashes[idx].type,
                         date: state.crashes[idx].crashedAt,
                         notifyDate: notifyDate,
+                        roll: state.crashes[idx].yaw ?? '0.0',
                       );
                     },
                   );

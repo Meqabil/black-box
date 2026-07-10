@@ -348,7 +348,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get how_help => 'كيف يمكننا مسـاعدتك ؟';
 
   @override
-  String get on_wh_num => 'على رقم الوتسـاب';
+  String get on_wh_num => 'على رقم الهاتف 5851';
 
   @override
   String get language => 'اللــغة';

@@ -1,5 +1,6 @@
 
 
+import 'package:black_box/core/constants/reasons.dart';
 import 'package:black_box/features/cars/domain/entities/car_entity.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_cubit.dart';
 import 'package:black_box/features/cars/presentation/cubit/car/car_state.dart';
@@ -31,7 +32,7 @@ class _DtcScreenState extends State<DtcScreen> {
 
   @override
   void initState() {
-    context.read<CrashCubit>().showAllCrashes(type: "dtc",carId: widget.car.id);
+    context.read<CrashCubit>().showAllCrashes(type: Reasons.dtc,carId: widget.car.id);
     super.initState();
   }
 
@@ -66,11 +67,23 @@ class _DtcScreenState extends State<DtcScreen> {
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             child: Row(
               children: [
-                StatItem(
-                  label: AppLocalizations.of(context)!.total_active_cars,
-                  value:"1",
-                  valueColor:Colors.white,
-                  arrowAngle: 135,
+                BlocBuilder<CarCubit,CarState>(
+                    builder: (context,state) {
+                      if(state is CarSuccess){
+                        return StatItem(
+                          label: AppLocalizations.of(context)!.total_active_cars,
+                          value:  "${state.stats.totalActiveVehicles}",
+                          valueColor:  Colors.white,
+                          arrowAngle: 135,
+                        );
+                      }
+                      return StatItem(
+                        label: AppLocalizations.of(context)!.total_active_cars,
+                        value:  "0",
+                        valueColor:  Colors.white,
+                        arrowAngle: 135,
+                      );
+                    }
                 ),
                 Container(
                   width: 2,

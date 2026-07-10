@@ -1,4 +1,5 @@
 
+import 'package:black_box/core/constants/reasons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,7 +28,6 @@ class CoolantTempContent extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(AppLocalizations.of(context)!.events),
-                CrashButton(size: width * 0.0813, imageName: AppImages.calender)
               ],
             ),
           ),
@@ -41,13 +41,13 @@ class CoolantTempContent extends StatelessWidget {
                       itemCount: state.crashes.length,
                       itemBuilder: (context,idx){
                         return CrashItem(
-                          title: "Coolant",
+                          title: "Engine Overheating",
                           lrs: state.crashes[idx].speedBefore.toString(),
                           severity: state.crashes[idx].severity,
                           location: state.crashes[idx].location,
                           reason: state.crashes[idx].type,
                           date: state.crashes[idx].crashedAt,
-                          type: 'coolant',
+                          type: Reasons.coolant,
                           coolant: state.crashes[idx].coolantTemp.toString(),
                         );
                       },
